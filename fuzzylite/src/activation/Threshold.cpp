@@ -94,6 +94,16 @@ namespace fl {
         return this->_threshold;
     }
 
+    void Threshold::setComparisonThreshold(Comparison comparison, scalar threshold) {
+        setComparison(comparison);
+        setThreshold(threshold);
+    }
+
+    void Threshold::setComparisonThreshold(const std::string& comparison, scalar threshold) {
+        setComparison(parseComparisonOperator(comparison));
+        setThreshold(threshold);
+    }
+
     bool Threshold::activates(scalar activationDegree) const {
         switch (_comparison) {
             case EqualTo: return Op::isEq(activationDegree, _threshold);
