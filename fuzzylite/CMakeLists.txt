@@ -33,6 +33,8 @@ option(FL_USE_FLOAT "Use fl::scalar as float" OFF)
 option(FL_BACKTRACE "Provide backtrace information in case of errors" OFF)
 option(FL_CPP11 "Builds utilizing C++11, i.e., passing -std=c++11" OFF)
 
+option(FL_BUILD_TESTS "Builds the unit tests" OFF)
+
 if(FL_CPP11 AND MSVC)
     message("Warning: MSVC not compatible with FL_CPP11 flag")
 endif()
@@ -72,28 +74,11 @@ endif()
 
 set(FL_LIBS)
 
-#link with rt lib on Linux. Fixes problem with clock_gettime()
-include(CheckLibraryExists)
-if(UNIX AND NOT APPLE)
-    ENABLE_LANGUAGE(C)
-    CHECK_LIBRARY_EXISTS(rt shm_open "" HAVE_RT_LIB)
-    if(HAVE_RT_LIB)
-        set(FL_LIBS ${FL_LIBS} rt)
-    endif()
-endif()
-
 if(MSVC)
     set(CMAKE_CXX_FLAGS "/W4 /EHsc")
     #Wx: Treat warnings as errors. W4: All warnings
     #http://msdn.microsoft.com/en-us/library/thxezb7y.aspx
     #EHsc: call destructors on __try __catch, and to ignore C4530: C++ exception handler used. Note, unwind semantics are not enabled
-    #/wd4251 disable warning 4251 #http://www.unknownroad.com/rtfm/VisualStudio/warningC4251.html
-    #To avoid issues from disabling warning 4251, MSVCRT.lib is statically linked to resolve external references
-    #http://msdn.microsoft.com/en-us/library/2kzt1wy3.aspx
-    #set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MD")
-    #set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MDd")
-    #By default, MD is selected.
-
     if (FL_BACKTRACE)
         set(FL_LIBS dbghelp)
     endif()
@@ -105,9 +90,11 @@ include_directories(.)
 
 file(STRINGS FL_HEADERS fl-headers)
 file(STRINGS FL_SOURCES fl-sources)
+file(STRINGS FL_TESTS fl-tests)
 
 string(REGEX REPLACE "\n" " " ${fl-headers} ${fl-headers})
 string(REGEX REPLACE "\n" " " ${fl-sources} ${fl-sources})
+string(REGEX REPLACE "\n" " " ${fl-tests} ${fl-tests})
 
 message("${exepath}")
 
@@ -164,6 +151,24 @@ if(FL_BUILD_BINARY)
     target_link_libraries(fl-bin fl-shared ${FL_LIBS})
 endif(FL_BUILD_BINARY)
 
+if(FL_BUILD_TESTS)
+    add_executable(fl-test ${fl-tests})
+    set_target_properties(fl-test PROPERTIES OUTPUT_NAME fuzzylite-tests)
+    set_target_properties(fl-test PROPERTIES OUTPUT_NAME fuzzylite-tests IMPORT_PREFIX tmp-) #To prevent LNK1149 in Windows
+    set_target_properties(fl-test PROPERTIES DEBUG_POSTFIX -debug)
+
+    set_target_properties(fl-test PROPERTIES COMPILE_DEFINITIONS "FL_IMPORT_LIBRARY")
+    target_link_libraries(fl-test fl-shared ${FL_LIBS})
+
+    enable_testing()
+    add_test(NAME RunTests COMMAND fl-test)
+#    add_test(NAME ListTests COMMAND fl-test --list-tests)
+#    set_tests_properties(ListTests PROPERTIES PASS_REGULAR_EXPRESSION "[0-9]+ test case")
+
+#    add_test(NAME ListTags COMMAND fl-test --list-tags)
+#    set_tests_properties(ListTags PROPERTIES PASS_REGULAR_EXPRESSION "[0-9]+ tag")
+endif()  
+
 ###INSTALL SECTION
 if(NOT FL_INSTALL_BINDIR)
     set(FL_INSTALL_BINDIR bin)
@@ -214,6 +219,7 @@ message("FL_CPP11=${FL_CPP11}")
 message("FL_BACKTRACE=${FL_BACKTRACE}")
 message("FL_INSTALL_BINDIR=${FL_INSTALL_BINDIR}")
 message("FL_INSTALL_LIBDIR=${FL_INSTALL_LIBDIR}")
+message("FL_BUILD_TESTS=${FL_BUILD_TESTS}")
 message("Build=${CMAKE_BUILD_TYPE}")
 message("=====================================\n")
 
