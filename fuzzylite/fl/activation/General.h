@@ -24,9 +24,10 @@
 namespace fl {
 
     /**
-     * This class activates each loaded rule in any given {@link RuleBlock}.
+     * General activates every rule in any given {@link RuleBlock} following the
+     * order in which the rules were added to the rule block
      * 
-     * @author Juan Rada-Vilela
+     * @author Juan Rada-Vilela, Ph.D.
      * @see Rule
      * @see RuleBlock
      * @see ActivationFactory
@@ -42,9 +43,26 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
 
+        /**
+         * No parameters are required to configure the activation method
+         * 
+         * @return an empty string
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+
+        /**
+         * No parameters are required to configure the activation method
+         * 
+         * @param parameters is an empty string
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
+        /**
+         * Activates every rule in the given {@link RuleBlock} following 
+         * the order in which the rules were added to the rule block
+         * 
+         * @param ruleBlock is the rule block to activate
+         */
         virtual void activate(RuleBlock* ruleBlock) const FL_IOVERRIDE;
 
         virtual General* clone() const FL_IOVERRIDE;

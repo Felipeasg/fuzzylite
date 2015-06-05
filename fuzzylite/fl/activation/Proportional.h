@@ -22,12 +22,11 @@
 namespace fl {
 
     /**
-     * This class activates each rule proportional to the activation of the 
-     * other rules in any given {@link RuleBlock}. The sum of the 
+     * Proportional activates the rules with activation degrees proportional 
+     * to the activation degrees of the other rules such that the sum of the 
      * the activation degrees of all rules is equal to one.
      * 
-     * @author Juan Rada-Vilela
-     * @see Lowest
+     * @author Juan Rada-Vilela, Ph.D.
      * @see Rule
      * @see RuleBlock
      * @see ActivationFactory
@@ -41,11 +40,22 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
 
+        /**
+         * No parameters are required to configure the activation method
+         * 
+         * @return an empty string
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+
+        /**
+         * No parameters are required to configure the activation method
+         * 
+         * @param parameters is an empty string
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Activates the loaded rules with activation degrees proportional to 
+         * Activates the rules with activation degrees proportional to 
          * the other rules degrees in any given {@link ruleBlock}.
          * 
          * @param ruleBlock is the rule block to activate.

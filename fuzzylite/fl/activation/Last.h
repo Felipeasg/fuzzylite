@@ -23,10 +23,14 @@
 namespace fl {
 
     /**
-     * This class activates the first rule with activation degree greater than 
-     * zero in any given {@link RuleBlock}.
+     * Last activates the last rule whose activation degree is greater than 
+     * zero, and deactivates the remaining rules.
      * 
-     * @author Juan Rada-Vilela
+     * The rules are iterated in the reverse order they were added to the 
+     * rule block. @todo Revise if natural order is a better option.
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see First
      * @see Rule
      * @see RuleBlock
      * @see ActivationFactory
@@ -42,9 +46,28 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
 
+        /**
+         * No parameters are required to configure the activation method
+         * 
+         * @return empty string
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+
+        /**
+         * No parameters are required to configure the activation method
+         * 
+         * @param parameters is an empty string
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
+        /**
+         * Activates the last rule whose activation degree is greater than 
+         * zero in the given {@link RuleBlock}, and deactivates the remaining
+         * rules. The rules are iterated in the reverse order the rules were 
+         * added to the rule block.
+         * 
+         * @param ruleBlock is the rule block to activate
+         */
         virtual void activate(RuleBlock* ruleBlock) const FL_IOVERRIDE;
 
         virtual Last* clone() const FL_IOVERRIDE;
