@@ -21,6 +21,15 @@
 
 namespace fl {
 
+    /**
+     * InputVariable represents an input variable of the fuzzy controller
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Variable
+     * @see OutputVariable
+     * @see Term
+     * @since 4.0
+     */
     class FL_API InputVariable : public Variable {
     public:
         explicit InputVariable(const std::string& name = "",
@@ -29,8 +38,21 @@ namespace fl {
         virtual ~InputVariable() FL_IOVERRIDE;
         FL_DEFAULT_COPY_AND_MOVE(InputVariable)
 
+        /**
+         * Evaluates the membership function of the current input value @f$x@f$ for each
+         * term @f$i@f$, resulting in a fuzzy input value in the form
+         * @f$\tilde{x}=\sum_i{\mu_i(x)/i}@f$. This is equivalent to a call to 
+         * @link{Variable#fuzzify() passing @f$x@f$
+         * @return the fuzzy input value expressed as @f$\sum_i{\mu_i(x)/i}@f$
+         */
         virtual std::string fuzzyInputValue() const;
 
+        /**
+         * Provides the representation of the input variable in the 
+         * FuzzyLite Language (FLL) @todo reference to FLL
+         * @return the input variable in FLL
+         * @see FllExporter
+         */
         virtual std::string toString() const FL_IOVERRIDE;
 
     };

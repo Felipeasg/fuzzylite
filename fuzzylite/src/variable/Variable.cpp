@@ -227,7 +227,7 @@ namespace fl {
     }
 
     bool Variable::hasTerm(const std::string& name) const {
-        return getTerm(name) != fl::null;
+        return getTerm(name) != fl::null; //@todo: Avoid exception when not found
     }
 
     Term* Variable::removeTerm(std::size_t index) {

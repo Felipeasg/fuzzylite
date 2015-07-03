@@ -28,6 +28,16 @@ namespace fl {
     class SNorm;
     class Expression;
 
+    /**
+     * Antecedent contains an expression tree that represents and evaluates the 
+     * antecedent of a Rule. The structure of a rule is: 
+     * `if (antecedent) then (consequent)`
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Consequent
+     * @see Rule
+     * @since 4.0
+     */
     class FL_API Antecedent {
     protected:
         std::string _text;
@@ -36,6 +46,7 @@ namespace fl {
     public:
         Antecedent();
         virtual ~Antecedent();
+
 
         virtual void setText(const std::string& text);
         virtual std::string getText() const;

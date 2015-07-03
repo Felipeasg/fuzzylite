@@ -25,6 +25,10 @@
 
 namespace fl {
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class FL_API Exception : public std::exception {
     protected:
         std::string _what;

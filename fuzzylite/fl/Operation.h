@@ -25,8 +25,11 @@
 #include <vector>
 
 namespace fl {
-    //FL_API removed because methods are inline.
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class Operation {
     public:
 

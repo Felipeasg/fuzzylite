@@ -31,6 +31,14 @@ namespace fl {
     class SNorm;
     class Activation;
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Engine
+     * @see Rule
+     * @see Antecedent
+     * @see Consequent
+     * @since 4.0
+     */
     class FL_API RuleBlock {
     private:
         void copyFrom(const RuleBlock& source);

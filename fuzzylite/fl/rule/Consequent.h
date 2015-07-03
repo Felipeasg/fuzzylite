@@ -28,6 +28,12 @@ namespace fl {
     class Proposition;
     class TNorm;
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Rule
+     * @see Antecedent
+     * @since 4.0
+     */
     class FL_API Consequent {
     protected:
         std::string _text;

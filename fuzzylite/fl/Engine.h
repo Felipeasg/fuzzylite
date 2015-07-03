@@ -35,6 +35,13 @@ namespace fl {
     class SNorm;
     class Defuzzifier;
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see InputVariable
+     * @see OutputVariable
+     * @see RuleBlock
+     * @since 4.0
+     */
     class FL_API Engine {
     private:
         void copyFrom(const Engine& source);

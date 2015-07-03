@@ -173,6 +173,10 @@ namespace fl {
 
 namespace fl {
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class FL_API fuzzylite {
     protected:
         static int _decimals;

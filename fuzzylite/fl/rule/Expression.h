@@ -29,6 +29,13 @@ namespace fl {
     class Hedge;
     class Term;
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Antecedent
+     * @see Consequent
+     * @see Rule
+     * @since 4.0
+     */
     class FL_API Expression {
     public:
 

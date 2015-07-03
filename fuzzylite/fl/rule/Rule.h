@@ -31,6 +31,13 @@ namespace fl {
     class TNorm;
     class SNorm;
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Antecedent
+     * @see Consequent
+     * @see RuleBlock
+     * @since 4.0
+     */
     class FL_API Rule {
     protected:
         std::string _text;
