@@ -46,13 +46,20 @@ namespace fl {
         explicit OutputVariable(const std::string& name = "",
                 scalar minimum = -fl::inf, scalar maximum = fl::inf);
         OutputVariable(const OutputVariable& other);
+        /**
+         * Deletes the terms in the current variable, adds clones of the terms
+         * from the `other` variable, deletes the fuzzyOutput and defuzzifier,
+         * and sets clones of fuzzyOutput and defuzzifier from `other`.
+         * @param other is the other variable to copy from
+         * @return this variable, which contains a copy of the `other` variable
+         */
         OutputVariable& operator=(const OutputVariable& other);
         virtual ~OutputVariable() FL_IOVERRIDE;
         FL_DEFAULT_MOVE(OutputVariable)
 
         /**
-         * Gets the fuzzy output value
-         * @return the fuzzy output value
+         * Gets the fuzzy output 
+         * @return the fuzzy output
          */
         virtual Accumulated* fuzzyOutput() const;
 
@@ -62,40 +69,41 @@ namespace fl {
         virtual void setMaximum(scalar maximum) FL_IOVERRIDE;
 
         /**
-         * Sets the defuzzifier of the output variable
+         * Sets the defuzzifier of the output variable (default: `fl::null`)
          * @param defuzzifier is the defuzzifier of the output variable
          */
         virtual void setDefuzzifier(Defuzzifier* defuzzifier);
         /**
-         * Gets the defuzzifier of the output variable
+         * Gets the defuzzifier of the output variable (default: `fl::null`)
          * @return the defuzzifier of the output variable
          */
         virtual Defuzzifier* getDefuzzifier() const;
 
         /**
-         * Sets the previous value of the output variable. This value is managed
-         * automatically upon calling @link{#defuzzify()
+         * Sets the previous value of the output variable (default: `fl::nan`). 
+         * This value is managed automatically upon calling @link{#defuzzify() 
          * @param previousValue is the previous value to store
          */
         virtual void setPreviousValue(scalar previousValue);
         /**
-         * Gets the previous value of the output variable. Initially, the 
-         * previous value is @link{fl#nan
-         * @return the previous value, or @link{fl#nan if there is none
+         * Gets the previous value of the output variable (default: `fl::nan`)
+         * @return the previous value, or `fl::nan` if there is none
          */
         virtual scalar getPreviousValue() const;
 
         /**
-         * Sets the default value of the output variable. The default value 
-         * will replace the current value whenever the defuzzification process 
-         * results in a non-finite value.
+         * Sets the default value of the output variable (default: `fl::nan`). 
+         * The default value will replace the current value whenever the 
+         * defuzzification process results in a non-finite value 
+         * (i.e., `fl::inf` or `fl::nan`).
          * @param defaultValue is the default value 
          */
         virtual void setDefaultValue(scalar defaultValue);
         /**
-         * Gets the default value of the output variable. The default value 
-         * will replace the current value whenever the defuzzification process 
-         * results in a non-finite value.
+         * Gets the default value of the output variable (default: `fl::nan`). 
+         * The default value will replace the current value whenever the 
+         * defuzzification process results in a non-finite value 
+         * (i.e., `fl::inf` or `fl::nan`).
          * @return the default value
          */
         virtual scalar getDefaultValue() const;
@@ -103,7 +111,8 @@ namespace fl {
         /**
          * Sets whether the previous value is utilized as a replacement of the 
          * current value whenever the defuzzification process results in a 
-         * non-finite value. If `true`, the previous value takes precedence over
+         * non-finite value (default: `false`). 
+         * If `true`, the previous value takes precedence over
          * the default value, unless there is no previous value. Otherwise, the
          * default value is utilized in such cases.
          * @param lockPreviousOutputValue is a boolean that indicates whether to 
@@ -113,7 +122,8 @@ namespace fl {
         /**
          * Gets whether the previous value is utilized as a replacement of the 
          * current value whenever the defuzzification process results in a 
-         * non-finite value. If `true`, the previous value takes precedence over
+         * non-finite value (default: `false`). 
+         * If `true`, the previous value takes precedence over
          * the default value, unless there is no previous value. Otherwise, the
          * default value is utilized in such cases.
          * @returns a boolean that indicates whether to lock the previous output value
@@ -122,28 +132,25 @@ namespace fl {
 
         /**
          * Defuzzifies the output variable, stores the previous output value, 
-         * and updates the output value. @todo reflect code
+         * and updates the output value, all while considering the conditions
+         * of @link{#isLockPreviousValue() and @link{#isLockValueInRange.
          */
         virtual void defuzzify();
 
         /**
-         * Gets the current fuzzy output value before defuzzification.
+         * Gets the currently accumulated fuzzy output value \f$\tilde{y}\f$ 
+         * (not to be confused with a call to @link{Variable#fuzzify() passing 
+         * the output value, as this would be equivalent to \f$\mu(y)\f$)
          * @return the fuzzy output value
          */
         virtual std::string fuzzyOutputValue() const;
 
         /**
          * Clears the Accumulated fuzzy output value, and sets the `value` and
-         * `previousValue` to @link{fl#nan
+         * `previousValue` to `fl::nan`
          */
         virtual void clear();
 
-         /**
-         * Gets the representation of the output variable in the 
-         * FuzzyLite Language (FLL)
-         * @return the output variable in FLL
-         * @see FllExporter
-         */
         virtual std::string toString() const FL_IOVERRIDE;
 
     };

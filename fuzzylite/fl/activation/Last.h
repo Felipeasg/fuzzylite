@@ -62,7 +62,7 @@ namespace fl {
 
         /**
          * Activates the last rule whose activation degree is greater than 
-         * zero in the given {@link RuleBlock}, and deactivates the remaining
+         * zero in the given RuleBlock, and deactivates the remaining
          * rules. The rules are iterated in the reverse order the rules were 
          * added to the rule block.
          * 

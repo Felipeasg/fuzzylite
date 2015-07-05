@@ -25,12 +25,12 @@ namespace fl {
 
     /**
      * Highest activates a given number of rules whose activation 
-     * degrees are the highest in any given {@link RuleBlock}.  
+     * degrees are the highest in any given RuleBlock.
      * 
      * The rules are activated in descending order according to their activation 
      * degrees. If the given number of rules to activate is negative, then 
      * this class activates the rules with the lowest activation degrees, 
-     * which is equivalent to the {@link Lowest} activation.
+     * which is equivalent to the Lowest activation.
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Lowest
@@ -87,11 +87,11 @@ namespace fl {
 
         /**
          * Activates the rules with the highest activation degrees in the 
-         * given {@link RuleBlock}.
+         * given RuleBlock.
          * 
          * If the number of rules to activate is negative, then Highest
          * activates the given number of rules with the lowest activation degrees, 
-         * which is equivalent to the {@link Lowest} activation.
+         * which is equivalent to the Lowest activation.
          * 
          * @param ruleBlock is the rule block to activate.
          */

@@ -24,11 +24,9 @@ namespace fl {
 
     /**
      * Activation is the base class of all activation methods for rule blocks.
-     * An activation method for any given {@link RuleBlock} needs to:
-     * <ul>
-     * <li>Activate the necessary rules.</li>
-     * <li>Deactivate the remaining rules.</li>
-     * </ul>
+     * An activation method for any given RuleBlock needs to:
+     * - Activate the necessary rules.
+     * - Deactivate the remaining rules.
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Rule
@@ -50,7 +48,7 @@ namespace fl {
 
         /**
          * Provides the name of the activation method. The name is utilized to
-         * register the activation method in {@link ActivationFactory}
+         * register the activation method in ActivationFactory
          * 
          * @return the name of the activation method
          * @see ActivationFactory

@@ -55,8 +55,8 @@ namespace fl {
         /**
          * A constructor with the comparison operator and threshold.
          * 
-         * @param comparison is the comparison operator. Defaults to GreaterThan (>).
-         * @param threshold is the threshold. Defaults to 0.0.
+         * @param comparison is the comparison operator.
+         * @param threshold is the threshold (default: `0.0`)
          */
         Threshold(Comparison comparison = GreaterThan, scalar threshold = 0.0);
         virtual ~Threshold();

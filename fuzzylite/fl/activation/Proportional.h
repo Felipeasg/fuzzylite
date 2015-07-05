@@ -56,7 +56,7 @@ namespace fl {
 
         /**
          * Activates the rules with activation degrees proportional to 
-         * the other rules degrees in any given {@link ruleBlock}.
+         * the other rules degrees in any given rule block.
          * 
          * @param ruleBlock is the rule block to activate.
          */
