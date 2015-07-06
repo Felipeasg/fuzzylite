@@ -21,12 +21,24 @@
 
 namespace fl {
 
+    /**
+     * Very is a hedge in the ordered set 
+     * (Not, Seldom, Somewhat, Very, Extremely, Any)
+     */
     class FL_API Very : public Hedge {
     public:
         std::string name() const FL_IOVERRIDE;
+        /**
+         * Computes Very for a membership function value \f$x\f$
+         * @param x is a membership function value
+         * @return \f$x^2\f$
+         */
         scalar hedge(scalar x) const FL_IOVERRIDE;
         Very* clone() const FL_IOVERRIDE;
 
+        /**
+         * @return a new instance of Very
+         */
         static Hedge* constructor();
     };
 
