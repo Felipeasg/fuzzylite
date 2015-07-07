@@ -25,6 +25,10 @@ namespace fl {
 
     /**
      * Hedge is the base class for all hedges
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Hedge
+     * @see HedgeFactory
+     * @since 4.0
      */
     class FL_API Hedge {
     public:
@@ -42,12 +46,12 @@ namespace fl {
          */
         virtual std::string name() const = 0;
         /**
-         * Computes the hedge value for a membership function value \f$x\f$
+         * Computes the hedge value for a membership function value @f$x@f$
          * @param x is a membership function value
-         * @return the hedge of \f$x\f$
+         * @return the hedge of @f$x@f$
          */
         virtual scalar hedge(scalar x) const = 0;
-        
+
         /**
          * @return a clone of the hedge.
          */

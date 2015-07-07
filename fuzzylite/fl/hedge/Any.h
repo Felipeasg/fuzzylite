@@ -20,6 +20,7 @@
 #include "fl/hedge/Hedge.h"
 
 namespace fl {
+
     /**
      * Any is a hedge that always returns 1.0. 
      * Antecedent considers Any a syntactically special hedge because it is 
@@ -27,6 +28,10 @@ namespace fl {
      * Amongst hedges, only Any has virtual methods to be overriden 
      * due to its particular case.
      * @todo check other special cases of Any.
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Hedge
+     * @see HedgeFactory
+     * @since 4.0
      */
     class FL_API Any : public Hedge {
     public:
@@ -38,7 +43,7 @@ namespace fl {
         /**
          * Always returns 1.0
          * @param x is irrelevant
-         * @return \f$1.0\f$
+         * @return @f$1.0@f$
          */
         virtual scalar hedge(scalar x) const FL_IOVERRIDE;
         virtual Any* clone() const FL_IOVERRIDE;

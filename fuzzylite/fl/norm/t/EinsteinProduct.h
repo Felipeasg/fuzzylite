@@ -21,9 +21,24 @@
 
 namespace fl {
 
+    /**
+     * EinsteinProduct of values
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see EinsteinSum
+     * @see TNorm
+     * @see TNormFactory
+     * @see Norm
+     * @since 4.0
+     */
     class FL_API EinsteinProduct : public TNorm {
     public:
         std::string className() const FL_IOVERRIDE;
+        /**
+         * Computes the einstein product of two membership function values
+         * @param a is a membership function value
+         * @param b is a membership function value
+         * @return @f$(a\times b)/(2-(a+b-a\times b))@f$
+         */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         EinsteinProduct* clone() const FL_IOVERRIDE;
 

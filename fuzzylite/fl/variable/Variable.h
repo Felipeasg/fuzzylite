@@ -152,7 +152,7 @@ namespace fl {
      * 
      * Locking the value of an OutputVariable means that defuzzifiers will 
      * ensure that the output value is within the range of the variable, 
-     * adjusting the output value if necessary. Refer to @link{OutputVariable#defuzzify()).
+     * adjusting the output value if necessary. Refer to @link{OutputVariable#defuzzify().
      *  
      * @param lockValueInRange is a boolean that indicates whether to lock 
      * the value in range
@@ -172,7 +172,7 @@ namespace fl {
      * 
      * Locking the value of an OutputVariable means that defuzzifiers will 
      * ensure that the output value is within the range of the variable, 
-     * adjusting the output value if necessary. Refer to @link{OutputVariable#defuzzify()).
+     * adjusting the output value if necessary. Refer to @link{OutputVariable#defuzzify().
      *  
      * @return `true`, if the variable locks the value in range; `false`, otherwise
      */
@@ -192,7 +192,7 @@ namespace fl {
      * @param x is the value of interest
      * @param[out] yhighest is a pointer where the highest membership 
      * function value will be stored
-     * @return the term @f$if@$ which maximimizes @f$\mu_i(x)@f$
+     * @return the term @f$if@f$ which maximimizes @f$\mu_i(x)@f$
      */
     virtual Term* highestMembership(scalar x, scalar* yhighest = fl::null) const;
 

@@ -20,9 +20,27 @@
 #include "fl/norm/SNorm.h"
 namespace fl {
 
+    /**
+     * DrasticSum of values
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see DrasticProduct
+     * @see SNorm
+     * @see SNormFactory
+     * @see Norm
+     * @since 4.0
+     */
     class FL_API DrasticSum : public SNorm {
     public:
         std::string className() const FL_IOVERRIDE;
+        /**
+         * Computes the drastic sum of two membership function values
+         * @param a is a membership function value
+         * @param b is a membership function value
+         * @return @f$\cases{
+         * \max(a,b) & \mbox{if $\min(a,b)=0$} \cr
+         * 1 & \mbox{otherwise}
+         * }@f$
+         */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         DrasticSum* clone() const FL_IOVERRIDE;
 

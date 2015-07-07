@@ -21,9 +21,23 @@
 
 namespace fl {
 
+    /**
+     * NormalizedSum of values
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see SNorm
+     * @see SNormFactory
+     * @see Norm
+     * @since 4.0
+     */
     class FL_API NormalizedSum : public SNorm {
     public:
         std::string className() const FL_IOVERRIDE;
+        /**
+         * Computes the normalized sum of two membership function values
+         * @param a is a membership function value
+         * @param b is a membership function value
+         * @return @f$(a+b)/\max(1, \max(a, b))@f$ @todo revise this function.
+         */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         NormalizedSum* clone() const FL_IOVERRIDE;
 

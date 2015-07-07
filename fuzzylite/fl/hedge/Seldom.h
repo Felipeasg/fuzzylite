@@ -24,21 +24,25 @@ namespace fl {
     /**
      * Seldom is a hedge in the ordered set 
      * (Not, Seldom, Somewhat, Very, Extremely, Any)
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Hedge
+     * @see HedgeFactory
+     * @since 4.0
      */
     class FL_API Seldom : public Hedge {
     public:
         std::string name() const FL_IOVERRIDE;
         /**
-         * Computes Seldom for a membership function value \f$x\f$
+         * Computes Seldom for a membership function value @f$x@f$
          * @param x is a membership function value
-         * @return \f$
+         * @return @f$
          * \cases{
          * \sqrt{x/2} & \mbox{if $x \le 0.5$} \cr
          * 1-\sqrt{(1-x)/2} & \mbox{otherwise}\cr
          * }
-         * \f$
+         * @f$
          */
-        
+
         scalar hedge(scalar x) const FL_IOVERRIDE;
         Seldom* clone() const FL_IOVERRIDE;
 

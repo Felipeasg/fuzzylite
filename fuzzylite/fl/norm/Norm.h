@@ -23,6 +23,15 @@
 
 namespace fl {
 
+    /**
+     * Norm is the base class of all norms
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see TNorm
+     * @see SNorm
+     * @see TNormFactory
+     * @see SNormFactory
+     * @since 4.0
+     */
     class FL_API Norm {
     public:
 
@@ -33,10 +42,21 @@ namespace fl {
         }
 
         FL_DEFAULT_COPY_AND_MOVE(Norm)
-
+        /**
+         * @return the name of the class of the norm
+         */
         virtual std::string className() const = 0;
+        /**
+         * Computes the norm for @f$a@f$ and @f$b@f$
+         * @param a is a membership function value
+         * @param b is a membership function value
+         * @return the norm between @f$a@f$ and @f$b@f$
+         */
         virtual scalar compute(scalar a, scalar b) const = 0;
 
+        /**
+         * @return a clone of the norm
+         */
         virtual Norm* clone() const = 0;
 
     };

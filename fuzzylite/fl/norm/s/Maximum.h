@@ -21,9 +21,24 @@
 
 namespace fl {
 
+    /**
+     * Maximum of values
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Minimum
+     * @see SNorm
+     * @see SNormFactory
+     * @see Norm
+     * @since 4.0
+     */
     class FL_API Maximum : public SNorm {
     public:
         std::string className() const FL_IOVERRIDE;
+        /**
+         * Computes the maximum of two membership function values
+         * @param a is a membership function value
+         * @param b is a membership function value
+         * @return @f$\max(a,b)@f$
+         */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         Maximum* clone() const FL_IOVERRIDE;
 

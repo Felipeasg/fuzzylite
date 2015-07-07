@@ -22,7 +22,7 @@ all(){
 }
 
 clean(){
-    rm -rf release debug CMakeFiles
+    rm -rf release debug CMakeFiles CMakeCache.txt cmake_install.cmake
 }
 
 usage(){

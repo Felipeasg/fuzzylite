@@ -138,9 +138,9 @@ namespace fl {
         virtual void defuzzify();
 
         /**
-         * Gets the currently accumulated fuzzy output value \f$\tilde{y}\f$ 
+         * Gets the currently accumulated fuzzy output value @f$\tilde{y}@f$ 
          * (not to be confused with a call to @link{Variable#fuzzify() passing 
-         * the output value, as this would be equivalent to \f$\mu(y)\f$)
+         * the output value, as this would be equivalent to @f$\mu(y)@f$)
          * @return the fuzzy output value
          */
         virtual std::string fuzzyOutputValue() const;

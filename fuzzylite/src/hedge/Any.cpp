@@ -1,4 +1,4 @@
-A/*
+/*
  Copyright © 2010-2015 by FuzzyLite Limited.
  All rights reserved.
 
