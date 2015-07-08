@@ -24,7 +24,7 @@
 namespace fl {
 
     /**
-     * Norm is the base class of all norms
+     * Base class of all T-Norms and S-Norms
      * @author Juan Rada-Vilela, Ph.D.
      * @see TNorm
      * @see SNorm

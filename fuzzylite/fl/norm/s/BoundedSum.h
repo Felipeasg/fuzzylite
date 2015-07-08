@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * BoundedSum of values
+     * S-Norm for a bounded sum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see BoundedDifference
      * @see SNorm

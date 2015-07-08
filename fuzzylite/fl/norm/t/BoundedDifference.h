@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * BoundedDifference between values
+     * T-Norm for a bounded difference between values
      * @author Juan Rada-Vilela, Ph.D.
      * @see BoundedSum
      * @see TNorm

@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * HamacherSum of values
+     * S-Norm for a hamacher sum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see HamacherProduct
      * @see SNorm

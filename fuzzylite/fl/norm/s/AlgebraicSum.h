@@ -23,7 +23,7 @@
 namespace fl {
 
     /**
-     * AlgebraicSum of values
+     * S-Norm for an algebraic sum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see AlgebraicProduct
      * @see SNorm

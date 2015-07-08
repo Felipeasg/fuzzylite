@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * NormalizedSum of values
+     * S-Norm for a normalized sum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see SNorm
      * @see SNormFactory

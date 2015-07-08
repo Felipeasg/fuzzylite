@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * Minimum of values
+     * T-Norm for the minimum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see Maximum
      * @see TNorm

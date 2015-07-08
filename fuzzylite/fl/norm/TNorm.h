@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * TNorm is the base class of all T-Norms
+     * Base class of all T-Norms
      * @author Juan Rada-Vilela, Ph.D.
      * @see TNormFactory
      * @see Norm

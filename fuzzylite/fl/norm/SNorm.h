@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * SNorm is the base class of all S-Norms
+     * Base class of all S-Norms
      * @author Juan Rada-Vilela, Ph.D.
      * @see SNormFactory
      * @see Norm

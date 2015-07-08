@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * NilpotentMinimum of values
+     * T-Norm for the nilpotent minimum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see NilpotentMaximum
      * @see TNorm
