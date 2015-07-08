@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * Extremely is a hedge in the ordered set 
+     * %Hedge located fifth in the ordered set 
      * (Not, Seldom, Somewhat, Very, Extremely, Any)
      * @author Juan Rada-Vilela, Ph.D.
      * @see Hedge
@@ -33,14 +33,13 @@ namespace fl {
     public:
         std::string name() const;
         /**
-         * Computes Extremely for a membership function value @f$x@f$
+         * Computes the hedge for the membership function value @f$x@f$
          * @param x is a membership function value
          * @return @f$
          * \cases{
          * 2x^2 & \mbox{if $x \le 0.5$} \cr
          * 1-2(1-x)^2 & \mbox{otherwise}\cr
-         * }
-         * @f$
+         * }@f$
          */
         scalar hedge(scalar x) const;
         Extremely* clone() const;

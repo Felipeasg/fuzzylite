@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * Very is a hedge in the ordered set 
+     * %Hedge located fourth in the ordered set 
      * (Not, Seldom, Somewhat, Very, Extremely, Any)
      * @author Juan Rada-Vilela, Ph.D.
      * @see Hedge
@@ -33,7 +33,7 @@ namespace fl {
     public:
         std::string name() const FL_IOVERRIDE;
         /**
-         * Computes Very for a membership function value @f$x@f$
+         * Computes the hedge for the membership function value @f$x@f$
          * @param x is a membership function value
          * @return @f$x^2@f$
          */

@@ -24,7 +24,7 @@
 namespace fl {
 
     /**
-     * Hedge is the base class for all hedges
+     * Base class for all hedges
      * @author Juan Rada-Vilela, Ph.D.
      * @see Hedge
      * @see HedgeFactory
@@ -41,12 +41,11 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Hedge)
 
         /**
-         * 
          * @return the name of the hedge
          */
         virtual std::string name() const = 0;
         /**
-         * Computes the hedge value for a membership function value @f$x@f$
+         * Computes the hedge for the membership function value @f$x@f$
          * @param x is a membership function value
          * @return the hedge of @f$x@f$
          */

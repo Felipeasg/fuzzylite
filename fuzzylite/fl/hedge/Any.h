@@ -22,7 +22,9 @@
 namespace fl {
 
     /**
-     * Any is a hedge that always returns 1.0. 
+     * %Hedge that always returns 1.0, and is located last in the ordered set
+     * (Not, Seldom, Somewhat, Very, Extremely, Any). 
+     * 
      * Antecedent considers Any a syntactically special hedge because it is 
      * not followed by a Term (e.g., `if Variable is any then...`).
      * Amongst hedges, only Any has virtual methods to be overriden 
@@ -41,7 +43,7 @@ namespace fl {
 
         virtual std::string name() const FL_IOVERRIDE;
         /**
-         * Always returns 1.0
+         * Computes the hedge for the membership function value @f$x@f$
          * @param x is irrelevant
          * @return @f$1.0@f$
          */

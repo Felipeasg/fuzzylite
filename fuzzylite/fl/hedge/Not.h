@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * Not is a complement hedge in the ordered set 
+     * Complement hedge located first in the ordered set 
      * (Not, Seldom, Somewhat, Very, Extremely, Any)
      * @author Juan Rada-Vilela, Ph.D.
      * @see Hedge
@@ -33,7 +33,7 @@ namespace fl {
     public:
         std::string name() const FL_IOVERRIDE;
         /**
-         * Computes Not for a membership function value @f$x@f$
+         * Computes the hedge for the membership function value @f$x@f$
          * @param x is a membership function value
          * @return @f$1-x@f$
          */
