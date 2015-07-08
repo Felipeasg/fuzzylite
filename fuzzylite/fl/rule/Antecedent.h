@@ -29,7 +29,7 @@ namespace fl {
     class Expression;
 
     /**
-     * Antecedent contains an expression tree that represents and evaluates the 
+     * %Expression tree that represents and evaluates the 
      * antecedent of a Rule. The structure of a rule is: 
      * `if (antecedent) then (consequent)`
      * 

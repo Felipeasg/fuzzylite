@@ -24,7 +24,7 @@ namespace fl {
     class Defuzzifier;
 
     /**
-     * OutputVariable represents an output variable of the fuzzy controller
+     * Output variable of the fuzzy controller
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Variable
@@ -81,7 +81,7 @@ namespace fl {
 
         /**
          * Sets the previous value of the output variable (default: `fl::nan`). 
-         * This value is managed automatically upon calling @link{#defuzzify() 
+         * This value is managed automatically upon calling @link #defuzzify() @endlink
          * @param previousValue is the previous value to store
          */
         virtual void setPreviousValue(scalar previousValue);
@@ -133,13 +133,13 @@ namespace fl {
         /**
          * Defuzzifies the output variable, stores the previous output value, 
          * and updates the output value, all while considering the conditions
-         * of @link{#isLockPreviousValue() and @link{#isLockValueInRange.
+         * of @link #isLockPreviousValue() @endlink and @link #isLockValueInRange @endlink.
          */
         virtual void defuzzify();
 
         /**
          * Gets the currently accumulated fuzzy output value @f$\tilde{y}@f$ 
-         * (not to be confused with a call to @link{Variable#fuzzify() passing 
+         * (not to be confused with a call to @link Variable#fuzzify() @endlink passing 
          * the output value, as this would be equivalent to @f$\mu(y)@f$)
          * @return the fuzzy output value
          */

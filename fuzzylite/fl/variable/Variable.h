@@ -28,7 +28,7 @@ namespace fl {
   class Term;
 
   /**
-   * Variable is the base class for input variables and output variables.
+   * Base class of input variables and output variables.
    * 
    * @author Juan Rada-Vilela, Ph.D.
    * @see InputVariable
@@ -148,11 +148,11 @@ namespace fl {
      * `[minimum,maximum]`, taking the `minimum` and `maximum` values whenever
      * the `value` is less than `minimum` or greater than `maximum` (respectively) 
      * without ever changing the input `value`. Refer to 
-     * @link{Antecedent#activationDegree().
+     * @link Antecedent#activationDegree() @endlink.
      * 
      * Locking the value of an OutputVariable means that defuzzifiers will 
      * ensure that the output value is within the range of the variable, 
-     * adjusting the output value if necessary. Refer to @link{OutputVariable#defuzzify().
+     * adjusting the output value if necessary. Refer to @link OutputVariable#defuzzify() @endlink.
      *  
      * @param lockValueInRange is a boolean that indicates whether to lock 
      * the value in range
@@ -168,11 +168,11 @@ namespace fl {
      * `[minimum,maximum]`, taking the `minimum` and `maximum` values whenever
      * the `value` is less than `minimum` or greater than `maximum` (respectively) 
      * without ever changing the input `value`. Refer to 
-     * @link{Antecedent#activationDegree().
+     * @link Antecedent#activationDegree() @endlink.
      * 
      * Locking the value of an OutputVariable means that defuzzifiers will 
      * ensure that the output value is within the range of the variable, 
-     * adjusting the output value if necessary. Refer to @link{OutputVariable#defuzzify().
+     * adjusting the output value if necessary. Refer to @link OutputVariable#defuzzify() @endlink.
      *  
      * @return `true`, if the variable locks the value in range; `false`, otherwise
      */
