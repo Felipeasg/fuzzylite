@@ -23,7 +23,7 @@
 namespace fl {
 
     /**
-     * Lowest activates a given number of rules whose activation 
+     * Activation method that activates a given number of rules whose activation 
      * degrees are the lowest in any given RuleBlock.
      * 
      * The rules are activated in ascending order according to their activation 

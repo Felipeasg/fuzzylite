@@ -23,8 +23,8 @@
 namespace fl {
 
     /**
-     * Last activates the last rule whose activation degree is greater than 
-     * zero, and deactivates the remaining rules.
+     * Activation method that activates the last rule whose activation degree 
+     * is greater than zero, and deactivates the remaining rules.
      * 
      * The rules are iterated in the reverse order they were added to the 
      * rule block. @todo Revise if natural order is a better option.

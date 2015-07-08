@@ -24,8 +24,8 @@
 namespace fl {
 
     /**
-     * General activates every rule in any given {@link RuleBlock} following the
-     * order in which the rules were added to the rule block
+     * Activation method that activates every rule in any given RuleBlock 
+     * following the order in which the rules were added to the rule block
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Rule
@@ -58,7 +58,7 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Activates every rule in the given {@link RuleBlock} following 
+         * Activates every rule in the given rule block following 
          * the order in which the rules were added to the rule block
          * 
          * @param ruleBlock is the rule block to activate
