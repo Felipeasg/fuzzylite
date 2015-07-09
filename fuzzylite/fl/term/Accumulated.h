@@ -27,6 +27,20 @@ namespace fl {
     class SNorm;
     class TNorm;
 
+    /**
+     * %Term that contains the Activated terms from the Antecedent%s of the Rule%s, 
+     * thereby serving as a fuzzy output value in OutputVariable. The instances 
+     * of the activated terms added for accumulation will be owned by Accumulated, and will be destroyed upon
+     * clearing the term.
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Antecedent
+     * @see Rule
+     * @see OutputVariable
+     * @see Activated
+     * @see Term
+     * @since 4.0
+     */
     class FL_API Accumulated : public Term {
     private:
         void copyFrom(const Accumulated& source);
@@ -45,40 +59,133 @@ namespace fl {
         FL_DEFAULT_MOVE(Accumulated)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term
+         * @return "accumulation minimum maximum terms"
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Does nothing
+         * @param parameters are irrelevant 
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         virtual Accumulated* clone() const FL_IOVERRIDE;
-
+        /**
+         * Accumulates the membership function values of @f$x@f$ utilizing the
+         * accumulation operator
+         * @param x is a value
+         * @return @f$\sum_i{\mu_i(x)}, i \in \mbox{terms}@f$
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
+        /**
+         * Computes the accumulated activation degree for the given term. 
+         * If the same term is present multiple times, the accumulation operator 
+         * is utilized to sum the activation degrees of the term. If the 
+         * accumulation operator is fl::null, a regular sum is performed.
+         * @param forTerm is the term for which to compute the accumulated 
+         * activation degree
+         * @return the accumulated activation degree for the given term
+         */
         virtual scalar activationDegree(const Term* forTerm) const;
 
         virtual std::string toString() const FL_IOVERRIDE;
 
-
+        /**
+         * Sets the minimum of the range of the fuzzy output value
+         * @param minimum is the minimum of the range of the fuzzy output value
+         */
         virtual void setMinimum(scalar minimum);
+        /**
+         * Gets the minimum of the range of the fuzzy output value
+         * @return the minimum of the range of the fuzzy output value
+         */
         virtual scalar getMinimum() const;
 
+        /**
+         * Sets the maximum of the range of the fuzzy output value
+         * @param maximum is the maximum of the range of the fuzzy output value
+         */
         virtual void setMaximum(scalar maximum);
+        /**
+         * Gets the maximum of the range of the fuzzy output value
+         * @return the maximum of the range of the fuzzy output value
+         */
         virtual scalar getMaximum() const;
 
+        /**
+         * Sets the range of the fuzzy output value as `[minimum, maximum]`
+         * @param minimum is the minimum of the range of the fuzzy output value
+         * @param maximum is the maximum of the range of the fuzzy output value
+         */
         virtual void setRange(scalar minimum, scalar maximum);
+        /**
+         * Provides the magnitude of the range of the fuzzy output value, 
+         * @return the magnitude of the range of the fuzzy output value, 
+         * i.e., `maximum - minimum`
+         */
         virtual scalar range() const;
 
+        /**
+         * Sets the accumulation operator
+         * @param accumulation is the accumulation operator
+         */
         virtual void setAccumulation(SNorm* accumulation);
+        /**
+         * Gets the accumulation operator
+         * @return the accumulation operator
+         */
         virtual SNorm* getAccumulation() const;
 
         /**
-         * Operations for std::vector _terms
+         * Creates an Activated term from the `term`, `degree` and `implication` 
+         * operator, and adds it to the fuzzy output value
+         * @param term is the activated term
+         * @param degree is the activation degree
+         * @param implication is the implication operator
          */
         virtual void addTerm(const Term* term, scalar degree, const TNorm* implication);
+        /**
+         * Adds the activated term to the fuzzy output value. The activated term 
+         * will be deleted upon @link #clear() @endlink
+         * @param term is the activated term
+         */
         virtual void addTerm(Activated* term);
+        /**
+         * Gets the term at the given index
+         * @param index is the index of the term
+         * @return the activated term at the given index
+         */
         virtual Activated* getTerm(std::size_t index) const;
+        /**
+         * Removes the term at the given index without deleting the term 
+         * @param index is the index of the term
+         * @return the removed term
+         */
         virtual Activated* removeTerm(std::size_t index);
+        /**
+         * Provides the number of activated terms 
+         * @return the number of activated terms
+         */
         virtual std::size_t numberOfTerms() const;
+        /**
+         * Provides an immutable vector of activated terms
+         * @return an immutable vector of activated terms
+         */
         virtual const std::vector<Activated*>& terms() const;
+        /**
+         * Provides a mutable vector of activated terms
+         * @return a mutable vector of activated terms
+         */
         virtual std::vector<Activated*>& terms();
+        /**
+         * Indicates whether the vector of activated terms is empty
+         * @return whether the vector of activated terms is empty
+         */
         virtual bool isEmpty() const;
+        /**
+         * Clears and deletes the activated terms
+         */
         virtual void clear();
     };
 

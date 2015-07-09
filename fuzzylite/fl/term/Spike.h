@@ -21,6 +21,13 @@
 
 namespace fl {
 
+    /**
+     * %Term for the spike membership function
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 5.0
+     */
     class FL_API Spike : public Term {
     protected:
         scalar _center, _width;
@@ -33,15 +40,39 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Spike)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as `center width [height]`
+         * @return `center width [height]`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the parameters given as `center width [height]`
+         * @param parameters as `center width [height]`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-
+        //@todo
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
+        /**
+         * Sets the center of the spike
+         * @param center is the center of the spike
+         */
         virtual void setCenter(scalar center);
+        /**
+         * Gets the center of the spike
+         * @return the center of the spike
+         */
         virtual scalar getCenter() const;
 
+        /**
+         * Sets the width of the spike
+         * @param width is the width of the spike
+         */
         virtual void setWidth(scalar width);
+        /**
+         * Gets the width of the spike
+         * @return the width of the spike
+         */
         virtual scalar getWidth() const;
 
         virtual Spike* clone() const FL_IOVERRIDE;

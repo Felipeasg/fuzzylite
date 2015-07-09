@@ -21,6 +21,13 @@
 
 namespace fl {
 
+    /**
+     * %Term for a constant value
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 4.0
+     */
     class FL_API Constant : public Term {
     protected:
         scalar _value;
@@ -32,12 +39,28 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Constant)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as `value`
+         * @return `value`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the parameters given as `value`
+         * @param parameters as `value`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-
+        //@todo
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
+        /**
+         * Sets the constant value
+         * @param value is the constant value
+         */
         virtual void setValue(scalar value);
+        /**
+         * Gets the constant value
+         * @return the constant value
+         */
         virtual scalar getValue() const;
 
         virtual Constant* clone() const FL_IOVERRIDE;

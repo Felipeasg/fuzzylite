@@ -22,6 +22,13 @@
 namespace fl {
     class Engine;
 
+    /**
+     * %Term for the linear membership function
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 4.0
+     */
     class FL_API Linear : public Term {
     protected:
         std::vector<scalar> _coefficients;
@@ -34,25 +41,80 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Linear)
 
         virtual std::string className() const FL_IOVERRIDE;
+
+        /**
+         * Provides the coefficients of the linear function as `a b c`
+         * @return `a b c`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the coefficients given as `a b c`
+         * @param parameters as `a b c`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
-        virtual void set(const std::vector<scalar>& coeffs, const Engine* engine);
+        /**
+         * Sets the coefficients and the engine for the term
+         * @param coefficients is a vector of coefficients
+         * @param engine is the engine to relate the coefficients with the input variables 
+         */
+        virtual void set(const std::vector<scalar>& coefficients, const Engine* engine);
 
-        virtual void setCoefficients(const std::vector<scalar>& coeffs);
+        /**
+         * Sets the coefficients of the term
+         * @param coefficients is a vector of coefficients
+         */
+        virtual void setCoefficients(const std::vector<scalar>& coefficients);
+        /**
+         * Gets an immutable vector of the coefficients of the term
+         * @return an immutable vector of the coefficients of the term
+         */
         virtual const std::vector<scalar>& coefficients() const;
+        /**
+         * Gets a mutable vector of the coefficients of the term
+         * @return a mutable vector of the coefficients of the term
+         */
         virtual std::vector<scalar>& coefficients();
 
+        /**
+         * Sets the engine for which the term relates the coefficients to the input variables
+         * @param engine is the engine for which the term relates the coefficients to the input variables
+         */
         virtual void setEngine(const Engine* engine);
+        /**
+         * Gets the engine for which the term relates the coefficients to the input variables
+         * @return the engine for which the term relates the coefficients to the input variables
+         */
         virtual const Engine* getEngine() const;
 
         virtual Linear* clone() const FL_IOVERRIDE;
 
         static Term* constructor();
 
-        //Warning: this method is unsafe, make sure you use it correctly.
+        /**
+         * Creates a Linear term from a variadic set of coefficients. 
+         * Beware: this method is unsafe and must be used with care by 
+         * ensuring:
+         * - the data type of each variadic arguments is the same, e.g., 
+         * @f$(1.0, 2.0, 3.0)@f$ are all fl::scalar%s, whereas in
+         * @f$(1.0, 2, 3.0)@f$ the second term is an integer, which will cause
+         * memory access issues due to the difference in size between 
+         * `int` and `fl::scalar`,
+         * - the number of variadic arguments is exactly the same as the 
+         * number of input variables in the engine plus one in order to match 
+         * the equation: @f$aX + bY + c@f$, where @f$X@f$ and @f$Y@f$ are input 
+         * variables, and @f$a@f$, @f$b@f$ and @f$c@f$ are coefficients.
+         * @param name is the name of the resulting term
+         * @param engine the engine for which the term relates the coefficients 
+         * to the input variables
+         * @param firstCoefficient is the first coefficient of the term, 
+         * which relates to the first input variable
+         * @param ... a variadic number of coefficients whose type need to be 
+         * the same as the first coefficient
+         * @return a new Linear term with the given parameters
+         */
         template <typename T>
         static Linear* create(const std::string& name, const Engine* engine,
                 T firstCoefficient, ...);

@@ -22,6 +22,17 @@
 namespace fl {
     class TNorm;
 
+    /**
+     * %Term that contains pointers to the necessary information of an activated term, 
+     * but does not assume their ownership. Activated was previously named as 
+     * `Thresholded` in version 4.0
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see OutputVariable
+     * @see Activated
+     * @see Term
+     * @since 5.0
+     */
     class FL_API Activated : public Term {
     protected:
         const Term* _term;
@@ -35,19 +46,57 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Activated)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as "degree implication term"
+         * @return "degree implication term"
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Does nothing.
+         * @param parameters are irrelevant
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
+        /**
+         * Computes the implication of the activation degree and the membership 
+         * function value of @f$x@f$
+         * @param x is a value
+         * @return @f$d \otimes \mu(x)@f$, where @f$d@f$ is the activation degree
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
         virtual std::string toString() const FL_IOVERRIDE;
 
+        /**
+         * Sets the term to activate
+         * @param term is the term to activate
+         */
         virtual void setTerm(const Term* term);
+        /**
+         * Gets the term to activate
+         * @return the term to activate
+         */
         virtual const Term* getTerm() const;
 
+        /**
+         * Sets the activation degree of the term
+         * @param degree is the activation degree of the term
+         */
         virtual void setDegree(scalar degree);
+        /**
+         * Gets the activation degree of the term
+         * @return the activation degree of the term
+         */
         virtual scalar getDegree() const;
 
+        /**
+         * Sets the implication operator
+         * @param implication is the implication operator
+         */
         virtual void setImplication(const TNorm* implication);
+        /**
+         * Gets the implication operator
+         * @return the implication operator
+         */
         virtual const TNorm* getImplication() const;
 
         virtual Activated* clone() const FL_IOVERRIDE;

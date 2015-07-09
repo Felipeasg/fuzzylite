@@ -72,11 +72,11 @@ namespace fl {
     }
 
     Sigmoid::Direction Sigmoid::direction() const {
-        if (not fl::Op::isFinite(_slope) or fl::Op::isEq(_slope, 0.0)) return ZERO;
+        if (not fl::Op::isFinite(_slope) or fl::Op::isEq(_slope, 0.0)) return Zero;
 
-        if (fl::Op::isGt(_slope, 0.0)) return POSITIVE;
+        if (fl::Op::isGt(_slope, 0.0)) return Positive;
 
-        return NEGATIVE;
+        return Negative;
     }
 
     Sigmoid* Sigmoid::clone() const {

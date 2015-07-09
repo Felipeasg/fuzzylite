@@ -60,11 +60,11 @@ namespace fl {
     }
 
     bool Function::Element::isOperator() const {
-        return type == OPERATOR;
+        return type == Operator;
     }
 
     bool Function::Element::isFunction() const {
-        return type == FUNCTION;
+        return type == Function;
     }
 
     Function::Element* Function::Element::clone() const {
@@ -74,7 +74,7 @@ namespace fl {
     std::string Function::Element::toString() const {
         std::ostringstream ss;
 
-        if (type == OPERATOR) {
+        if (type == Operator) {
             ss << "Operator (name=" << name << ", "
                     << "description=" << description << ", "
                     << "precedence=" << precedence << ", "
@@ -84,7 +84,7 @@ namespace fl {
             else if (arity == 2) ss << "pointer=" << binary;
             else ss << "pointer=error";
             ss << ")";
-        } else if (type == FUNCTION) {
+        } else if (type == Function) {
             ss << "Function (name=" << name << ", "
                     << "description=" << description << ", "
                     << "arity=" << arity << ", "

@@ -21,6 +21,14 @@
 
 namespace fl {
 
+    /**
+     * %Term for the cosine membership function
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 5.0
+     */
+    
     class FL_API Cosine : public Term {
     protected:
         scalar _center, _width;
@@ -33,15 +41,38 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Cosine)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as `center width [height]`
+         * @return `center width [height]`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the parameters given as `center width [height]`
+         * @param parameters as `center width [height]`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-
+        //@todo
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
-
+        /**
+         * Sets the center of the cosine
+         * @param center is the center of the cosine
+         */
         virtual void setCenter(scalar center);
+        /**
+         * Gets the center of the cosine
+         * @return the center of the cosine
+         */
         virtual scalar getCenter() const;
 
+        /**
+         * Sets the width of the cosine
+         * @param width is the width of the cosine
+         */
         virtual void setWidth(scalar width);
+        /**
+         * Gets the width of the cosine
+         * @return the width of the cosine
+         */
         virtual scalar getWidth() const;
 
         virtual Cosine* clone() const FL_IOVERRIDE;

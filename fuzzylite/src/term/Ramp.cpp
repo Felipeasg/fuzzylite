@@ -84,11 +84,11 @@ namespace fl {
 
     Ramp::Direction Ramp::direction() const {
         scalar range = this->_end - this->_start;
-        if (not fl::Op::isFinite(range) or fl::Op::isEq(range, 0.0)) return ZERO;
+        if (not fl::Op::isFinite(range) or fl::Op::isEq(range, 0.0)) return Zero;
 
-        if (fl::Op::isGt(range, 0.0)) return POSITIVE;
+        if (fl::Op::isGt(range, 0.0)) return Positive;
 
-        return NEGATIVE;
+        return Negative;
     }
 
     Ramp* Ramp::clone() const {

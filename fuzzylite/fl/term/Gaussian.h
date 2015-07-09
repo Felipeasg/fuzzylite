@@ -21,6 +21,13 @@
 
 namespace fl {
 
+    /**
+     * %Term for the Gaussian curve membership function
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 4.0
+     */
     class FL_API Gaussian : public Term {
     protected:
         scalar _mean;
@@ -35,15 +42,39 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Gaussian)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as `mean standardDeviation [height]`
+         * @return `mean standardDeviation [height]`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the parameters given as `mean standardDeviation [height]`
+         * @param parameters as `mean standardDeviation [height]`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-
+        //@todo
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
-
-        virtual void setMean(scalar c);
+        
+        /**
+         * Sets the mean of the Gaussian curve
+         * @param mean is the mean of the Gaussian curve
+         */
+        virtual void setMean(scalar mean);
+        /**
+         * Gets the mean of the Gaussian curve
+         * @return the mean of the Gaussian curve
+         */
         virtual scalar getMean() const;
 
-        virtual void setStandardDeviation(scalar sigma);
+        /**
+         * Sets the standard deviation of the Gaussian curve
+         * @param standardDeviation is the standard deviation of the Gaussian curve
+         */
+        virtual void setStandardDeviation(scalar standardDeviation);
+        /**
+         * Gets the standard deviation of the Gaussian curve
+         * @return the standard deviation of the Gaussian curve
+         */
         virtual scalar getStandardDeviation() const;
 
         virtual Gaussian* clone() const FL_IOVERRIDE;

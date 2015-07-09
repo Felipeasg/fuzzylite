@@ -22,6 +22,13 @@
 
 namespace fl {
 
+    /**
+     * (Edge) term for the concave membership function
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 5.0
+     */
     class FL_API Concave : public Term {
     protected:
         scalar _inflection, _end;
@@ -34,15 +41,38 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Concave)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as `inflection end [height]`
+         * @return `inflection end [height]`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the parameters given as `inflection end [height]`
+         * @param parameters as `inflection end [height]`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-
+        //@todo
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
-
+        /**
+         * Sets the inflection of the curve
+         * @param inflection is the inflection of the curve
+         */
         virtual void setInflection(scalar inflection);
+        /**
+         * Gets the inflection of the curve
+         * @return the inflection of the curve
+         */
         virtual scalar getInflection() const;
 
+        /**
+         * Sets the end of the curve
+         * @param end is the end of the curve
+         */
         virtual void setEnd(scalar end);
+        /**
+         * Gets the end of the curve
+         * @return the end of the curve
+         */
         virtual scalar getEnd() const;
 
         virtual Concave* clone() const FL_IOVERRIDE;

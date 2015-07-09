@@ -21,6 +21,13 @@
 
 namespace fl {
 
+    /**
+     * %Term for the trapezoidal membership function
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 4.0
+     */
     class FL_API Trapezoid : public Term {
     protected:
         scalar _vertexA, _vertexB, _vertexC, _vertexD;
@@ -35,21 +42,62 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Trapezoid)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as `vertexA vertexB vertexC vertexD [height]`
+         * @return `vertexA vertexB vertexC vertexD [height]`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the parameters given as `vertexA vertexB vertexC vertexD [height]`
+         * @param parameters as `vertexA vertexB vertexC vertexD [height]`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
+        //@todo
 
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
+        /**
+         * Sets the first vertex of the trapezoid
+         * @param a is the first vertex of the trapezoid
+         */
         virtual void setVertexA(scalar a);
+        /**
+         * Gets the first vertex of the trapezoid
+         * @return the first vertex of the trapezoid
+         */
         virtual scalar getVertexA() const;
 
+        /**
+         * Sets the second vertex of the trapezoid
+         * @param b is the second vertex of the trapezoid
+         */
         virtual void setVertexB(scalar b);
+        /**
+         * Gets the second vertex of the trapezoid
+         * @return the second vertex of the trapezoid
+         */
         virtual scalar getVertexB() const;
 
+        /**
+         * Sets the third vertex of the trapezoid
+         * @param c is the third vertex of the trapezoid
+         */
         virtual void setVertexC(scalar c);
+        /**
+         * Gets the third vertex of the trapezoid
+         * @return the third vertex of the trapezoid
+         */
         virtual scalar getVertexC() const;
 
+        /**
+         * Sets the fourth vertex of the trapezoid
+         * @param d is the fourth vertex of the trapezoid
+         */
         virtual void setVertexD(scalar d);
+        /**
+         * Gets the fourth vertex of the trapezoid
+         * @return the fourth vertex of the trapezoid
+         */
         virtual scalar getVertexD() const;
 
         virtual Trapezoid* clone() const FL_IOVERRIDE;

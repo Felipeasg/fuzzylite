@@ -52,13 +52,13 @@ namespace fl {
         return result;
     }
 
-    void Linear::set(const std::vector<scalar>& coeffs, const Engine* engine) {
-        setCoefficients(coeffs);
+    void Linear::set(const std::vector<scalar>& coefficients, const Engine* engine) {
+        setCoefficients(coefficients);
         setEngine(engine);
     }
 
-    void Linear::setCoefficients(const std::vector<scalar>& coeffs) {
-        this->_coefficients = coeffs;
+    void Linear::setCoefficients(const std::vector<scalar>& coefficients) {
+        this->_coefficients = coefficients;
     }
 
     const std::vector<scalar>& Linear::coefficients() const {

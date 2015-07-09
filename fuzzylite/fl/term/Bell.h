@@ -21,6 +21,13 @@
 
 namespace fl {
 
+    /**
+     * %Term for the generalized bell curve membership function
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Term
+     * @see Variable
+     * @since 4.0
+     */
     class FL_API Bell : public Term {
     protected:
         scalar _center;
@@ -36,18 +43,60 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Bell)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Provides the parameters of the term as `center width slope [height]`
+         * @return `center width slope [height]`
+         */
         virtual std::string parameters() const FL_IOVERRIDE;
+        /**
+         * Configures the term with the parameters given as `center width slope [height]`
+         * @param parameters as `center width slope [height]`
+         */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
+        /**
+         * Computes the bell curve membership function evaluated at @f$x@f$
+         * @param x 
+         * @return @f$h \times 1 / (1 + \left(|x-c|/w\right)^{2s}@f$
+         *
+         * where @f$h@f$ is the height,
+         *       @f$c@f$ is the center, 
+         *       @f$w@f$ is the width,
+         *       @f$s@f$ is the slope
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
+        /**
+         * Sets the center of the bell curve
+         * @param center is the center of the bell curve
+         */
         virtual void setCenter(scalar center);
+        /**
+         * Gets the center of the bell curve
+         * @return the center of the bell curve
+         */
         virtual scalar getCenter() const;
 
+        /**
+         * Sets the width of the bell curve
+         * @param width is the width of the bell curve
+         */
         virtual void setWidth(scalar width);
+        /**
+         * Gets the width of the bell curve
+         * @return the width of the bell curve
+         */
         virtual scalar getWidth() const;
 
+        /**
+         * Sets the slope of the bell curve
+         * @param slope is the slope of the bell curve
+         */
         virtual void setSlope(scalar slope);
+        /**
+         * Gets the slope of the bell curve
+         * @return the slope of the bell curve
+         */
         virtual scalar getSlope() const;
 
         virtual Bell* clone() const FL_IOVERRIDE;
