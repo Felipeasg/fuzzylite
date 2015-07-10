@@ -37,10 +37,10 @@ namespace fl {
          * Computes the nilpotent minimum of two membership function values
          * @param a is a membership function value
          * @param b is a membership function value
-         * @return @f$\cases{
+         * @return @f$\begin{cases}
          * \min(a,b) & \mbox{if $a+b>1$} \cr
-         * 0.0 & \mbox{otherwise}
-         * }@f$
+         * 0 & \mbox{otherwise}
+         * \end{cases}@f$
          */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         NilpotentMinimum* clone() const FL_IOVERRIDE;

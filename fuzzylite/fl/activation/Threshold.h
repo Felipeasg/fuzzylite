@@ -41,11 +41,11 @@ namespace fl {
          * Comparison provides six comparison operators for the threshold. 
          */
         enum Comparison {
-            /**@f$a = b@f$ **/ EqualTo,
+            /**@f$a = b@f$**/ EqualTo,
             /**@f$a \neq b@f$**/ NotEqualTo,
-            /**@f$a < b@f$**/ LessThan,
+            /**\f$a \textless b\f$**/ LessThan,
             /**@f$a \leq b@f$**/ LessThanOrEqualTo,
-            /**@f$a > b@f$**/ GreaterThan,
+            /**@f$a \textgreater b@f$**/ GreaterThan,
             /**@f$a \geq b@f$**/ GreaterThanOrEqualTo
         };
     protected:

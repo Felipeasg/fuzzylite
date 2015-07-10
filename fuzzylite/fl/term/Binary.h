@@ -52,10 +52,10 @@ namespace fl {
         /**
          * Computes the binary membership function evaluated at @f$x@f$
          * @param x 
-         * @return @f$\cases{
-         * h\times 0.0 & \mbox{if $x<t$}\cr
-         * h\times 1.0 & \mbox{otherwise}
-         * }@f$
+         * @return @f$\begin{cases}
+         * h\times 0 & \mbox{if $x<t$} \cr
+         * h\times 1 & \mbox{otherwise}
+         * \end{cases}@f$
          *
          * where @f$h@f$ is the height,
          *       @f$t@f$ is the threshold

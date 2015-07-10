@@ -61,7 +61,7 @@ namespace fl {
 
         /**
          * Sets the inflection of the left sigmoidal curve
-         * @param left is the inflection of the left sigmoidal curve
+         * @param leftInflection is the inflection of the left sigmoidal curve
          */
         virtual void setLeft(scalar leftInflection);
         /**

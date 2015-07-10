@@ -51,7 +51,18 @@ namespace fl {
          * @param parameters as `center width [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Computes the cosine membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$\begin{cases}
+         * 0h & \mbox{if $x \textless c - w / 2 \vee x \textgreater c + w / 2$} \cr
+         * 0.5h \times ( 1 + \cos(2 / w\pi(x-c))) & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$c@f$ refers to the center of the cosine,
+         *       @f$w@f$ refers to the width of the cosine
+         *       @f$h@f$ refers to the height of the term
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
         /**
          * Sets the center of the cosine

@@ -148,11 +148,11 @@ namespace fl {
      * `[minimum,maximum]`, taking the `minimum` and `maximum` values whenever
      * the `value` is less than `minimum` or greater than `maximum` (respectively) 
      * without ever changing the input `value`. Refer to 
-     * @link Antecedent#activationDegree() @endlink.
+     * {@link Antecedent#activationDegree()}.
      * 
      * Locking the value of an OutputVariable means that defuzzifiers will 
      * ensure that the output value is within the range of the variable, 
-     * adjusting the output value if necessary. Refer to @link OutputVariable#defuzzify() @endlink.
+     * adjusting the output value if necessary. Refer to {@link OutputVariable#defuzzify()}.
      *  
      * @param lockValueInRange is a boolean that indicates whether to lock 
      * the value in range
@@ -168,11 +168,11 @@ namespace fl {
      * `[minimum,maximum]`, taking the `minimum` and `maximum` values whenever
      * the `value` is less than `minimum` or greater than `maximum` (respectively) 
      * without ever changing the input `value`. Refer to 
-     * @link Antecedent#activationDegree() @endlink.
+     * {@link Antecedent#activationDegree()}.
      * 
      * Locking the value of an OutputVariable means that defuzzifiers will 
      * ensure that the output value is within the range of the variable, 
-     * adjusting the output value if necessary. Refer to @link OutputVariable#defuzzify() @endlink.
+     * adjusting the output value if necessary. Refer to {@link OutputVariable#defuzzify()}.
      *  
      * @return `true`, if the variable locks the value in range; `false`, otherwise
      */

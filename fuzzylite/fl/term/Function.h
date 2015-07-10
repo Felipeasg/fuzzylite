@@ -56,12 +56,18 @@ namespace fl {
             enum Type {
                 Operator, Function
             };
-            /**Name of the element**/ std::string name;
-            /**Description of the element**/std::string description;
-            /**Type of the element**/Type type;
-            /**Pointer to unary method**/Unary unary;
-            /**Pointer to binary method**/Binary binary;
-            /**Number of operands required**/int arity;
+            /**Name of the element**/ 
+            std::string name;
+            /**Description of the element**/
+            std::string description;
+            /**Type of the element**/
+            Type type;
+            /**Pointer to unary method**/
+            Unary unary;
+            /**Pointer to binary method**/
+            Binary binary;
+            /**Number of operands required**/
+            int arity;
             /**Precedence of the element: clarifies which procedures should be 
              * performed first in a given mathematical expression
              * (https://en.wikipedia.org/wiki/Order_of_operations)**/

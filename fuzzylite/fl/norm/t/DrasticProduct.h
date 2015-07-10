@@ -37,10 +37,10 @@ namespace fl {
          * Computes the drastic product of two membership function values
          * @param a is a membership function value
          * @param b is a membership function value
-         * @return @f$\cases{
+         * @return @f$\begin{cases}
          * \min(a,b) & \mbox{if $\max(a,b)=1$} \cr
          * 0 & \mbox{otherwise}
-         * }@f$
+         * \end{cases}@f$
          */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         DrasticProduct* clone() const FL_IOVERRIDE;

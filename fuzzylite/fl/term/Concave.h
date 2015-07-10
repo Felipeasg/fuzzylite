@@ -23,7 +23,7 @@
 namespace fl {
 
     /**
-     * (Edge) term for the concave membership function
+     * %Term for the concave membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable
@@ -51,7 +51,19 @@ namespace fl {
          * @param parameters as `inflection end [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Computes the concave membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$\begin{cases}
+         * h \times (e - i) / (2e - i - x) & \mbox{if $i \leq e \wedge x \textless e$ (increasing concave)} \cr
+         * h \times (i - e) / (-2e + i + x) & \mbox{if $i \textgreater e \wedge x \textgreater e$ (decreasing concave)} \cr
+         * h & \mbox{otherwise}
+         * \end{cases}
+         * where @f$i@f$ refers to the inflection of the curve,
+         *       @f$e@f$ refers to the end of the curve
+         * @f$
+         */
+
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
         /**
          * Sets the inflection of the curve

@@ -36,10 +36,10 @@ namespace fl {
          * Computes the drastic sum of two membership function values
          * @param a is a membership function value
          * @param b is a membership function value
-         * @return @f$\cases{
+         * @return @f$\begin{cases}
          * \max(a,b) & \mbox{if $\min(a,b)=0$} \cr
          * 1 & \mbox{otherwise}
-         * }@f$
+         * \end{cases}@f$
          */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         DrasticSum* clone() const FL_IOVERRIDE;

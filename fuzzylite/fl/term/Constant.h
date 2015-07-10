@@ -49,7 +49,11 @@ namespace fl {
          * @param parameters as `value`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Gets the constant value
+         * @param x is irrelevant
+         * @return @f$c@f$, where @f$c@f$ is the constant value
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

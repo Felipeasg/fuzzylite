@@ -36,10 +36,10 @@ namespace fl {
          * Computes the hedge for the membership function value @f$x@f$
          * @param x is a membership function value
          * @return @f$
-         * \cases{
+         * \begin{cases}
          * 2x^2 & \mbox{if $x \le 0.5$} \cr
-         * 1-2(1-x)^2 & \mbox{otherwise}\cr
-         * }@f$
+         * 1-2(1-x)^2 & \mbox{otherwise} \cr
+         * \end{cases}@f$
          */
         scalar hedge(scalar x) const;
         Extremely* clone() const;
