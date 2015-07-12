@@ -55,13 +55,14 @@ namespace fl {
          * Computes the concave membership function evaluated at @f$x@f$
          * @param x
          * @return @f$\begin{cases}
-         * h \times (e - i) / (2e - i - x) & \mbox{if $i \leq e \wedge x \textless e$ (increasing concave)} \cr
-         * h \times (i - e) / (-2e + i + x) & \mbox{if $i \textgreater e \wedge x \textgreater e$ (decreasing concave)} \cr
-         * h & \mbox{otherwise}
-         * \end{cases}
-         * where @f$i@f$ refers to the inflection of the curve,
-         *       @f$e@f$ refers to the end of the curve
-         * @f$
+         * h \times (e - i) / (2e - i - x) & \mbox{if $i \leq e \wedge x < e$ (increasing concave)} \cr
+         * h \times (i - e) / (-2e + i + x) & \mbox{if $i > e \wedge x > e$ (decreasing concave)} \cr
+         * h & \mbox{otherwise} \cr
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height,
+         *       @f$i@f$ is the inflection of the curve,
+         *       @f$e@f$ is the end of the curve
          */
 
         virtual scalar membership(scalar x) const FL_IOVERRIDE;

@@ -55,13 +55,13 @@ namespace fl {
          * Computes the cosine membership function evaluated at @f$x@f$
          * @param x
          * @return @f$\begin{cases}
-         * 0h & \mbox{if $x \textless c - w / 2 \vee x \textgreater c + w / 2$} \cr
+         * 0h & \mbox{if $x < c - w / 2 \vee x > c + w / 2$} \cr
          * 0.5h \times ( 1 + \cos(2 / w\pi(x-c))) & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$c@f$ refers to the center of the cosine,
-         *       @f$w@f$ refers to the width of the cosine
-         *       @f$h@f$ refers to the height of the term
+         * where @f$c@f$ is the center of the cosine,
+         *       @f$w@f$ is the width of the cosine
+         *       @f$h@f$ is the height of the term
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
         /**

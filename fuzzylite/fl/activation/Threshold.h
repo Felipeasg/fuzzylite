@@ -43,9 +43,9 @@ namespace fl {
         enum Comparison {
             /**@f$a = b@f$**/ EqualTo,
             /**@f$a \neq b@f$**/ NotEqualTo,
-            /**\f$a \textless b\f$**/ LessThan,
+            /**\f$a < b\f$**/ LessThan,
             /**@f$a \leq b@f$**/ LessThanOrEqualTo,
-            /**@f$a \textgreater b@f$**/ GreaterThan,
+            /**@f$a > b@f$**/ GreaterThan,
             /**@f$a \geq b@f$**/ GreaterThanOrEqualTo
         };
     protected:
