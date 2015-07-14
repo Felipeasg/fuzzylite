@@ -50,7 +50,15 @@ namespace fl {
          * @param parameters as `center width [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Computes the spike membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$h \times \exp(-|(10 / w (x - c))|)@f$
+         * 
+         * where @f$h@f$ is the height of the term,
+         *       @f$w@f$ is the width of the spike,
+         *       @f$c@f$ is the center of the spike
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

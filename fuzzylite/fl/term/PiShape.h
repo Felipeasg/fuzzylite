@@ -56,8 +56,26 @@ namespace fl {
          * @param parameters as `bottomLeft topLeft topRight bottomRight [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        
-        //@todo
+
+        /**
+         * Computes the pi-shaped curve membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$\begin{cases}
+         * 0h & \mbox{if $x \leq b_l$}\cr
+         * 2h \left((x - b_l) / (t_l-b_l)\right)^2 & \mbox{if $x \leq (a+b)/2$}\cr
+         * h (1 - 2 \left((x - t_l) / (t_l-b_l)\right)^2) & \mbox{if $ x < t_l$}\cr
+         * h & \mbox{if $x \leq t_r$}\cr
+         * h (1 - 2\left((x - t_r) / (b_r - t_r)\right)^2) & \mbox{if $x \leq (t_r + b_r)/2$}\cr
+         * 2h \left((x - b_r) / (b_r-t_r)\right)^2 & \mbox{if $x < b_r$} \cr
+         * 0h & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height of the term,
+         *       @f$b_l@f$ is the bottom left of the pi-shaped curve,
+         *       @f$t_l@f$ is the top left of the pi-shaped curve,
+         *       @f$b_r@f$ is the bottom right of the pi-shaped curve,
+         *       @f$t_r@f$ is the top right of the pi-shaped curve
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

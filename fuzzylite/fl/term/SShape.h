@@ -52,7 +52,20 @@ namespace fl {
          * @param parameters as `start end [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Computes the S-shaped membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$  \begin{cases}
+         * 0h & \mbox{if $x \leq s$} \cr
+         * h(2 \left((x - s) / (e-s)\right)^2) & \mbox{if $x \leq (s+e)/2$}\cr
+         * h(1 - 2\left((x - e) / (e-s)\right)^2) & \mbox{if $x < e$}\cr
+         * 1h & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height,
+         *       @f$s@f$ is the start of the S-shape,
+         *       @f$e@f$ is the end of the S-shape.
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

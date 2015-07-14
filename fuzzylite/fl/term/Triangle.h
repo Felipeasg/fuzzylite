@@ -53,7 +53,22 @@ namespace fl {
          * @param parameters as `vertexA vertexB vertexC [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+
+        /**
+         * Computes the triangular membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$\begin{cases}
+         * 0h & \mbox{if $x < a \vee x > c$}\cr
+         * 1h & \mbox{if $x = b$}\cr
+         * h (x - a) / (b - a) & \mbox{if $x < b$} \cr
+         * h (c - x) / (c - b) & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height of the term,
+         *       @f$a@f$ is the first vertex of the triangle,
+         *       @f$b@f$ is the second vertex of the triangle,
+         *       @f$c@f$ is the third vertex of the triangle
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

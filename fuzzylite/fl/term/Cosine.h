@@ -28,7 +28,7 @@ namespace fl {
      * @see Variable
      * @since 5.0
      */
-    
+
     class FL_API Cosine : public Term {
     protected:
         scalar _center, _width;

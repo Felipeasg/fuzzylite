@@ -52,8 +52,24 @@ namespace fl {
          * @param parameters as `vertexA vertexB vertexC vertexD [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
 
+        /**
+         * Computes the trapezoidal membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$\begin{cases}
+         * 0h & \mbox{if $x < a \vee x > d$}\cr
+         * h \times \min(1, (x - a) / (b - a)) & \mbox{if $x < b$}\cr
+         * 1h & \mbox{if $x \leq c$}\cr
+         * h (d - x) / (d - c) & \mbox{if $x < d$}\cr
+         * 0h & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height of the term,
+         *       @f$a@f$ is the first vertex of the trapezoid,
+         *       @f$b@f$ is the second vertex of the trapezoid,
+         *       @f$c@f$ is the third vertex of the trapezoid,
+         *       @f$d@f$ is the fourth vertex of the trapezoid
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

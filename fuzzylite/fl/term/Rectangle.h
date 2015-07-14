@@ -51,7 +51,18 @@ namespace fl {
          * @param parameters as `start end [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Computes the rectangle membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$  \begin{cases}
+         * 1h & \mbox{if $x \in [s, e]$} \cr
+         * 0h & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height,
+         *       @f$s@f$ is the start of the rectangle,
+         *       @f$e@f$ is the end of the rectangle.
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

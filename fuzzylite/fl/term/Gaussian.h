@@ -52,9 +52,19 @@ namespace fl {
          * @param parameters as `mean standardDeviation [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+
+        /**
+         * Computes the Gaussian membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$ h \times \exp(-(x-\mu)^2/(2\sigma^2))
+         * @f$
+         * 
+         * where @f$h@f$ is the height of the term 
+         *       @f$\mu@f$ is the mean of the Gaussian curve,
+         *       @f$\sigma@f$ is the standard deviation of the Gaussian curve
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
-        
+
         /**
          * Sets the mean of the Gaussian curve
          * @param mean is the mean of the Gaussian curve

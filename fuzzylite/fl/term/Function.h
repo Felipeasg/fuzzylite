@@ -56,7 +56,7 @@ namespace fl {
             enum Type {
                 Operator, Function
             };
-            /**Name of the element**/ 
+            /**Name of the element**/
             std::string name;
             /**Description of the element**/
             std::string description;
@@ -288,13 +288,13 @@ namespace fl {
         /**
          * Loads the current formula expressed in infix notation
          */
-        virtual void load(); 
+        virtual void load();
         /**
          * Loads the given formula expressed in infix notation
          * @param formula is the right-hand side of a mathematical equation
          * @throws fl::Exception if the formula has syntax errors
          */
-        virtual void load(const std::string& formula); 
+        virtual void load(const std::string& formula);
         /**
          * Loads the given formula expressed in infix notation, and sets the 
          * engine holding the variables to which the formula refers.
@@ -303,7 +303,7 @@ namespace fl {
          * @param engine is the engine to which the formula can refer
          * @throws fl::Exception if the formula has syntax errors
          */
-        virtual void load(const std::string& formula, const Engine* engine); 
+        virtual void load(const std::string& formula, const Engine* engine);
         /**
          * Creates a node representing a binary expression tree from the given formula
          * @param formula is the right-hand side of a mathematical equation

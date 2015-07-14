@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * [Edge] term for the Z-shaped membership function
+     * %Term for the Z-shaped membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable
@@ -52,7 +52,21 @@ namespace fl {
          * @param parameters as `start end [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+
+        /**
+         * Computes the Z-shaped membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$  \begin{cases}
+         * 1h & \mbox{if $x \leq s$} \cr
+         * h(1 - 2\left((x - s) / (e-s)\right)^2) & \mbox{if $x \leq (s+e)/2$}\cr
+         * h(2 \left((x - e) / (e-s)\right)^2) & \mbox{if $x < e$}\cr
+         * 0h & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height,
+         *       @f$s@f$ is the start of the Z-shape,
+         *       @f$e@f$ is the end of the Z-shape.
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

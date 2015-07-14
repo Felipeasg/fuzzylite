@@ -33,11 +33,11 @@ namespace fl {
         scalar _start, _end;
 
     public:
-        
+
         /**The direction of the ramp**/
         enum Direction {
-            /** `(_/)` increases to the right **/ Positive, 
-            /** `(--)` slope is zero **/ Zero, 
+            /** `(_/)` increases to the right **/ Positive,
+            /** `(--)` slope is zero **/ Zero,
             /** `(\_)` increases to the left **/ Negative
         };
         explicit Ramp(const std::string& name = "",
@@ -58,10 +58,34 @@ namespace fl {
          * @param parameters as `start end [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-
-        //@todo
+        /**
+         * Computes the triangular membership function evaluated at @f$x@f$
+         * @param x
+         * @return 
+         * @f$\begin{cases}
+         *
+         *  \begin{cases}
+         * 0h & \mbox{if $x \leq s$}\cr
+         * 1h & \mbox{if $x \geq e$}\cr
+         * h (x - s) / (e - s) & \mbox{otherwise}\cr
+         * \end{cases} & \mbox{if $s < e$}\cr
+         *
+         * \begin{cases}
+         * 0h & \mbox{if $x \geq s$}\cr
+         * 1h & \mbox{if $x \leq e$}\cr
+         * h (s - x) / (s - e) & \mbox{otherwise}
+         * \end{cases} & \mbox{if $s > e$}\cr
+         *
+         * 0h & \mbox{otherwise}
+         * \end{cases}@f$
+         * 
+         * where @f$h@f$ is the height of the term,
+         *       @f$a@f$ is the first vertex of the triangle,
+         *       @f$b@f$ is the second vertex of the triangle,
+         *       @f$c@f$ is the third vertex of the triangle
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
-        
+
         /**
          * Sets the start of the ramp
          * @param start is the start of the ramp

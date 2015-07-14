@@ -58,8 +58,15 @@ namespace fl {
          * @param parameters as `inflection slope [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-
-        //@todo
+        /**
+         * Computes the sigmoid membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$ h / (1 + \exp(-s(x-i)))@f$
+         * 
+         * where @f$h@f$ is the height,
+         *       @f$s@f$ is the slope of the sigmoid,
+         *       @f$i@f$ is the inflection of the sigmoid,
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

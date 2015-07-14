@@ -51,6 +51,7 @@ namespace fl {
          * @param parameters as `inflection end [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
+
         /**
          * Computes the concave membership function evaluated at @f$x@f$
          * @param x
@@ -64,7 +65,6 @@ namespace fl {
          *       @f$i@f$ is the inflection of the curve,
          *       @f$e@f$ is the end of the curve
          */
-
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
         /**
          * Sets the inflection of the curve
