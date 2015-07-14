@@ -194,7 +194,7 @@ namespace fl {
         std::string _formula;
         const Engine* _engine;
     public:
-        /**A map of substitution values**/
+        /**A map of variables and substitution values**/
         mutable std::map<std::string, scalar> variables;
         explicit Function(const std::string& name = "",
                 const std::string& formula = "", const Engine* engine = fl::null);
@@ -218,7 +218,7 @@ namespace fl {
         /**
          * Computes the membership function value of @f$x@f$ at the root node.
          * If the engine has been set, the current values of the input variables 
-         * and output variables are added to the map of substitution variables.
+         * and output variables are added to the map of {@link Function::variables}.
          * In addition, the variable @f$x@f$ will also be added to the map.
          * @param x
          * @return the membership function value of @f$x@f$ at the root node

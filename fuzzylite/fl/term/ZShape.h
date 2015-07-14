@@ -54,7 +54,7 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the Z-shaped membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x
          * @return @f$  \begin{cases}
          * 1h & \mbox{if $x \leq s$} \cr
@@ -63,9 +63,9 @@ namespace fl {
          * 0h & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height,
-         *       @f$s@f$ is the start of the Z-shape,
-         *       @f$e@f$ is the end of the Z-shape.
+         * where @f$h@f$ is the height of the term,
+         *       @f$s@f$ is the start of the ZShape,
+         *       @f$e@f$ is the end of the ZShape.
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

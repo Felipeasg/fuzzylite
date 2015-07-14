@@ -52,16 +52,16 @@ namespace fl {
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
-         * Computes the rectangle membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x
-         * @return @f$  \begin{cases}
+         * @return @f$\begin{cases}
          * 1h & \mbox{if $x \in [s, e]$} \cr
          * 0h & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height,
-         *       @f$s@f$ is the start of the rectangle,
-         *       @f$e@f$ is the end of the rectangle.
+         * where @f$h@f$ is the height of the term,
+         *       @f$s@f$ is the start of the Rectangle,
+         *       @f$e@f$ is the end of the Rectangle.
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

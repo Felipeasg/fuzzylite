@@ -58,7 +58,7 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the pi-shaped curve membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x
          * @return @f$\begin{cases}
          * 0h & \mbox{if $x \leq b_l$}\cr
@@ -71,10 +71,10 @@ namespace fl {
          * \end{cases}@f$
          * 
          * where @f$h@f$ is the height of the term,
-         *       @f$b_l@f$ is the bottom left of the pi-shaped curve,
-         *       @f$t_l@f$ is the top left of the pi-shaped curve,
-         *       @f$b_r@f$ is the bottom right of the pi-shaped curve,
-         *       @f$t_r@f$ is the top right of the pi-shaped curve
+         *       @f$b_l@f$ is the bottom left of the PiShape,
+         *       @f$t_l@f$ is the top left of the PiShape,
+         *       @f$t_r@f$ is the top right of the PiShape
+         *       @f$b_r@f$ is the bottom right of the PiShape,
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

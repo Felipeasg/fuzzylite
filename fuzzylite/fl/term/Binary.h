@@ -50,15 +50,15 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the binary membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x 
          * @return @f$\begin{cases}
-         * h\times 0 & \mbox{if $x<t$} \cr
-         * h\times 1 & \mbox{otherwise}
+         * 0h & \mbox{if $x<t$} \cr
+         * 1h & \mbox{otherwise}
          * \end{cases}@f$
          *
-         * where @f$h@f$ is the height,
-         *       @f$t@f$ is the threshold
+         * where @f$h@f$ is the height of the term,
+         *       @f$t@f$ is the threshold of the Binary
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

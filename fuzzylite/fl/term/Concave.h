@@ -53,7 +53,7 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the concave membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x
          * @return @f$\begin{cases}
          * h \times (e - i) / (2e - i - x) & \mbox{if $i \leq e \wedge x < e$ (increasing concave)} \cr
@@ -61,9 +61,9 @@ namespace fl {
          * h & \mbox{otherwise} \cr
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height,
-         *       @f$i@f$ is the inflection of the curve,
-         *       @f$e@f$ is the end of the curve
+         * where @f$h@f$ is the height of the term,
+         *       @f$i@f$ is the inflection of the Concave,
+         *       @f$e@f$ is the end of the Concave
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
         /**

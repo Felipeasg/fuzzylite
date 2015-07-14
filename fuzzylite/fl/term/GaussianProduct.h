@@ -56,50 +56,64 @@ namespace fl {
          * @param parameters as `meanA standardDeviationA meanB standardDeviationB [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Computes the membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$ h \left((1 - i) + i \times \exp(-(x - \mu_a)^2 / (2\sigma_a^2))\right) 
+         *               \left((1 - j) + j \times \exp(-(x - \mu_b)^2 / (2 \sigma_b)^2)\right)
+         * @f$
+         * 
+         * where @f$h@f$ is the height of the term,
+         *       @f$\mu_a@f$ is the mean of the first GaussianProduct,
+         *       @f$\sigma_a@f$ is the standard deviation of the first GaussianProduct,
+         *       @f$\mu_b@f$ is the mean of the second GaussianProduct,
+         *       @f$\sigma_b@f$ is the standard deviation of the second GaussianProduct,
+         *       @f$i=\begin{cases}1 & \mbox{if $x \leq \mu_a$} \cr 0 &\mbox{otherwise}\end{cases}@f$,
+         *       @f$j=\begin{cases}1 & \mbox{if $x \geq \mu_b$} \cr 0 &\mbox{otherwise}\end{cases}@f$
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the mean of the first Gaussian curve
-         * @param meanA is the mean of the first Gaussian curve
+         * Sets the mean of the first %Gaussian curve
+         * @param meanA is the mean of the first %Gaussian curve
          */
         virtual void setMeanA(scalar meanA);
         /**
-         * Gets the mean of the first Gaussian curve
-         * @return the mean of the first Gaussian curve
+         * Gets the mean of the first %Gaussian curve
+         * @return the mean of the first %Gaussian curve
          */
         virtual scalar getMeanA() const;
 
         /**
-         * Sets the standard deviation of the first Gaussian curve
-         * @param sigmaA is the standard deviation of the first Gaussian curve
+         * Sets the standard deviation of the first %Gaussian curve
+         * @param sigmaA is the standard deviation of the first %Gaussian curve
          */
         virtual void setStandardDeviationA(scalar sigmaA);
         /**
-         * Gets the standard deviation of the first Gaussian curve
-         * @return the standard deviation of the first Gaussian curve
+         * Gets the standard deviation of the first %Gaussian curve
+         * @return the standard deviation of the first %Gaussian curve
          */
         virtual scalar getStandardDeviationA() const;
 
         /**
-         * Sets the mean of the second Gaussian curve
-         * @param meanB is the mean of the second Gaussian curve
+         * Sets the mean of the second %Gaussian curve
+         * @param meanB is the mean of the second %Gaussian curve
          */
         virtual void setMeanB(scalar meanB);
         /**
-         * Gets the mean of the second Gaussian curve
-         * @return the mean of the second Gaussian curve
+         * Gets the mean of the second %Gaussian curve
+         * @return the mean of the second %Gaussian curve
          */
         virtual scalar getMeanB() const;
 
         /**
-         * Sets the standard deviation of the second Gaussian curve
-         * @param sigmaB is the standard deviation of the second Gaussian curve
+         * Sets the standard deviation of the second %Gaussian curve
+         * @param sigmaB is the standard deviation of the second %Gaussian curve
          */
         virtual void setStandardDeviationB(scalar sigmaB);
         /**
-         * Gets the standard deviation of the second Gaussian curve
-         * @return the standard deviation of the second Gaussian curve
+         * Gets the standard deviation of the second %Gaussian curve
+         * @return the standard deviation of the second %Gaussian curve
          */
         virtual scalar getStandardDeviationB() const;
 

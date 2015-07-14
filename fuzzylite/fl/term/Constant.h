@@ -50,7 +50,7 @@ namespace fl {
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
-         * Gets the constant value
+         * Computes the membership function evaluated at @f$x@f$
          * @param x is irrelevant
          * @return @f$c@f$, where @f$c@f$ is the constant value
          */

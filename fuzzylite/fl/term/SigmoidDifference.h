@@ -57,17 +57,17 @@ namespace fl {
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
-         * Computes the sigmoid difference membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x
          * @return @f$ h (a-b)@f$
          * 
-         * where @f$h@f$ is the height,
+         * where @f$h@f$ is the height of the term,
          *       @f$a= 1 / (1 + \exp(-s_l * (x - i_l))) @f$,
          *       @f$b = 1 / (1 + \exp(-s_r * (x - i_r)))@f$,
-         *       @f$i_l@f$ is the inflection of the left sigmoidal curve,
-         *       @f$s_l@f$ is the slope of the left sigmoidal curve,
-         *       @f$i_r@f$ is the inflection of the right sigmoidal curve,
-         *       @f$s_r@f$ is the slope of the right sigmoidal curve
+         *       @f$i_l@f$ is the left inflection of the SigmoidDifference,
+         *       @f$s_l@f$ is the left slope of the SigmoidDifference,
+         *       @f$i_r@f$ is the right inflection of the SigmoidDifference,
+         *       @f$s_r@f$ is the right slope of the SigmoidDifference
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

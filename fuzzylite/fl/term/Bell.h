@@ -55,14 +55,14 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the bell curve membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x 
-         * @return @f$h \times 1 / (1 + \left(|x-c|/w\right)^{2s}@f$
+         * @return @f$h / (1 + \left(|x-c|/w\right)^{2s}@f$
          *
-         * where @f$h@f$ is the height,
-         *       @f$c@f$ is the center, 
-         *       @f$w@f$ is the width,
-         *       @f$s@f$ is the slope
+         * where @f$h@f$ is the height of the term,
+         *       @f$c@f$ is the center of the Bell, 
+         *       @f$w@f$ is the width of the Bell,
+         *       @f$s@f$ is the slope of the Bell
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

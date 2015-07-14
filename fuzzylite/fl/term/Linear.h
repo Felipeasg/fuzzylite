@@ -53,6 +53,16 @@ namespace fl {
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
+        /**
+         * Computes the membership function evaluated at @f$x@f$
+         * @param x is irrelevant
+         * @return @f$\sum_{i=0}^{j-1}{c_ix_i}+c_j@f$
+         * 
+         * where @f$j@f$ is the number of input variables in the Engine,
+         *       @f$c_i@f$ is the $i$th coefficient of Linear,
+         *       @f$x_i@f$ is the input value of the $i$th input variable,
+         *       @f$c_j@f$ is a constant registered as the last coefficient in Linear
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

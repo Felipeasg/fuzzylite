@@ -54,14 +54,14 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the Gaussian membership function evaluated at @f$x@f$
+         * Computes the membership function evaluated at @f$x@f$
          * @param x
          * @return @f$ h \times \exp(-(x-\mu)^2/(2\sigma^2))
          * @f$
          * 
-         * where @f$h@f$ is the height of the term 
-         *       @f$\mu@f$ is the mean of the Gaussian curve,
-         *       @f$\sigma@f$ is the standard deviation of the Gaussian curve
+         * where @f$h@f$ is the height of the term,
+         *       @f$\mu@f$ is the mean of the Gaussian,
+         *       @f$\sigma@f$ is the standard deviation of the Gaussian
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
