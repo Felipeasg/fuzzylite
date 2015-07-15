@@ -1,9 +1,10 @@
-sudo: false
 language: cpp
-os: linux
-compiler:
-  - gcc
-  - clang
+
+sudo: false
+
+git:
+  depth: 1
+
 cache:
   - apt
   - directories:
@@ -12,25 +13,26 @@ addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
-    packages:
-    - g++-4.6
-    - g++-4.8
-    - g++-5
-    - clang
-#    - cmake
     
 script:
   #cmake 
   - mkdir -p $HOME/cmake
-  - wget http://www.cmake.org/files/v3.1/cmake-3.1.3-Linux-x86_64.tar.gz
-  - tar -xzf cmake-3.1.3-Linux-x86_64.tar.gz
-  - export CMAKE_CMD=`pwd`/cmake-3.1.3-Linux-x86_64/bin/cmake
+    wget http://www.cmake.org/files/v3.1/cmake-3.1.3-Linux-x86_64.tar.gz
+    tar -xzf cmake-3.1.3-Linux-x86_64.tar.gz
+    export CMAKE_CMD=`pwd`/cmake-3.1.3-Linux-x86_64/bin/cmake
   #fuzzylite
+  #release
   - cd fuzzylite
-  - mkdir -p $FL_CONF
-  - cd $FL_CONF
-  - $CMAKE_CMD .. -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=$FL_CONF -DFL_BACKTRACE=ON -DFL_USE_FLOAT=$FL_USE_FLOAT -DFL_CPP11=$FL_CPP11 -DCMAKE_CXX_COMPILER=$CXX
-  - make
+  - mkdir -p release
+    cd release
+    $CMAKE_CMD .. -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DFL_BACKTRACE=ON -DFL_USE_FLOAT=$FL_USE_FLOAT -DFL_CPP11=$FL_CPP11
+    make
+    cd ..
+  #debug
+  - mkdir -p debug
+    cd debug
+    $CMAKE_CMD .. -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DFL_BACKTRACE=ON -DFL_USE_FLOAT=$FL_USE_FLOAT -DFL_CPP11=$FL_CPP11
+    make
 
 env:
   - ignore=this
@@ -38,127 +40,163 @@ env:
 matrix:
   exclude:
     - env: ignore=this
+  
   include:
 #clang-3.2
-##Debug
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.2']
+      compiler: clang
       env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.2']
+      compiler: clang
       env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.2']
+      compiler: clang
       env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.2']
+      compiler: clang
       env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=ON
-##Release
-    - compiler: clang
-      env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: clang
-      env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: clang
-      env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: clang
-      env: CC=clang-3.2 CXX=clang++-3.2 PACKAGE=clang-3.2 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=ON
 
 #clang-3.3
-##Debug
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.3']
+      compiler: clang
       env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.3']
+      compiler: clang
       env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.3']
+      compiler: clang
       env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.3']
+      compiler: clang
       env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=ON
-##Release
-    - compiler: clang
-      env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: clang
-      env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: clang
-      env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: clang
-      env: CC=clang-3.3 CXX=clang++-3.3 PACKAGE=clang-3.3 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=ON
 
 #clang-3.4
-##Debug
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.4']
+      compiler: clang
       env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.4']
+      compiler: clang
       env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.4']
+      compiler: clang
       env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: clang
+    - os: linux
+      addons:
+        apt:
+          packages: ['clang-3.4']
+      compiler: clang
       env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=ON
-##Release
-    - compiler: clang
-      env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: clang
-      env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: clang
-      env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: clang
-      env: CC=clang-3.4 CXX=clang++-3.4 PACKAGE=clang-3.4 SUPPORT=g++-4.8 FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=ON
-
 
 #gcc-4.7
-##Debug
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.7']
+      compiler: gcc
       env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.7']
+      compiler: gcc
       env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.7']
+      compiler: gcc
       env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.7']
+      compiler: gcc
       env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=ON
-##Release
-    - compiler: gcc
-      env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: gcc
-      env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: gcc
-      env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: gcc
-      env: CC=gcc-4.7   CXX=g++-4.7     PACKAGE=g++-4.7   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=ON
 
 #gcc-4.8
-##Debug
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.8']
+      compiler: gcc
       env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.8']
+      compiler: gcc
       env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.8']
+      compiler: gcc
       env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-4.8']
+      compiler: gcc
       env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=ON
-##Release
-    - compiler: gcc
-      env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: gcc
-      env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: gcc
-      env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: gcc
-      env: CC=gcc-4.8   CXX=g++-4.8     PACKAGE=g++-4.8   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=ON
-      
+
 #gcc-5
-##Debug
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-5']
+      compiler: gcc
       env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-5']
+      compiler: gcc
       env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-5']
+      compiler: gcc
       env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: gcc
+    - os: linux
+      addons:
+        apt:
+          packages: ['g++-5']
+      compiler: gcc
       env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Debug FL_USE_FLOAT=ON FL_CPP11=ON
-##Release
-    - compiler: gcc
-      env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=OFF
-    - compiler: gcc
-      env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=OFF
-    - compiler: gcc
-      env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=OFF FL_CPP11=ON
-    - compiler: gcc
-      env: CC=gcc-5   CXX=g++-5     PACKAGE=g++-5   SUPPORT=    FL_CONF=Release FL_USE_FLOAT=ON FL_CPP11=ON
 
 
 notifications:
