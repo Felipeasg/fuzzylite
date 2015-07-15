@@ -29,7 +29,6 @@ script:
 
 
 env:
-  - ignore=this
   global:
     - secure: "E5MepocHc2GgbsWgzxYU3b2vucYTEZoFFC4HfNI8Dr5LyNMknMX9SVl0vNFU35j3xfahplbeW0WGRRPoE7zLM81UYFbIsuIbCwfJWMg4NMlOJkvYbMyas4tBKqY+8cqkicneL/8ySFNvHaReUNFViZKLIyBpAjexfVxTcq3cnB8="
 
