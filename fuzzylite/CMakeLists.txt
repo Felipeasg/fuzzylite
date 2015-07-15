@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.8)
 
 project(fuzzylite CXX)
 
@@ -221,6 +221,7 @@ message("FL_INSTALL_BINDIR=${FL_INSTALL_BINDIR}")
 message("FL_INSTALL_LIBDIR=${FL_INSTALL_LIBDIR}")
 message("FL_BUILD_TESTS=${FL_BUILD_TESTS}")
 message("Build=${CMAKE_BUILD_TYPE}")
+message("CMAKE_VERSION: " ${CMAKE_VERSION} )
 message("=====================================\n")
 
 ###UNINSTALL SECTION
