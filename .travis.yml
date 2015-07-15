@@ -27,8 +27,21 @@ script:
   - cmake .. -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=$FL_CONF -DFL_BACKTRACE=ON -DFL_USE_FLOAT=$FL_USE_FLOAT -DFL_CPP11=$FL_CPP11
   - make
 
+
 env:
   - ignore=this
+  global:
+    - secure: "E5MepocHc2GgbsWgzxYU3b2vucYTEZoFFC4HfNI8Dr5LyNMknMX9SVl0vNFU35j3xfahplbeW0WGRRPoE7zLM81UYFbIsuIbCwfJWMg4NMlOJkvYbMyas4tBKqY+8cqkicneL/8ySFNvHaReUNFViZKLIyBpAjexfVxTcq3cnB8="
+
+addons:
+  coverity_scan:
+    project:
+      name: "fuzzylite/fuzzylite"
+      description: "Build submitted via Travis CI"
+    notification_email: jcrada@fuzzylite.com
+    build_command_prepend: "cd $FL_CONF; make clean"
+    build_command:   "make -j 4"
+    branch_pattern: coverity_scan
 
 matrix:
   exclude:

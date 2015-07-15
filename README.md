@@ -1,4 +1,7 @@
-fuzzylite &reg; [![Build Status](https://travis-ci.org/fuzzylite/fuzzylite.svg?branch=develop)](https://travis-ci.org/fuzzylite/fuzzylite) <img src="https://github.com/fuzzylite/fuzzylite/raw/develop/fuzzylite.png" align="right" alt="fuzzylite">
+fuzzylite &reg; [![Build Status](https://travis-ci.org/fuzzylite/fuzzylite.svg?branch=documentation)](https://travis-ci.org/fuzzylite/fuzzylite) 
+[![Coverity Status](https://scan.coverity.com/projects/5759/badge.svg)](https://scan.coverity.com/projects/5759) 
+<img src="https://github.com/fuzzylite/fuzzylite/raw/documentation/fuzzylite.png" align="right" alt="fuzzylite">
+
 ===========
 
 A Fuzzy Logic Control Library in C++
