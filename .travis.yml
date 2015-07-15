@@ -23,13 +23,13 @@ script:
   #cmake 
   - mkdir -p $HOME/cmake
   - wget http://www.cmake.org/files/v3.1/cmake-3.1.3-Linux-x86_64.tar.gz
-  - tar -xvzf cmake-3.1.3-Linux-x86_64.tar.gz
+  - tar -xzf cmake-3.1.3-Linux-x86_64.tar.gz
   - export CMAKE_CMD=`pwd`/cmake-3.1.3-Linux-x86_64/bin/cmake
   #fuzzylite
   - cd fuzzylite
   - mkdir -p $FL_CONF
   - cd $FL_CONF
-  - $CMAKE_CMD .. -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=$FL_CONF -DFL_BACKTRACE=ON -DFL_USE_FLOAT=$FL_USE_FLOAT -DFL_CPP11=$FL_CPP11
+  - $CMAKE_CMD .. -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=$FL_CONF -DFL_BACKTRACE=ON -DFL_USE_FLOAT=$FL_USE_FLOAT -DFL_CPP11=$FL_CPP11 -DCMAKE_CXX_COMPILER=$CXX
   - make
 
 env:
