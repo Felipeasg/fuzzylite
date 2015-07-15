@@ -38,10 +38,10 @@ addons:
     project:
       name: "fuzzylite/fuzzylite"
       description: "Build submitted via Travis CI"
-    notification_email: jcrada@fuzzylite.com
-    build_command_prepend: "cd $FL_CONF; make clean"
-    build_command:   "make -j 4"
-    branch_pattern: coverity_scan
+      notification_email: jcrada@fuzzylite.com
+      build_command_prepend: "cd $FL_CONF; make clean"
+      build_command:   "make"
+      branch_pattern: coverity_scan
 
 matrix:
   exclude:
