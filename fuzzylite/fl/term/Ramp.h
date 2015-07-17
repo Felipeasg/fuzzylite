@@ -79,7 +79,7 @@ namespace fl {
          * 0h & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$s@f$ is the start of the Ramp,
          *       @f$e@f$ is the end of the Ramp
          */

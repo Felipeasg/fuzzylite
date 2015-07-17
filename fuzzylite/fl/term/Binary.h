@@ -57,7 +57,7 @@ namespace fl {
          * 1h & \mbox{otherwise}
          * \end{cases}@f$
          *
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$t@f$ is the threshold of the Binary
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;

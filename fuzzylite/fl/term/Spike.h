@@ -55,7 +55,7 @@ namespace fl {
          * @param x
          * @return @f$h \times \exp(-|(10 / w (x - c))|)@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$w@f$ is the width of the Spike,
          *       @f$c@f$ is the center of the Spike
          */

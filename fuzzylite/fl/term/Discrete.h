@@ -54,7 +54,17 @@ namespace fl {
          * @param parameters as `x1 y1 ... xn yn [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
-        //@todo
+        /**
+         * Computes the membership function evaluated at @f$x@f$
+         * @param x
+         * @return @f$ h (y_{\max} - y_{\min}) / (x_{\max}- x_{\min}) * (x - x_{\min}) + y_{\min}@f$
+         * 
+         * where @f$h@f$ is the height of the Term,
+         *       @f$x_{\min}@f$ and @f$x_{\max}@f$is are the lower and upper limits 
+         *            of @f$x@f$ in `xy` (respectively),
+         *       @f$y_{\min}@f$ and @f$y_{\max}@f$is are the membership functions 
+         *            of @f$\mu(x_{\min})@f$ and @f$\mu(x_{\max})@f$ (respectively)
+         */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**

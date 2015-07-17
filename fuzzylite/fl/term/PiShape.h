@@ -70,7 +70,7 @@ namespace fl {
          * 0h & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$b_l@f$ is the bottom left of the PiShape,
          *       @f$t_l@f$ is the top left of the PiShape,
          *       @f$t_r@f$ is the top right of the PiShape

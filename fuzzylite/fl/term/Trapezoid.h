@@ -64,7 +64,7 @@ namespace fl {
          * 0h & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$a@f$ is the first vertex of the Trapezoid,
          *       @f$b@f$ is the second vertex of the Trapezoid,
          *       @f$c@f$ is the third vertex of the Trapezoid,

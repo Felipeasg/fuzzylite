@@ -63,7 +63,7 @@ namespace fl {
          *               \left((1 - j) + j \times \exp(-(x - \mu_b)^2 / (2 \sigma_b)^2)\right)
          * @f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$\mu_a@f$ is the mean of the first GaussianProduct,
          *       @f$\sigma_a@f$ is the standard deviation of the first GaussianProduct,
          *       @f$\mu_b@f$ is the mean of the second GaussianProduct,

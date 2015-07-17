@@ -61,7 +61,7 @@ namespace fl {
          * h & \mbox{otherwise} \cr
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$i@f$ is the inflection of the Concave,
          *       @f$e@f$ is the end of the Concave
          */

@@ -59,7 +59,7 @@ namespace fl {
          * 0.5h \times ( 1 + \cos(2 / w\pi(x-c))) & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$c@f$ is the center of the Cosine,
          *       @f$w@f$ is the width of the Cosine
          */

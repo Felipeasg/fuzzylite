@@ -59,7 +59,7 @@ namespace fl {
          * @param x 
          * @return @f$h / (1 + \left(|x-c|/w\right)^{2s}@f$
          *
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$c@f$ is the center of the Bell, 
          *       @f$w@f$ is the width of the Bell,
          *       @f$s@f$ is the slope of the Bell

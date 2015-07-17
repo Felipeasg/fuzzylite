@@ -23,7 +23,7 @@
 namespace fl {
 
     /**
-     * [Edge] term for the S-shaped membership function
+     * %Term for the S-shaped membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable
@@ -62,7 +62,7 @@ namespace fl {
          * 1h & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$s@f$ is the start of the SShape,
          *       @f$e@f$ is the end of the SShape.
          */

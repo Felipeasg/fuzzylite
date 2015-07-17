@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * [Edge] term for the sigmoid membership function
+     * %Term for the sigmoid membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable
@@ -63,7 +63,7 @@ namespace fl {
          * @param x
          * @return @f$ h / (1 + \exp(-s(x-i)))@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$s@f$ is the slope of the Sigmoid,
          *       @f$i@f$ is the inflection of the Sigmoid
          */

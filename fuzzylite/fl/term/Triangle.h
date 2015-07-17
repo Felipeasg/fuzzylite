@@ -64,7 +64,7 @@ namespace fl {
          * h (c - x) / (c - b) & \mbox{otherwise}
          * \end{cases}@f$
          * 
-         * where @f$h@f$ is the height of the term,
+         * where @f$h@f$ is the height of the Term,
          *       @f$a@f$ is the first vertex of the Triangle,
          *       @f$b@f$ is the second vertex of the Triangle,
          *       @f$c@f$ is the third vertex of the Triangle

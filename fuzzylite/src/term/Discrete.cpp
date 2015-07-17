@@ -30,7 +30,7 @@ namespace fl {
     std::string Discrete::className() const {
         return "Discrete";
     }
-
+    //@todo: use binary search
     scalar Discrete::membership(scalar _x_) const {
         if (fl::Op::isNaN(_x_)) return fl::nan;
         if (_xy.empty())
