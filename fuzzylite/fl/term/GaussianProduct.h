@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the two-sided Gaussian membership function
+     * %Term for the two-sided %Gaussian membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

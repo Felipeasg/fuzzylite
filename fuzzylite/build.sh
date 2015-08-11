@@ -16,9 +16,17 @@ release(){
     cd ..
 }
 
+documentation(){
+    pwd=`pwd`
+    cd ..
+    doxygen 
+    cd $pwd
+}
+
 all(){
     debug
     release
+    documentation
 }
 
 clean(){
@@ -31,6 +39,7 @@ usage(){
     printf "\tall\t\t builds fuzzylite in debug and release mode (default)\n"
     printf "\tdebug\t\t builds fuzzylite in debug mode\n"
     printf "\trelease\t\t builds fuzzylite in release mode\n"
+    printf "\tdocumentation\t\t creates documentation using doxygen\n"
     printf "\tclean\t\t erases previous builds\n"
     printf "\thelp\t\t shows this information\n"
     printf "\n"
@@ -38,14 +47,14 @@ usage(){
 
 #############################
 
-OPTIONS=( "all" "debug" "release" "clean" "help")
+OPTIONS=( "all" "debug" "release" "documentation" "clean" "help")
 BUILD=( )
 
 for arg in "$@"
 do
     if [[ "$arg" == "help" ]]; then usage && exit 0; fi
 
-    if [[ "$arg" == "all" || "$arg" == "debug" || "$arg" == "release" || "$arg" == "clean" ]];
+    if [[ "$arg" == "all" || "$arg" == "debug" || "$arg" == "release" || "$arg" == "documentation" || "$arg" == "clean" ]];
     then BUILD+=( $arg ); else echo "Invalid option: $arg" && usage && exit 2;
     fi
 done

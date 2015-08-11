@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the Gaussian curve membership function
+     * %Term for the %Gaussian curve membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

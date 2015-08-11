@@ -27,7 +27,7 @@ namespace fl {
     class Engine;
 
     /**
-     * %Term for the Function membership function
+     * %Term for a generic formula membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable
