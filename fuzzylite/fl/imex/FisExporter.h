@@ -31,6 +31,13 @@ namespace fl {
     class Proposition;
     class Variable;
 
+    /**
+     * Exports an Engine to the Fuzzy Inference System (FIS) format for Matlab or Octave
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see FisImporter
+     * @see Exporter
+     * @since 4.0
+     */
     class FL_API FisExporter : public Exporter {
     protected:
 

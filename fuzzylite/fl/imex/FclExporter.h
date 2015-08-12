@@ -29,6 +29,13 @@ namespace fl {
     class Defuzzifier;
     class Term;
 
+    /**
+     * Exports an Engine to the Fuzzy Control Language (FCL) specification
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see FclImporter
+     * @see Exporter
+     * @since 4.0
+     */
     class FL_API FclExporter : public Exporter {
     protected:
         std::string _indent;

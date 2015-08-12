@@ -31,6 +31,13 @@ namespace fl {
     class SNorm;
     class TNorm;
 
+    /**
+     * Exports an Engine to the Java programming language using the `jfuzzylite` library
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see JavaExporter
+     * @see Exporter
+     * @since 4.0
+     */
     class FL_API JavaExporter : public Exporter {
     public:
         JavaExporter();

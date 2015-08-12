@@ -122,7 +122,7 @@ namespace fl {
          * @return the threshold for activation degrees
          */
         virtual scalar getThreshold() const;
-        
+
         /**
          * Sets the comparison operator and the threshold for the activation method 
          
@@ -130,7 +130,7 @@ namespace fl {
          * @param threshold is the threshold for activation degrees
          */
         virtual void setComparisonThreshold(Comparison comparison, scalar threshold);
-        
+
         /**
          * Sets the comparison operator (in short form) and the threshold for 
          * the activation method 

@@ -29,6 +29,13 @@ namespace fl {
     class Defuzzifier;
     class Hedge;
 
+    /**
+     * Exports an Engine to the `C++` programming language using the `fuzzylite` library
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see JavaExporter
+     * @see Exporter
+     * @since 4.0
+     */
     class FL_API CppExporter : public Exporter {
     protected:
         bool _prefixNamespace;

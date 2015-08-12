@@ -28,6 +28,13 @@ namespace fl {
     class Term;
     class Defuzzifier;
 
+    /**
+     * Imports an Engine from the FuzzyLite Language (FLL)
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see FclExporter
+     * @see Importer
+     * @since 4.0
+     */
     class FL_API FllImporter : public Importer {
     protected:
         std::string _separator;
@@ -36,7 +43,15 @@ namespace fl {
         virtual ~FllImporter() FL_IOVERRIDE;
         FL_DEFAULT_COPY_AND_MOVE(FllImporter)
 
+        /**
+         * Sets the separator of the language. By default, the separator is a new line '\n'
+         * @param separator is the separator of the language
+         */
         virtual void setSeparator(const std::string& separator);
+        /**
+         * Gets the separator of the language. By default, the separator is a new line '\n'
+         * @return the separator of the language
+         */
         virtual std::string getSeparator() const;
 
         virtual std::string name() const FL_IOVERRIDE;
@@ -45,6 +60,7 @@ namespace fl {
         virtual FllImporter* clone() const FL_IOVERRIDE;
 
     protected:
+
         virtual void process(const std::string& tag, const std::string& block, Engine* engine) const;
         virtual void processInputVariable(const std::string& block, Engine* engine) const;
         virtual void processOutputVariable(const std::string& block, Engine* engine) const;

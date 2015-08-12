@@ -24,7 +24,7 @@
 #include <vector>
 
 namespace fl {
-     
+
     /**
      * Base class for factories of objects created via Constructor%s
      * 
