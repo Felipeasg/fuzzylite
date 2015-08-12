@@ -32,7 +32,7 @@ namespace fl {
     class Defuzzifier;
 
     /**
-     * Imports an Engine from the Fuzzy Control Language (FCL) specification
+     * Imports an Engine from the Fuzzy Control Language specification
      * @author Juan Rada-Vilela, Ph.D.
      * @see FclExporter
      * @see Importer

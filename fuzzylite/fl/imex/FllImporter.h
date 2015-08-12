@@ -29,11 +29,12 @@ namespace fl {
     class Defuzzifier;
 
     /**
-     * Imports an Engine from the FuzzyLite Language (FLL)
+     * Imports an Engine from the FuzzyLite Language
      * @author Juan Rada-Vilela, Ph.D.
      * @see FclExporter
      * @see Importer
      * @since 4.0
+     * @todo parse methods returning respective instances from blocks of text
      */
     class FL_API FllImporter : public Importer {
     protected:

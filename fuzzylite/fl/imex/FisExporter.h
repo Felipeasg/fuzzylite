@@ -32,7 +32,7 @@ namespace fl {
     class Variable;
 
     /**
-     * Exports an Engine to the Fuzzy Inference System (FIS) format for Matlab or Octave
+     * Exports an Engine to the Fuzzy Inference System format for Matlab or Octave
      * @author Juan Rada-Vilela, Ph.D.
      * @see FisImporter
      * @see Exporter
@@ -52,14 +52,55 @@ namespace fl {
         virtual std::string name() const FL_IOVERRIDE;
         virtual std::string toString(const Engine* engine) const FL_IOVERRIDE;
 
+         /**
+         * Returns a string representation of the norm in the Fuzzy Inference System format
+         * @param norm is the norm
+         * @return a string representation of the norm in the Fuzzy Inference System format
+         */
         virtual std::string toString(const Norm* norm) const;
+          /**
+         * Returns a string representation of the defuzzifier in the Fuzzy Inference System format
+         * @param defuzzifier is the defuzzifier
+         * @return a string representation of the defuzzifier in the Fuzzy Inference System format
+         */
         virtual std::string toString(const Defuzzifier* defuzzifier) const;
+         /**
+         * Returns a string representation of the term in the Fuzzy Inference System format
+         * @param term is the term
+         * @return a string representation of the term in the Fuzzy Inference System format
+         */
         virtual std::string toString(const Term* term) const;
 
+         /**
+         * Returns a string representation of the `[System]` configuration
+         * @param engine is the engine
+         * @return a string representation of the `[System]` configuration
+         */
         virtual std::string exportSystem(const Engine* engine) const;
+        /**
+         * Returns a string representation of the `[Input]` configuration
+         * @param engine is the engine
+         * @return a string representation of the `[Input]` configuration
+         */
         virtual std::string exportInputs(const Engine* engine) const;
+        /**
+         * Returns a string representation of the `[Output]` configuration
+         * @param engine is the engine
+         * @return a string representation of the `[Output]` configuration
+         */
         virtual std::string exportOutputs(const Engine* engine) const;
+        /**
+         * Returns a string representation of the `[Rules]` configuration
+         * @param engine is the engine
+         * @return a string representation of the `[Rules]` configuration
+         */
         virtual std::string exportRules(const Engine* engine) const;
+        /**
+         * Returns a string representation for the rule in the Fuzzy Inference System format
+         * @param rule is the rule
+         * @param engine is the engine in which the rule is registered
+         * @return a string representation for the rule in the Fuzzy Inference System format
+         */
         virtual std::string exportRule(const Rule* rule, const Engine* engine) const;
 
         virtual FisExporter* clone() const FL_IOVERRIDE;

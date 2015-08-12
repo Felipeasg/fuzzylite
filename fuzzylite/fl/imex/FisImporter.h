@@ -32,8 +32,7 @@ namespace fl {
     class Variable;
 
     /**
-     * Imports an Engine from the Fuzzy Inference System (FIS) format for Matlab or Octave
-     * for Matlab and Octave
+     * Imports an Engine from the Fuzzy Inference System format for Matlab or Octave
      * @author Juan Rada-Vilela, Ph.D.
      * @see FclExporter
      * @see Importer
