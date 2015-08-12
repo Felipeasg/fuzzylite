@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the generalized bell curve membership function
+     * Term for the generalized bell curve membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

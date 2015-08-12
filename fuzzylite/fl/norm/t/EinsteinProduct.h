@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * T-Norm for an einstein product of values
+     * TNorm for an einstein product of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see EinsteinSum
      * @see TNorm

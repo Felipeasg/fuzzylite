@@ -24,7 +24,14 @@
 #include <vector>
 
 namespace fl {
-    //FL_API removed because methods are inline.
+
+    /**
+     * Base class for factories of objects created via cloning
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see FactoryManager
+     * @since 5.0
+     */
 
     template <typename T>
     class CloningFactory {
@@ -39,15 +46,55 @@ namespace fl {
         virtual ~CloningFactory();
         FL_DEFAULT_MOVE(CloningFactory)
 
+        /**
+         * Provides the name of the factory
+         * @return the name of the factory
+         */
         virtual std::string name() const;
 
+        /**
+         * Registers the object in the factory
+         * @param key is the unique name by which objects are registered
+         * @param object is the object to be cloned via a `clone` method 
+         */
         virtual void registerObject(const std::string& key, T object);
+        /**
+         * Deregisters the given object from the factory
+         * @param key is the unique name by which objects are registered
+         */
         virtual void deregisterObject(const std::string& key);
+        /**
+         * Checks whether the factory has the given object registered
+         * @param key is the unique name by which objects are registered
+         * @return whether the factory has the given object registered
+         */
         virtual bool hasObject(const std::string& key) const;
+        /**
+         * Gets the object registered by the given key, not a clone of the object
+         * @param key is the unique name by which objects are registered
+         * @return the object registered by the given key
+         */
         virtual T getObject(const std::string& key) const;
+        /**
+         * Creates a cloned object by executing the clone method on the registered object
+         * @param key is the unique name by which objects are registered
+         * @return a cloned object by executing the clone method on the registered object
+         */
         virtual T cloneObject(const std::string& key) const;
+        /**
+         * Provides a vector of the objects available
+         * @return a vector of the objects available
+         */
         virtual std::vector<std::string> available() const;
+        /**
+         * Gets the map of registered keys and objects
+         * @return the map of registered keys and objects
+         */
         virtual std::map<std::string, T>& objects();
+        /**
+         * Gets an immutable map of registered keys and objects
+         * @return an immutable map of registered keys and objects
+         */
         virtual const std::map<std::string, T>& objects() const;
 
     };

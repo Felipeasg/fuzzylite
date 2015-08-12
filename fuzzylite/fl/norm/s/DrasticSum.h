@@ -21,7 +21,7 @@
 namespace fl {
 
     /**
-     * S-Norm for a drastic sum of values 
+     * SNorm for a drastic sum of values 
      * @author Juan Rada-Vilela, Ph.D.
      * @see DrasticProduct
      * @see SNorm

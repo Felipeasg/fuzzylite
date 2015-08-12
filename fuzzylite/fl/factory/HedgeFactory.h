@@ -23,6 +23,15 @@
 
 namespace fl {
 
+    /**
+     * Factory of Hedge%s
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Hedge
+     * @see ConstructionFactory
+     * @see FactoryManager
+     * @since 4.0
+     */
     class FL_API HedgeFactory : public ConstructionFactory<Hedge*> {
     public:
         HedgeFactory();

@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the Pi-shaped curve membership function
+     * Term for the Pi-shaped curve membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Hedge located second in the ordered set 
+     * Hedge located second in the ordered set 
      * (Not, Seldom, Somewhat, Very, Extremely, Any)
      * @author Juan Rada-Vilela, Ph.D.
      * @see Hedge

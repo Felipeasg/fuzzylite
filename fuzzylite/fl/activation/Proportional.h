@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * Activation method that activates the rules with degrees proportional 
+     * Activation method that activates the Rule%s with degrees proportional 
      * to the activation degrees of the other rules such that the sum of the 
      * the activation degrees of all rules is equal to one.
      * 

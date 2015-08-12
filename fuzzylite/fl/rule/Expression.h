@@ -30,6 +30,7 @@ namespace fl {
     class Term;
 
     /**
+     * Base class for an expression tree
      * @author Juan Rada-Vilela, Ph.D.
      * @see Antecedent
      * @see Consequent
@@ -48,30 +49,62 @@ namespace fl {
         FL_DISABLE_COPY(Expression)
     };
 
+    /**
+     * A terminal node in the expression tree. The node represents a proposition 
+     * in the form `variable is [hedge]* term`
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Antecedent
+     * @see Consequent
+     * @see Rule
+     * @since 4.0
+     */
     class FL_API Proposition : public Expression {
     public:
+        /**Variable in `variable is [hedge]* term`*/
         Variable* variable;
+        /**Hedge%s in `variable is [hedge]* term`*/
         std::vector<Hedge*> hedges;
+        /**Term in `variable is [hedge]* term`*/
         Term* term;
 
         Proposition();
         virtual ~Proposition() FL_IOVERRIDE;
 
+        /**
+         * Returns a string representation of the proposition
+         * @return a string representation of the proposition
+         */
         virtual std::string toString() const FL_IOVERRIDE;
 
     private:
         FL_DISABLE_COPY(Proposition)
     };
 
+    /**
+     * A non-terminal node in the expression tree. The node represents a 
+     * a binary operator (i.e., `and` or `or`) on two Expression%s
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see Antecedent
+     * @see Consequent
+     * @see Rule
+     * @since 4.0
+     */
     class FL_API Operator : public Expression {
     public:
+        /**Name of the operator*/
         std::string name;
+        /**Expression in the left binary tree*/
         Expression* left;
+        /**Expression in the right binary tree*/
         Expression* right;
 
         Operator();
         virtual ~Operator() FL_IOVERRIDE;
 
+        /**
+         * Provides the name of the operator
+         * @return the name of the operator
+         */
         virtual std::string toString() const FL_IOVERRIDE;
 
     private:

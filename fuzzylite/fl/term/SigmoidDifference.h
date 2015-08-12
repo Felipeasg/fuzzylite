@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the difference between two sigmoidal membership functions
+     * Term for the difference between two sigmoidal membership functions
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

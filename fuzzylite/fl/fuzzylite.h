@@ -100,7 +100,10 @@
 #define FL_API
 #endif
 
-
+/**
+ * fuzzylite namespace
+ * @author Juan Rada-Vilela, Ph.D.
+ */
 namespace fl {
 #ifdef FL_USE_FLOAT
     typedef float scalar;

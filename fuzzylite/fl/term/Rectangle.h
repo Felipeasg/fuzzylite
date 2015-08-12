@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the rectangle membership function
+     * Term for the rectangle membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

@@ -24,7 +24,7 @@ namespace fl {
     class Defuzzifier;
 
     /**
-     * Output variable of the fuzzy controller
+     * Output Variable of the fuzzy Engine
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Variable

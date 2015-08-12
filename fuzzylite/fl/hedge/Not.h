@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * Complement hedge located first in the ordered set 
+     * Hedge located first in the ordered set 
      * (Not, Seldom, Somewhat, Very, Extremely, Any)
      * @author Juan Rada-Vilela, Ph.D.
      * @see Hedge

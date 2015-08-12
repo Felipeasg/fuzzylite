@@ -25,7 +25,7 @@
 namespace fl {
 
     /**
-     * %Term for the discrete membership function
+     * Term for the discrete membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

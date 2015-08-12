@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * T-Norm for an algebraic product of values
+     * TNorm for an algebraic product of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see AlgebraicSum
      * @see TNorm

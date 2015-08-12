@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * S-Norm for an einstein sum of values
+     * SNorm for an einstein sum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see EinsteinProduct
      * @see SNorm

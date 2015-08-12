@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * T-Norm for a drastic product of values
+     * TNorm for a drastic product of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see DrasticSum
      * @see TNorm

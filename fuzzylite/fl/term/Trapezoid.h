@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the trapezoidal membership function
+     * Term for the trapezoidal membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * S-Norm for the maximum of values
+     * SNorm for the maximum of values
      * @author Juan Rada-Vilela, Ph.D.
      * @see Minimum
      * @see SNorm

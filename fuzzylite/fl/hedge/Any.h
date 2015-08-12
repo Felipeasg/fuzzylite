@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Hedge that always returns 1.0, and is located last in the ordered set
+     * Hedge located last in the ordered set
      * (Not, Seldom, Somewhat, Very, Extremely, Any). 
      * 
      * Antecedent considers Any a syntactically special hedge because it is 

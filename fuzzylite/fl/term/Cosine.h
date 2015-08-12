@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the cosine membership function
+     * Term for the cosine membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

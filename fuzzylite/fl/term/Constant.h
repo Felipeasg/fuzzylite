@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for a constant value
+     * Term for a constant value
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

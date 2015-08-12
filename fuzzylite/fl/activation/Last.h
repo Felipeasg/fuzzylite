@@ -23,7 +23,7 @@
 namespace fl {
 
     /**
-     * Activation method that activates the last rule whose activation degree 
+     * Activation method that activates the last Rule whose activation degree 
      * is greater than zero, and deactivates the remaining rules.
      * 
      * The rules are iterated in the reverse order they were added to the 

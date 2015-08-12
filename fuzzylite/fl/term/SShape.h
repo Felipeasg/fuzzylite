@@ -23,7 +23,7 @@
 namespace fl {
 
     /**
-     * %Term for the S-shaped membership function
+     * Term for the S-shaped membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

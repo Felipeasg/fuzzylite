@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * (Edge) term for the ramp membership function
+     * Term for the ramp membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

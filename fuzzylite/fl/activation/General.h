@@ -24,7 +24,7 @@
 namespace fl {
 
     /**
-     * Activation method that activates every rule in any given RuleBlock 
+     * Activation method that activates every Rule in any given RuleBlock 
      * following the order in which the rules were added to the rule block
      * 
      * @author Juan Rada-Vilela, Ph.D.

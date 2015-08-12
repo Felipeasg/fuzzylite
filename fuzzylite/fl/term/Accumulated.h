@@ -28,7 +28,7 @@ namespace fl {
     class TNorm;
 
     /**
-     * %Term that contains the Activated terms from the Antecedent%s of the Rule%s, 
+     * Term that contains the Activated terms from the Antecedent%s of the Rule%s, 
      * thereby serving as a fuzzy output value in OutputVariable. The instances 
      * of the activated terms added for accumulation will be owned by Accumulated, and will be destroyed upon
      * clearing the term.

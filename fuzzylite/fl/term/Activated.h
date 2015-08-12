@@ -23,9 +23,9 @@ namespace fl {
     class TNorm;
 
     /**
-     * %Term that contains pointers to the necessary information of an activated term, 
-     * but does not assume their ownership. Activated was previously named as 
-     * `Thresholded` in version 4.0
+     * Term that contains pointers to the necessary information of an activated term, 
+     * but does not assume the ownership of the pointers. Activated was previously 
+     * named `Thresholded` in version 4.0
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see OutputVariable

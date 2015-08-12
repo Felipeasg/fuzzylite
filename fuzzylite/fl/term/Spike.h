@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * %Term for the spike membership function
+     * Term for the spike membership function
      * @author Juan Rada-Vilela, Ph.D.
      * @see Term
      * @see Variable

@@ -23,6 +23,15 @@
 
 namespace fl {
 
+    /**
+     * Factory of TNorm%s
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see TNorm
+     * @see ConstructionFactory
+     * @see FactoryManager
+     * @since 4.0
+     */
     class FL_API TNormFactory : public ConstructionFactory<TNorm*> {
     public:
         TNormFactory();

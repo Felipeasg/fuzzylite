@@ -24,7 +24,7 @@
 namespace fl {
 
     /**
-     * Activation method that activates the rules of any given rule block iff 
+     * Activation method that activates the Rule%s of any given RuleBlock iff 
      * their activation degrees satisfy the given comparison operator for the 
      * given threshold. Otherwise, the rules are deactivated.
      * 

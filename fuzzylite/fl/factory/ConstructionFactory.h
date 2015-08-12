@@ -24,7 +24,14 @@
 #include <vector>
 
 namespace fl {
-    //FL_API removed because methods are inline.
+     
+    /**
+     * Base class for factories of objects created via Constructor%s
+     * 
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see FactoryManager
+     * @since 5.0
+     */
 
     template <typename T>
     class ConstructionFactory {
@@ -40,16 +47,55 @@ namespace fl {
         virtual ~ConstructionFactory();
         FL_DEFAULT_COPY_AND_MOVE(ConstructionFactory)
 
+        /**
+         * Provides the name of the factory
+         * @return the name of the factory
+         */
         virtual std::string name() const;
 
+        /**
+         * Registers the constructor in the factory
+         * @param key is the unique name by which constructors are registered
+         * @param constructor is the pointer to the constructor of the object
+         */
         virtual void registerConstructor(const std::string& key, Constructor constructor);
+        /**
+         * Deregisters the given constructor from the factory
+         * @param key is the unique name by which constructors are registered
+         */
         virtual void deregisterConstructor(const std::string& key);
+        /**
+         * Checks whether the factory has the given constructor registered
+         * @param key is the unique name by which constructors are registered
+         * @return whether the factory has the given constructor registered
+         */
         virtual bool hasConstructor(const std::string& key) const;
+        /**
+         * Gets the constructor registered by the given key
+         * @param key is the unique name by which constructors are registered
+         * @return the pointer to the given constructor
+         */
         virtual Constructor getConstructor(const std::string& key) const;
+        /**
+         * Creates an object by executing the registered constructor
+         * @param key is the unique name by which constructors are registered
+         * @return an object by executing the registered constructor
+         */
         virtual T constructObject(const std::string& key) const;
+        /**
+         * Provides a vector of the constructors available
+         * @return a vector of the constructors available
+         */
         virtual std::vector<std::string> available() const;
-
+        /**
+         * Gets the map of registered keys and constructors
+         * @return the map of registered keys and constructors
+         */
         virtual std::map<std::string, Constructor>& constructors();
+        /**
+         * Gets an immutable map of registered keys and constructors
+         * @return an immutable map of registered keys and constructors
+         */
         virtual const std::map<std::string, Constructor>& constructors() const;
     };
 

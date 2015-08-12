@@ -22,7 +22,7 @@
 namespace fl {
 
     /**
-     * Input variable of the fuzzy controller
+     * Input Variable of the fuzzy Engine
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Variable

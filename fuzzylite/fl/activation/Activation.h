@@ -23,10 +23,10 @@ namespace fl {
     class RuleBlock;
 
     /**
-     * Base class of all activation methods for rule blocks.
+     * Base class of all activation methods for RuleBlock%s.
      * An activation method for any given RuleBlock needs to:
-     * - Activate the necessary rules.
-     * - Deactivate the remaining rules.
+     * - Activate the necessary Rule%s.
+     * - Deactivate the remaining Rule%s.
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Rule
