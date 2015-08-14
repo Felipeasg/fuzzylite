@@ -34,7 +34,7 @@ namespace fl {
     /**
      * Exports an Engine to the Java programming language using the `jfuzzylite` library
      * @author Juan Rada-Vilela, Ph.D.
-     * @see JavaExporter
+     * @see CppExporter
      * @see Exporter
      * @since 4.0
      */

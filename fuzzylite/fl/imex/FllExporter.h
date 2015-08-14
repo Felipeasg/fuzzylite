@@ -35,8 +35,8 @@ namespace fl {
     /**
      * Exports an Engine to the FuzzyLite Language
      * @author Juan Rada-Vilela, Ph.D.
-     * @see FclExporter
-     * @see Importer
+     * @see FllImporter
+     * @see Exporter
      * @since 4.0
      */
     class FL_API FllExporter : public Exporter {

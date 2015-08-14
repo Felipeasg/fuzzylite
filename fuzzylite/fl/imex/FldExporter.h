@@ -29,8 +29,8 @@ namespace fl {
     /**
      * Exports an Engine to the FuzzyLite Dataset (FLD)
      * @author Juan Rada-Vilela, Ph.D.
-     * @see FclExporter
-     * @see Importer
+     * @see FllExporter
+     * @see Exporter
      * @since 4.0
      */
     class FL_API FldExporter : public Exporter {

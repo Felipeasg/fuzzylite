@@ -34,7 +34,7 @@ namespace fl {
     /**
      * Imports an Engine from the Fuzzy Inference System format for Matlab or Octave
      * @author Juan Rada-Vilela, Ph.D.
-     * @see FclExporter
+     * @see FisExporter
      * @see Importer
      * @since 4.0
      */
