@@ -22,6 +22,10 @@
 
 namespace fl {
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class FL_API WeightedSum : public WeightedDefuzzifier {
     public:
         explicit WeightedSum(Type type = Automatic);

@@ -21,6 +21,10 @@
 
 namespace fl {
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class FL_API SmallestOfMaximum : public IntegralDefuzzifier {
     public:
         explicit SmallestOfMaximum(int resolution = defaultResolution());

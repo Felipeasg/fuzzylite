@@ -20,8 +20,13 @@
 #include "fl/defuzzifier/Defuzzifier.h"
 
 namespace fl {
-    //TODO: check  http://en.wikipedia.org/wiki/Adaptive_quadrature
 
+    /**
+     * Base class for integral-based defuzzifiers.
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     * @todo check  http://en.wikipedia.org/wiki/Adaptive_quadrature
+     */
     class FL_API IntegralDefuzzifier : public Defuzzifier {
     protected:
         static int _defaultResolution;
@@ -29,14 +34,32 @@ namespace fl {
         int _resolution;
     public:
 
+        /**
+         * Sets the default resolution for integral-based defuzzifiers
+         * @param defaultResolution is the default resolution for integral-based defuzzifiers
+         */
         static void setDefaultResolution(int defaultResolution);
+        /**
+         * Gets the default resolution for integral-based defuzzifiers
+         * @return the default resolution for integral-based defuzzifiers
+         */
         static int defaultResolution();
 
         explicit IntegralDefuzzifier(int resolution = defaultResolution());
         virtual ~IntegralDefuzzifier() FL_IOVERRIDE;
         FL_DEFAULT_COPY_AND_MOVE(IntegralDefuzzifier)
 
+        /**
+         * Sets the resolution of the defuzzifier. The resolution refers to the number of divisions in 
+         * which the range `[minimum,maximum]` is divided into in order to integrate the area under the curve
+         * @param resolution is the resolution of the defuzzifier
+         */
         virtual void setResolution(int resolution);
+        /**
+         * Gets the resolution of the defuzzifier. The resolution refers to the number of divisions in 
+         * which the range `[minimum,maximum]` is divided into in order to integrate the area under the curve
+         * @return the resolution of the defuzzifier
+         */
         virtual int getResolution() const;
     };
 }

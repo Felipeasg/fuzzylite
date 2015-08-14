@@ -21,6 +21,10 @@
 
 namespace fl {
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class FL_API Centroid : public IntegralDefuzzifier {
     public:
         explicit Centroid(int resolution = defaultResolution());

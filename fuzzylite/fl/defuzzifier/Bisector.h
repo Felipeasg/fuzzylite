@@ -21,6 +21,10 @@
 
 namespace fl {
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class FL_API Bisector : public IntegralDefuzzifier {
     public:
         explicit Bisector(int resolution = defaultResolution());

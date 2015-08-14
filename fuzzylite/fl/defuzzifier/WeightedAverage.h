@@ -22,6 +22,14 @@
 namespace fl {
     class Activated;
 
+    /**
+     * Computes the weighted average of fuzzy terms
+     * @author Juan Rada-Vilela, Ph.D.
+     * @see WeightedSum
+     * @see WeightedDefuzzifier
+     * @see Defuzzifier
+     * @since 4.0
+     */
     class FL_API WeightedAverage : public WeightedDefuzzifier {
     public:
         explicit WeightedAverage(Type type = Automatic);
@@ -30,6 +38,14 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(WeightedAverage)
 
         virtual std::string className() const FL_IOVERRIDE;
+        /**
+         * Computes the weighted average of the given term, whose class needs to be 
+         * Accumulated term. 
+         * @param term is an Accumulated term
+         * @param minimum is the minimum value of the range (necessary for Tsukamoto)
+         * @param maximum is the maximum value of the range (necessary for Tsukamoto)
+         * @return 
+         */
         virtual scalar defuzzify(const Term* term,
                 scalar minimum, scalar maximum) const FL_IOVERRIDE;
         virtual WeightedAverage* clone() const FL_IOVERRIDE;

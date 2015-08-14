@@ -21,6 +21,10 @@
 
 namespace fl {
 
+    /**
+     * @author Juan Rada-Vilela, Ph.D.
+     * @since 4.0
+     */
     class FL_API MeanOfMaximum : public IntegralDefuzzifier {
     public:
         explicit MeanOfMaximum(int resolution = defaultResolution());
