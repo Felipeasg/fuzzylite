@@ -22,7 +22,13 @@
 namespace fl {
 
     /**
+     * Computes the largest value of the maximum membership function value 
+     * in the fuzzy set
      * @author Juan Rada-Vilela, Ph.D.
+     * @see SmallestOfMaximum
+     * @see MeanOfMaximum
+     * @see IntegralDefuzzifier
+     * @see Defuzzifier
      * @since 4.0
      */
     class FL_API LargestOfMaximum : public IntegralDefuzzifier {
@@ -32,6 +38,17 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(LargestOfMaximum)
 
         virtual std::string className() const FL_IOVERRIDE;
+
+        /**
+         * Computes the largest value of the maximum membership function value 
+         * in the fuzzy set. The largest value is computed while integrating 
+         * over the fuzzy set. The integration algorithm is the midpoint rectangle 
+         * method (https://en.wikipedia.org/wiki/Rectangle_method).
+         * @param minimum is the minimum value of the fuzzy set
+         * @param maximum is the maximum value of the fuzzy set
+         * @return the largest @f$x@f$-coordinate of the maximum membership 
+         * function value in the fuzzy set
+         */
         virtual scalar defuzzify(const Term* term,
                 scalar minimum, scalar maximum) const FL_IOVERRIDE;
         virtual LargestOfMaximum* clone() const FL_IOVERRIDE;
