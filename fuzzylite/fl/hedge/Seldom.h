@@ -46,9 +46,6 @@ namespace fl {
         scalar hedge(scalar x) const FL_IOVERRIDE;
         Seldom* clone() const FL_IOVERRIDE;
 
-        /**
-         * @return a new instance of Seldom
-         */
         static Hedge* constructor();
     };
 

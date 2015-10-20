@@ -28,7 +28,7 @@ namespace fl {
     class TNorm;
 
     /**
-     * Term that contains the Activated terms from the Antecedent%s of the Rule%s, 
+     * Fuzzy set that contains the Activated terms from the Antecedent%s of the Rule%s, 
      * thereby serving as a fuzzy output value in OutputVariable. The instances 
      * of the activated terms added for accumulation will be owned by Accumulated, and will be destroyed upon
      * clearing the term.
@@ -92,36 +92,36 @@ namespace fl {
         virtual std::string toString() const FL_IOVERRIDE;
 
         /**
-         * Sets the minimum of the range of the fuzzy output value
-         * @param minimum is the minimum of the range of the fuzzy output value
+         * Sets the minimum of the range of the fuzzy set
+         * @param minimum is the minimum of the range of the fuzzy set
          */
         virtual void setMinimum(scalar minimum);
         /**
-         * Gets the minimum of the range of the fuzzy output value
-         * @return the minimum of the range of the fuzzy output value
+         * Gets the minimum of the range of the fuzzy set
+         * @return the minimum of the range of the fuzzy set
          */
         virtual scalar getMinimum() const;
 
         /**
-         * Sets the maximum of the range of the fuzzy output value
-         * @param maximum is the maximum of the range of the fuzzy output value
+         * Sets the maximum of the range of the fuzzy set
+         * @param maximum is the maximum of the range of the fuzzy set
          */
         virtual void setMaximum(scalar maximum);
         /**
-         * Gets the maximum of the range of the fuzzy output value
-         * @return the maximum of the range of the fuzzy output value
+         * Gets the maximum of the range of the fuzzy set
+         * @return the maximum of the range of the fuzzy set
          */
         virtual scalar getMaximum() const;
 
         /**
-         * Sets the range of the fuzzy output value as `[minimum, maximum]`
-         * @param minimum is the minimum of the range of the fuzzy output value
-         * @param maximum is the maximum of the range of the fuzzy output value
+         * Sets the range of the fuzzy set to `[minimum, maximum]`
+         * @param minimum is the minimum of the range of the fuzzy set
+         * @param maximum is the maximum of the range of the fuzzy set
          */
         virtual void setRange(scalar minimum, scalar maximum);
         /**
-         * Provides the magnitude of the range of the fuzzy output value, 
-         * @return the magnitude of the range of the fuzzy output value, 
+         * Provides the magnitude of the range of the fuzzy set, 
+         * @return the magnitude of the range of the fuzzy set, 
          * i.e., `maximum - minimum`
          */
         virtual scalar range() const;
@@ -138,15 +138,14 @@ namespace fl {
         virtual SNorm* getAccumulation() const;
 
         /**
-         * Creates an Activated term from the `term`, `degree` and `implication` 
-         * operator, and adds it to the fuzzy output value
+         * Adds a new Activated term (from the parameters) to the fuzzy set
          * @param term is the activated term
          * @param degree is the activation degree
          * @param implication is the implication operator
          */
         virtual void addTerm(const Term* term, scalar degree, const TNorm* implication);
         /**
-         * Adds the activated term to the fuzzy output value. The activated term 
+         * Adds the activated term to the fuzzy set. The activated term 
          * will be deleted upon {@link #clear()}
          * @param term is the activated term
          */

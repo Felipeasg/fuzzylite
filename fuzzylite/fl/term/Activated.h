@@ -67,13 +67,13 @@ namespace fl {
         virtual std::string toString() const FL_IOVERRIDE;
 
         /**
-         * Sets the term to activate
-         * @param term is the term to activate
+         * Sets the activated term
+         * @param term is the activated term 
          */
         virtual void setTerm(const Term* term);
         /**
-         * Gets the term to activate
-         * @return the term to activate
+         * Gets the activated term 
+         * @return the activated term 
          */
         virtual const Term* getTerm() const;
 

@@ -70,8 +70,8 @@ namespace fl {
         virtual scalar getHeight() const;
 
         /**
-         * Provides the representation of the term in the FuzzyLite Language (FLL)
-         * @return the representation of the term in FLL
+         * Provides the representation of the term in the FuzzyLite Language
+         * @return the representation of the term in FuzzyLite Language
          * @see FllExporter
          */
         virtual std::string toString() const;

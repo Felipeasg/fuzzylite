@@ -59,8 +59,8 @@ namespace fl {
          * @return @f$\sum_{i=0}^{I}{(c_ix_i)}+k@f$
          * 
          * where @f$I@f$ is the number of input variables in the Engine,
-         *       @f$c_i@f$ is the $i$th coefficient of Linear,
-         *       @f$x_i@f$ is the input value of the $i$th input variable,
+         *       @f$c_i@f$ is the @f$i@f$th coefficient of Linear,
+         *       @f$x_i@f$ is the input value of the @f$i@f$th input variable,
          *       @f$k@f$ is a constant registered as the last coefficient in Linear
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;

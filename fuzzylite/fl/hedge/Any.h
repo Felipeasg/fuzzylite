@@ -43,16 +43,13 @@ namespace fl {
 
         virtual std::string name() const FL_IOVERRIDE;
         /**
-         * Computes the hedge for the membership function value @f$x@f$
+         * Computes the hedge for the given value
          * @param x is irrelevant
          * @return @f$1.0@f$
          */
         virtual scalar hedge(scalar x) const FL_IOVERRIDE;
         virtual Any* clone() const FL_IOVERRIDE;
 
-        /**
-         * @return a new instance of Any
-         */
         static Hedge* constructor();
     };
 

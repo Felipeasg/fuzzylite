@@ -53,12 +53,12 @@ namespace fl {
          * Computes the membership function evaluated at @f$x@f$
          * @param x 
          * @return @f$\begin{cases}
-         * 0h & \mbox{if $x<t$} \cr
+         * 0h & \mbox{if $x<\theta$} \cr
          * 1h & \mbox{otherwise}
          * \end{cases}@f$
          *
          * where @f$h@f$ is the height of the Term,
-         *       @f$t@f$ is the threshold of the Binary
+         *       @f$\theta@f$ is the threshold of the Binary
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

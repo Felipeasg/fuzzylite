@@ -62,8 +62,8 @@ namespace fl {
          * @return @f$ h (a-b)@f$
          * 
          * where @f$h@f$ is the height of the Term,
-         *       @f$a= 1 / (1 + \exp(-s_l * (x - i_l))) @f$,
-         *       @f$b = 1 / (1 + \exp(-s_r * (x - i_r)))@f$,
+         *       @f$a= 1 / (1 + \exp(-s_l \times (x - i_l))) @f$,
+         *       @f$b = 1 / (1 + \exp(-s_r \times (x - i_r)))@f$,
          *       @f$i_l@f$ is the left inflection of the SigmoidDifference,
          *       @f$s_l@f$ is the left slope of the SigmoidDifference,
          *       @f$i_r@f$ is the right inflection of the SigmoidDifference,

@@ -40,9 +40,6 @@ namespace fl {
         scalar hedge(scalar x) const FL_IOVERRIDE;
         Very* clone() const FL_IOVERRIDE;
 
-        /**
-         * @return a new instance of Very
-         */
         static Hedge* constructor();
     };
 

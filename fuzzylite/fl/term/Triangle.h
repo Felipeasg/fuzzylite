@@ -58,7 +58,7 @@ namespace fl {
          * Computes the membership function evaluated at @f$x@f$
          * @param x
          * @return @f$\begin{cases}
-         * 0h & \mbox{if $x < a \vee x > c$}\cr
+         * 0h & \mbox{if $x \not\in [a,c]$}\cr
          * 1h & \mbox{if $x = b$}\cr
          * h (x - a) / (b - a) & \mbox{if $x < b$} \cr
          * h (c - x) / (c - b) & \mbox{otherwise}

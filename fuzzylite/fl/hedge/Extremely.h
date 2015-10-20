@@ -44,9 +44,6 @@ namespace fl {
         scalar hedge(scalar x) const;
         Extremely* clone() const;
 
-        /**
-         * @return a new instance of Extremely
-         */
         static Hedge* constructor();
     };
 

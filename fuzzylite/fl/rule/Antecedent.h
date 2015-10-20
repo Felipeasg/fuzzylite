@@ -36,7 +36,8 @@ namespace fl {
      * 
      * `if variable is [hedge]* term [(and|or) variable is [hedge]* term]*`
      * 
-     * where *-marked elements may appear zero or more times.
+     * where *-marked elements may appear zero or more times, elements in brackets 
+     * are optional, and elements in parenthesis are compulsory
      * 
      * @author Juan Rada-Vilela, Ph.D.
      * @see Consequent
@@ -102,7 +103,8 @@ namespace fl {
         virtual void load(const std::string& antecedent, Rule* rule, const Engine* engine);
 
         /**
-         * Computes the activation degree of the antecedent
+         * Computes the activation degree of the antecedent on the expression tree 
+         * from the given node
          * @param conjunction is the conjunction operator from the RuleBlock
          * @param disjunction is the disjunction operator from the RuleBlock
          * @param node is a node in the expression tree of the antecedent
@@ -112,7 +114,8 @@ namespace fl {
                 const Expression* node) const;
 
         /**
-         * Computes the activation degree of the antecedent on the expression tree
+         * Computes the activation degree of the antecedent on the expression tree 
+         * from the root node
          * @param conjunction is the conjunction operator from the RuleBlock
          * @param disjunction is the disjunction operator from the RuleBlock
          * @return the activation degree of the antecedent on the expression tree

@@ -44,6 +44,7 @@ namespace fl {
          * in the fuzzy set. The largest value is computed while integrating 
          * over the fuzzy set. The integration algorithm is the midpoint rectangle 
          * method (https://en.wikipedia.org/wiki/Rectangle_method).
+         * @param term is the fuzzy set
          * @param minimum is the minimum value of the fuzzy set
          * @param maximum is the maximum value of the fuzzy set
          * @return the largest @f$x@f$-coordinate of the maximum membership 

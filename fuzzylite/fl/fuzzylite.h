@@ -105,19 +105,33 @@
  * @author Juan Rada-Vilela, Ph.D.
  */
 namespace fl {
+    /**
+     * Represents floating-point values (typedef to float or double).
+     */
 #ifdef FL_USE_FLOAT
     typedef float scalar;
 #else
+    /**
+     * Represents floating-point values as doubles.
+     */
     typedef double scalar;
 #endif
-
+    /**
+     * Represents the Not-A-Number scalar value
+     */
     const scalar nan = std::numeric_limits<scalar>::quiet_NaN();
+    /**
+     * Represents the infinity scalar value
+     */
     const scalar inf = std::numeric_limits<scalar>::infinity();
 
 #ifdef FL_CPP11
     //C++11 defines
 
     //Pointers
+    /**
+     * Represents the C++11 null pointer
+     */
     const std::nullptr_t null = nullptr;
 #define FL_unique_ptr std::unique_ptr
 #define FL_move_ptr(x) std::move(x)
@@ -150,6 +164,9 @@ namespace fl {
     //C++98 defines
 
     //Pointers
+    /**
+     * Represents the C++98 null pointer
+     */
     const long null = 0L;
 #define FL_unique_ptr std::auto_ptr
 #define FL_move_ptr(x) x
@@ -177,6 +194,7 @@ namespace fl {
 namespace fl {
 
     /**
+     * Information and global static settings of the library
      * @author Juan Rada-Vilela, Ph.D.
      * @since 4.0
      */
@@ -215,17 +233,17 @@ namespace fl {
         static std::string license();
         /**
          * Returns the name of the author of the `fuzzylite` library
-         * @return Juan Rada-Vilela, Ph.D.
+         * @return "Juan Rada-Vilela, Ph.D."
          */
         static std::string author();
         /**
          * Returns the name of the company that owns the `fuzzylite` library
-         * @return FuzzyLite Limited
+         * @return "FuzzyLite Limited"
          */
         static std::string company();
         /**
          * Returns the website of the `fuzzylite` library
-         * @return http://www.fuzzylite.com/
+         * @return "http://www.fuzzylite.com/"
          */
         static std::string website();
 

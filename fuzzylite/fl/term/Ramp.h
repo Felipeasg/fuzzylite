@@ -64,6 +64,8 @@ namespace fl {
          * @return 
          * @f$\begin{cases}
          *
+         * 0h & \mbox{if $x = e$}\cr
+         * 
          * \begin{cases}
          * 0h & \mbox{if $x \leq s$}\cr
          * 1h & \mbox{if $x \geq e$}\cr
@@ -75,8 +77,6 @@ namespace fl {
          * 1h & \mbox{if $x \leq e$}\cr
          * h (s - x) / (s - e) & \mbox{otherwise}
          * \end{cases} & \mbox{if $s > e$}\cr
-         *
-         * 0h & \mbox{otherwise}
          * \end{cases}@f$
          * 
          * where @f$h@f$ is the height of the Term,
