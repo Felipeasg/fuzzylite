@@ -11,11 +11,10 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_BINARY_H
-#define	FL_BINARY_H
+#define FL_BINARY_H
 
 #include "fl/term/Term.h"
 
@@ -80,4 +79,4 @@ namespace fl {
 
 }
 
-#endif	/* FL_BINARY_H */
+#endif /* FL_BINARY_H */

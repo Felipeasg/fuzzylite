@@ -11,11 +11,10 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_GENERAL_H
-#define	FL_GENERAL_H
+#define FL_GENERAL_H
 
 #include "fl/fuzzylite.h"
 
@@ -23,15 +22,17 @@
 
 namespace fl {
 
-    /**
-      Activation method that activates every Rule in any given RuleBlock 
-      following the order in which the rules were added to the rule block
+    /** 
+    
+    The General class is a RuleBlock activation method that activates every
+    rule following the order in which the rules were added to the rule block.
       
-      @author Juan Rada-Vilela, Ph.D.
-      @see Rule
-      @see RuleBlock
-      @see ActivationFactory
-      @since 6.0
+    @author Juan Rada-Vilela, Ph.D.
+    @see Rule
+    @see RuleBlock
+    @see ActivationFactory
+    @since 6.0
+    
      */
 
     class FL_API General : public Activation {
@@ -44,22 +45,22 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
 
         /**
-          No parameters are required to configure the activation method
+          No parameters are required to configure the activation method.
           
           @return an empty string
          */
         virtual std::string parameters() const FL_IOVERRIDE;
 
         /**
-          No parameters are required to configure the activation method
+          No parameters are required to configure the activation method.
           
           @param parameters is an empty string
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-          Activates every rule in the given rule block following 
-          the order in which the rules were added to the rule block
+          Activates every rule in the given rule block following the order in
+          which the rules were added.
           
           @param ruleBlock is the rule block to activate
          */
@@ -72,4 +73,4 @@ namespace fl {
 
 }
 
-#endif	/* FL_GENERAL_H */
+#endif /* FL_GENERAL_H */

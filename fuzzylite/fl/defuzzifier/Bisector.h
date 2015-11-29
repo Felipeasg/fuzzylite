@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_BISECTOR_H
@@ -36,7 +35,7 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Bisector)
 
         virtual std::string className() const FL_IOVERRIDE;
-        
+
         /**
           Computes the bisector of a fuzzy set. The defuzzification process
           integrates over the fuzzy set utilizing the limits given as parameters.

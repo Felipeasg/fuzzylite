@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_FLDEXPORTER_H
@@ -130,7 +129,7 @@ namespace fl {
          */
         virtual std::string toString(Engine* engine, const std::string& inputData) const;
 
-        
+
         using Exporter::toFile;
         /**
           Saves the engine as a FuzzyLite Dataset into the specified file
@@ -169,11 +168,11 @@ namespace fl {
           @param reader is the reader of a set of lines containing space-separated input values
          */
         void write(Engine* engine, std::ostream& writer, std::istream& reader) const;
-      /**
-          Writes the engine into the given writer
-          @param engine is the engine to export
-          @param writer is the output where the engine will be written to
-          @param inputValues is the vector of input values
+        /**
+            Writes the engine into the given writer
+            @param engine is the engine to export
+            @param writer is the output where the engine will be written to
+            @param inputValues is the vector of input values
          */
         void write(Engine* engine, std::ostream& writer, const std::vector<scalar>& inputValues) const;
 

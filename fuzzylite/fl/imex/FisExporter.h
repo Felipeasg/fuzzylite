@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_FISEXPORTER_H
@@ -52,29 +51,29 @@ namespace fl {
         virtual std::string name() const FL_IOVERRIDE;
         virtual std::string toString(const Engine* engine) const FL_IOVERRIDE;
 
-         /**
-          Returns a string representation of the norm in the Fuzzy Inference System format
-          @param norm is the norm
-          @return a string representation of the norm in the Fuzzy Inference System format
+        /**
+         Returns a string representation of the norm in the Fuzzy Inference System format
+         @param norm is the norm
+         @return a string representation of the norm in the Fuzzy Inference System format
          */
         virtual std::string toString(const Norm* norm) const;
-          /**
-          Returns a string representation of the defuzzifier in the Fuzzy Inference System format
-          @param defuzzifier is the defuzzifier
-          @return a string representation of the defuzzifier in the Fuzzy Inference System format
+        /**
+        Returns a string representation of the defuzzifier in the Fuzzy Inference System format
+        @param defuzzifier is the defuzzifier
+        @return a string representation of the defuzzifier in the Fuzzy Inference System format
          */
         virtual std::string toString(const Defuzzifier* defuzzifier) const;
-         /**
-          Returns a string representation of the term in the Fuzzy Inference System format
-          @param term is the term
-          @return a string representation of the term in the Fuzzy Inference System format
+        /**
+         Returns a string representation of the term in the Fuzzy Inference System format
+         @param term is the term
+         @return a string representation of the term in the Fuzzy Inference System format
          */
         virtual std::string toString(const Term* term) const;
 
-         /**
-          Returns a string representation of the `[System]` configuration
-          @param engine is the engine
-          @return a string representation of the `[System]` configuration
+        /**
+         Returns a string representation of the `[System]` configuration
+         @param engine is the engine
+         @return a string representation of the `[System]` configuration
          */
         virtual std::string exportSystem(const Engine* engine) const;
         /**

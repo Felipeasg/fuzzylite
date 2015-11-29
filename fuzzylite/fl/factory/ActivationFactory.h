@@ -11,11 +11,10 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_ACTIVATIONFACTORY_H
-#define	FL_ACTIVATIONFACTORY_H
+#define FL_ACTIVATIONFACTORY_H
 
 #include "fl/fuzzylite.h"
 
@@ -41,4 +40,4 @@ namespace fl {
     };
 }
 
-#endif	/* FL_ACTIVATIONFACTORY_H */
+#endif /* FL_ACTIVATIONFACTORY_H */

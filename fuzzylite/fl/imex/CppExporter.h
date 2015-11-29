@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_CPPEXPORTER_H
@@ -82,14 +81,14 @@ namespace fl {
           @return a string representation of the rule block in the `C++` programming language
          */
         virtual std::string toString(const RuleBlock* ruleBlock, const Engine* engine) const;
-        
+
         /*
           Returns a string representation of the activation method in the `C++` programming language
           @param activation is the activation method 
           @return a string representation of the activation method in the `C++` programming language
           @todo virtual std::string toString(const Activation* activation) const;
          */
-        
+
         /**
           Returns a string representation of the scalar value in the `C++` programming language
           @param value is the scalar value

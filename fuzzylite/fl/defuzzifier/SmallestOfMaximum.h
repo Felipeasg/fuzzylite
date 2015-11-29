@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_SMALLESTOFMAXIMUM_H
@@ -38,7 +37,7 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(SmallestOfMaximum)
 
         virtual std::string className() const FL_IOVERRIDE;
-        
+
         /**
           Computes the smallest value of the maximum membership function value 
           in the fuzzy set. The smallest value is computed while integrating 

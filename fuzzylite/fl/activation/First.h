@@ -11,29 +11,31 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_FIRST_H
-#define	FL_FIRST_H
+#define FL_FIRST_H
 
 #include "fl/activation/Activation.h"
 
 namespace fl {
 
     /**
-      Activation method that activates the first Rule whose activation degree 
-      is greater than zero, and deactivates the remaining rules in any given 
-      RuleBlock.
-      
-      The rules are iterated in the order they were added to the rule block.
-      
-      @author Juan Rada-Vilela, Ph.D.
-      @see Last
-      @see Rule
-      @see RuleBlock
-      @see ActivationFactory
-      @since 6.0
+     
+    The First class is a RuleBlock activation method that (1) activates the
+    first rule whose activation degree is greater than the given threshold, and
+    (2) deactivates the remaining rules. The rules are iterated in the order
+    they were added to the rule block.
+   
+    @author Juan Rada-Vilela, Ph.D.
+    @see Last
+    @see Rule
+    @see RuleBlock
+    @see ActivationFactory
+    @since 6.0
+    
+    @todo add threshold value
+     
      */
 
     class FL_API First : public Activation {
@@ -60,10 +62,9 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-          Activates the first rule whose activation degree is greater than 
-          zero in the given rule block, and deactivates the remaining
-          rules. The rules are iterated in the order the rules were added to 
-          the rule block.
+          Activates the first rule whose activation degree is greater than the
+          given threshold, and deactivates the remaining rules. The rules are
+          iterated in the order the rules were added to the rule block.
           
           @param ruleBlock is the rule block to activate
          */
@@ -77,4 +78,4 @@ namespace fl {
 }
 
 
-#endif	/* FL_FIRST_H */
+#endif /* FL_FIRST_H */

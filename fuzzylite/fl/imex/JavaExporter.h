@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_JAVAEXPORTER_H
@@ -88,7 +87,7 @@ namespace fl {
           @return a string representation of the activation method in the Java programming language
           @todo virtual std::string toString(const Activation* activation) const;
          */
-        
+
         /**
           Returns a string representation of the defuzzifier in the Java programming language
           @param defuzzifier is the defuzzifier

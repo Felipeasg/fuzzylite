@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 //TODO Check http://en.wikipedia.org/wiki/Defuzzification for other defuzzifiers.

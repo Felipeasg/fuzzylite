@@ -11,11 +11,10 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_THRESHOLD_H
-#define	FL_THRESHOLD_H
+#define FL_THRESHOLD_H
 
 #include "fl/fuzzylite.h"
 
@@ -166,4 +165,4 @@ namespace fl {
 
 }
 
-#endif	/* FL_THRESHOLD_H */
+#endif /* FL_THRESHOLD_H */

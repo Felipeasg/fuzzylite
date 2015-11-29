@@ -11,7 +11,6 @@
  fuzzylite®. If not, see <http://www.fuzzylite.com/license/>.
 
  fuzzylite® is a registered trademark of FuzzyLite Limited.
-
  */
 
 #ifndef FL_WEIGHTEDDEFUZZIFIER_H
@@ -32,9 +31,9 @@ namespace fl {
 
         enum Type {
             /**Type is automatically inferred from the terms */
-            Automatic, 
+            Automatic,
             /**Type is TakagiSugeno or Inverse Tsukamoto, depending on the terms*/
-            TakagiSugeno, 
+            TakagiSugeno,
             /**Type is Tsukamoto*/
             Tsukamoto
         };
