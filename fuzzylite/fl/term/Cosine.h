@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for the cosine membership function
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 5.0
+      Term for the cosine membership function
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 5.0
      */
 
     class FL_API Cosine : public Term {
@@ -42,47 +42,47 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `center width [height]`
-         * @return `center width [height]`
+          Provides the parameters of the term as `center width [height]`
+          @return `center width [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `center width [height]`
-         * @param parameters as `center width [height]`
+          Configures the term with the parameters given as `center width [height]`
+          @param parameters as `center width [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x
-         * @return @f$\begin{cases}
-         * 0h & \mbox{if $x < c - w / 2 \vee x > c + w / 2$} \cr
-         * 0.5h \times ( 1 + \cos(2 / w\pi(x-c))) & \mbox{otherwise}
-         * \end{cases}@f$
-         * 
-         * where @f$h@f$ is the height of the Term,
-         *       @f$c@f$ is the center of the Cosine,
-         *       @f$w@f$ is the width of the Cosine
+          Computes the membership function evaluated at @f$x@f$
+          @param x
+          @return @f$\begin{cases}
+          0h & \mbox{if $x < c - w / 2 \vee x > c + w / 2$} \cr
+          0.5h \times ( 1 + \cos(2 / w\pi(x-c))) & \mbox{otherwise}
+          \end{cases}@f$
+          
+          where @f$h@f$ is the height of the Term,
+                @f$c@f$ is the center of the Cosine,
+                @f$w@f$ is the width of the Cosine
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
         /**
-         * Sets the center of the cosine
-         * @param center is the center of the cosine
+          Sets the center of the cosine
+          @param center is the center of the cosine
          */
         virtual void setCenter(scalar center);
         /**
-         * Gets the center of the cosine
-         * @return the center of the cosine
+          Gets the center of the cosine
+          @return the center of the cosine
          */
         virtual scalar getCenter() const;
 
         /**
-         * Sets the width of the cosine
-         * @param width is the width of the cosine
+          Sets the width of the cosine
+          @param width is the width of the cosine
          */
         virtual void setWidth(scalar width);
         /**
-         * Gets the width of the cosine
-         * @return the width of the cosine
+          Gets the width of the cosine
+          @return the width of the cosine
          */
         virtual scalar getWidth() const;
 

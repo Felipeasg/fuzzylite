@@ -29,12 +29,12 @@ namespace fl {
     class Defuzzifier;
 
     /**
-     * Imports an Engine from the FuzzyLite Language
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see FllExporter
-     * @see Importer
-     * @since 4.0
-     * @todo parse methods returning respective instances from blocks of text
+      Imports an Engine from the FuzzyLite Language
+      @author Juan Rada-Vilela, Ph.D.
+      @see FllExporter
+      @see Importer
+      @since 4.0
+      @todo parse methods returning respective instances from blocks of text
      */
     class FL_API FllImporter : public Importer {
     protected:
@@ -45,13 +45,13 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(FllImporter)
 
         /**
-         * Sets the separator of the language. By default, the separator is a new line '\n'
-         * @param separator is the separator of the language
+          Sets the separator of the language. By default, the separator is a new line '\n'
+          @param separator is the separator of the language
          */
         virtual void setSeparator(const std::string& separator);
         /**
-         * Gets the separator of the language. By default, the separator is a new line '\n'
-         * @return the separator of the language
+          Gets the separator of the language. By default, the separator is a new line '\n'
+          @return the separator of the language
          */
         virtual std::string getSeparator() const;
 

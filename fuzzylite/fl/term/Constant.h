@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for a constant value
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 4.0
+      Term for a constant value
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 4.0
      */
     class FL_API Constant : public Term {
     protected:
@@ -40,30 +40,30 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `value`
-         * @return `value`
+          Provides the parameters of the term as `value`
+          @return `value`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `value`
-         * @param parameters as `value`
+          Configures the term with the parameters given as `value`
+          @param parameters as `value`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x is irrelevant
-         * @return @f$c@f$, where @f$c@f$ is the constant value
+          Computes the membership function evaluated at @f$x@f$
+          @param x is irrelevant
+          @return @f$c@f$, where @f$c@f$ is the constant value
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the constant value
-         * @param value is the constant value
+          Sets the constant value
+          @param value is the constant value
          */
         virtual void setValue(scalar value);
         /**
-         * Gets the constant value
-         * @return the constant value
+          Gets the constant value
+          @return the constant value
          */
         virtual scalar getValue() const;
 

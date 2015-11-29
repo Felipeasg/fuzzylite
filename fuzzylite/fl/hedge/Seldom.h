@@ -22,25 +22,25 @@
 namespace fl {
 
     /**
-     * Hedge located second in the ordered set 
-     * (Not, Seldom, Somewhat, Very, Extremely, Any)
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Hedge
-     * @see HedgeFactory
-     * @since 4.0
+      Hedge located second in the ordered set 
+      (Not, Seldom, Somewhat, Very, Extremely, Any)
+      @author Juan Rada-Vilela, Ph.D.
+      @see Hedge
+      @see HedgeFactory
+      @since 4.0
      */
     class FL_API Seldom : public Hedge {
     public:
         std::string name() const FL_IOVERRIDE;
         /**
-         * Computes the hedge for the membership function value @f$x@f$
-         * @param x is a membership function value
-         * @return @f$
-         * \begin{cases}
-         * \sqrt{x/2} & \mbox{if $x \le 0.5$} \cr
-         * 1-\sqrt{(1-x)/2} & \mbox{otherwise}\cr
-         * \end{cases}
-         * @f$
+          Computes the hedge for the membership function value @f$x@f$
+          @param x is a membership function value
+          @return @f$
+          \begin{cases}
+          \sqrt{x/2} & \mbox{if $x \le 0.5$} \cr
+          1-\sqrt{(1-x)/2} & \mbox{otherwise}\cr
+          \end{cases}
+          @f$
          */
 
         scalar hedge(scalar x) const FL_IOVERRIDE;

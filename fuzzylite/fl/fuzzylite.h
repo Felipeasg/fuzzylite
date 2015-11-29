@@ -101,27 +101,27 @@
 #endif
 
 /**
- * fuzzylite namespace
- * @author Juan Rada-Vilela, Ph.D.
+  fuzzylite namespace
+  @author Juan Rada-Vilela, Ph.D.
  */
 namespace fl {
     /**
-     * Represents floating-point values (typedef to float or double).
+      Represents floating-point values (typedef to float or double).
      */
 #ifdef FL_USE_FLOAT
     typedef float scalar;
 #else
     /**
-     * Represents floating-point values as doubles.
+      Represents floating-point values as doubles.
      */
     typedef double scalar;
 #endif
     /**
-     * Represents the Not-A-Number scalar value
+      Represents the Not-A-Number scalar value
      */
     const scalar nan = std::numeric_limits<scalar>::quiet_NaN();
     /**
-     * Represents the infinity scalar value
+      Represents the infinity scalar value
      */
     const scalar inf = std::numeric_limits<scalar>::infinity();
 
@@ -130,7 +130,7 @@ namespace fl {
 
     //Pointers
     /**
-     * Represents the C++11 null pointer
+      Represents the C++11 null pointer
      */
     const std::nullptr_t null = nullptr;
 #define FL_unique_ptr std::unique_ptr
@@ -165,7 +165,7 @@ namespace fl {
 
     //Pointers
     /**
-     * Represents the C++98 null pointer
+      Represents the C++98 null pointer
      */
     const long null = 0L;
 #define FL_unique_ptr std::auto_ptr
@@ -194,9 +194,9 @@ namespace fl {
 namespace fl {
 
     /**
-     * Information and global static settings of the library
-     * @author Juan Rada-Vilela, Ph.D.
-     * @since 4.0
+      Information and global static settings of the library
+      @author Juan Rada-Vilela, Ph.D.
+      @since 4.0
      */
     class FL_API fuzzylite {
     protected:
@@ -207,104 +207,104 @@ namespace fl {
 
     public:
         /**
-         * Returns the name of the `fuzzylite` library
-         * @return the name of the `fuzzylite` library
+          Returns the name of the `fuzzylite` library
+          @return the name of the `fuzzylite` library
          */
         static std::string name();
         /**
-         * Returns the name of the `fuzzylite` library including the long version
-         * @return the name of the `fuzzylite` library including the long version
+          Returns the name of the `fuzzylite` library including the long version
+          @return the name of the `fuzzylite` library including the long version
          */
         static std::string fullname();
         /**
-         * Returns the version of the `fuzzylite` library
-         * @return the version of the `fuzzylite` library
+          Returns the version of the `fuzzylite` library
+          @return the version of the `fuzzylite` library
          */
         static std::string version();
         /**
-         * Returns the version of the `fuzzylite` library including the release date
-         * @return the version of the `fuzzylite` library including the release date
+          Returns the version of the `fuzzylite` library including the release date
+          @return the version of the `fuzzylite` library including the release date
          */
         static std::string longVersion();
         /**
-         * Returns the license under which the `fuzzylite` library is released
-         * @return the license under which the `fuzzylite` library is released
+          Returns the license under which the `fuzzylite` library is released
+          @return the license under which the `fuzzylite` library is released
          */
         static std::string license();
         /**
-         * Returns the name of the author of the `fuzzylite` library
-         * @return "Juan Rada-Vilela, Ph.D."
+          Returns the name of the author of the `fuzzylite` library
+          @return "Juan Rada-Vilela, Ph.D."
          */
         static std::string author();
         /**
-         * Returns the name of the company that owns the `fuzzylite` library
-         * @return "FuzzyLite Limited"
+          Returns the name of the company that owns the `fuzzylite` library
+          @return "FuzzyLite Limited"
          */
         static std::string company();
         /**
-         * Returns the website of the `fuzzylite` library
-         * @return "http://www.fuzzylite.com/"
+          Returns the website of the `fuzzylite` library
+          @return "http://www.fuzzylite.com/"
          */
         static std::string website();
 
         /**
-         * Returns the release date of the `fuzzylite` library
-         * @return the release date of the `fuzzylite` library
+          Returns the release date of the `fuzzylite` library
+          @return the release date of the `fuzzylite` library
          */
         static std::string date();
         /**
-         * Returns the platform under which the `fuzzylite` library was built
-         * @return `Unix` or `Windows`
+          Returns the platform under which the `fuzzylite` library was built
+          @return `Unix` or `Windows`
          */
         static std::string platform();
 
         /**
-         * Returns the name of the type of the floating-point variables
-         * @return `double` or `float`
+          Returns the name of the type of the floating-point variables
+          @return `double` or `float`
          */
         static std::string floatingPoint();
 
         /**
-         * Indicates whether the library is running in debug mode
-         * @return a boolean indicating whether the library is running in debug mode
+          Indicates whether the library is running in debug mode
+          @return a boolean indicating whether the library is running in debug mode
          */
         static bool debug();
         /**
-         * Sets whether the library is set to run in debug mode
-         * @param debug is a boolean indicating whether the library is set to run in debug mode
+          Sets whether the library is set to run in debug mode
+          @param debug is a boolean indicating whether the library is set to run in debug mode
          */
         static void setDebug(bool debug);
 
         /**
-         * Returns the number of decimals utilized when formatting scalar values
-         * @return the number of decimals utilized when formatting scalar values (default is 3)
+          Returns the number of decimals utilized when formatting scalar values
+          @return the number of decimals utilized when formatting scalar values (default is 3)
          */
         static int decimals();
         /**
-         * Sets the number of decimals utilized when formatting scalar values
-         * @param decimals is the number of decimals to utilize when formatting scalar values
+          Sets the number of decimals utilized when formatting scalar values
+          @param decimals is the number of decimals to utilize when formatting scalar values
          */
         static void setDecimals(int decimals);
 
         /**
-         * Returns the minimum difference upon which two floating-point values are considered equivalent
-         * @return the minimum difference upon which two floating-point values are considered equivalent (default is 1e-6)
+          Returns the minimum difference upon which two floating-point values are considered equivalent
+          @return the minimum difference upon which two floating-point values are considered equivalent (default is 1e-6)
          */
         static scalar macheps();
         /**
-         * Sets the minimum difference (machine epsilon) upon which two floating-point values are considered equivalent 
-         * @param macheps is the minimum difference (machine epsilon) upon which two floating-point values are considered equivalent (default is 1e-6)
+          Sets the minimum difference (machine epsilon) upon which two floating-point values are considered equivalent 
+          @param macheps is the minimum difference (machine epsilon) upon which two floating-point values are considered equivalent (default is 1e-6)
          */
         static void setMachEps(scalar macheps);
 
         /**
-         * Returns whether the library is set to log information using the macro FL_LOG
-         * @return a boolean indicating whether the library is set to log information using the macro FL_LOG
+          Returns whether the library is set to log information using the macro FL_LOG
+          @return a boolean indicating whether the library is set to log information using the macro FL_LOG
          */
         static bool logging();
         /**
-         * Sets whether the library is set to log information using the macro FL_LOG
-         * @param logging is a boolean indicating whether the library is set to log information using the macro FL_LOG
+          Sets whether the library is set to log information using the macro FL_LOG
+          @param logging is a boolean indicating whether the library is set to log information using the macro FL_LOG
          */
         static void setLogging(bool logging);
 

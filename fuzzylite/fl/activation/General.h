@@ -24,14 +24,14 @@
 namespace fl {
 
     /**
-     * Activation method that activates every Rule in any given RuleBlock 
-     * following the order in which the rules were added to the rule block
-     * 
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Rule
-     * @see RuleBlock
-     * @see ActivationFactory
-     * @since 6.0
+      Activation method that activates every Rule in any given RuleBlock 
+      following the order in which the rules were added to the rule block
+      
+      @author Juan Rada-Vilela, Ph.D.
+      @see Rule
+      @see RuleBlock
+      @see ActivationFactory
+      @since 6.0
      */
 
     class FL_API General : public Activation {
@@ -44,24 +44,24 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
 
         /**
-         * No parameters are required to configure the activation method
-         * 
-         * @return an empty string
+          No parameters are required to configure the activation method
+          
+          @return an empty string
          */
         virtual std::string parameters() const FL_IOVERRIDE;
 
         /**
-         * No parameters are required to configure the activation method
-         * 
-         * @param parameters is an empty string
+          No parameters are required to configure the activation method
+          
+          @param parameters is an empty string
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Activates every rule in the given rule block following 
-         * the order in which the rules were added to the rule block
-         * 
-         * @param ruleBlock is the rule block to activate
+          Activates every rule in the given rule block following 
+          the order in which the rules were added to the rule block
+          
+          @param ruleBlock is the rule block to activate
          */
         virtual void activate(RuleBlock* ruleBlock) const FL_IOVERRIDE;
 

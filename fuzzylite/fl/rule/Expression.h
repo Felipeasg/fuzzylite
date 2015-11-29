@@ -30,12 +30,12 @@ namespace fl {
     class Term;
 
     /**
-     * Base class for an expression tree
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Antecedent
-     * @see Consequent
-     * @see Rule
-     * @since 4.0
+      Base class for an expression tree
+      @author Juan Rada-Vilela, Ph.D.
+      @see Antecedent
+      @see Consequent
+      @see Rule
+      @since 4.0
      */
     class FL_API Expression {
     public:
@@ -50,13 +50,13 @@ namespace fl {
     };
 
     /**
-     * A terminal node in the expression tree. The node represents a proposition 
-     * in the form `variable is [hedge]* term`
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Antecedent
-     * @see Consequent
-     * @see Rule
-     * @since 4.0
+      A terminal node in the expression tree. The node represents a proposition 
+      in the form `variable is [hedge]* term`
+      @author Juan Rada-Vilela, Ph.D.
+      @see Antecedent
+      @see Consequent
+      @see Rule
+      @since 4.0
      */
     class FL_API Proposition : public Expression {
     public:
@@ -71,8 +71,8 @@ namespace fl {
         virtual ~Proposition() FL_IOVERRIDE;
 
         /**
-         * Returns a string representation of the proposition
-         * @return a string representation of the proposition
+          Returns a string representation of the proposition
+          @return a string representation of the proposition
          */
         virtual std::string toString() const FL_IOVERRIDE;
 
@@ -81,13 +81,13 @@ namespace fl {
     };
 
     /**
-     * A non-terminal node in the expression tree. The node represents a 
-     * a binary operator (i.e., `and` or `or`) on two Expression%s
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Antecedent
-     * @see Consequent
-     * @see Rule
-     * @since 4.0
+      A non-terminal node in the expression tree. The node represents a 
+      a binary operator (i.e., `and` or `or`) on two Expression%s
+      @author Juan Rada-Vilela, Ph.D.
+      @see Antecedent
+      @see Consequent
+      @see Rule
+      @since 4.0
      */
     class FL_API Operator : public Expression {
     public:
@@ -102,8 +102,8 @@ namespace fl {
         virtual ~Operator() FL_IOVERRIDE;
 
         /**
-         * Provides the name of the operator
-         * @return the name of the operator
+          Provides the name of the operator
+          @return the name of the operator
          */
         virtual std::string toString() const FL_IOVERRIDE;
 

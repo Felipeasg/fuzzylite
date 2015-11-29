@@ -22,25 +22,25 @@
 namespace fl {
 
     /**
-     * TNorm for a drastic product of values
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see DrasticSum
-     * @see TNorm
-     * @see TNormFactory
-     * @see Norm
-     * @since 4.0
+      TNorm for a drastic product of values
+      @author Juan Rada-Vilela, Ph.D.
+      @see DrasticSum
+      @see TNorm
+      @see TNormFactory
+      @see Norm
+      @since 4.0
      */
     class FL_API DrasticProduct : public TNorm {
     public:
         std::string className() const FL_IOVERRIDE;
         /**
-         * Computes the drastic product of two membership function values
-         * @param a is a membership function value
-         * @param b is a membership function value
-         * @return @f$\begin{cases}
-         * \min(a,b) & \mbox{if $\max(a,b)=1$} \cr
-         * 0 & \mbox{otherwise}
-         * \end{cases}@f$
+          Computes the drastic product of two membership function values
+          @param a is a membership function value
+          @param b is a membership function value
+          @return @f$\begin{cases}
+          \min(a,b) & \mbox{if $\max(a,b)=1$} \cr
+          0 & \mbox{otherwise}
+          \end{cases}@f$
          */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         DrasticProduct* clone() const FL_IOVERRIDE;

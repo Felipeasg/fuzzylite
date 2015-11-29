@@ -24,13 +24,13 @@ namespace fl {
     class Defuzzifier;
 
     /**
-     * Output Variable of the fuzzy Engine
-     * 
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Variable
-     * @see InputVariable
-     * @see Term
-     * @since 4.0
+      Output Variable of the fuzzy Engine
+      
+      @author Juan Rada-Vilela, Ph.D.
+      @see Variable
+      @see InputVariable
+      @see Term
+      @since 4.0
      */
     class FL_API OutputVariable : public Variable {
     private:
@@ -47,19 +47,19 @@ namespace fl {
                 scalar minimum = -fl::inf, scalar maximum = fl::inf);
         OutputVariable(const OutputVariable& other);
         /**
-         * Deletes the terms in the current variable, adds clones of the terms
-         * from the `other` variable, deletes the fuzzyOutput and defuzzifier,
-         * and sets clones of fuzzyOutput and defuzzifier from `other`.
-         * @param other is the other variable to copy from
-         * @return this variable, which contains a copy of the `other` variable
+          Deletes the terms in the current variable, adds clones of the terms
+          from the `other` variable, deletes the fuzzyOutput and defuzzifier,
+          and sets clones of fuzzyOutput and defuzzifier from `other`.
+          @param other is the other variable to copy from
+          @return this variable, which contains a copy of the `other` variable
          */
         OutputVariable& operator=(const OutputVariable& other);
         virtual ~OutputVariable() FL_IOVERRIDE;
         FL_DEFAULT_MOVE(OutputVariable)
 
         /**
-         * Gets the fuzzy output 
-         * @return the fuzzy output
+          Gets the fuzzy output 
+          @return the fuzzy output
          */
         virtual Accumulated* fuzzyOutput() const;
 
@@ -69,85 +69,85 @@ namespace fl {
         virtual void setMaximum(scalar maximum) FL_IOVERRIDE;
 
         /**
-         * Sets the defuzzifier of the output variable (default: `fl::null`)
-         * @param defuzzifier is the defuzzifier of the output variable
+          Sets the defuzzifier of the output variable (default: `fl::null`)
+          @param defuzzifier is the defuzzifier of the output variable
          */
         virtual void setDefuzzifier(Defuzzifier* defuzzifier);
         /**
-         * Gets the defuzzifier of the output variable (default: `fl::null`)
-         * @return the defuzzifier of the output variable
+          Gets the defuzzifier of the output variable (default: `fl::null`)
+          @return the defuzzifier of the output variable
          */
         virtual Defuzzifier* getDefuzzifier() const;
 
         /**
-         * Sets the previous value of the output variable (default: `fl::nan`). 
-         * This value is managed automatically upon calling {@link #defuzzify()}
-         * @param previousValue is the previous value to store
+          Sets the previous value of the output variable (default: `fl::nan`). 
+          This value is managed automatically upon calling {@link #defuzzify()}
+          @param previousValue is the previous value to store
          */
         virtual void setPreviousValue(scalar previousValue);
         /**
-         * Gets the previous value of the output variable (default: `fl::nan`)
-         * @return the previous value, or `fl::nan` if there is none
+          Gets the previous value of the output variable (default: `fl::nan`)
+          @return the previous value, or `fl::nan` if there is none
          */
         virtual scalar getPreviousValue() const;
 
         /**
-         * Sets the default value of the output variable (default: `fl::nan`). 
-         * The default value will replace the current value whenever the 
-         * defuzzification process results in a non-finite value 
-         * (i.e., `fl::inf` or `fl::nan`).
-         * @param defaultValue is the default value 
+          Sets the default value of the output variable (default: `fl::nan`). 
+          The default value will replace the current value whenever the 
+          defuzzification process results in a non-finite value 
+          (i.e., `fl::inf` or `fl::nan`).
+          @param defaultValue is the default value 
          */
         virtual void setDefaultValue(scalar defaultValue);
         /**
-         * Gets the default value of the output variable (default: `fl::nan`). 
-         * The default value will replace the current value whenever the 
-         * defuzzification process results in a non-finite value 
-         * (i.e., `fl::inf` or `fl::nan`).
-         * @return the default value
+          Gets the default value of the output variable (default: `fl::nan`). 
+          The default value will replace the current value whenever the 
+          defuzzification process results in a non-finite value 
+          (i.e., `fl::inf` or `fl::nan`).
+          @return the default value
          */
         virtual scalar getDefaultValue() const;
 
         /**
-         * Sets whether the previous value is utilized as a replacement of the 
-         * current value whenever the defuzzification process results in a 
-         * non-finite value (default: `false`). 
-         * If `true`, the previous value takes precedence over
-         * the default value, unless there is no previous value. Otherwise, the
-         * default value is utilized in such cases.
-         * @param lockPreviousOutputValue is a boolean that indicates whether to 
-         * lock the previous output value
+          Sets whether the previous value is utilized as a replacement of the 
+          current value whenever the defuzzification process results in a 
+          non-finite value (default: `false`). 
+          If `true`, the previous value takes precedence over
+          the default value, unless there is no previous value. Otherwise, the
+          default value is utilized in such cases.
+          @param lockPreviousOutputValue is a boolean that indicates whether to 
+          lock the previous output value
          */
         virtual void setLockPreviousValue(bool lockPreviousOutputValue);
         /**
-         * Gets whether the previous value is utilized as a replacement of the 
-         * current value whenever the defuzzification process results in a 
-         * non-finite value (default: `false`). 
-         * If `true`, the previous value takes precedence over
-         * the default value, unless there is no previous value. Otherwise, the
-         * default value is utilized in such cases.
-         * @returns a boolean that indicates whether to lock the previous output value
+          Gets whether the previous value is utilized as a replacement of the 
+          current value whenever the defuzzification process results in a 
+          non-finite value (default: `false`). 
+          If `true`, the previous value takes precedence over
+          the default value, unless there is no previous value. Otherwise, the
+          default value is utilized in such cases.
+          @returns a boolean that indicates whether to lock the previous output value
          */
         virtual bool isLockPreviousValue() const;
 
         /**
-         * Defuzzifies the output variable, stores the previous output value, 
-         * and updates the output value, all while considering the conditions
-         * of {@link #isLockPreviousValue()}and {@link #isLockValueInRange()}
+          Defuzzifies the output variable, stores the previous output value, 
+          and updates the output value, all while considering the conditions
+          of {@link #isLockPreviousValue()}and {@link #isLockValueInRange()}
          */
         virtual void defuzzify();
 
         /**
-         * Gets the currently accumulated fuzzy output value @f$\tilde{y}@f$ 
-         * (not to be confused with a call to {@link Variable#fuzzify()} passing 
-         * the output value, as this would be equivalent to @f$\mu(y)@f$)
-         * @return the fuzzy output value
+          Gets the currently accumulated fuzzy output value @f$\tilde{y}@f$ 
+          (not to be confused with a call to {@link Variable#fuzzify()} passing 
+          the output value, as this would be equivalent to @f$\mu(y)@f$)
+          @return the fuzzy output value
          */
         virtual std::string fuzzyOutputValue() const;
 
         /**
-         * Clears the Accumulated fuzzy output value, and sets the `value` and
-         * `previousValue` to `fl::nan`
+          Clears the Accumulated fuzzy output value, and sets the `value` and
+          `previousValue` to `fl::nan`
          */
         virtual void clear();
 

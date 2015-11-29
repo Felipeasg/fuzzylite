@@ -22,20 +22,20 @@
 namespace fl {
 
     /**
-     * Hedge located third in the ordered set
-     * (Not, Seldom, Somewhat, Very, Extremely, Any)
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Hedge
-     * @see HedgeFactory
-     * @since 4.0
+      Hedge located third in the ordered set
+      (Not, Seldom, Somewhat, Very, Extremely, Any)
+      @author Juan Rada-Vilela, Ph.D.
+      @see Hedge
+      @see HedgeFactory
+      @since 4.0
      */
     class FL_API Somewhat : public Hedge {
     public:
         std::string name() const FL_IOVERRIDE;
         /**
-         * Computes the hedge for the membership function value @f$x@f$
-         * @param x is a membership function value
-         * @return @f$\sqrt{x}@f$
+          Computes the hedge for the membership function value @f$x@f$
+          @param x is a membership function value
+          @return @f$\sqrt{x}@f$
          */
         scalar hedge(scalar x) const FL_IOVERRIDE;
         Somewhat* clone() const FL_IOVERRIDE;

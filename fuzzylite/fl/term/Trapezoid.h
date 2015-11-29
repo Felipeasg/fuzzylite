@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for the trapezoidal membership function
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 4.0
+      Term for the trapezoidal membership function
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 4.0
      */
     class FL_API Trapezoid : public Term {
     protected:
@@ -43,76 +43,76 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `vertexA vertexB vertexC vertexD [height]`
-         * @return `vertexA vertexB vertexC vertexD [height]`
+          Provides the parameters of the term as `vertexA vertexB vertexC vertexD [height]`
+          @return `vertexA vertexB vertexC vertexD [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `vertexA vertexB vertexC vertexD [height]`
-         * @param parameters as `vertexA vertexB vertexC vertexD [height]`
+          Configures the term with the parameters given as `vertexA vertexB vertexC vertexD [height]`
+          @param parameters as `vertexA vertexB vertexC vertexD [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x
-         * @return @f$\begin{cases}
-         * 0h & \mbox{if $x \not\in[a,d]$}\cr
-         * h \times \min(1, (x - a) / (b - a)) & \mbox{if $x < b$}\cr
-         * 1h & \mbox{if $x \leq c$}\cr
-         * h (d - x) / (d - c) & \mbox{if $x < d$}\cr
-         * 0h & \mbox{otherwise}
-         * \end{cases}@f$
-         * 
-         * where @f$h@f$ is the height of the Term,
-         *       @f$a@f$ is the first vertex of the Trapezoid,
-         *       @f$b@f$ is the second vertex of the Trapezoid,
-         *       @f$c@f$ is the third vertex of the Trapezoid,
-         *       @f$d@f$ is the fourth vertex of the Trapezoid
+          Computes the membership function evaluated at @f$x@f$
+          @param x
+          @return @f$\begin{cases}
+          0h & \mbox{if $x \not\in[a,d]$}\cr
+          h \times \min(1, (x - a) / (b - a)) & \mbox{if $x < b$}\cr
+          1h & \mbox{if $x \leq c$}\cr
+          h (d - x) / (d - c) & \mbox{if $x < d$}\cr
+          0h & \mbox{otherwise}
+          \end{cases}@f$
+          
+          where @f$h@f$ is the height of the Term,
+                @f$a@f$ is the first vertex of the Trapezoid,
+                @f$b@f$ is the second vertex of the Trapezoid,
+                @f$c@f$ is the third vertex of the Trapezoid,
+                @f$d@f$ is the fourth vertex of the Trapezoid
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the first vertex of the trapezoid
-         * @param a is the first vertex of the trapezoid
+          Sets the first vertex of the trapezoid
+          @param a is the first vertex of the trapezoid
          */
         virtual void setVertexA(scalar a);
         /**
-         * Gets the first vertex of the trapezoid
-         * @return the first vertex of the trapezoid
+          Gets the first vertex of the trapezoid
+          @return the first vertex of the trapezoid
          */
         virtual scalar getVertexA() const;
 
         /**
-         * Sets the second vertex of the trapezoid
-         * @param b is the second vertex of the trapezoid
+          Sets the second vertex of the trapezoid
+          @param b is the second vertex of the trapezoid
          */
         virtual void setVertexB(scalar b);
         /**
-         * Gets the second vertex of the trapezoid
-         * @return the second vertex of the trapezoid
+          Gets the second vertex of the trapezoid
+          @return the second vertex of the trapezoid
          */
         virtual scalar getVertexB() const;
 
         /**
-         * Sets the third vertex of the trapezoid
-         * @param c is the third vertex of the trapezoid
+          Sets the third vertex of the trapezoid
+          @param c is the third vertex of the trapezoid
          */
         virtual void setVertexC(scalar c);
         /**
-         * Gets the third vertex of the trapezoid
-         * @return the third vertex of the trapezoid
+          Gets the third vertex of the trapezoid
+          @return the third vertex of the trapezoid
          */
         virtual scalar getVertexC() const;
 
         /**
-         * Sets the fourth vertex of the trapezoid
-         * @param d is the fourth vertex of the trapezoid
+          Sets the fourth vertex of the trapezoid
+          @param d is the fourth vertex of the trapezoid
          */
         virtual void setVertexD(scalar d);
         /**
-         * Gets the fourth vertex of the trapezoid
-         * @return the fourth vertex of the trapezoid
+          Gets the fourth vertex of the trapezoid
+          @return the fourth vertex of the trapezoid
          */
         virtual scalar getVertexD() const;
 

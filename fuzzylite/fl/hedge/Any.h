@@ -22,18 +22,18 @@
 namespace fl {
 
     /**
-     * Hedge located last in the ordered set
-     * (Not, Seldom, Somewhat, Very, Extremely, Any). 
-     * 
-     * Antecedent considers Any a syntactically special hedge because it is 
-     * not followed by a Term (e.g., `if Variable is any then...`).
-     * Amongst hedges, only Any has virtual methods to be overriden 
-     * due to its particular case.
-     * @todo check other special cases of Any.
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Hedge
-     * @see HedgeFactory
-     * @since 4.0
+      Hedge located last in the ordered set
+      (Not, Seldom, Somewhat, Very, Extremely, Any). 
+      
+      Antecedent considers Any a syntactically special hedge because it is 
+      not followed by a Term (e.g., `if Variable is any then...`).
+      Amongst hedges, only Any has virtual methods to be overriden 
+      due to its particular case.
+      @todo check other special cases of Any.
+      @author Juan Rada-Vilela, Ph.D.
+      @see Hedge
+      @see HedgeFactory
+      @since 4.0
      */
     class FL_API Any : public Hedge {
     public:
@@ -43,9 +43,9 @@ namespace fl {
 
         virtual std::string name() const FL_IOVERRIDE;
         /**
-         * Computes the hedge for the given value
-         * @param x is irrelevant
-         * @return @f$1.0@f$
+          Computes the hedge for the given value
+          @param x is irrelevant
+          @return @f$1.0@f$
          */
         virtual scalar hedge(scalar x) const FL_IOVERRIDE;
         virtual Any* clone() const FL_IOVERRIDE;

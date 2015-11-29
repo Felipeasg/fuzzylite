@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for the Pi-shaped curve membership function
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 4.0
+      Term for the Pi-shaped curve membership function
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 4.0
      */
     class FL_API PiShape : public Term {
     protected:
@@ -47,78 +47,78 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `bottomLeft topLeft topRight bottomRight [height]`
-         * @return `bottomLeft topLeft topRight bottomRight [height]`
+          Provides the parameters of the term as `bottomLeft topLeft topRight bottomRight [height]`
+          @return `bottomLeft topLeft topRight bottomRight [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `bottomLeft topLeft topRight bottomRight [height]`
-         * @param parameters as `bottomLeft topLeft topRight bottomRight [height]`
+          Configures the term with the parameters given as `bottomLeft topLeft topRight bottomRight [height]`
+          @param parameters as `bottomLeft topLeft topRight bottomRight [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x
-         * @return @f$\begin{cases}
-         * 0h & \mbox{if $x \leq b_l$}\cr
-         * 2h \left((x - b_l) / (t_l-b_l)\right)^2 & \mbox{if $x \leq (a+b)/2$}\cr
-         * h (1 - 2 \left((x - t_l) / (t_l-b_l)\right)^2) & \mbox{if $ x < t_l$}\cr
-         * h & \mbox{if $x \leq t_r$}\cr
-         * h (1 - 2\left((x - t_r) / (b_r - t_r)\right)^2) & \mbox{if $x \leq (t_r + b_r)/2$}\cr
-         * 2h \left((x - b_r) / (b_r-t_r)\right)^2 & \mbox{if $x < b_r$} \cr
-         * 0h & \mbox{otherwise}
-         * \end{cases}@f$
-         * 
-         * where @f$h@f$ is the height of the Term,
-         *       @f$b_l@f$ is the bottom left of the PiShape,
-         *       @f$t_l@f$ is the top left of the PiShape,
-         *       @f$t_r@f$ is the top right of the PiShape
-         *       @f$b_r@f$ is the bottom right of the PiShape,
+          Computes the membership function evaluated at @f$x@f$
+          @param x
+          @return @f$\begin{cases}
+          0h & \mbox{if $x \leq b_l$}\cr
+          2h \left((x - b_l) / (t_l-b_l)\right)^2 & \mbox{if $x \leq (a+b)/2$}\cr
+          h (1 - 2 \left((x - t_l) / (t_l-b_l)\right)^2) & \mbox{if $ x < t_l$}\cr
+          h & \mbox{if $x \leq t_r$}\cr
+          h (1 - 2\left((x - t_r) / (b_r - t_r)\right)^2) & \mbox{if $x \leq (t_r + b_r)/2$}\cr
+          2h \left((x - b_r) / (b_r-t_r)\right)^2 & \mbox{if $x < b_r$} \cr
+          0h & \mbox{otherwise}
+          \end{cases}@f$
+          
+          where @f$h@f$ is the height of the Term,
+                @f$b_l@f$ is the bottom left of the PiShape,
+                @f$t_l@f$ is the top left of the PiShape,
+                @f$t_r@f$ is the top right of the PiShape
+                @f$b_r@f$ is the bottom right of the PiShape,
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the bottom-left value of the curve
-         * @param bottomLeft is the bottom-left value of the curve
+          Sets the bottom-left value of the curve
+          @param bottomLeft is the bottom-left value of the curve
          */
         virtual void setBottomLeft(scalar bottomLeft);
         /**
-         * Gets the bottom-left value of the curve
-         * @return the bottom-left value of the curve
+          Gets the bottom-left value of the curve
+          @return the bottom-left value of the curve
          */
         virtual scalar getBottomLeft() const;
 
         /**
-         * Sets the top-left value of the curve
-         * @param topLeft is the top-left value of the curve
+          Sets the top-left value of the curve
+          @param topLeft is the top-left value of the curve
          */
         virtual void setTopLeft(scalar topLeft);
         /**
-         * Gets the top-left value of the curve
-         * @return the top-left value of the curve
+          Gets the top-left value of the curve
+          @return the top-left value of the curve
          */
         virtual scalar getTopLeft() const;
 
         /**
-         * Sets the top-right value of the curve
-         * @param topRight is the top-right value of the curve
+          Sets the top-right value of the curve
+          @param topRight is the top-right value of the curve
          */
         virtual void setTopRight(scalar topRight);
         /**
-         * Gets the top-right value of the curve
-         * @return the top-right value of the curve
+          Gets the top-right value of the curve
+          @return the top-right value of the curve
          */
         virtual scalar getTopRight() const;
 
         /**
-         * Sets the bottom-right value of the curve
-         * @param bottomRight is the bottom-right value of the curve
+          Sets the bottom-right value of the curve
+          @param bottomRight is the bottom-right value of the curve
          */
         virtual void setBottomRight(scalar bottomRight);
         /**
-         * Gets the bottom-right value of the curve
-         * @return the bottom-right value of the curve
+          Gets the bottom-right value of the curve
+          @return the bottom-right value of the curve
          */
         virtual scalar getBottomRight() const;
 

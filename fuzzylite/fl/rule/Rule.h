@@ -32,23 +32,23 @@ namespace fl {
     class SNorm;
 
     /** A Rule is a conditional statement that controls the Engine.
-     * Each rule consists of an Antecedent and a Consequent, each of which 
-     * comprises propositions in the form `variable is term`. The 
-     * propositions in the Antecedent can be connected by the conjunctive `and`
-     * or the disjunctive `or`, both of which are fuzzy logic operators (TNorm 
-     * and SNorm, respectively). 
-     * Differently, the propositions in the Consequent are independent from 
-     * each other and are separated with a symbolic `and`. 
-     * The Term in any proposition can be preceded by a Hedge that modifies 
-     * its membership function to model cases such as Very, Somewhat, Seldom 
-     * and Not. Additionally, the importance of a rule can be determined by its
-     * weight @f$w \in [0.0, 1.0]@f$, which is equal to 1.0 if omitted.
-     * 
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Antecedent
-     * @see Consequent
-     * @see RuleBlock
-     * @since 4.0
+      Each rule consists of an Antecedent and a Consequent, each of which 
+      comprises propositions in the form `variable is term`. The 
+      propositions in the Antecedent can be connected by the conjunctive `and`
+      or the disjunctive `or`, both of which are fuzzy logic operators (TNorm 
+      and SNorm, respectively). 
+      Differently, the propositions in the Consequent are independent from 
+      each other and are separated with a symbolic `and`. 
+      The Term in any proposition can be preceded by a Hedge that modifies 
+      its membership function to model cases such as Very, Somewhat, Seldom 
+      and Not. Additionally, the importance of a rule can be determined by its
+      weight @f$w \in [0.0, 1.0]@f$, which is equal to 1.0 if omitted.
+      
+      @author Juan Rada-Vilela, Ph.D.
+      @see Antecedent
+      @see Consequent
+      @see RuleBlock
+      @since 4.0
      */
     class FL_API Rule {
     protected:
@@ -67,46 +67,46 @@ namespace fl {
         FL_DEFAULT_MOVE(Rule)
 
         /**
-         * Sets the rule in text
-         * @param text is the rule in text
+          Sets the rule in text
+          @param text is the rule in text
          */
         virtual void setText(const std::string& text);
         /**
-         * Gets the rule in text
-         * @return the rule in text
+          Gets the rule in text
+          @return the rule in text
          */
         virtual std::string getText() const;
 
         /**
-         * Sets the weight of the rule
-         * @param weight is the weight of the rule
+          Sets the weight of the rule
+          @param weight is the weight of the rule
          */
         virtual void setWeight(scalar weight);
         /**
-         * Gets the weight of the rule
-         * @return the weight of the rule
+          Gets the weight of the rule
+          @return the weight of the rule
          */
         virtual scalar getWeight() const;
 
         /**
-         * Sets the antecedent of the rule
-         * @param antecedent is the antecedent of the rule
+          Sets the antecedent of the rule
+          @param antecedent is the antecedent of the rule
          */
         virtual void setAntecedent(Antecedent* antecedent);
         /**
-         * Gets the antecedent of the rule
-         * @return the antecedent of the rule
+          Gets the antecedent of the rule
+          @return the antecedent of the rule
          */
         virtual Antecedent* getAntecedent() const;
 
         /**
-         * Sets the consequent of the rule
-         * @param consequent the consequent of the rule
+          Sets the consequent of the rule
+          @param consequent the consequent of the rule
          */
         virtual void setConsequent(Consequent* consequent);
         /**
-         * Gets the consequent of the rule
-         * @return the consequent of the rule
+          Gets the consequent of the rule
+          @return the consequent of the rule
          */
         virtual Consequent* getConsequent() const;
 
@@ -121,121 +121,121 @@ namespace fl {
         virtual std::map<std::string, Hedge*>& hedges();
 
         /**
-         * Sets the activation degree of the rule
-         * @param activationDegree is the activation degree of the rule
+          Sets the activation degree of the rule
+          @param activationDegree is the activation degree of the rule
          */
         virtual void setActivationDegree(scalar activationDegree);
         /**
-         * Gets the activation degree of the rule
-         * @return the activation degree of the rule
+          Gets the activation degree of the rule
+          @return the activation degree of the rule
          */
         virtual scalar getActivationDegree() const;
 
         /**
-         * Activates the rule with the given activation degree and implication
-         * operator
-         * @param activationDegree is the activation degree of the rule
-         * @param implication is the implication operator from the RuleBlock
+          Activates the rule with the given activation degree and implication
+          operator
+          @param activationDegree is the activation degree of the rule
+          @param implication is the implication operator from the RuleBlock
          */
         virtual void activate(scalar activationDegree, const TNorm* implication);
         /**
-         * Deactivates the rule setting the activation degree to 0.0
+          Deactivates the rule setting the activation degree to 0.0
          */
         virtual void deactivate();
         /**
-         * Indicates whether the rule has been activated, i.e., `activationDegree > 0.0`
-         * @return whether the rule has been activated
+          Indicates whether the rule has been activated, i.e., `activationDegree > 0.0`
+          @return whether the rule has been activated
          */
         virtual bool isActivated() const;
 
         /**
-         * Returns a string representation of the rule in the FuzzyLite Language (FLL)
-         * @return a string representation of the rule in FLL
+          Returns a string representation of the rule in the FuzzyLite Language (FLL)
+          @return a string representation of the rule in FLL
          */
         virtual std::string toString() const;
 
         /**
-         * Indicates if the rule is loaded
-         * @return whether the rule is loaded
+          Indicates if the rule is loaded
+          @return whether the rule is loaded
          */
         virtual bool isLoaded() const;
         /**
-         * Unloads the rule
+          Unloads the rule
          */
         virtual void unload();
         /**
-         * Loads the rule with the previously set text, using the engine to 
-         * identify the input variables and output variables referred to in 
-         * the antecedent and consequent
-         * @param engine is the engine from which the rule is part of
+          Loads the rule with the previously set text, using the engine to 
+          identify the input variables and output variables referred to in 
+          the antecedent and consequent
+          @param engine is the engine from which the rule is part of
          */
         virtual void load(const Engine* engine);
         /**
-         * Loads the rule with the given text, using the engine to 
-         * identify the input variables and output variables referred to in 
-         * the antecedent and consequent
-         * @param rule is the rule in text
-         * @param engine is the engine from which the rule is part of
+          Loads the rule with the given text, using the engine to 
+          identify the input variables and output variables referred to in 
+          the antecedent and consequent
+          @param rule is the rule in text
+          @param engine is the engine from which the rule is part of
          */
         virtual void load(const std::string& rule, const Engine* engine);
 
         /**
-         * Clones the rule
-         * @return a clone of the rule
+          Clones the rule
+          @return a clone of the rule
          */
         virtual Rule* clone() const;
 
         /**
-         * Parses and creates a new rule based on the text passed
-         * @param rule is the rule in text
-         * @param engine is the engine from which the rule is part of
-         * @return a new rule parsed from the given text
+          Parses and creates a new rule based on the text passed
+          @param rule is the rule in text
+          @param engine is the engine from which the rule is part of
+          @return a new rule parsed from the given text
          */
         static Rule* parse(const std::string& rule, const Engine* engine);
 
         /**
-         * Returns a string representation of the `if` keyword in rules
-         * @return a string representation of the `if` keyword in rules
+          Returns a string representation of the `if` keyword in rules
+          @return a string representation of the `if` keyword in rules
          */
         static std::string ifKeyword() {
             return "if";
         }
 
         /**
-         * Returns a string representation of the `is` keyword in rules
-         * @return a string representation of the `is` keyword in rules
+          Returns a string representation of the `is` keyword in rules
+          @return a string representation of the `is` keyword in rules
          */
         static std::string isKeyword() {
             return "is";
         }
 
         /**
-         * Returns a string representation of the `then` keyword in rules
-         * @return a string representation of the `then` keyword in rules
+          Returns a string representation of the `then` keyword in rules
+          @return a string representation of the `then` keyword in rules
          */
         static std::string thenKeyword() {
             return "then";
         }
 
         /**
-         * Returns a string representation of the `and` keyword in rules
-         * @return a string representation of the `and` keyword in rules
+          Returns a string representation of the `and` keyword in rules
+          @return a string representation of the `and` keyword in rules
          */
         static std::string andKeyword() {
             return "and";
         }
 
         /**
-         * Returns a string representation of the `or` keyword in rules
-         * @return a string representation of the `or` keyword in rules
+          Returns a string representation of the `or` keyword in rules
+          @return a string representation of the `or` keyword in rules
          */
         static std::string orKeyword() {
             return "or";
         }
 
         /**
-         * Returns a string representation of the `with` keyword in rules
-         * @return a string representation of the `with` keyword in rules
+          Returns a string representation of the `with` keyword in rules
+          @return a string representation of the `with` keyword in rules
          */
         static std::string withKeyword() {
             return "with";

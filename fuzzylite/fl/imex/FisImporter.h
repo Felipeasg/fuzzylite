@@ -32,11 +32,11 @@ namespace fl {
     class Variable;
 
     /**
-     * Imports an Engine from the Fuzzy Inference System format for Matlab or Octave
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see FisExporter
-     * @see Importer
-     * @since 4.0
+      Imports an Engine from the Fuzzy Inference System format for Matlab or Octave
+      @author Juan Rada-Vilela, Ph.D.
+      @see FisExporter
+      @see Importer
+      @since 4.0
      */
     class FL_API FisImporter : public Importer {
     public:

@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for the ramp membership function
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 4.0
+      Term for the ramp membership function
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 4.0
      */
     class FL_API Ramp : public Term {
     protected:
@@ -49,67 +49,67 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `start end [height]`
-         * @return `start end [height]`
+          Provides the parameters of the term as `start end [height]`
+          @return `start end [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `start end [height]`
-         * @param parameters as `start end [height]`
+          Configures the term with the parameters given as `start end [height]`
+          @param parameters as `start end [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x
-         * @return 
-         * @f$\begin{cases}
-         *
-         * 0h & \mbox{if $x = e$}\cr
-         * 
-         * \begin{cases}
-         * 0h & \mbox{if $x \leq s$}\cr
-         * 1h & \mbox{if $x \geq e$}\cr
-         * h (x - s) / (e - s) & \mbox{otherwise}\cr
-         * \end{cases} & \mbox{if $s < e$}\cr
-         *
-         * \begin{cases}
-         * 0h & \mbox{if $x \geq s$}\cr
-         * 1h & \mbox{if $x \leq e$}\cr
-         * h (s - x) / (s - e) & \mbox{otherwise}
-         * \end{cases} & \mbox{if $s > e$}\cr
-         * \end{cases}@f$
-         * 
-         * where @f$h@f$ is the height of the Term,
-         *       @f$s@f$ is the start of the Ramp,
-         *       @f$e@f$ is the end of the Ramp
+          Computes the membership function evaluated at @f$x@f$
+          @param x
+          @return 
+          @f$\begin{cases}
+         
+          0h & \mbox{if $x = e$}\cr
+          
+          \begin{cases}
+          0h & \mbox{if $x \leq s$}\cr
+          1h & \mbox{if $x \geq e$}\cr
+          h (x - s) / (e - s) & \mbox{otherwise}\cr
+          \end{cases} & \mbox{if $s < e$}\cr
+         
+          \begin{cases}
+          0h & \mbox{if $x \geq s$}\cr
+          1h & \mbox{if $x \leq e$}\cr
+          h (s - x) / (s - e) & \mbox{otherwise}
+          \end{cases} & \mbox{if $s > e$}\cr
+          \end{cases}@f$
+          
+          where @f$h@f$ is the height of the Term,
+                @f$s@f$ is the start of the Ramp,
+                @f$e@f$ is the end of the Ramp
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the start of the ramp
-         * @param start is the start of the ramp
+          Sets the start of the ramp
+          @param start is the start of the ramp
          */
         virtual void setStart(scalar start);
         /**
-         * Gets the start of the ramp
-         * @return the start of the ramp
+          Gets the start of the ramp
+          @return the start of the ramp
          */
         virtual scalar getStart() const;
 
         /**
-         * Sets the end of the ramp
-         * @param end is the end of the ramp
+          Sets the end of the ramp
+          @param end is the end of the ramp
          */
         virtual void setEnd(scalar end);
         /**
-         * Gets the end of the ramp
-         * @return the end of the ramp
+          Gets the end of the ramp
+          @return the end of the ramp
          */
         virtual scalar getEnd() const;
 
         /**
-         * Provides the direction of the ramp
-         * @return the direction of the ramp
+          Provides the direction of the ramp
+          @return the direction of the ramp
          */
         virtual Direction direction() const;
 

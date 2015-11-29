@@ -24,14 +24,14 @@
 namespace fl {
 
     /**
-     * Factory of Function Element%s
-     * 
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Function
-     * @see Element
-     * @see CloningFactory
-     * @see FactoryManager
-     * @since 5.0
+      Factory of Function Element%s
+      
+      @author Juan Rada-Vilela, Ph.D.
+      @see Function
+      @see Element
+      @see CloningFactory
+      @see FactoryManager
+      @since 5.0
      */
     class FunctionFactory : public CloningFactory<Function::Element*> {
     private:
@@ -43,13 +43,13 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(FunctionFactory)
 
         /**
-         * Provides a vector of the operators available
-         * @return a vector of the operators available
+          Provides a vector of the operators available
+          @return a vector of the operators available
          */
         virtual std::vector<std::string> availableOperators() const;
         /**
-         * Provides a vector of the functions available
-         * @return a vector of the functions available
+          Provides a vector of the functions available
+          @return a vector of the functions available
          */
         virtual std::vector<std::string> availableFunctions() const;
 

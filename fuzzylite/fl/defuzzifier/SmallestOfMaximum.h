@@ -22,14 +22,14 @@
 namespace fl {
 
     /**
-     * Computes the smallest value of the maximum membership function value 
-     * in the fuzzy set
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see LargestOfMaximum
-     * @see MeanOfMaximum
-     * @see IntegralDefuzzifier
-     * @see Defuzzifier
-     * @since 4.0
+      Computes the smallest value of the maximum membership function value 
+      in the fuzzy set
+      @author Juan Rada-Vilela, Ph.D.
+      @see LargestOfMaximum
+      @see MeanOfMaximum
+      @see IntegralDefuzzifier
+      @see Defuzzifier
+      @since 4.0
      */
     class FL_API SmallestOfMaximum : public IntegralDefuzzifier {
     public:
@@ -40,15 +40,15 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
         
         /**
-         * Computes the smallest value of the maximum membership function value 
-         * in the fuzzy set. The smallest value is computed while integrating 
-         * over the fuzzy set. The integration algorithm is the midpoint 
-         * rectangle method (https://en.wikipedia.org/wiki/Rectangle_method).
-         * @param term is the fuzzy set
-         * @param minimum is the minimum value of the fuzzy set
-         * @param maximum is the maximum value of the fuzzy set
-         * @return the smallest @f$x@f$-coordinate of the maximum membership 
-         * function value in the fuzzy set
+          Computes the smallest value of the maximum membership function value 
+          in the fuzzy set. The smallest value is computed while integrating 
+          over the fuzzy set. The integration algorithm is the midpoint 
+          rectangle method (https://en.wikipedia.org/wiki/Rectangle_method).
+          @param term is the fuzzy set
+          @param minimum is the minimum value of the fuzzy set
+          @param maximum is the maximum value of the fuzzy set
+          @return the smallest @f$x@f$-coordinate of the maximum membership 
+          function value in the fuzzy set
          */
         virtual scalar defuzzify(const Term* term,
                 scalar minimum, scalar maximum) const FL_IOVERRIDE;

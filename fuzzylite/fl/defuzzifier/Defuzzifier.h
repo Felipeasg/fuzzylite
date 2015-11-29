@@ -26,11 +26,11 @@ namespace fl {
     class Term;
 
     /**
-     * Base class for all defuzzifiers
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see IntegralDefuzzifier
-     * @see WeightedDefuzzifier
-     * @since 4.0
+      Base class for all defuzzifiers
+      @author Juan Rada-Vilela, Ph.D.
+      @see IntegralDefuzzifier
+      @see WeightedDefuzzifier
+      @since 4.0
      */
     class FL_API Defuzzifier {
     public:
@@ -43,22 +43,22 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Defuzzifier)
 
         /**
-         * Returns the name of the class of the defuzzifier
-         * @return the name of the class of the defuzzifier
+          Returns the name of the class of the defuzzifier
+          @return the name of the class of the defuzzifier
          */
         virtual std::string className() const = 0;
         /**
-         * Creates a clone of the defuzzifier
-         * @return a clone of the defuzzifier
+          Creates a clone of the defuzzifier
+          @return a clone of the defuzzifier
          */
         virtual Defuzzifier* clone() const = 0;
         /**
-         * Defuzzifies the given fuzzy term utilizing the range `[minimum,maximum]`
-         * @param term is the term to defuzzify, typically an Accumulated term
-         * @param minimum is the minimum value of the range 
-         * @param maximum is the maximum value of the range 
-         * @return the defuzzified value of the given fuzzy term
-         * @todo consider changing the type of `Term* term` to `Accumulated* term`
+          Defuzzifies the given fuzzy term utilizing the range `[minimum,maximum]`
+          @param term is the term to defuzzify, typically an Accumulated term
+          @param minimum is the minimum value of the range 
+          @param maximum is the maximum value of the range 
+          @return the defuzzified value of the given fuzzy term
+          @todo consider changing the type of `Term* term` to `Accumulated* term`
          */
         virtual scalar defuzzify(const Term* term, scalar minimum, scalar maximum) const = 0;
 

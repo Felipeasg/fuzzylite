@@ -22,24 +22,24 @@
 namespace fl {
 
     /**
-     * Hedge located fifth in the ordered set 
-     * (Not, Seldom, Somewhat, Very, Extremely, Any)
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Hedge
-     * @see HedgeFactory
-     * @since 4.0
+      Hedge located fifth in the ordered set 
+      (Not, Seldom, Somewhat, Very, Extremely, Any)
+      @author Juan Rada-Vilela, Ph.D.
+      @see Hedge
+      @see HedgeFactory
+      @since 4.0
      */
     class FL_API Extremely : public Hedge {
     public:
         std::string name() const;
         /**
-         * Computes the hedge for the membership function value @f$x@f$
-         * @param x is a membership function value
-         * @return @f$
-         * \begin{cases}
-         * 2x^2 & \mbox{if $x \le 0.5$} \cr
-         * 1-2(1-x)^2 & \mbox{otherwise} \cr
-         * \end{cases}@f$
+          Computes the hedge for the membership function value @f$x@f$
+          @param x is a membership function value
+          @return @f$
+          \begin{cases}
+          2x^2 & \mbox{if $x \le 0.5$} \cr
+          1-2(1-x)^2 & \mbox{otherwise} \cr
+          \end{cases}@f$
          */
         scalar hedge(scalar x) const;
         Extremely* clone() const;

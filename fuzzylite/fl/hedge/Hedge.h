@@ -24,11 +24,11 @@
 namespace fl {
 
     /**
-     * Base class for all hedges
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Hedge
-     * @see HedgeFactory
-     * @since 4.0
+      Base class for all hedges
+      @author Juan Rada-Vilela, Ph.D.
+      @see Hedge
+      @see HedgeFactory
+      @since 4.0
      */
     class FL_API Hedge {
     public:
@@ -41,18 +41,18 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Hedge)
 
         /**
-         * @return the name of the hedge
+          @return the name of the hedge
          */
         virtual std::string name() const = 0;
         /**
-         * Computes the hedge for the membership function value @f$x@f$
-         * @param x is a membership function value
-         * @return the hedge of @f$x@f$
+          Computes the hedge for the membership function value @f$x@f$
+          @param x is a membership function value
+          @return the hedge of @f$x@f$
          */
         virtual scalar hedge(scalar x) const = 0;
 
         /**
-         * @return a clone of the hedge.
+          @return a clone of the hedge.
          */
         virtual Hedge* clone() const = 0;
 

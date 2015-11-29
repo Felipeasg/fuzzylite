@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for the spike membership function
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 5.0
+      Term for the spike membership function
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 5.0
      */
     class FL_API Spike : public Term {
     protected:
@@ -41,45 +41,45 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `center width [height]`
-         * @return `center width [height]`
+          Provides the parameters of the term as `center width [height]`
+          @return `center width [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `center width [height]`
-         * @param parameters as `center width [height]`
+          Configures the term with the parameters given as `center width [height]`
+          @param parameters as `center width [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x
-         * @return @f$h \times \exp(-|10 / w (x - c)|)@f$
-         * 
-         * where @f$h@f$ is the height of the Term,
-         *       @f$w@f$ is the width of the Spike,
-         *       @f$c@f$ is the center of the Spike
+          Computes the membership function evaluated at @f$x@f$
+          @param x
+          @return @f$h \times \exp(-|10 / w (x - c)|)@f$
+          
+          where @f$h@f$ is the height of the Term,
+                @f$w@f$ is the width of the Spike,
+                @f$c@f$ is the center of the Spike
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the center of the spike
-         * @param center is the center of the spike
+          Sets the center of the spike
+          @param center is the center of the spike
          */
         virtual void setCenter(scalar center);
         /**
-         * Gets the center of the spike
-         * @return the center of the spike
+          Gets the center of the spike
+          @return the center of the spike
          */
         virtual scalar getCenter() const;
 
         /**
-         * Sets the width of the spike
-         * @param width is the width of the spike
+          Sets the width of the spike
+          @param width is the width of the spike
          */
         virtual void setWidth(scalar width);
         /**
-         * Gets the width of the spike
-         * @return the width of the spike
+          Gets the width of the spike
+          @return the width of the spike
          */
         virtual scalar getWidth() const;
 

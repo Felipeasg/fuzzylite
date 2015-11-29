@@ -30,12 +30,12 @@ namespace fl {
     class Engine;
 
     /**
-     * Base class for all terms.
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Variable
-     * @see InputVariable
-     * @see OutputVariable
-     * @since 4.0
+      Base class for all terms.
+      @author Juan Rada-Vilela, Ph.D.
+      @see Variable
+      @see InputVariable
+      @see OutputVariable
+      @since 4.0
      */
     class FL_API Term {
     protected:
@@ -48,73 +48,73 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Term)
 
         /**
-         * Sets the name of the term
-         * @param name is the name of term
+          Sets the name of the term
+          @param name is the name of term
          */
         virtual void setName(const std::string& name);
         /**
-         * Gets the name of the term
-         * @return the name of the term
+          Gets the name of the term
+          @return the name of the term
          */
         virtual std::string getName() const;
 
         /**
-         * Sets the height of the term
-         * @param height is the height of the term
+          Sets the height of the term
+          @param height is the height of the term
          */
         virtual void setHeight(scalar height);
         /**
-         * Gets the height of the term
-         * @return the height of the term
+          Gets the height of the term
+          @return the height of the term
          */
         virtual scalar getHeight() const;
 
         /**
-         * Provides the representation of the term in the FuzzyLite Language
-         * @return the representation of the term in FuzzyLite Language
-         * @see FllExporter
+          Provides the representation of the term in the FuzzyLite Language
+          @return the representation of the term in FuzzyLite Language
+          @see FllExporter
          */
         virtual std::string toString() const;
 
         /**
-         * Provides the name of the class of the term
-         * @return the name of the class of the term
+          Provides the name of the class of the term
+          @return the name of the class of the term
          */
         virtual std::string className() const = 0;
         /**
-         * Provides the parameters to configure the term. The parameters are 
-         * separated by spaces. If there is one additional parameter, the parameter
-         * will be considered as the height of the term; otherwise, the height 
-         * will be set to @f$1.0@f$
-         * @return the parameters to configure the term. The parameters are 
-         * separated by spaces. If the height of the term is equal to @f$1.0@f$, 
-         * then the height parameter is omitted; otherwise, the height of the 
-         * term is appended to the parameters at the end.
-         * @see {@link #configure()}
+          Provides the parameters to configure the term. The parameters are 
+          separated by spaces. If there is one additional parameter, the parameter
+          will be considered as the height of the term; otherwise, the height 
+          will be set to @f$1.0@f$
+          @return the parameters to configure the term. The parameters are 
+          separated by spaces. If the height of the term is equal to @f$1.0@f$, 
+          then the height parameter is omitted; otherwise, the height of the 
+          term is appended to the parameters at the end.
+          @see {@link #configure()}
          */
         virtual std::string parameters() const = 0;
         /**
-         * Configures the term with the parameters. The parameters are 
-         * separated by spaces. If there is one additional parameter, the parameter
-         * will be considered as the height of the term; otherwise, the height 
-         * will be set to @f$1.0@f$
-         * @param parameters is the parameters to configure the term. The parameters are 
-         * separated by spaces. If the height of the term is equal to @f$1.0@f$, 
-         * then the height parameter is omitted; otherwise, the height of the 
-         * term is appended to the parameters at the end.
+          Configures the term with the parameters. The parameters are 
+          separated by spaces. If there is one additional parameter, the parameter
+          will be considered as the height of the term; otherwise, the height 
+          will be set to @f$1.0@f$
+          @param parameters is the parameters to configure the term. The parameters are 
+          separated by spaces. If the height of the term is equal to @f$1.0@f$, 
+          then the height parameter is omitted; otherwise, the height of the 
+          term is appended to the parameters at the end.
          */
         virtual void configure(const std::string& parameters) = 0;
 
         /**
-         * Computes the membership function value at @f$x@f$
-         * @param x 
-         * @return the membership function value @f$\mu(x)@f$
+          Computes the membership function value at @f$x@f$
+          @param x 
+          @return the membership function value @f$\mu(x)@f$
          */
         virtual scalar membership(scalar x) const = 0;
 
         /**
-         * Clones the term
-         * @return a clone of the term
+          Clones the term
+          @return a clone of the term
          */
         virtual Term* clone() const = 0;
 

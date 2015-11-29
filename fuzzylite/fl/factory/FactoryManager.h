@@ -29,17 +29,17 @@ namespace fl {
     class FunctionFactory;
 
     /**
-     * Manager of the different factories
-     * 
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see TermFactory
-     * @see TNormFactory
-     * @see SNormFactory
-     * @see HedgeFactory
-     * @see ActivationFactory
-     * @see DefuzzifierFactory
-     * @see FunctionFactory
-     * @since 4.0
+      Manager of the different factories
+      
+      @author Juan Rada-Vilela, Ph.D.
+      @see TermFactory
+      @see TNormFactory
+      @see SNormFactory
+      @see HedgeFactory
+      @see ActivationFactory
+      @see DefuzzifierFactory
+      @see FunctionFactory
+      @since 4.0
      */
     class FL_API FactoryManager {
     protected:
@@ -64,85 +64,85 @@ namespace fl {
 
     public:
         /**
-         * Gets the static instance of the manager
-         * @return the static instance of the manager
+          Gets the static instance of the manager
+          @return the static instance of the manager
          */
         static FactoryManager* instance();
 
         /**
-         * Sets the factory of TNorm%s
-         * @param tnorm is the factory of TNorm%s
+          Sets the factory of TNorm%s
+          @param tnorm is the factory of TNorm%s
          */
         virtual void setTnorm(TNormFactory* tnorm);
         /**
-         * Gets the factory of TNorm%s
-         * @return the factory of TNorm%s
+          Gets the factory of TNorm%s
+          @return the factory of TNorm%s
          */
         virtual TNormFactory* tnorm() const;
 
         /**
-         * Sets the factory of SNorm%s
-         * @param snorm is the factory of SNorm%s
+          Sets the factory of SNorm%s
+          @param snorm is the factory of SNorm%s
          */
         virtual void setSnorm(SNormFactory* snorm);
         /**
-         * Gets the factory of SNorm%s
-         * @return the factory of SNorm%s
+          Gets the factory of SNorm%s
+          @return the factory of SNorm%s
          */
         virtual SNormFactory* snorm() const;
 
         /**
-         * Sets the factory of Activation methods
-         * @param activation is the factory of Activation methods
+          Sets the factory of Activation methods
+          @param activation is the factory of Activation methods
          */
         virtual void setActivation(ActivationFactory* activation);
         /**
-         * Gets the factory of Activation methods
-         * @return the factory of Activation methods
+          Gets the factory of Activation methods
+          @return the factory of Activation methods
          */
         virtual ActivationFactory* activation() const;
 
         /**
-         * Sets the factory of Defuzzifier%s
-         * @param defuzzifier is the factory of Defuzzifier%s
+          Sets the factory of Defuzzifier%s
+          @param defuzzifier is the factory of Defuzzifier%s
          */
         virtual void setDefuzzifier(DefuzzifierFactory* defuzzifier);
         /**
-         * Gets the factory of Defuzzifier%s
-         * @return the factory of Defuzzifier%s
+          Gets the factory of Defuzzifier%s
+          @return the factory of Defuzzifier%s
          */
         virtual DefuzzifierFactory* defuzzifier() const;
 
         /**
-         * Sets the factory of Term%s
-         * @param term is the factory of Term%s
+          Sets the factory of Term%s
+          @param term is the factory of Term%s
          */
         virtual void setTerm(TermFactory* term);
         /**
-         * Gets the factory of Term%s
-         * @return the factory of Term%s
+          Gets the factory of Term%s
+          @return the factory of Term%s
          */
         virtual TermFactory* term() const;
 
         /**
-         * Sets the factory of Hedge%s
-         * @param hedge is the factory of Hedge%s
+          Sets the factory of Hedge%s
+          @param hedge is the factory of Hedge%s
          */
         virtual void setHedge(HedgeFactory* hedge);
         /**
-         * Gets the factory of Hedge%s
-         * @return the factory of Hedge%s
+          Gets the factory of Hedge%s
+          @return the factory of Hedge%s
          */
         virtual HedgeFactory* hedge() const;
 
         /**
-         * Sets the factory of Function Element%s
-         * @param function is the factory of Function Element%s
+          Sets the factory of Function Element%s
+          @param function is the factory of Function Element%s
          */
         virtual void setFunction(FunctionFactory* function);
         /**
-         * Gets the factory of Function Element%s
-         * @return the factory of Function Element%s
+          Gets the factory of Function Element%s
+          @return the factory of Function Element%s
          */
         virtual FunctionFactory* function() const;
     };

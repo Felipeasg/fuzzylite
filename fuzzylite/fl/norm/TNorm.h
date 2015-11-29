@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Base class of all T-Norms
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see TNormFactory
-     * @see Norm
-     * @since 4.0
+      Base class of all T-Norms
+      @author Juan Rada-Vilela, Ph.D.
+      @see TNormFactory
+      @see Norm
+      @since 4.0
      */
     class FL_API TNorm : public Norm {
     public:

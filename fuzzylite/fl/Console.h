@@ -27,15 +27,15 @@ namespace fl {
     class Engine;
 
     /**
-     * A command-line tool to utilize the `fuzzylite` library
-     * @author Juan Rada-Vilela, Ph.D.
-     * @since 4.0
+      A command-line tool to utilize the `fuzzylite` library
+      @author Juan Rada-Vilela, Ph.D.
+      @since 4.0
      */
     class FL_API Console {
     public:
 
         /**
-         * A command-line option given by key, value and description
+          A command-line option given by key, value and description
          */
         struct Option {
             std::string key, value, description;
@@ -67,13 +67,13 @@ namespace fl {
         static const std::string KW_DATA_EXPORT_INPUTS;
 
         /**
-         * Creates a new Mamdani Engine based on the SimpleDimmer example
-         * @return a new Mamdani Engine based on the SimpleDimmer example
+          Creates a new Mamdani Engine based on the SimpleDimmer example
+          @return a new Mamdani Engine based on the SimpleDimmer example
          */
         static Engine* mamdani();
         /**
-         * Creates a new TakagiSugeno Engine based on the Approximation example of @f$sin(x)/x@f$
-         * @return a new TakagiSugeno Engine based on the Approximation example of @f$sin(x)/x@f$
+          Creates a new TakagiSugeno Engine based on the Approximation example of @f$sin(x)/x@f$
+          @return a new TakagiSugeno Engine based on the Approximation example of @f$sin(x)/x@f$
          */
         static Engine* takagiSugeno();
 
@@ -97,13 +97,13 @@ namespace fl {
 
     public:
         /**
-         * Returns a string representation of the usage of the command-line tool
-         * @return a string representation of the usage of the command-line tool
+          Returns a string representation of the usage of the command-line tool
+          @return a string representation of the usage of the command-line tool
          */
         static std::string usage();
         /**
-         * Returns a vector of the options available from the command line
-         * @return a vector of the options available from the command line
+          Returns a vector of the options available from the command line
+          @return a vector of the options available from the command line
          */
         static std::vector<Option> availableOptions();
 

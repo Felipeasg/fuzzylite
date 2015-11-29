@@ -25,13 +25,13 @@
 namespace fl {
 
     /**
-     * Factory of Activation methods for RuleBlock%s
-     * 
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Activation
-     * @see ConstructionFactory
-     * @see FactoryManager
-     * @since 6.0
+      Factory of Activation methods for RuleBlock%s
+      
+      @author Juan Rada-Vilela, Ph.D.
+      @see Activation
+      @see ConstructionFactory
+      @see FactoryManager
+      @since 6.0
      */
     class FL_API ActivationFactory : public ConstructionFactory<Activation*> {
     public:

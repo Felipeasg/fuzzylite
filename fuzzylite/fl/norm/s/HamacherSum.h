@@ -22,22 +22,22 @@
 namespace fl {
 
     /**
-     * SNorm for a hamacher sum of values
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see HamacherProduct
-     * @see SNorm
-     * @see SNormFactory
-     * @see Norm
-     * @since 4.0
+      SNorm for a hamacher sum of values
+      @author Juan Rada-Vilela, Ph.D.
+      @see HamacherProduct
+      @see SNorm
+      @see SNormFactory
+      @see Norm
+      @since 4.0
      */
     class FL_API HamacherSum : public SNorm {
     public:
         std::string className() const FL_IOVERRIDE;
         /**
-         * Computes the hamacher sum of two membership function values
-         * @param a is a membership function value
-         * @param b is a membership function value
-         * @return @f$a+b-(2\times a \times b)/(1-a\times b)@f$
+          Computes the hamacher sum of two membership function values
+          @param a is a membership function value
+          @param b is a membership function value
+          @return @f$a+b-(2\times a \times b)/(1-a\times b)@f$
          */
         scalar compute(scalar a, scalar b) const FL_IOVERRIDE;
         HamacherSum* clone() const FL_IOVERRIDE;

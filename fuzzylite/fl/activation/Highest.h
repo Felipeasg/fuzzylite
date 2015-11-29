@@ -24,29 +24,29 @@
 namespace fl {
 
     /**
-     * Activation method that activates a given number of Rule%s whose activation 
-     * degrees are the highest in any given RuleBlock.
-     * 
-     * The rules are activated in descending order according to their activation 
-     * degrees. If the given number of rules to activate is negative, then 
-     * this class activates the rules with the lowest activation degrees, 
-     * which is equivalent to the Lowest activation.
-     * 
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Lowest
-     * @see Rule
-     * @see RuleBlock
-     * @see ActivationFactory
-     * @since 6.0
+      Activation method that activates a given number of Rule%s whose activation 
+      degrees are the highest in any given RuleBlock.
+      
+      The rules are activated in descending order according to their activation 
+      degrees. If the given number of rules to activate is negative, then 
+      this class activates the rules with the lowest activation degrees, 
+      which is equivalent to the Lowest activation.
+      
+      @author Juan Rada-Vilela, Ph.D.
+      @see Lowest
+      @see Rule
+      @see RuleBlock
+      @see ActivationFactory
+      @since 6.0
      */
     class FL_API Highest : public Activation {
     protected:
         int _activatedRules;
     public:
         /**
-         * A constructor with the number of rules.
-         * 
-         * @param numberOfRules number of rules to activate. Defaults to 1.
+          A constructor with the number of rules.
+          
+          @param numberOfRules number of rules to activate. Defaults to 1.
          */
         Highest(int numberOfRules = 1);
         virtual ~Highest();
@@ -55,45 +55,45 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
 
         /**
-         * Returns the number of rules to activate
-         * 
-         * @return number of rules to activate
+          Returns the number of rules to activate
+          
+          @return number of rules to activate
          */
         virtual std::string parameters() const FL_IOVERRIDE;
 
         /**
-         * Configures the activation method with the number of rules specified 
-         * in the parameters
-         * 
-         * @param parameters is the number of rules to activate
+          Configures the activation method with the number of rules specified 
+          in the parameters
+          
+          @param parameters is the number of rules to activate
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Sets the number of rules to activate. 
-         * 
-         * @param activatedRules is the number of rules to activate. If negative, the 
-         * rules with the lowest activation degrees will be activated.
+          Sets the number of rules to activate. 
+          
+          @param activatedRules is the number of rules to activate. If negative, the 
+          rules with the lowest activation degrees will be activated.
          */
         virtual void setActivatedRules(int activatedRules);
 
         /**
-         * Returns the number of rules to activate. 
-         * 
-         * @return the number of rules to activate. If negative, the 
-         * rules with the lowest activation degrees will be activated.
+          Returns the number of rules to activate. 
+          
+          @return the number of rules to activate. If negative, the 
+          rules with the lowest activation degrees will be activated.
          */
         virtual int getActivatedRules() const;
 
         /**
-         * Activates the rules with the highest activation degrees in the 
-         * given RuleBlock.
-         * 
-         * If the number of rules to activate is negative, then Highest
-         * activates the given number of rules with the lowest activation degrees, 
-         * which is equivalent to the Lowest activation.
-         * 
-         * @param ruleBlock is the rule block to activate.
+          Activates the rules with the highest activation degrees in the 
+          given RuleBlock.
+          
+          If the number of rules to activate is negative, then Highest
+          activates the given number of rules with the lowest activation degrees, 
+          which is equivalent to the Lowest activation.
+          
+          @param ruleBlock is the rule block to activate.
          */
         virtual void activate(RuleBlock* ruleBlock) const FL_IOVERRIDE;
 

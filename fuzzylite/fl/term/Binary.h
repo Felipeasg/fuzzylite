@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for the binary membership function
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 6.0
+      Term for the binary membership function
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 6.0
      */
     class FL_API Binary : public Term {
     protected:
@@ -39,37 +39,37 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `threshold [height]`
-         * @return `threshold [height]`
+          Provides the parameters of the term as `threshold [height]`
+          @return `threshold [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `threshold [height]`
-         * @param parameters as `threshold [height]`
+          Configures the term with the parameters given as `threshold [height]`
+          @param parameters as `threshold [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x 
-         * @return @f$\begin{cases}
-         * 0h & \mbox{if $x<\theta$} \cr
-         * 1h & \mbox{otherwise}
-         * \end{cases}@f$
-         *
-         * where @f$h@f$ is the height of the Term,
-         *       @f$\theta@f$ is the threshold of the Binary
+          Computes the membership function evaluated at @f$x@f$
+          @param x 
+          @return @f$\begin{cases}
+          0h & \mbox{if $x<\theta$} \cr
+          1h & \mbox{otherwise}
+          \end{cases}@f$
+         
+          where @f$h@f$ is the height of the Term,
+                @f$\theta@f$ is the threshold of the Binary
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the threshold
-         * @param threshold
+          Sets the threshold
+          @param threshold
          */
         virtual void setThreshold(scalar threshold);
         /**
-         * Gets the threshold
-         * @return 
+          Gets the threshold
+          @return 
          */
         virtual scalar getThreshold() const;
 

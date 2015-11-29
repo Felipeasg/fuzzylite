@@ -22,11 +22,11 @@
 namespace fl {
 
     /**
-     * Term for the triangular membership function
-     * @author Juan Rada-Vilela, Ph.D.
-     * @see Term
-     * @see Variable
-     * @since 4.0
+      Term for the triangular membership function
+      @author Juan Rada-Vilela, Ph.D.
+      @see Term
+      @see Variable
+      @since 4.0
      */
     class FL_API Triangle : public Term {
     protected:
@@ -44,63 +44,63 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-         * Provides the parameters of the term as `vertexA vertexB vertexC [height]`
-         * @return `vertexA vertexB vertexC [height]`
+          Provides the parameters of the term as `vertexA vertexB vertexC [height]`
+          @return `vertexA vertexB vertexC [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-         * Configures the term with the parameters given as `vertexA vertexB vertexC [height]`
-         * @param parameters as `vertexA vertexB vertexC [height]`
+          Configures the term with the parameters given as `vertexA vertexB vertexC [height]`
+          @param parameters as `vertexA vertexB vertexC [height]`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-         * Computes the membership function evaluated at @f$x@f$
-         * @param x
-         * @return @f$\begin{cases}
-         * 0h & \mbox{if $x \not\in [a,c]$}\cr
-         * 1h & \mbox{if $x = b$}\cr
-         * h (x - a) / (b - a) & \mbox{if $x < b$} \cr
-         * h (c - x) / (c - b) & \mbox{otherwise}
-         * \end{cases}@f$
-         * 
-         * where @f$h@f$ is the height of the Term,
-         *       @f$a@f$ is the first vertex of the Triangle,
-         *       @f$b@f$ is the second vertex of the Triangle,
-         *       @f$c@f$ is the third vertex of the Triangle
+          Computes the membership function evaluated at @f$x@f$
+          @param x
+          @return @f$\begin{cases}
+          0h & \mbox{if $x \not\in [a,c]$}\cr
+          1h & \mbox{if $x = b$}\cr
+          h (x - a) / (b - a) & \mbox{if $x < b$} \cr
+          h (c - x) / (c - b) & \mbox{otherwise}
+          \end{cases}@f$
+          
+          where @f$h@f$ is the height of the Term,
+                @f$a@f$ is the first vertex of the Triangle,
+                @f$b@f$ is the second vertex of the Triangle,
+                @f$c@f$ is the third vertex of the Triangle
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-         * Sets the first vertex of the triangle
-         * @param a is the first vertex of the triangle
+          Sets the first vertex of the triangle
+          @param a is the first vertex of the triangle
          */
         virtual void setVertexA(scalar a);
         /**
-         * Gets the first vertex of the triangle
-         * @return the first vertex of the triangle
+          Gets the first vertex of the triangle
+          @return the first vertex of the triangle
          */
         virtual scalar getVertexA() const;
 
         /**
-         * Sets the second vertex of the triangle
-         * @param b is the second vertex of the triangle
+          Sets the second vertex of the triangle
+          @param b is the second vertex of the triangle
          */
         virtual void setVertexB(scalar b);
         /**
-         * Gets the second vertex of the triangle
-         * @return the second vertex of the triangle
+          Gets the second vertex of the triangle
+          @return the second vertex of the triangle
          */
         virtual scalar getVertexB() const;
 
         /**
-         * Sets the third vertex of the triangle
-         * @param c is the third vertex of the triangle
+          Sets the third vertex of the triangle
+          @param c is the third vertex of the triangle
          */
         virtual void setVertexC(scalar c);
         /**
-         * Gets the third vertex of the triangle
-         * @return the third vertex of the triangle
+          Gets the third vertex of the triangle
+          @return the third vertex of the triangle
          */
         virtual scalar getVertexC() const;
 
