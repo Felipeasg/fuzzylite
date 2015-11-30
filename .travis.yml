@@ -24,7 +24,6 @@ before_install:
 
 script:
   #docs
-  - cd ..
   - doxygen
   #cmake 
   - mkdir -p $HOME/cmake
