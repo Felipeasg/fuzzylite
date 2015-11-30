@@ -24,14 +24,14 @@ namespace fl {
 
     /** 
     
-    The General class is a RuleBlock activation method that activates every
-    rule following the order in which the rules were added to the rule block.
-      
-    @author Juan Rada-Vilela, Ph.D.
-    @see Rule
-    @see RuleBlock
-    @see ActivationFactory
-    @since 6.0
+      The General class is a RuleBlock Activation method that activates every
+      rule following the order in which the rules were added to the rule block.
+        
+      @author Juan Rada-Vilela, Ph.D.
+      @see Rule
+      @see RuleBlock
+      @see ActivationFactory
+      @since 6.0
     
      */
 

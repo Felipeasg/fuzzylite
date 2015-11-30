@@ -23,10 +23,10 @@ namespace fl {
 
     /**
     
-     The Last class is a RuleBlock activation method that (1) activates the
-     last rule whose activation degree is greater than the given threshold, and
-     (2) deactivates the remaining rules. The rules are iterated in the reverse
-     order that they were added to the rule block.
+     The Last class is a RuleBlock Activation method that activates the last
+     rule whose activation degree is greater than the given threshold, and
+     deactivates the remaining rules. The rules are iterated in the reverse
+     order in which they were added to the rule block.
     
      @todo Revise if natural order is a better option.
      @todo add threshold value

@@ -30,7 +30,9 @@ namespace fl {
     class TNorm;
     class SNorm;
 
-    /** A Rule is a conditional statement that controls the Engine.
+    /** 
+     
+      A Rule is a conditional statement that controls the Engine.
       Each rule consists of an Antecedent and a Consequent, each of which 
       comprises propositions in the form `variable is term`. The 
       propositions in the Antecedent can be connected by the conjunctive `and`
@@ -42,6 +44,8 @@ namespace fl {
       its membership function to model cases such as Very, Somewhat, Seldom 
       and Not. Additionally, the importance of a rule can be determined by its
       weight @f$w \in [0.0, 1.0]@f$, which is equal to 1.0 if omitted.
+     
+     @todo add `computeActivationDegree` and replace in Activation methods
       
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent

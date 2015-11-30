@@ -22,20 +22,18 @@ namespace fl {
 
     /**
      
-    The First class is a RuleBlock activation method that (1) activates the
-    first rule whose activation degree is greater than the given threshold, and
-    (2) deactivates the remaining rules. The rules are iterated in the order
-    they were added to the rule block.
+      The First class is a RuleBlock Activation method that activates the first
+      rule whose activation degree is greater than the given threshold, and
+      deactivates the remaining rules. The rules are iterated in the order they
+      were added to the rule block. @todo add threshold value
    
-    @author Juan Rada-Vilela, Ph.D.
-    @see Last
-    @see Rule
-    @see RuleBlock
-    @see ActivationFactory
-    @since 6.0
-    
-    @todo add threshold value
-     
+      @author Juan Rada-Vilela, Ph.D.
+      @see Last
+      @see Rule
+      @see RuleBlock
+      @see ActivationFactory
+      @since 6.0
+
      */
 
     class FL_API First : public Activation {
@@ -48,16 +46,16 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
 
         /**
-          Provides an empty string because First does not require parameters
+          Returns the threshold of the activation method.
           
-          @return empty string
+          @return the threshold of the activation method
          */
         virtual std::string parameters() const FL_IOVERRIDE;
 
         /**
-          Configures the activation method (no parameters required).
+          Configures the activation method with the given threshold.
           
-          @param parameters is an empty string
+          @param parameters contains the threshold of the activation method
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 

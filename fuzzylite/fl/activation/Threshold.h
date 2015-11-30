@@ -23,29 +23,40 @@
 namespace fl {
 
     /**
-      Activation method that activates the Rule%s of any given RuleBlock iff 
-      their activation degrees satisfy the given comparison operator for the 
-      given threshold. Otherwise, the rules are deactivated.
+    
+      The Threshold class is a RuleBlock Activation method that activates the
+      rules whose activation degrees satisfy the equation given by the
+      comparison operator and the threshold, and deactivates the rules which do
+      not satisfy the equation.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Rule
       @see RuleBlock
       @see ActivationFactory
       @since 6.0
+    
      */
+    
     class FL_API Threshold : public Activation {
     public:
 
         /**
-          Comparison provides six comparison operators for the threshold. 
+          Comparison is an enumerator that provides six comparison operators 
+          between the activation degree @f$a@f$ and the threshold @f$\theta@f$. 
          */
         enum Comparison {
-            /**@f$a = b@f$**/ EqualTo,
-            /**@f$a \neq b@f$**/ NotEqualTo,
-            /**\f$a < b\f$**/ LessThan,
-            /**@f$a \leq b@f$**/ LessThanOrEqualTo,
-            /**@f$a > b@f$**/ GreaterThan,
-            /**@f$a \geq b@f$**/ GreaterThanOrEqualTo
+            /**@f$a = \theta@f$*/ 
+            EqualTo,
+            /**@f$a \neq \theta@f$*/ 
+            NotEqualTo,
+            /**\f$a < \theta@f$*/ 
+            LessThan,
+            /**@f$a \leq \theta@f$*/ 
+            LessThanOrEqualTo,
+            /**@f$a > \theta@f$*/ 
+            GreaterThan,
+            /**@f$a \geq \theta@f$*/ 
+            GreaterThanOrEqualTo
         };
     protected:
         Comparison _comparison;
@@ -54,8 +65,8 @@ namespace fl {
         /**
           A constructor with the comparison operator and threshold.
           
-          @param comparison is the comparison operator.
-          @param threshold is the threshold (default: `0.0`)
+          @param comparison is the comparison operator
+          @param threshold is the threshold
          */
         Threshold(Comparison comparison = GreaterThan, scalar threshold = 0.0);
         virtual ~Threshold();
@@ -64,7 +75,7 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
 
         /**
-          Provides the comparison operator (in short form) followed by the 
+          Returns the comparison operator (in short form) followed by the 
           threshold.
           
           @return comparison operator and threshold
@@ -73,7 +84,7 @@ namespace fl {
 
         /**
           Configures the activation method with the comparison operator (in 
-          short form) and the threshold given in the parameters
+          short form) and the threshold
           
           @param parameters is the comparison operator and threshold
          */
@@ -96,7 +107,7 @@ namespace fl {
         /**
           Gets the short form of the comparison operator of the activation method 
           
-          @return one of ("==", "!=", "<", ">", "<=", ">=")
+          @return the short form of an operator in (`==`, `!=`, `<`, `>`, `<=`, `>=`)
          */
         virtual std::string getComparisonOperator() const;
 
@@ -104,7 +115,7 @@ namespace fl {
           Parses the comparison operator, or throws an
           exception if the parameter does not correspond to a valid operator
           
-          @param comparisonOperator is one of ("==", "!=", "<", ">", "<=", ">=")
+          @param comparisonOperator is an operator in (`==`, `!=`, `<`, `>`, `<=`, `>=`)
          */
         virtual Comparison parseComparisonOperator(const std::string& comparisonOperator) const;
 
@@ -123,7 +134,7 @@ namespace fl {
         virtual scalar getThreshold() const;
 
         /**
-          Sets the comparison operator and the threshold for the activation method 
+          Sets the comparison operator and the threshold for the activation method
          
           @param comparison is an enum option
           @param threshold is the threshold for activation degrees
@@ -131,8 +142,8 @@ namespace fl {
         virtual void setComparisonThreshold(Comparison comparison, scalar threshold);
 
         /**
-          Sets the comparison operator (in short form) and the threshold for 
-          the activation method 
+          Sets the comparison operator (in short form) and the threshold for
+          the activation method.
           
           @param comparison is an enum option
           @param threshold is the threshold for activation degrees
@@ -140,21 +151,22 @@ namespace fl {
         virtual void setComparisonThreshold(const std::string& comparison, scalar threshold);
 
         /**
-          Determines whether the activation method will activate a rule with
-          the given activation degree.
+          Returns `true` if the activation method will activate a rule with
+          the given activation degree, and `false` otherwise. @todo rename to 
+          `activatesWith`
           
           @param activationDegree an activation degree
-          @return whether the activation degree satisfy the condition 
-          for activation
+          @return `true` if the comparison equation is satisfied with the  
+          activation degree and the threshold
          */
         virtual bool activates(scalar activationDegree) const;
 
         /**
-          Activates the rules of the given rule block iff 
-          their activation degrees satisfy the given comparison for the  
-          given threshold. Otherwise, the rules are deactivated.
-          
-          @param ruleBlock
+          Activates the rules whose activation degrees satisfy the comparison
+          equation with the given threshold, and deactivate the rules which do
+          not.
+        
+          @param ruleBlock is the rule block to activate
          */
         virtual void activate(RuleBlock* ruleBlock) const FL_IOVERRIDE;
 

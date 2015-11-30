@@ -21,15 +21,18 @@
 namespace fl {
 
     /**
-      Activation method that activates the Rule%s with degrees proportional 
-      to the activation degrees of the other rules such that the sum of the 
-      the activation degrees of all rules is equal to one.
+      
+      The Proportional class is a RuleBlock Activation method that activates the
+      rules utilizing activation degrees proportional to the activation degrees
+      of the other rules, thus the sum of the activation degrees is equal to one.
+      @todo check activation method as it includes all rules.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Rule
       @see RuleBlock
       @see ActivationFactory
       @since 6.0
+    
      */
     class FL_API Proportional : public Activation {
     public:
@@ -54,8 +57,8 @@ namespace fl {
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-          Activates the rules with activation degrees proportional to 
-          the other rules degrees in any given rule block.
+          Activates the rules utilizing activation degrees proportional to 
+          the activation degrees of the other rules in the rule block.
           
           @param ruleBlock is the rule block to activate.
          */
