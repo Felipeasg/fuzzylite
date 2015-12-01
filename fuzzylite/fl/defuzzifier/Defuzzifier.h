@@ -25,7 +25,9 @@ namespace fl {
     class Term;
 
     /**
-      Base class for all defuzzifiers
+      The Defuzzifier class is a pure abstract class that defines the interface
+      of defuzzifiers. 
+    
       @author Juan Rada-Vilela, Ph.D.
       @see IntegralDefuzzifier
       @see WeightedDefuzzifier

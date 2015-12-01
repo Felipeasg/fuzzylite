@@ -21,7 +21,9 @@
 namespace fl {
 
     /**
-      Computes the centroid of a fuzzy set
+      The Centroid class is an IntegralDefuzzifier that computes the centroid
+      of a fuzzy set represented in a Term
+    
       @author Juan Rada-Vilela, Ph.D.
       @see BiSector
       @see IntegralDefuzzifier
@@ -38,9 +40,10 @@ namespace fl {
 
         /**
           Computes the centroid of a fuzzy set. The defuzzification process
-          integrates over the fuzzy set utilizing the limits given as parameters.
-          The integration algorithm is the midpoint rectangle method 
-          (https://en.wikipedia.org/wiki/Rectangle_method).
+          integrates over the fuzzy set utilizing the boundaries given as
+          parameters. The integration algorithm is the midpoint rectangle
+          method (https://en.wikipedia.org/wiki/Rectangle_method).
+
           @param term is the fuzzy set
           @param minimum is the minimum value of the fuzzy set
           @param maximum is the maximum value of the fuzzy set

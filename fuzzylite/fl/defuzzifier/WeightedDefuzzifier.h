@@ -22,19 +22,23 @@ namespace fl {
     class Activated;
 
     /**
-      Base class for Weighted-base defuzzifiers
+      The WeightedDefuzzifier class is the base class for defuzzifiers which do
+      not require to integrate over the fuzzy set.
+
       @author Juan Rada-Vilela, Ph.D.
       @since 5.0
      */
     class FL_API WeightedDefuzzifier : public Defuzzifier {
     public:
 
+        /**The Type enum indicates the type of the WeightedDefuzzifier based
+        the terms included in the fuzzy set.*/
         enum Type {
-            /**Type is automatically inferred from the terms */
+            /**Automatically inferred from the terms */
             Automatic,
-            /**Type is TakagiSugeno or Inverse Tsukamoto, depending on the terms*/
+            /**Manually set to TakagiSugeno (or Inverse Tsukamoto)*/
             TakagiSugeno,
-            /**Type is Tsukamoto*/
+            /**Manually set to Tsukamoto*/
             Tsukamoto
         };
         /**
@@ -65,9 +69,10 @@ namespace fl {
          */
         virtual std::string getTypeName() const;
         /**
-          Infers the type of the defuzzifier based on the given term. If the 
-          given term is Constant, Linear or Function, then the type is TakagiSugeno;
-          otherwise, the type is Tsukamoto
+          Infers the type of the defuzzifier based on the given term. If the
+          given term is Constant, Linear or Function, then the type is
+          TakagiSugeno; otherwise, the type is Tsukamoto
+
           @param term is the given term 
           @return the inferred type of the defuzzifier based on the given term
          */
@@ -80,9 +85,10 @@ namespace fl {
         virtual bool isMonotonic(const Term* term) const;
 
         /**
-          Computes the Tsukamoto @f$z@f$-value for the given monotonic term. 
-          If the term is not monotonic, then the TakagiSugeno (or InverseTsukamoto) 
+          Computes the Tsukamoto @f$z@f$-value for the given monotonic term. If
+          the term is not monotonic, then the TakagiSugeno (or InverseTsukamoto)
           @f$z@f$-value is computed.
+        
           @param monotonic is the monotonic term
           @param activationDegree is the activation degree for the term
           @param minimum is the minimum value of the range of the term

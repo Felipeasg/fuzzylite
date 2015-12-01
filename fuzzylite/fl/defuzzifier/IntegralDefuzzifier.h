@@ -21,7 +21,9 @@
 namespace fl {
 
     /**
-      Base class for integral-based defuzzifiers.
+      The IntegralDefuzzifier is the base class for defuzzifiers which integrate
+      over the fuzzy set. 
+    
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0
       @todo check  http://en.wikipedia.org/wiki/Adaptive_quadrature
@@ -49,14 +51,18 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(IntegralDefuzzifier)
 
         /**
-          Sets the resolution of the defuzzifier. The resolution refers to the number of divisions in 
-          which the range `[minimum,maximum]` is divided into in order to integrate the area under the curve
+          Sets the resolution of the defuzzifier. The resolution refers to the
+          number of divisions in which the range `[minimum,maximum]` is divided
+          in order to integrate the area under the curve
+
           @param resolution is the resolution of the defuzzifier
          */
         virtual void setResolution(int resolution);
         /**
-          Gets the resolution of the defuzzifier. The resolution refers to the number of divisions in 
-          which the range `[minimum,maximum]` is divided into in order to integrate the area under the curve
+          Gets the resolution of the defuzzifier. The resolution refers to the
+          number of divisions in which the range `[minimum,maximum]` is divided
+          in order to integrate the area under the curve
+
           @return the resolution of the defuzzifier
          */
         virtual int getResolution() const;

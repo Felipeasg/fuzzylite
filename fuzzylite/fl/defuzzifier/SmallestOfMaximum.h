@@ -21,8 +21,10 @@
 namespace fl {
 
     /**
-      Computes the smallest value of the maximum membership function value 
-      in the fuzzy set
+      The SmallestOfMaximum class is an IntegralDefuzzifier that computes the
+      smallest value of the maximum membership function of a fuzzy set
+      represented in a Term
+    
       @author Juan Rada-Vilela, Ph.D.
       @see LargestOfMaximum
       @see MeanOfMaximum
@@ -39,10 +41,11 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
 
         /**
-          Computes the smallest value of the maximum membership function value 
-          in the fuzzy set. The smallest value is computed while integrating 
-          over the fuzzy set. The integration algorithm is the midpoint 
-          rectangle method (https://en.wikipedia.org/wiki/Rectangle_method).
+          Computes the smallest value of the maximum membership function in the
+          fuzzy set. The smallest value is computed while integrating over the
+          fuzzy set. The integration algorithm is the midpoint rectangle method
+          (https://en.wikipedia.org/wiki/Rectangle_method).
+
           @param term is the fuzzy set
           @param minimum is the minimum value of the fuzzy set
           @param maximum is the maximum value of the fuzzy set
