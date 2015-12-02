@@ -22,6 +22,7 @@
 namespace fl {
 
     /**
+    
       The WeightedSum class is a WeightedDefuzzifier that computes the
       weighted sum of a fuzzy set represented in an AccumulatedTerm
 
@@ -30,6 +31,7 @@ namespace fl {
       @see WeightedDefuzzifier
       @see Defuzzifier
       @since 4.0
+    
      */
     class FL_API WeightedSum : public WeightedDefuzzifier {
     public:

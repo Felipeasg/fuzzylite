@@ -21,12 +21,14 @@
 namespace fl {
 
     /**
+    
       The IntegralDefuzzifier is the base class for defuzzifiers which integrate
       over the fuzzy set. 
     
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0
       @todo check  http://en.wikipedia.org/wiki/Adaptive_quadrature
+    
      */
     class FL_API IntegralDefuzzifier : public Defuzzifier {
     protected:

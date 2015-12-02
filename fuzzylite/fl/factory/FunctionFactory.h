@@ -23,7 +23,9 @@
 namespace fl {
 
     /**
-      Factory of Function Element%s
+    
+      The FunctionFactory is a CloningFactory of operators and functions
+      utilized by the Function term
       
       @author Juan Rada-Vilela, Ph.D.
       @see Function
@@ -31,6 +33,7 @@ namespace fl {
       @see CloningFactory
       @see FactoryManager
       @since 5.0
+    
      */
     class FunctionFactory : public CloningFactory<Function::Element*> {
     private:

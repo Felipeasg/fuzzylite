@@ -25,6 +25,7 @@ namespace fl {
     class Term;
 
     /**
+    
       The Defuzzifier class is a pure abstract class that defines the interface
       of defuzzifiers. 
     
@@ -32,6 +33,7 @@ namespace fl {
       @see IntegralDefuzzifier
       @see WeightedDefuzzifier
       @since 4.0
+    
      */
     class FL_API Defuzzifier {
     public:

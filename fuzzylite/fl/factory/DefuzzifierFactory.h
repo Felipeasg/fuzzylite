@@ -25,13 +25,15 @@
 namespace fl {
 
     /**
-      Factory of Defuzzifier%s
+    
+      The DefuzzifierFactory class is a ConstructionFactory of defuzzifiers.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Defuzzifier
       @see ConstructionFactory
       @see FactoryManager
       @since 4.0
+    
      */
     class FL_API DefuzzifierFactory : public ConstructionFactory<Defuzzifier*> {
     public:
@@ -44,8 +46,8 @@ namespace fl {
           @param key is the unique name by which constructors are registered
           @param resolution is the resolution of an IntegralDefuzzifier
           @param type is the type of a WeightedDefuzzifier
-          @return a Defuzzifier by executing the registered constructor and setting 
-          its resolution or type accordingly
+          @return a Defuzzifier by executing the registered constructor and
+          setting its resolution or type accordingly
          */
         virtual Defuzzifier* constructDefuzzifier(const std::string& key,
                 int resolution, WeightedDefuzzifier::Type type) const;
@@ -54,16 +56,17 @@ namespace fl {
           Creates a Defuzzifier by executing the registered constructor
           @param key is the unique name by which constructors are registered
           @param resolution is the resolution of an IntegralDefuzzifier
-          @return a Defuzzifier by executing the registered constructor and setting 
-          its resolution
+          @return a Defuzzifier by executing the registered constructor and
+          setting its resolution
          */
         virtual Defuzzifier* constructDefuzzifier(const std::string& key, int resolution) const;
+        
         /**
           Creates a Defuzzifier by executing the registered constructor
           @param key is the unique name by which constructors are registered
           @param type is the type of a WeightedDefuzzifier
-          @return a Defuzzifier by executing the registered constructor and setting 
-          its type
+          @return a Defuzzifier by executing the registered constructor and
+          setting its type
          */
         virtual Defuzzifier* constructDefuzzifier(const std::string& key, WeightedDefuzzifier::Type type);
     };

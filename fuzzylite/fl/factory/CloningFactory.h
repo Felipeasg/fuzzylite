@@ -25,11 +25,14 @@
 namespace fl {
 
     /**
-      Base class for factories of objects created via cloning
+    
+      The CloningFactory class is the base class for a factory whose objects
+      are created from a registered object by calling the `clone()` method.
       
       @author Juan Rada-Vilela, Ph.D.
       @see FactoryManager
       @since 5.0
+    
      */
 
     template <typename T>
@@ -46,7 +49,7 @@ namespace fl {
         FL_DEFAULT_MOVE(CloningFactory)
 
         /**
-          Provides the name of the factory
+          Returns the name of the factory
           @return the name of the factory
          */
         virtual std::string name() const;
@@ -60,6 +63,7 @@ namespace fl {
         /**
           Deregisters the given object from the factory
           @param key is the unique name by which objects are registered
+          @todo should it not return the deregistered object?
          */
         virtual void deregisterObject(const std::string& key);
         /**
@@ -81,8 +85,8 @@ namespace fl {
          */
         virtual T cloneObject(const std::string& key) const;
         /**
-          Provides a vector of the objects available
-          @return a vector of the objects available
+          Returns a vector of the available objects 
+          @return a vector of the available objects 
          */
         virtual std::vector<std::string> available() const;
         /**

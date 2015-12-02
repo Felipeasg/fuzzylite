@@ -25,16 +25,25 @@
 namespace fl {
 
     /**
-      Base class for factories of objects created via Constructor%s
+    
+      The ConstructionFactory class is the base class for a factory whose
+      objects are created from a registered Constructor.
       
       @author Juan Rada-Vilela, Ph.D.
       @see FactoryManager
       @since 5.0
+    
      */
 
     template <typename T>
     class ConstructionFactory {
     public:
+        /**
+        
+          The Constructor type definition refers to a zero-parameter method
+          which returns an instance of T
+        
+        */
         typedef T(*Constructor)();
 
     protected:
@@ -47,7 +56,7 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(ConstructionFactory)
 
         /**
-          Provides the name of the factory
+          Returns the name of the factory
           @return the name of the factory
          */
         virtual std::string name() const;
@@ -61,6 +70,7 @@ namespace fl {
         /**
           Deregisters the given constructor from the factory
           @param key is the unique name by which constructors are registered
+          @todo should it not return the deregistered object?
          */
         virtual void deregisterConstructor(const std::string& key);
         /**
@@ -82,7 +92,7 @@ namespace fl {
          */
         virtual T constructObject(const std::string& key) const;
         /**
-          Provides a vector of the constructors available
+          Returns a vector of the constructors available
           @return a vector of the constructors available
          */
         virtual std::vector<std::string> available() const;

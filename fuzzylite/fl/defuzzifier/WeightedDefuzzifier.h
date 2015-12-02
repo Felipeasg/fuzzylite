@@ -22,11 +22,13 @@ namespace fl {
     class Activated;
 
     /**
+    
       The WeightedDefuzzifier class is the base class for defuzzifiers which do
       not require to integrate over the fuzzy set.
 
       @author Juan Rada-Vilela, Ph.D.
       @since 5.0
+    
      */
     class FL_API WeightedDefuzzifier : public Defuzzifier {
     public:
