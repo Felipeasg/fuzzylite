@@ -23,11 +23,16 @@
 namespace fl {
 
     /**
-      Base class for all hedges
+      
+      The Hedge class is a pure abstract class that defines the interface of 
+      hedges. A Hedge is utilized to modify the membership function of a 
+      linguistic Term. 
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Hedge
       @see HedgeFactory
       @since 4.0
+     
      */
     class FL_API Hedge {
     public:
@@ -40,6 +45,7 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(Hedge)
 
         /**
+          Returns the name of the hedge
           @return the name of the hedge
          */
         virtual std::string name() const = 0;

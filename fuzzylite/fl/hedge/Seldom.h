@@ -21,12 +21,15 @@
 namespace fl {
 
     /**
-      Hedge located second in the ordered set 
+      
+      The Seldom class is a Hedge located second in the ordered set 
       (Not, Seldom, Somewhat, Very, Extremely, Any)
+      
       @author Juan Rada-Vilela, Ph.D.
       @see Hedge
       @see HedgeFactory
       @since 4.0
+     
      */
     class FL_API Seldom : public Hedge {
     public:

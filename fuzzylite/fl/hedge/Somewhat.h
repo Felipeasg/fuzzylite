@@ -21,12 +21,15 @@
 namespace fl {
 
     /**
-      Hedge located third in the ordered set
+     
+      The Somewhat class is a Hedge located third in the ordered set
       (Not, Seldom, Somewhat, Very, Extremely, Any)
+     
       @author Juan Rada-Vilela, Ph.D.
       @see Hedge
       @see HedgeFactory
       @since 4.0
+     
      */
     class FL_API Somewhat : public Hedge {
     public:

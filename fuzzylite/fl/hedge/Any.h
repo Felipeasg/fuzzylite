@@ -21,18 +21,20 @@
 namespace fl {
 
     /**
-      Hedge located last in the ordered set
-      (Not, Seldom, Somewhat, Very, Extremely, Any). 
-      
-      Antecedent considers Any a syntactically special hedge because it is 
-      not followed by a Term (e.g., `if Variable is any then...`).
-      Amongst hedges, only Any has virtual methods to be overriden 
-      due to its particular case.
+    
+      The Any class is a special Hedge that always returns @f$1.0@f$. Its
+      position with respect to the other hedges is last in the ordered set
+      (Not, Seldom, Somewhat, Very, Extremely, Any). The Antecedent of a Rule
+      considers Any to be a syntactically special hedge because it is not
+      followed by a Term (e.g., `if Variable is any then...`). Amongst hedges,
+      only Any has virtual methods to be overriden due to its particular case.
       @todo check other special cases of Any.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Hedge
       @see HedgeFactory
       @since 4.0
+    
      */
     class FL_API Any : public Hedge {
     public:
