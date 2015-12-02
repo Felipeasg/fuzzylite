@@ -24,8 +24,8 @@ namespace fl {
 
     /**
     
-      The FunctionFactory is a CloningFactory of operators and functions
-      utilized by the Function term
+      The FunctionFactory class is a CloningFactory of operators and functions
+      utilized by the Function Term
       
       @author Juan Rada-Vilela, Ph.D.
       @see Function
@@ -45,12 +45,12 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(FunctionFactory)
 
         /**
-          Provides a vector of the operators available
+          Returns a vector of the operators available
           @return a vector of the operators available
          */
         virtual std::vector<std::string> availableOperators() const;
         /**
-          Provides a vector of the functions available
+          Returns a vector of the functions available
           @return a vector of the functions available
          */
         virtual std::vector<std::string> availableFunctions() const;
