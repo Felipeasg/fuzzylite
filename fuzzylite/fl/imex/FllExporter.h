@@ -32,11 +32,16 @@ namespace fl {
     class Term;
 
     /**
-      Exports an Engine to the FuzzyLite Language
+
+      The FllExporter class is an Exporter that translates an Engine and its
+      components to the FuzzyLite Language (FLL), see 
+      [http://www.fuzzylite.com/fll-fld](http://www.fuzzylite.com/fll-fld).
+    
       @author Juan Rada-Vilela, Ph.D.
       @see FllImporter
       @see Exporter
       @since 4.0
+    
      */
     class FL_API FllExporter : public Exporter {
     protected:
@@ -99,57 +104,57 @@ namespace fl {
         virtual std::string toString(const std::vector<RuleBlock*>& ruleBlocks) const;
 
         /**
-          Returns a string representation of the variable in the FuzzyLite Language
+          Returns a string representation of the Variable in the FuzzyLite Language
           @param variable is the variable 
           @return a string representation of the variable in the FuzzyLite Language
          */
         virtual std::string toString(const Variable* variable) const;
         /**
-          Returns a string representation of the input variable in the FuzzyLite Language
+          Returns a string representation of the InputVariable in the FuzzyLite Language
           @param inputVariable is the input variable to export
           @return a string representation of the input variable in the FuzzyLite Language
          */
         virtual std::string toString(const InputVariable* inputVariable) const;
         /**
-          Returns a string representation of the output variable in the FuzzyLite Language
+          Returns a string representation of the OutputVariable in the FuzzyLite Language
           @param outputVariable is the output variable
           @return a string representation of the output variable in the FuzzyLite Language
          */
         virtual std::string toString(const OutputVariable* outputVariable) const;
 
         /**
-          Returns a string representation of the rule block in the FuzzyLite Language
+          Returns a string representation of the RuleBlock in the FuzzyLite Language
           @param ruleBlock is the rule block 
           @return a string representation of the rule block in the FuzzyLite Language
          */
         virtual std::string toString(const RuleBlock* ruleBlock) const;
         /**
-          Returns a string representation of the rule in the FuzzyLite Language
+          Returns a string representation of the Rule in the FuzzyLite Language
           @param rule is the rule
           @return a string representation of the rule in the FuzzyLite Language
          */
         virtual std::string toString(const Rule* rule) const;
 
         /**
-          Returns a string representation of the norm in the FuzzyLite Language
+          Returns a string representation of the Norm in the FuzzyLite Language
           @param norm is the norm 
           @return a string representation of the norm in the FuzzyLite Language
          */
         virtual std::string toString(const Norm* norm) const;
         /**
-          Returns a string representation of the activation method in the FuzzyLite Language
+          Returns a string representation of the Activation method in the FuzzyLite Language
           @param activation is the activation method 
           @return a string representation of the activation method in the FuzzyLite Language
          */
         virtual std::string toString(const Activation* activation) const;
         /**
-          Returns a string representation of the defuzzifier in the FuzzyLite Language
+          Returns a string representation of the Defuzzifier in the FuzzyLite Language
           @param defuzzifier is the defuzzifier
           @return a string representation of the defuzzifier in the FuzzyLite Language
          */
         virtual std::string toString(const Defuzzifier* defuzzifier) const;
         /**
-          Returns a string representation of the term in the FuzzyLite Language
+          Returns a string representation of the Term in the FuzzyLite Language
           @param term is the term
           @return a string representation of the term in the FuzzyLite Language
          */

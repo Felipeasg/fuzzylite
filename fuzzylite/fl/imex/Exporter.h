@@ -24,10 +24,16 @@ namespace fl {
     class Engine;
 
     /**
-      Base class for all exporters
+      
+      The Exporter class is the base class for exporters to translate an Engine
+      into different formats
+    
+      @todo declare methods for exporting other components (e.g., Variable)
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Importer
       @since 4.0
+     
      */
     class FL_API Exporter {
     public:

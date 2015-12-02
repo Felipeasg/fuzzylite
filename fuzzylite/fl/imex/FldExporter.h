@@ -26,11 +26,16 @@ namespace fl {
     class OutputVariable;
 
     /**
-      Exports an Engine to the FuzzyLite Dataset (FLD)
+
+      The FldExporter class is an Exporter that evaluates an Engine and exports 
+      its input values and output values to the FuzzyLite Dataset (FLD) format,
+      see [http://www.fuzzylite.com/fll-fld](http://www.fuzzylite.com/fll-fld).
+    
       @author Juan Rada-Vilela, Ph.D.
       @see FllExporter
       @see Exporter
       @since 4.0
+    
      */
     class FL_API FldExporter : public Exporter {
     protected:
@@ -64,8 +69,8 @@ namespace fl {
         virtual void setExportHeader(bool exportHeaders);
         /**
           Gets whether the header of the dataset is to be exported
-          @return a boolean indicating whether the header of 
-          the dataset is to be exported
+          @return `true` if the header of the dataset is to be exported,
+          `false` otherwise
          */
         virtual bool exportsHeader() const;
 
@@ -77,8 +82,8 @@ namespace fl {
         virtual void setExportInputValues(bool exportInputValues);
         /**
           Gets whether the values of the input variables are to be exported
-          @return a boolean indicating whether the values
-          of the input variables are to be exported
+          @return `true` if the values of the input variables are to be
+          exported, and `false` otherwise
          */
         virtual bool exportsInputValues() const;
 
@@ -90,8 +95,8 @@ namespace fl {
         virtual void setExportOutputValues(bool exportOutputValues);
         /**
           Gets whether the values of the output variables are to be exported
-          @return a boolean indicating whether the values
-          of the output variables are to be exported
+          @return `true` if the values of the output variables are to be
+          exported, and `false` otherwise
          */
         virtual bool exportsOutputValues() const;
 
@@ -103,10 +108,11 @@ namespace fl {
         virtual std::string header(const Engine* engine) const;
 
         /**
-          Returns a FuzzyLite Dataset from the engine. Please consider that
-          the engine will be `const_cast`ed to achieve so; that is, despite 
-          being marked as `const`, the engine will be modified in order to compute 
+          Returns a FuzzyLite Dataset from the engine. Please consider that the
+          engine will be `const_cast`ed to achieve so; that is, despite being
+          marked as `const`, the engine will be modified in order to compute
           the output values based on the input values.
+
           @param engine is the engine to export
           @return a FuzzyLite Dataset from the engine
          */

@@ -24,10 +24,15 @@ namespace fl {
     class Engine;
 
     /**
-      Base class for all importers
+    
+      The Importer class is the base class for importers to configure an Engine
+      and its components from different formats
+      @todo declare methods to import specific components
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Exporter
       @since 4.0
+    
      */
     class FL_API Importer {
     public:
