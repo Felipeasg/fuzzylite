@@ -31,13 +31,17 @@ namespace fl {
     class Activation;
 
     /**
-      A block of rules with the necessary fuzzy operators
+    
+      The RuleBlock class contains a group of Rule%s and the fuzzy logic
+      operators required to control an Engine
+
       @author Juan Rada-Vilela, Ph.D.
       @see Engine
       @see Rule
       @see Antecedent
       @see Consequent
       @since 4.0
+    
      */
     class FL_API RuleBlock {
     private:
@@ -135,18 +139,21 @@ namespace fl {
         virtual void unloadRules() const;
         /**
           Loads all the rules in the rule block
-          @param engine
+          @param engine is the engine where this rule block is registered
+          @todo add method to load multiple rules from text 
          */
         virtual void loadRules(const Engine* engine);
         /**
-          Unloads all the rules in the rule block and then loads them back again
-          @param engine
+          Unloads all the rules in the rule block and then loads each rule again
+          @param engine is the engine where this rule block is registered
          */
         virtual void reloadRules(const Engine* engine);
 
         /**
-          Returns a string representation of the rule block in the FuzzyLite Language (FLL)
-          @return a string representation of the rule block in FLL
+          Returns a string representation of the rule block in the FuzzyLite
+          Language
+          @return a string representation of the rule block in the  FuzzyLite
+          Language
          */
         virtual std::string toString() const;
 
@@ -186,12 +193,12 @@ namespace fl {
          */
         virtual void setRules(const std::vector<Rule*>& rules);
         /**
-          Provides an immutable vector of the rules added to the rule block
+          Returns an immutable vector of the rules added to the rule block
           @return an immutable vector of the rules added to the rule block
          */
         virtual const std::vector<Rule*>& rules() const;
         /**
-          Provides a mutable vector of the rules added to the rule block
+          Returns a mutable vector of the rules added to the rule block
           @return a mutable vector of the rules added to the rule block
          */
         virtual std::vector<Rule*>& rules();

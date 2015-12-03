@@ -32,26 +32,27 @@ namespace fl {
 
     /** 
      
-      A Rule is a conditional statement that controls the Engine.
-      Each rule consists of an Antecedent and a Consequent, each of which 
-      comprises propositions in the form `variable is term`. The 
+      The Rule class is a conditional statement that contributes to the control
+      of an Engine. Each rule consists of an Antecedent and a Consequent, each
+      of which comprises propositions in the form `variable is term`. The
       propositions in the Antecedent can be connected by the conjunctive `and`
-      or the disjunctive `or`, both of which are fuzzy logic operators (TNorm 
-      and SNorm, respectively). 
-      Differently, the propositions in the Consequent are independent from 
-      each other and are separated with a symbolic `and`. 
-      The Term in any proposition can be preceded by a Hedge that modifies 
-      its membership function to model cases such as Very, Somewhat, Seldom 
-      and Not. Additionally, the importance of a rule can be determined by its
-      weight @f$w \in [0.0, 1.0]@f$, which is equal to 1.0 if omitted.
+      or the disjunctive `or`, both of which are fuzzy logic operators (TNorm
+      and SNorm, respectively). Differently, the propositions in the Consequent
+      are independent from each other and are separated with a symbolic `and`.
+      The Term in any proposition can be preceded by a Hedge that modifies its
+      membership function to model cases such as Very, Somewhat, Seldom and
+      Not. Additionally, the contribution of a rule to the control of the
+      engine can be determined by its weight @f$w \in [0.0, 1.0]@f$, which is
+      equal to 1.0 if omitted.
      
-     @todo add `computeActivationDegree` and replace in Activation methods
+      @todo add `computeActivationDegree` and replace in Activation methods
       
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
       @see Consequent
       @see RuleBlock
       @since 4.0
+    
      */
     class FL_API Rule {
     protected:
@@ -70,13 +71,13 @@ namespace fl {
         FL_DEFAULT_MOVE(Rule)
 
         /**
-          Sets the rule in text
-          @param text is the rule in text
+          Sets the text of the rule
+          @param text is the text of the rule
          */
         virtual void setText(const std::string& text);
         /**
-          Gets the rule in text
-          @return the rule in text
+          Gets the text of the rule
+          @return the text of the rule
          */
         virtual std::string getText() const;
 
@@ -113,7 +114,7 @@ namespace fl {
          */
         virtual Consequent* getConsequent() const;
 
-        //@todo remove hedges from there.
+        //@todo remove hedges from here.
         virtual void addHedge(Hedge* hedge);
         virtual Hedge* getHedge(const std::string& name) const;
         virtual Hedge* removeHedge(const std::string& hedge);
@@ -152,8 +153,8 @@ namespace fl {
         virtual bool isActivated() const;
 
         /**
-          Returns a string representation of the rule in the FuzzyLite Language (FLL)
-          @return a string representation of the rule in FLL
+          Returns a string representation of the rule in the FuzzyLite Language 
+          @return a string representation of the rule in the FuzzyLite Language 
          */
         virtual std::string toString() const;
 
@@ -167,23 +168,24 @@ namespace fl {
          */
         virtual void unload();
         /**
-          Loads the rule with the previously set text, using the engine to 
-          identify the input variables and output variables referred to in 
-          the antecedent and consequent
+          Loads the rule with the text from ::getText(), and uses the engine to
+          identify and retrieve references to the input variables and output
+          variables as required
           @param engine is the engine from which the rule is part of
          */
         virtual void load(const Engine* engine);
         /**
-          Loads the rule with the given text, using the engine to 
-          identify the input variables and output variables referred to in 
-          the antecedent and consequent
+          Loads the rule with the given text, and uses the engine to identify
+          and retrieve references to the input variables and output variables
+          as required
+
           @param rule is the rule in text
           @param engine is the engine from which the rule is part of
          */
         virtual void load(const std::string& rule, const Engine* engine);
 
         /**
-          Clones the rule
+          Creates a clone of the rule
           @return a clone of the rule
          */
         virtual Rule* clone() const;

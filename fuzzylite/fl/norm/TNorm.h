@@ -21,11 +21,14 @@
 namespace fl {
 
     /**
-      Base class of all T-Norms
+
+      The SNorm class is the base class for S-Norms.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see TNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API TNorm : public Norm {
     public:

@@ -23,13 +23,17 @@
 namespace fl {
 
     /**
-      Base class of all T-Norms and S-Norms
+
+      The Norm class is a pure abstract class that defines the interface of
+      TNorm%s and SNorm%s
+
       @author Juan Rada-Vilela, Ph.D.
       @see TNorm
       @see SNorm
       @see TNormFactory
       @see SNormFactory
       @since 4.0
+    
      */
     class FL_API Norm {
     public:
@@ -42,9 +46,11 @@ namespace fl {
 
         FL_DEFAULT_COPY_AND_MOVE(Norm)
         /**
+          Returns the name of the class of the norm
           @return the name of the class of the norm
          */
         virtual std::string className() const = 0;
+        
         /**
           Computes the norm for @f$a@f$ and @f$b@f$
           @param a is a membership function value
@@ -54,6 +60,7 @@ namespace fl {
         virtual scalar compute(scalar a, scalar b) const = 0;
 
         /**
+          Creates a clone of the norm
           @return a clone of the norm
          */
         virtual Norm* clone() const = 0;

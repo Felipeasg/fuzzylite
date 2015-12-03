@@ -29,12 +29,15 @@ namespace fl {
     class Term;
 
     /**
-      Base class for an expression tree
+    
+      The Expression class is the base class to build an expression tree
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
       @see Consequent
       @see Rule
       @since 4.0
+    
      */
     class FL_API Expression {
     public:
@@ -49,13 +52,16 @@ namespace fl {
     };
 
     /**
-      A terminal node in the expression tree. The node represents a proposition 
-      in the form `variable is [hedge]* term`
+
+      The Proposition class is an Expression that represents a terminal node in
+      the expression tree as `variable is [hedge]* term`
+
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
       @see Consequent
       @see Rule
       @since 4.0
+    
      */
     class FL_API Proposition : public Expression {
     public:
@@ -80,13 +86,17 @@ namespace fl {
     };
 
     /**
-      A non-terminal node in the expression tree. The node represents a 
-      a binary operator (i.e., `and` or `or`) on two Expression%s
+
+      The Operator class is an Expression that represents a non-terminal node
+      in the expression tree as a binary operator (i.e., `and` or `or`) on two
+      Expression%s nodes
+
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
       @see Consequent
       @see Rule
       @since 4.0
+    
      */
     class FL_API Operator : public Expression {
     public:
@@ -101,7 +111,7 @@ namespace fl {
         virtual ~Operator() FL_IOVERRIDE;
 
         /**
-          Provides the name of the operator
+          Returns the name of the operator
           @return the name of the operator
          */
         virtual std::string toString() const FL_IOVERRIDE;

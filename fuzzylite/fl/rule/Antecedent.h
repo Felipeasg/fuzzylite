@@ -28,20 +28,21 @@ namespace fl {
     class Expression;
 
     /**
-      %Expression tree that represents and evaluates the 
-      antecedent of a Rule. The structure of a rule is: 
-      `if (antecedent) then (consequent)`. The structure of the antecedent of 
-      a rule is:
-      
-      `if variable is [hedge]* term [(and|or) variable is [hedge]* term]*`
-      
-      where *-marked elements may appear zero or more times, elements in brackets 
-      are optional, and elements in parenthesis are compulsory
-      
+
+      The Antecedent class is an expression tree that represents and evaluates
+      the antecedent of a Rule. The structure of a rule is: `if (antecedent)
+      then (consequent)`. The structure of the antecedent of a rule is:
+
+     `if variable is [hedge]* term [(and|or) variable is [hedge]* term]*`
+
+      where `*`-marked elements may appear zero or more times, elements in
+      brackets are optional, and elements in parenthesis are compulsory
+
       @author Juan Rada-Vilela, Ph.D.
       @see Consequent
       @see Rule
       @since 4.0
+    
      */
     class FL_API Antecedent {
     protected:
@@ -71,7 +72,7 @@ namespace fl {
 
         /**
           Indicates if the antecedent is loaded
-          @return whether the antecedent is loaded
+          @return `true` if the antecedent is loaded, `false` otherwise
          */
         virtual bool isLoaded() const;
 
@@ -79,21 +80,23 @@ namespace fl {
           Unloads the antecedent
          */
         virtual void unload();
+
         /**
-          Loads the antecedent with the previously set text, using the given rule 
-          (from which the antecedent is part of) to utilize the hedges registered 
-          therein, and the engine to identify the input variables and output 
-          variables referred to in the antecedent
+          Loads the antecedent with the text obtained from ::getText(), uses
+          the given rule (from which the antecedent is part of) to register and
+          retrieve the necessary hedges, and uses the engine to identify and
+          retrieve references to the input variables and output variables as
+          required
           
           @param rule is the rule from which the antecedent is part of
           @param engine is the engine from which the rules are part of
          */
         virtual void load(Rule* rule, const Engine* engine);
         /**
-          Loads the antecedent with the given text, using the given rule 
-          (from which the antecedent is part of) to utilize the hedges registered 
-          therein, and the engine to identify the input variables and output 
-          variables referred to in the antecedent
+          Loads the antecedent with the given text, uses the given rule (from
+          which the antecedent is part of) to register and retrieve the
+          necessary hedges, and uses the engine to identify and retrieve
+          references to the input variables and output variables as required
           
           @param antecedent is the antecedent of the rule in text
           @param rule is the rule from which the antecedent is part of
@@ -102,8 +105,9 @@ namespace fl {
         virtual void load(const std::string& antecedent, Rule* rule, const Engine* engine);
 
         /**
-          Computes the activation degree of the antecedent on the expression tree 
-          from the given node
+          Computes the activation degree of the antecedent on the expression
+          tree from the given node
+
           @param conjunction is the conjunction operator from the RuleBlock
           @param disjunction is the disjunction operator from the RuleBlock
           @param node is a node in the expression tree of the antecedent
@@ -113,8 +117,9 @@ namespace fl {
                 const Expression* node) const;
 
         /**
-          Computes the activation degree of the antecedent on the expression tree 
-          from the root node
+          Computes the activation degree of the antecedent on the expression
+          tree from the root node
+
           @param conjunction is the conjunction operator from the RuleBlock
           @param disjunction is the disjunction operator from the RuleBlock
           @return the activation degree of the antecedent on the expression tree
@@ -122,8 +127,11 @@ namespace fl {
         virtual scalar activationDegree(const TNorm* conjunction, const SNorm* disjunction) const;
 
         /**
-          Returns a string representation of the expression tree in infix notation
-          @return a string representation of the expression tree in infix notation
+          Returns a string representation of the expression tree in infix
+          notation
+
+          @return a string representation of the expression tree in infix
+          notation
          */
         virtual std::string toString() const;
 
