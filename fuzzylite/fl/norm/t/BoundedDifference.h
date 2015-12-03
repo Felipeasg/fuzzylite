@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      TNorm for a bounded difference between values
+
+      The BoundedDifference class is a TNorm that computes the bounded
+      difference between any two values.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see BoundedSum
       @see TNorm
       @see TNormFactory
       @see Norm
       @since 4.0
+
      */
     class FL_API BoundedDifference : public TNorm {
     public:

@@ -22,13 +22,17 @@
 namespace fl {
 
     /**
-      SNorm for an algebraic sum of values
+      
+      The AlgebraicSum class is an SNorm that computes the algebraic sum of
+      values any two values.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see AlgebraicProduct
       @see SNorm
       @see SNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API AlgebraicSum : public SNorm {
     public:

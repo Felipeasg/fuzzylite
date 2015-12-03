@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      TNorm for the nilpotent minimum of values
+
+      The NilpotentMinimum class is a TNorm that computes the nilpotent minimum
+      of any two values.
+
       @author Juan Rada-Vilela, Ph.D.
       @see NilpotentMaximum
       @see TNorm
       @see TNormFactory
       @see Norm
       @since 5.0
+
      */
     class FL_API NilpotentMinimum : public TNorm {
     public:

@@ -21,13 +21,16 @@
 namespace fl {
 
     /**
-      SNorm for the maximum of values
+    
+      The Maximum class is an SNorm that computes the maximum of any two values.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Minimum
       @see SNorm
       @see SNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API Maximum : public SNorm {
     public:

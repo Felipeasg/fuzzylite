@@ -20,13 +20,17 @@
 namespace fl {
 
     /**
-      SNorm for a drastic sum of values 
+
+      The DrasticSum class is an SNorm that computes the drastic sum of any two
+      values.
+
       @author Juan Rada-Vilela, Ph.D.
       @see DrasticProduct
       @see SNorm
       @see SNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API DrasticSum : public SNorm {
     public:

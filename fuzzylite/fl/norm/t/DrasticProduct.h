@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      TNorm for a drastic product of values
+
+      The DrasticProduct class is a TNorm that computes the drastic product of
+      any two values.
+
       @author Juan Rada-Vilela, Ph.D.
       @see DrasticSum
       @see TNorm
       @see TNormFactory
       @see Norm
       @since 4.0
+
      */
     class FL_API DrasticProduct : public TNorm {
     public:

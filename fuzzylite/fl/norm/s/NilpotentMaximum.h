@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      SNorm for the nilpotent maximum of values
+
+      The NilpotentMaximum class is an SNorm that computes the nilpotent
+      maximum of any two values.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see NilpotentMinimum
       @see SNorm
       @see SNormFactory
       @see Norm
       @since 5.0
+    
      */
     class FL_API NilpotentMaximum : public SNorm {
     public:

@@ -21,12 +21,16 @@
 namespace fl {
 
     /**
-      SNorm for a normalized sum of values
+
+      The NormalizedSum class is an SNorm that computes the normalized sum of
+      any two values.
+
       @author Juan Rada-Vilela, Ph.D.
       @see SNorm
       @see SNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API NormalizedSum : public SNorm {
     public:

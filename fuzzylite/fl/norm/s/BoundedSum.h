@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      SNorm for a bounded sum of values
+
+      The BoundedSum class is an SNorm that computes the bounded sum of any two
+      values.
+
       @author Juan Rada-Vilela, Ph.D.
       @see BoundedDifference
       @see SNorm
       @see SNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API BoundedSum : public SNorm {
     public:

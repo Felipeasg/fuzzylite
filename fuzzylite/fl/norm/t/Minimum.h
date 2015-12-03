@@ -21,13 +21,16 @@
 namespace fl {
 
     /**
-      TNorm for the minimum of values
+    
+      The Minimum class is a TNorm that computes the minimum of any two values.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Maximum
       @see TNorm
       @see TNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API Minimum : public TNorm {
     public:

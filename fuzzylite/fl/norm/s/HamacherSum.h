@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      SNorm for a hamacher sum of values
+
+      The HamacherSum class is an SNorm that computes the hamacher sum of any
+      two values.
+
       @author Juan Rada-Vilela, Ph.D.
       @see HamacherProduct
       @see SNorm
       @see SNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API HamacherSum : public SNorm {
     public:

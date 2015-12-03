@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      TNorm for an einstein product of values
+    
+      The EinsteinProduct class is a TNorm that computes the einstein product
+      of any two values.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see EinsteinSum
       @see TNorm
       @see TNormFactory
       @see Norm
       @since 4.0
+    
      */
     class FL_API EinsteinProduct : public TNorm {
     public:

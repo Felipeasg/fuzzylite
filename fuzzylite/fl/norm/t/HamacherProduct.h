@@ -21,13 +21,17 @@
 namespace fl {
 
     /**
-      TNorm for a hamacher product of values
+
+      The HamacherProduct class is a TNorm that computes the hamacher product
+      of any two values.
+
       @author Juan Rada-Vilela, Ph.D.
       @see HamacherSum
       @see TNorm
       @see TNormFactory
       @see Norm
       @since 4.0
+
      */
     class FL_API HamacherProduct : public TNorm {
     public:
