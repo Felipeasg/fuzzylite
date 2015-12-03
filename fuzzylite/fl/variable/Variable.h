@@ -27,15 +27,17 @@ namespace fl {
     class Term;
 
     /**
-      Base class of input variables and output variables.
-      A linguistic variable is a set of terms expressed 
-      in natural language that can represent the possible values that a system variable can take.
+      
+      The Variable class represents a linguistic variable and its terms,
+      together with the possible value that a system variable can take. The
+      Variable class is the base class of InputVariable%s and OutputVariable%s.
       
       @author Juan Rada-Vilela, Ph.D.
       @see InputVariable
       @see OutputVariable
       @see Term
       @since 4.0
+    
      */
     class FL_API Variable {
     private:
@@ -55,8 +57,9 @@ namespace fl {
                 scalar maximum = fl::inf);
         Variable(const Variable& other);
         /**
-          Deletes the terms in the current variable, and adds clones of the terms
-          from the `other` variable.
+          Deletes the terms in the current variable, and adds clones of the
+          terms from the `other` variable.
+
           @param other is the other variable to copy from
           @return this variable, which contains a copy of the `other` variable
          */

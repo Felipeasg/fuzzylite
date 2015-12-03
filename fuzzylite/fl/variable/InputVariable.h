@@ -21,13 +21,16 @@
 namespace fl {
 
     /**
-      Input Variable of the fuzzy Engine
+
+      The InputVariable class is a Variable that represents an input of the
+      Engine
       
       @author Juan Rada-Vilela, Ph.D.
       @see Variable
       @see OutputVariable
       @see Term
       @since 4.0
+    
      */
     class FL_API InputVariable : public Variable {
     public:
@@ -38,10 +41,11 @@ namespace fl {
         FL_DEFAULT_COPY_AND_MOVE(InputVariable)
 
         /**
-          Evaluates the membership function of the current input value @f$x@f$ for each
-          term @f$i@f$, resulting in a fuzzy input value in the form
-          @f$\tilde{x}=\sum_i{\mu_i(x)/i}@f$. 
-          This is equivalent to a call to {@link Variable#fuzzify()} passing @f$x@f$
+          Evaluates the membership function of the current input value @f$x@f$
+          for each term @f$i@f$, resulting in a fuzzy input value in the form
+          @f$\tilde{x}=\sum_i{\mu_i(x)/i}@f$. This is equivalent to a call to
+          {@link Variable#fuzzify()} passing @f$x@f$ as input value
+
           @return the fuzzy input value expressed as @f$\sum_i{\mu_i(x)/i}@f$
          */
         virtual std::string fuzzyInputValue() const;

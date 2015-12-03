@@ -23,13 +23,16 @@ namespace fl {
     class Defuzzifier;
 
     /**
-      Output Variable of the fuzzy Engine
+      
+      The OutputVariable class is a Variable that represents an output of the
+      Engine
       
       @author Juan Rada-Vilela, Ph.D.
       @see Variable
       @see InputVariable
       @see Term
       @since 4.0
+    
      */
     class FL_API OutputVariable : public Variable {
     private:
@@ -57,8 +60,8 @@ namespace fl {
         FL_DEFAULT_MOVE(OutputVariable)
 
         /**
-          Gets the fuzzy output 
-          @return the fuzzy output
+          Gets the aggregated fuzzy output 
+          @return the aggregated fuzzy output
          */
         virtual Accumulated* fuzzyOutput() const;
 
