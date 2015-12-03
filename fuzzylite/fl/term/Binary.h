@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the binary membership function
+
+      The Binary class is an extended Term that represents the binary
+      membership function.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 6.0
+
      */
     class FL_API Binary : public Term {
     protected:
@@ -38,13 +42,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `threshold [height]`
-          @return `threshold [height]`
+          Returns the parameters of the term
+          @return `"threshold [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `threshold [height]`
-          @param parameters as `threshold [height]`
+          Configures the term with the parameters
+          @param parameters as `"threshold [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 

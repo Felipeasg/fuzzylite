@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the rectangle membership function
+      
+      The Rectangle class is a basic Term that represents the rectangle
+      membership function
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API Rectangle : public Term {
     protected:
@@ -41,13 +45,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `start end [height]`
-          @return `start end [height]`
+          Returns the parameters of the term
+          @return `"start end [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `start end [height]`
-          @param parameters as `start end [height]`
+          Configures the term with the parameters
+          @param parameters as `"start end [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**

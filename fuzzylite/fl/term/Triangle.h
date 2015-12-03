@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the triangular membership function
+
+      The Triangle class is a basic Term that represents the triangular
+      membership function.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API Triangle : public Term {
     protected:
@@ -43,13 +47,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `vertexA vertexB vertexC [height]`
-          @return `vertexA vertexB vertexC [height]`
+          Returns the parameters of the term
+          @return `"vertexA vertexB vertexC [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `vertexA vertexB vertexC [height]`
-          @param parameters as `vertexA vertexB vertexC [height]`
+          Configures the term with the parameters
+          @param parameters as `"vertexA vertexB vertexC [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 

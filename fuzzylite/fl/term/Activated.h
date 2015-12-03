@@ -22,15 +22,18 @@ namespace fl {
     class TNorm;
 
     /**
-      Term that contains pointers to the necessary information of an activated term, 
-      but does not assume the ownership of the pointers. Activated was previously 
-      named `Thresholded` in version 4.0
+    
+      The Activated class is a special Term that contains pointers to the
+      necessary information of a term that has been activated as part of the
+      Antecedent of a Rule. The ownership of the pointers is not transferred to
+      objects of this class. The Activated class was named
+      `Thresholded` in versions 4.0 and earlier.
       
       @author Juan Rada-Vilela, Ph.D.
       @see OutputVariable
-      @see Activated
       @see Term
       @since 5.0
+    
      */
     class FL_API Activated : public Term {
     protected:
@@ -46,8 +49,8 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as "degree implication term"
-          @return "degree implication term"
+          Returns the parameters of the term
+          @return `"degree implication term"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**

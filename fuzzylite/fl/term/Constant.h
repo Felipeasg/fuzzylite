@@ -21,11 +21,14 @@
 namespace fl {
 
     /**
-      Term for a constant value
+    
+      The Constant class is a function Term that represents a constant value.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API Constant : public Term {
     protected:
@@ -39,13 +42,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `value`
-          @return `value`
+          Returns the parameters of the term
+          @return `"value"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `value`
-          @param parameters as `value`
+          Configures the term with the parameters
+          @param parameters as `"value"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**

@@ -26,12 +26,16 @@ namespace fl {
     class Engine;
 
     /**
-      Term for a generic formula membership function
+
+      The Function class is a multipurpose Term that represents a generic
+      formula membership function.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @see FunctionFactory
       @since 4.0
+    
      */
     class FL_API Function : public Term {
     public:
@@ -39,13 +43,14 @@ namespace fl {
         typedef scalar(*Binary)(scalar, scalar);
 
         /**
-          A structure that defines a single element in a formula. 
-          An Element can represent a function or an operator. 
-          If the Element represents a function, the function can be 
-          Unary or Binary, that is, the function take one or two parameters 
-          (respectively). 
-          If the Element represents an operator, the parameters to be defined 
-          are its `arity`, its `precedence`, and its `associativity`.
+
+          The Element structure represents a single element in a formula,
+          either a function or an operator. If the Element represents a
+          function, the function can be Unary or Binary, that is, the function
+          take one or two parameters (respectively). Else, if the Element
+          represents an operator, the parameters to be defined are its `arity`,
+          its `precedence`, and its `associativity`.
+
          */
         struct FL_API Element {
 
@@ -100,7 +105,7 @@ namespace fl {
             virtual Element* clone() const;
 
             /**
-              Provides a description of the element and its members
+              Returns a description of the element and its members
               @return a description of the element and its members
              */
             virtual std::string toString() const;
@@ -142,20 +147,20 @@ namespace fl {
                     variables = fl::null) const;
 
             /**
-              Clones the node.
+              Creates a clone of the node.
               @return a clone of the node
              */
             virtual Node* clone() const;
 
             /**
-              Provides a string with the name of the element, the name of the 
+              Returns a string with the name of the element, the name of the 
               variable, or the constant value, accordingly.
               @return a string with the name of the element, the name of the 
               variable, or the constant value, accordingly.
              */
             virtual std::string toString() const;
             /**
-              Provides a prefix representation of the expression tree under the
+              Returns a prefix representation of the expression tree under the
               given node
               @param node is the node to start the prefix representation from. 
               If the node is `fl::null`, then the starting point is `this` node
@@ -164,7 +169,7 @@ namespace fl {
              */
             virtual std::string toPrefix(const Node* node = fl::null) const;
             /**
-              Provides an infix representation of the expression tree under the
+              Returns an infix representation of the expression tree under the
               given node
               @param node is the node to start the infix representation from. 
               If the node is `fl::null`, then the starting point is `this` node
@@ -173,7 +178,7 @@ namespace fl {
              */
             virtual std::string toInfix(const Node* node = fl::null) const;
             /**
-              Provides a postfix representation of the expression tree under the
+              Returns a postfix representation of the expression tree under the
               given node
               @param node is the node to start the postfix representation from. 
               If the node is `fl::null`, then the starting point is `this` node
@@ -216,9 +221,10 @@ namespace fl {
 
         /**
           Computes the membership function value of @f$x@f$ at the root node.
-          If the engine has been set, the current values of the input variables 
-          and output variables are added to the map of {@link Function::variables}.
-          In addition, the variable @f$x@f$ will also be added to the map.
+          If the engine has been set, the current values of the input variables
+          and output variables are added to the map of {@link
+          Function::variables}. In addition, the variable @f$x@f$ will also be
+          added to the map.
           @param x
           @return the membership function value of @f$x@f$ at the root node
          */
@@ -235,7 +241,7 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `formula`
+          Returns the parameters of the term as `formula`
           @return `formula`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
@@ -322,8 +328,9 @@ namespace fl {
         virtual std::string toPostfix(const std::string& formula) const;
 
         /**
-          Adds spaces to the formula to separate parentheses, commas and function
-          operators such that these are treated as tokens when parsing the function.
+          Adds spaces to the formula to separate parentheses, commas and
+          function operators such that these are treated as tokens when parsing
+          the function.
           @param formula is the right-hand side of a mathematical equation
           expressed in infix notation
           @return the formula with spaces before and after parentheses, commas 

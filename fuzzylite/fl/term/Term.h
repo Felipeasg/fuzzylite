@@ -29,12 +29,21 @@ namespace fl {
     class Engine;
 
     /**
-      Base class for all terms.
+      
+      The Term class is an abstract base class that represents linguistic
+      terms. As a reference, the terms in this library are grouped as basic,
+      extended, edge, and function. The basic terms are Triangle, Trapezoid,
+      Rectangle, and Discrete. The extended terms are Bell, Binary, Cosine,
+      Gaussian, GaussianProduct, PiShape, SigmoidDifference, SigmoidProduct,
+      and Spike. The edge terms are Concave, Ramp, Sigmoid, SShape, and ZShape.
+      The function terms are Constant, Linear, and Function.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Variable
       @see InputVariable
       @see OutputVariable
       @since 4.0
+    
      */
     class FL_API Term {
     protected:
@@ -69,38 +78,33 @@ namespace fl {
         virtual scalar getHeight() const;
 
         /**
-          Provides the representation of the term in the FuzzyLite Language
+          Returns the representation of the term in the FuzzyLite Language
           @return the representation of the term in FuzzyLite Language
           @see FllExporter
          */
         virtual std::string toString() const;
 
         /**
-          Provides the name of the class of the term
+          Returns the name of the class of the term
           @return the name of the class of the term
          */
         virtual std::string className() const = 0;
         /**
-          Provides the parameters to configure the term. The parameters are 
-          separated by spaces. If there is one additional parameter, the parameter
-          will be considered as the height of the term; otherwise, the height 
-          will be set to @f$1.0@f$
-          @return the parameters to configure the term. The parameters are 
-          separated by spaces. If the height of the term is equal to @f$1.0@f$, 
-          then the height parameter is omitted; otherwise, the height of the 
-          term is appended to the parameters at the end.
-          @see {@link #configure()}
+          Returns the parameters to configure the term. The parameters are
+          separated by spaces. If there is one additional parameter, the
+          parameter will be considered as the height of the term; otherwise,
+          the height will be set to @f$1.0@f$
+
+          @return the parameters to configure the term (@see ::configure())
          */
         virtual std::string parameters() const = 0;
         /**
-          Configures the term with the parameters. The parameters are 
-          separated by spaces. If there is one additional parameter, the parameter
-          will be considered as the height of the term; otherwise, the height 
-          will be set to @f$1.0@f$
-          @param parameters is the parameters to configure the term. The parameters are 
-          separated by spaces. If the height of the term is equal to @f$1.0@f$, 
-          then the height parameter is omitted; otherwise, the height of the 
-          term is appended to the parameters at the end.
+          Configures the term with the given parameters. The parameters are
+          separated by spaces. If there is one additional parameter, the
+          parameter will be considered as the height of the term; otherwise,
+          the height will be set to @f$1.0@f$
+
+          @param parameters is the parameters to configure the term
          */
         virtual void configure(const std::string& parameters) = 0;
 
@@ -112,7 +116,7 @@ namespace fl {
         virtual scalar membership(scalar x) const = 0;
 
         /**
-          Clones the term
+          Creates a clones of the term
           @return a clone of the term
          */
         virtual Term* clone() const = 0;

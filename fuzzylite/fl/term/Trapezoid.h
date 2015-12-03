@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the trapezoidal membership function
+
+      The Trapezoid class is a basic Term that represents the trapezoidal
+      membership function.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API Trapezoid : public Term {
     protected:
@@ -42,13 +46,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `vertexA vertexB vertexC vertexD [height]`
-          @return `vertexA vertexB vertexC vertexD [height]`
+          Returns the parameters of the term
+          @return `"vertexA vertexB vertexC vertexD [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `vertexA vertexB vertexC vertexD [height]`
-          @param parameters as `vertexA vertexB vertexC vertexD [height]`
+          Configures the term with the parameters
+          @param parameters as `"vertexA vertexB vertexC vertexD [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 

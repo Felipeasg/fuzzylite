@@ -27,10 +27,14 @@ namespace fl {
     class TNorm;
 
     /**
-      Fuzzy set that contains the Activated terms from the Antecedent%s of the Rule%s, 
-      thereby serving as a fuzzy output value in OutputVariable. The instances 
-      of the activated terms added for accumulation will be owned by Accumulated, and will be destroyed upon
-      clearing the term.
+      
+      The Accumulated class is a special Term that stores a fuzzy set with the
+      Activated terms from the Antecedent%s of a Rule, thereby serving mainly
+      as the fuzzy output value of the OutputVariable%s. The ownership of the
+      activated terms will be transfered to objects of this class, and
+      therefore their destructors will be called upon destruction of this term
+      (or calling ::clear()).
+      @todo rename this class to Aggregated and its related methods
       
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
@@ -39,6 +43,7 @@ namespace fl {
       @see Activated
       @see Term
       @since 4.0
+    
      */
     class FL_API Accumulated : public Term {
     private:
@@ -59,8 +64,8 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term
-          @return "accumulation minimum maximum terms"
+          Returns the parameters of the term
+          @return `"accumulation minimum maximum terms"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
@@ -162,17 +167,17 @@ namespace fl {
          */
         virtual Activated* removeTerm(std::size_t index);
         /**
-          Provides the number of activated terms 
+          Returns the number of activated terms 
           @return the number of activated terms
          */
         virtual std::size_t numberOfTerms() const;
         /**
-          Provides an immutable vector of activated terms
+          Returns an immutable vector of activated terms
           @return an immutable vector of activated terms
          */
         virtual const std::vector<Activated*>& terms() const;
         /**
-          Provides a mutable vector of activated terms
+          Returns a mutable vector of activated terms
           @return a mutable vector of activated terms
          */
         virtual std::vector<Activated*>& terms();

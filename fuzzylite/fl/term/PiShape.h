@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the Pi-shaped curve membership function
+
+      The PiShape class is an extended Term that represents the Pi-shaped curve
+      membership function.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API PiShape : public Term {
     protected:
@@ -46,13 +50,15 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `bottomLeft topLeft topRight bottomRight [height]`
-          @return `bottomLeft topLeft topRight bottomRight [height]`
+          Returns the parameters of the term
+          @return `"bottomLeft topLeft topRight bottomRight [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `bottomLeft topLeft topRight bottomRight [height]`
-          @param parameters as `bottomLeft topLeft topRight bottomRight [height]`
+          Configures the term with the parameters
+          @param parameters as `"bottomLeft topLeft topRight bottomRight
+          [height]"`
+
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 

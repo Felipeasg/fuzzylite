@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the two-sided %Gaussian membership function
+      
+      The GaussianProduct class is an extended Term that represents the
+      two-sided %Gaussian membership function.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API GaussianProduct : public Term {
     protected:
@@ -46,29 +50,35 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `meanA standardDeviationA meanB standardDeviationB [height]`
-          @return `meanA standardDeviationA meanB standardDeviationB [height]`
+          Provides the parameters of the term
+          @return `"meanA standardDeviationA meanB standardDeviationB [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `meanA standardDeviationA meanB standardDeviationB [height]`
-          @param parameters as `meanA standardDeviationA meanB standardDeviationB [height]`
+          Configures the term with the parameters
+          @param parameters as `"meanA standardDeviationA meanB
+          standardDeviationB [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
           Computes the membership function evaluated at @f$x@f$
           @param x
-          @return @f$ h \left((1 - i) + i \times \exp(-(x - \mu_a)^2 / (2\sigma_a^2))\right) 
-                        \left((1 - j) + j \times \exp(-(x - \mu_b)^2 / (2 \sigma_b)^2)\right)
+          @return @f$ h \left((1 - i) + i \times \exp(-(x - \mu_a)^2 /
+          (2\sigma_a^2))\right)
+          \left((1 - j) + j \times \exp(-(x - \mu_b)^2 / (2 \sigma_b)^2)\right)
           @f$
           
           where @f$h@f$ is the height of the Term,
                 @f$\mu_a@f$ is the mean of the first GaussianProduct,
-                @f$\sigma_a@f$ is the standard deviation of the first GaussianProduct,
+                @f$\sigma_a@f$ is the standard deviation of the first
+                GaussianProduct,
                 @f$\mu_b@f$ is the mean of the second GaussianProduct,
-                @f$\sigma_b@f$ is the standard deviation of the second GaussianProduct,
-                @f$i=\begin{cases}1 & \mbox{if $x \leq \mu_a$} \cr 0 &\mbox{otherwise}\end{cases}@f$,
-                @f$j=\begin{cases}1 & \mbox{if $x \geq \mu_b$} \cr 0 &\mbox{otherwise}\end{cases}@f$
+                @f$\sigma_b@f$ is the standard deviation of the second
+                GaussianProduct,
+                @f$i=\begin{cases}1 & \mbox{if $x \leq \mu_a$} \cr 0
+                &\mbox{otherwise}\end{cases}@f$,
+                @f$j=\begin{cases}1 & \mbox{if $x \geq \mu_b$} \cr 0
+                &\mbox{otherwise}\end{cases}@f$
          */
         virtual scalar membership(scalar x) const FL_IOVERRIDE;
 

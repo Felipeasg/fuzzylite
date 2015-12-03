@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the difference between two sigmoidal membership functions
+      
+      The SigmoidDifference class is an extended Term that represents the
+      difference between two sigmoidal membership functions.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API SigmoidDifference : public Term {
     protected:
@@ -46,13 +50,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `left rising falling right [height]`
-          @return `left rising falling right [height]`
+          Returns the parameters of the term
+          @return `"left rising falling right [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `left rising falling right [height]`
-          @param parameters as `left rising falling right [height]`
+          Configures the term with the parameters 
+          @param parameters as `"left rising falling right [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**

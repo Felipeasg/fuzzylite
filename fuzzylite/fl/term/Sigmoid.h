@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the sigmoid membership function
+
+      The Sigmoid class is an edge Term that represents the sigmoid membership
+      function.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API Sigmoid : public Term {
     protected:
@@ -33,7 +37,10 @@ namespace fl {
         scalar _slope;
     public:
 
-        /**The direction of the sigmoid**/
+        /**
+          Direction is an enumerator that determines the direction of the
+          sigmoid.
+        */
         enum Direction {
             /** `(_/)` increases to the right **/ Positive,
             /** `(--)` slope is zero **/ Zero,
@@ -48,13 +55,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `inflection slope [height]`
-          @return `inflection slope [height]`
+          Returns the parameters of the term
+          @return `"inflection slope [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `inflection slope [height]`
-          @param parameters as `inflection slope [height]`
+          Configures the term with the parameters
+          @param parameters as `"inflection slope [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
@@ -91,7 +98,7 @@ namespace fl {
         virtual scalar getSlope() const;
 
         /**
-          Provides the direction of the sigmoid
+          Returns the direction of the sigmoid
           @return the direction of the sigmoid
          */
         virtual Direction direction() const;

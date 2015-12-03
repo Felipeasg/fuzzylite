@@ -24,11 +24,15 @@
 namespace fl {
 
     /**
-      Term for the discrete membership function
+      
+      The Discrete class is a basic Term that represents a discrete membership
+      function.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API Discrete : public Term {
     public:
@@ -44,7 +48,7 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `x1 y1 xn yn [height]`
+          Returns the parameters of the term as `x1 y1 xn yn [height]`
           @return `x1 y1 xn yn [height]`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
@@ -95,23 +99,32 @@ namespace fl {
         virtual Pair& xy(std::size_t index);
 
         /**
-          Creates a vector of fl::scalar from a vector of Pair given in the form @f$\left(\{x_1,y_1\},...,\{x_n,y_n\}\right)@f$
+          Creates a vector of fl::scalar from a vector of Pair given in the
+          form @f$\left(\{x_1,y_1\},...,\{x_n,y_n\}\right)@f$
           @param xy is the vector of Pair
           @return a vector of fl::scalar as @f$(x_1,y_1,...,x_n,y_n)@f$
          */
         static std::vector<scalar> toVector(const std::vector<Pair>& xy);
         /**
-          Creates a vector of Pair from a vector of fl::scalar given in the form @f$(x_1,y_1,...,x_n,y_n)@f$
-          @param xy is a vector of fl::scalar given as @f$(x_1,y_1,...,x_n,y_n)@f$
-          @return a vector of Pair in the form @f$\left(\{x_1,y_1\},...,\{x_n,y_n\}\right)@f$
-          @throws fl::Exception if a value is missing, that is, if the length of @f$xy@f$ is odd: @f$|xy|\mod 2 = 1@f$
+          Creates a vector of Pair from a vector of fl::scalar given in the
+          form @f$(x_1,y_1,...,x_n,y_n)@f$
+          @param xy is a vector of fl::scalar given as
+          @f$(x_1,y_1,...,x_n,y_n)@f$
+          @return a vector of Pair in the form
+          @f$\left(\{x_1,y_1\},...,\{x_n,y_n\}\right)@f$
+          @throws fl::Exception if a value is missing, that is, if the length
+          of @f$xy@f$ is odd: @f$|xy|\mod 2 = 1@f$
          */
         static std::vector<Pair> toPairs(const std::vector<scalar>& xy);
         /**
-          Creates a vector of Pair from a vector of fl::scalar given in the form @f$(x_1,y_1,...,x_n,y_n)@f$
-          @param xy is a vector of fl::scalar given as @f$(x_1,y_1,...,x_n,y_n)@f$ possibly missing a value
-          @param missingValue is the replacement in the case a value is missing from @f$xy@f$
-          @return a vector of Pair in the form @f$\left(\{x_1,y_1\},...,\{x_n,y_n\}\right)@f$
+          Creates a vector of Pair from a vector of fl::scalar given in the
+          form @f$(x_1,y_1,...,x_n,y_n)@f$
+          @param xy is a vector of fl::scalar given as
+          @f$(x_1,y_1,...,x_n,y_n)@f$ possibly missing a value
+          @param missingValue is the replacement in the case a value is missing
+          from @f$xy@f$
+          @return a vector of Pair in the form
+          @f$\left(\{x_1,y_1\},...,\{x_n,y_n\}\right)@f$
          */
         static std::vector<Pair> toPairs(const std::vector<scalar>& xy,
                 scalar missingValue) FL_INOEXCEPT;
@@ -120,10 +133,12 @@ namespace fl {
           Formats a vector of Pair into a std::string in the form 
           @f$(x_1,y_1) ... (x_n,y_n)@f$
           @param xy is the vector of Pair
-          @param prefix indicates the prefix of a Pair, e.g., `(` results in @f$(x_i@f$
+          @param prefix indicates the prefix of a Pair, e.g., `(` results in
+          @f$(x_i@f$
           @param innerSeparator indicates the separator between 
           @f$x@f$ and @f$y@f$, e.g., `,` results in @f$x_i,y_i@f$
-          @param postfix indicates the postfix of a Pair, e.g., `]` results in @f$y_i]@f$
+          @param postfix indicates the postfix of a Pair, e.g., `]` results in
+          @f$y_i]@f$
           @param outerSeparator indicates the separator between Pair, e.g., 
           `;` results in @f$(x_i,y_i);(x_j,y_j)@f$
           @return a formatted string containing the pairs of @f$(x,y)@f$ values

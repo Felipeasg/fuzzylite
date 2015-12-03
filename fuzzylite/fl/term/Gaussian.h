@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the %Gaussian curve membership function
+
+      The Gaussian class is an extended Term that represents the %Gaussian
+      curve membership function.
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 4.0
+    
      */
     class FL_API Gaussian : public Term {
     protected:
@@ -42,13 +46,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `mean standardDeviation [height]`
-          @return `mean standardDeviation [height]`
+          Returns the parameters of the term
+          @return `"mean standardDeviation [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `mean standardDeviation [height]`
-          @param parameters as `mean standardDeviation [height]`
+          Configures the term with the parameters
+          @param parameters as `"mean standardDeviation [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 

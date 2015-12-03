@@ -21,11 +21,15 @@
 namespace fl {
 
     /**
-      Term for the spike membership function
+
+      The Spike class is an extended Term that represents the spike membership
+      function.
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @since 5.0
+    
      */
     class FL_API Spike : public Term {
     protected:
@@ -40,13 +44,13 @@ namespace fl {
 
         virtual std::string className() const FL_IOVERRIDE;
         /**
-          Provides the parameters of the term as `center width [height]`
-          @return `center width [height]`
+          Returns the parameters of the term
+          @return `"center width [height]"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the term with the parameters given as `center width [height]`
-          @param parameters as `center width [height]`
+          Configures the term with the parameters 
+          @param parameters as `"center width [height]"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
         /**
