@@ -100,8 +100,11 @@
 #endif
 
 /**
-  fuzzylite namespace
+  The fl namespace is the namespace where all the classes of the `fuzzylite`
+  library are contained.
+
   @author Juan Rada-Vilela, Ph.D.
+  @since 4.0
  */
 namespace fl {
     /**
@@ -193,9 +196,13 @@ namespace fl {
 namespace fl {
 
     /**
-      Information and global static settings of the library
+
+      The fuzzylite class contains general information about the library and
+      its global settings
+
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0
+    
      */
     class FL_API fuzzylite {
     protected:

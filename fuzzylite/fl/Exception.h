@@ -25,9 +25,13 @@
 namespace fl {
 
     /**
-      The only class of exception that is thrown in `%fuzzylite`.
+
+      The Exception class is an std::exception that contains relevant
+      information to the library.
+
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0
+    
      */
     class FL_API Exception : public std::exception {
     protected:
@@ -93,7 +97,7 @@ namespace fl {
         static std::string btCallStack();
 
         /**
-          A signal handler to catch signals
+          Provides a signal handler to catch signals
           @param signal is the code of the signal
          */
         static void signalHandler(int signal);

@@ -26,9 +26,13 @@ namespace fl {
     class Engine;
 
     /**
-      A command-line tool to utilize the `fuzzylite` library
+
+      The Console class is a command-line tool that helps to utilize the
+      `fuzzylite` library
+
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0
+    
      */
     class FL_API Console {
     public:
