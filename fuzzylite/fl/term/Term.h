@@ -30,13 +30,13 @@ namespace fl {
 
     /**
       
-      The Term class is an abstract base class that represents linguistic
-      terms. As a reference, the terms in this library are grouped as basic,
-      extended, edge, and function. The basic terms are Triangle, Trapezoid,
-      Rectangle, and Discrete. The extended terms are Bell, Binary, Cosine,
-      Gaussian, GaussianProduct, PiShape, SigmoidDifference, SigmoidProduct,
-      and Spike. The edge terms are Concave, Ramp, Sigmoid, SShape, and ZShape.
-      The function terms are Constant, Linear, and Function.
+      The Term class is an abstract base class that represents the concept of a
+      linguistic term. As a reference, the terms in this library are grouped as
+      basic, extended, edge, and function. The basic terms are Triangle,
+      Trapezoid, Rectangle, and Discrete. The extended terms are Bell, Binary,
+      Cosine, Gaussian, GaussianProduct, PiShape, SigmoidDifference,
+      SigmoidProduct, and Spike. The edge terms are Concave, Ramp, Sigmoid,
+      SShape, and ZShape. The function terms are Constant, Linear, and Function.
     
       @author Juan Rada-Vilela, Ph.D.
       @see Variable

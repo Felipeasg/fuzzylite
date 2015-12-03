@@ -22,10 +22,10 @@ namespace fl {
 
     /**
 
-      The TNorm class is the base class for T-Norms. The TNorm%s are utilized
-      as the conjunction fuzzy logic operator (see RuleBlock::getConjunction())
-      and as the implication (or activation in versions 5.0 and earlier) fuzzy
-      logic operator (see RuleBlock::getImplication()).
+      The TNorm class is the base class for T-Norms, and it is utilized as the
+      conjunction fuzzy logic operator (see RuleBlock::getConjunction()) and as
+      the implication (or `activation` in versions 5.0 and earlier) fuzzy logic
+      operator (see RuleBlock::getImplication()).
     
       @author Juan Rada-Vilela, Ph.D.
       @see TNormFactory

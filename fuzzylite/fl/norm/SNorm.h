@@ -22,10 +22,11 @@ namespace fl {
 
     /**
     
-      The SNorm class is the base class for all S-Norms. The SNorm%s are
-      utilized as the disjunction fuzzy logic operator (see
-      RuleBlock::getDisjunction()) and as the aggregation fuzzy logic operator
-      (see OutputVariable::getFuzzyOutput() and Accumulated::getAccumulation()).
+      The SNorm class is the base class for all S-Norms, and it is utilized as
+      the disjunction fuzzy logic operator (see RuleBlock::getDisjunction())
+      and as the aggregation fuzzy logic operator (see
+      OutputVariable::fuzzyOutput() and Accumulated::getAccumulation()).
+
     
       @author Juan Rada-Vilela, Ph.D.
       @see SNormFactory

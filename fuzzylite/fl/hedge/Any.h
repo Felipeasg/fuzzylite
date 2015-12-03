@@ -22,7 +22,7 @@ namespace fl {
 
     /**
     
-      The Any class is a special Hedge that always returns @f$1.0@f$. Its
+      The Any class is a special Hedge that always returns `1.0`. Its
       position with respect to the other hedges is last in the ordered set
       (Not, Seldom, Somewhat, Very, Extremely, Any). The Antecedent of a Rule
       considers Any to be a syntactically special hedge because it is not
@@ -46,7 +46,7 @@ namespace fl {
         /**
           Computes the hedge for the given value
           @param x is irrelevant
-          @return @f$1.0@f$
+          @return `1.0`
          */
         virtual scalar hedge(scalar x) const FL_IOVERRIDE;
         virtual Any* clone() const FL_IOVERRIDE;

@@ -27,9 +27,10 @@ namespace fl {
 
     /**
 
-      The FldExporter class is an Exporter that evaluates an Engine and exports 
+      The FldExporter class is an Exporter that evaluates an Engine and exports
       its input values and output values to the FuzzyLite Dataset (FLD) format,
-      see [http://www.fuzzylite.com/fll-fld](http://www.fuzzylite.com/fll-fld).
+      see [http://www.fuzzylite.com/fll-fld](http://www.fuzzylite.com/fll-fld)
+      for more information.
     
       @author Juan Rada-Vilela, Ph.D.
       @see FllExporter

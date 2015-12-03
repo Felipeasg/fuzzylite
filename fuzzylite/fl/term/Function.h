@@ -113,9 +113,9 @@ namespace fl {
         };
 
         /**
-          A binary tree structure that can store a Function::Element, 
-          a reference to an InputVariable or OutputVariable by name, 
-          or a constant value.
+          The Node structure is a binary tree that can store a
+          Function::Element, a reference to an InputVariable or OutputVariable
+          by name, or a constant value.
          */
         struct FL_API Node {
             /**The node takes an operation or a function**/
@@ -138,10 +138,16 @@ namespace fl {
             FL_DEFAULT_MOVE(Node)
 
             /**
-              Evaluates the node and substitutes the variables therein for the 
-              values passed in the map. The expression tree is evaluated recursively.
-              @param variables is a map of substitutions of variable names for fl::scalar%s
-              @return a fl::scalar indicating the result of the evaluation of the node
+              Evaluates the node and substitutes the variables therein for the
+              values passed in the map. The expression tree is evaluated
+              recursively.
+
+              @param variables is a map of substitutions of variable names for
+              fl::scalar%s
+
+              @return a fl::scalar indicating the result of the evaluation of
+              the node
+
              */
             virtual scalar evaluate(const std::map<std::string, scalar>*
                     variables = fl::null) const;

@@ -89,7 +89,7 @@ namespace fl {
 
       The Operator class is an Expression that represents a non-terminal node
       in the expression tree as a binary operator (i.e., `and` or `or`) on two
-      Expression%s nodes.
+      Expression nodes.
 
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent

@@ -34,8 +34,9 @@ namespace fl {
     /**
 
       The FllExporter class is an Exporter that translates an Engine and its
-      components to the FuzzyLite Language (FLL), see 
-      [http://www.fuzzylite.com/fll-fld](http://www.fuzzylite.com/fll-fld).
+      components to the FuzzyLite Language (FLL), see
+      [http://www.fuzzylite.com/fll-fld](http://www.fuzzylite.com/fll-fld) for
+      more information.
     
       @author Juan Rada-Vilela, Ph.D.
       @see FllImporter
