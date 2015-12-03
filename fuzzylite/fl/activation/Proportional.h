@@ -22,9 +22,11 @@ namespace fl {
 
     /**
       
-      The Proportional class is a RuleBlock Activation method that activates the
-      rules utilizing activation degrees proportional to the activation degrees
-      of the other rules, thus the sum of the activation degrees is equal to one.
+      The Proportional class is a RuleBlock Activation method that activates
+      the rules utilizing activation degrees proportional to the activation
+      degrees of the other rules, thus the sum of the activation degrees is
+      equal to one.
+
       @todo check activation method as it includes all rules.
       
       @author Juan Rada-Vilela, Ph.D.

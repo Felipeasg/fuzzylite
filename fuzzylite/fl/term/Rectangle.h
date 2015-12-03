@@ -23,7 +23,7 @@ namespace fl {
     /**
       
       The Rectangle class is a basic Term that represents the rectangle
-      membership function
+      membership function.
 
       @author Juan Rada-Vilela, Ph.D.
       @see Term

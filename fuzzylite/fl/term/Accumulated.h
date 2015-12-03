@@ -33,7 +33,7 @@ namespace fl {
       as the fuzzy output value of the OutputVariable%s. The ownership of the
       activated terms will be transfered to objects of this class, and
       therefore their destructors will be called upon destruction of this term
-      (or calling ::clear()).
+      (or calling Accumulated::clear()).
       @todo rename this class to Aggregated and its related methods
       
       @author Juan Rada-Vilela, Ph.D.

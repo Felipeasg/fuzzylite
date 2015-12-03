@@ -24,8 +24,9 @@
 namespace fl {
 
     /**
+
       The ActivationFactory class is a ConstructionFactory of Activation
-      methods for rule blocks.
+      methods for RuleBlock%s.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Activation
@@ -33,6 +34,7 @@ namespace fl {
       @see ConstructionFactory
       @see FactoryManager
       @since 6.0
+    
      */
     class FL_API ActivationFactory : public ConstructionFactory<Activation*> {
     public:

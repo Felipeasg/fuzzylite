@@ -101,7 +101,7 @@
 
 /**
   The fl namespace is the namespace where all the classes of the `fuzzylite`
-  library are contained.
+  library are contained. @todo utilize FL_BEGIN_NAMESPACE and FL_END_NAMESPACE
 
   @author Juan Rada-Vilela, Ph.D.
   @since 4.0
@@ -198,7 +198,7 @@ namespace fl {
     /**
 
       The fuzzylite class contains general information about the library and
-      its global settings
+      its global settings.
 
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0

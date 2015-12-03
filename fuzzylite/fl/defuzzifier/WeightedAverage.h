@@ -24,7 +24,7 @@ namespace fl {
     /**
     
       The WeightedAverage class is a WeightedDefuzzifier that computes the
-      weighted average of a fuzzy set represented in an AccumulatedTerm
+      weighted average of a fuzzy set represented in an Accumulated Term.
 
       @author Juan Rada-Vilela, Ph.D.
       @see WeightedSum

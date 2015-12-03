@@ -30,7 +30,7 @@ namespace fl {
 
     /**
     
-      The Expression class is the base class to build an expression tree
+      The Expression class is the base class to build an expression tree.
     
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
@@ -54,7 +54,7 @@ namespace fl {
     /**
 
       The Proposition class is an Expression that represents a terminal node in
-      the expression tree as `variable is [hedge]* term`
+      the expression tree as `variable is [hedge]* term`.
 
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
@@ -89,7 +89,7 @@ namespace fl {
 
       The Operator class is an Expression that represents a non-terminal node
       in the expression tree as a binary operator (i.e., `and` or `or`) on two
-      Expression%s nodes
+      Expression%s nodes.
 
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent

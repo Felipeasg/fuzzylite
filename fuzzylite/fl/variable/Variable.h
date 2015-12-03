@@ -28,9 +28,10 @@ namespace fl {
 
     /**
       
-      The Variable class represents a linguistic variable and its terms,
-      together with the possible value that a system variable can take. The
-      Variable class is the base class of InputVariable%s and OutputVariable%s.
+      The Variable class represents a linguistic variable of the fuzzy logic
+      controller, and contains the linguistic terms and the possible value that
+      the variable can take. The Variable class is the base class of
+      InputVariable%s and OutputVariable%s.
       
       @author Juan Rada-Vilela, Ph.D.
       @see InputVariable

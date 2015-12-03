@@ -84,10 +84,11 @@ namespace fl {
          */
         virtual void unload();
         /**
-          Loads the consequent with text given from ::getText(), uses the given
-          rule (from which the consequent is part of) to register and retrieve
-          the necessary hedges, and uses the engine to identify and retrieve
-          references to the input variables and output variables as required
+          Loads the consequent with text given from Consequent::getText(), uses
+          the given rule (from which the consequent is part of) to register and
+          retrieve the necessary hedges, and uses the engine to identify and
+          retrieve references to the input variables and output variables as
+          required
           
           @param rule is the rule from which the consequent is part of
           @param engine is the engine from which the rules are part of

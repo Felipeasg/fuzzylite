@@ -36,7 +36,7 @@ namespace fl {
      `if variable is [hedge]* term [(and|or) variable is [hedge]* term]*`
 
       where `*`-marked elements may appear zero or more times, elements in
-      brackets are optional, and elements in parenthesis are compulsory
+      brackets are optional, and elements in parenthesis are compulsory.
 
       @author Juan Rada-Vilela, Ph.D.
       @see Consequent
@@ -82,11 +82,11 @@ namespace fl {
         virtual void unload();
 
         /**
-          Loads the antecedent with the text obtained from ::getText(), uses
-          the given rule (from which the antecedent is part of) to register and
-          retrieve the necessary hedges, and uses the engine to identify and
-          retrieve references to the input variables and output variables as
-          required
+          Loads the antecedent with the text obtained from
+          Antecedent::getText(), uses the given rule (from which the antecedent
+          is part of) to register and retrieve the necessary hedges, and uses
+          the engine to identify and retrieve references to the input variables
+          and output variables as required
           
           @param rule is the rule from which the antecedent is part of
           @param engine is the engine from which the rules are part of

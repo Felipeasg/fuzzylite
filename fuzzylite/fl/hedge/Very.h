@@ -23,7 +23,7 @@ namespace fl {
     /**
       
       The Very class is a Hedge located fourth in the ordered set 
-      (Not, Seldom, Somewhat, Very, Extremely, Any)
+      (Not, Seldom, Somewhat, Very, Extremely, Any).
       
       @author Juan Rada-Vilela, Ph.D.
       @see Hedge

@@ -23,8 +23,9 @@ namespace fl {
 
     /**
     
-      The WeightedDefuzzifier class is the base class for defuzzifiers which do
-      not require to integrate over the fuzzy set.
+      The WeightedDefuzzifier class is the base class for defuzzifiers which
+      computed a weighted function on the fuzzy set without requiring to
+      integrate over the fuzzy set.
 
       @author Juan Rada-Vilela, Ph.D.
       @since 5.0

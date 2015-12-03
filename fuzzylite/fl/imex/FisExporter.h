@@ -33,7 +33,7 @@ namespace fl {
     /**
 
       The FisExporter class is an Exporter that translates an Engine and its
-      components into the Fuzzy Inference System format for Matlab or Octave
+      components into the Fuzzy Inference System format for Matlab or Octave.
     
       @author Juan Rada-Vilela, Ph.D.
       @see FisImporter

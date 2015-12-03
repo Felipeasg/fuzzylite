@@ -23,7 +23,7 @@ namespace fl {
     /**
      
       The Somewhat class is a Hedge located third in the ordered set
-      (Not, Seldom, Somewhat, Very, Extremely, Any)
+      (Not, Seldom, Somewhat, Very, Extremely, Any).
      
       @author Juan Rada-Vilela, Ph.D.
       @see Hedge

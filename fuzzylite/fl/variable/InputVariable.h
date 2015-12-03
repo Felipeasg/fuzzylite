@@ -23,7 +23,7 @@ namespace fl {
     /**
 
       The InputVariable class is a Variable that represents an input of the
-      Engine
+      fuzzy logic controller.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Variable

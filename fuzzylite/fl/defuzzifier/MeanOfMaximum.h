@@ -24,7 +24,7 @@ namespace fl {
     
       The MeanOfMaximum class is an IntegralDefuzzifier that computes the mean
       value of the maximum membership function of a fuzzy set represented in a
-      Term
+      Term.
     
       @author Juan Rada-Vilela, Ph.D.
       @see SmallestOfMaximum

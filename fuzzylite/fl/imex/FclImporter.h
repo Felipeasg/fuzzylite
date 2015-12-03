@@ -33,7 +33,7 @@ namespace fl {
     /**
       
       The FclImporter class is an Importer that configures an Engine and its
-      components utilizing the Fuzzy Control Language specification
+      components utilizing the Fuzzy Control Language specification.
     
       @author Juan Rada-Vilela, Ph.D.
       @see FclExporter

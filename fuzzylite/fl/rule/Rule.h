@@ -168,9 +168,9 @@ namespace fl {
          */
         virtual void unload();
         /**
-          Loads the rule with the text from ::getText(), and uses the engine to
-          identify and retrieve references to the input variables and output
-          variables as required
+          Loads the rule with the text from Rule::getText(), and uses the
+          engine to identify and retrieve references to the input variables and
+          output variables as required
           @param engine is the engine from which the rule is part of
          */
         virtual void load(const Engine* engine);

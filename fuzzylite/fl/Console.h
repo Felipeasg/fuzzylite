@@ -28,7 +28,7 @@ namespace fl {
     /**
 
       The Console class is a command-line tool that helps to utilize the
-      `fuzzylite` library
+      `fuzzylite` library.
 
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0

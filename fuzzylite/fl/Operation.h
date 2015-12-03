@@ -108,7 +108,8 @@ namespace fl {
         static bool isNaN(T x);
 
         /**
-          Indicates whether  @f$x@f$ is finite, that is,  @f$x \not\in \{\pm\infty, \mathrm{NaN}\}@f$ 
+          Indicates whether @f$x@f$ is finite, that is, @f$x \not\in
+          \{\pm\infty, \mathrm{NaN}\}@f$
           @param x is the value
           @return a boolean indicating whether  @f$x@f$  is finite
          */
@@ -119,51 +120,65 @@ namespace fl {
           Returns whether @f$a@f$ is less than @f$b@f$ at the given `macheps`
           @param a
           @param b
-          @param macheps is the minimum difference upon which two floating-point values are considered equivalent
-          @return a boolean indicating whether @f$a@f$ is less than @f$b@f$ at the given `macheps`
+          @param macheps is the minimum difference upon which two
+          floating-point values are considered equivalent
+          @return a boolean indicating whether @f$a@f$ is less than @f$b@f$ at
+          the given `macheps`
          */
         static bool isLt(scalar a, scalar b, scalar macheps = fl::fuzzylite::macheps());
         /**
-          Returns whether @f$a@f$ is less than or equal to @f$b@f$ at the given `macheps`
+          Returns whether @f$a@f$ is less than or equal to @f$b@f$ at the given
+          `macheps`
           @param a
           @param b
-          @param macheps is the minimum difference upon which two floating-point values are considered equivalent
-          @return a boolean indicating whether @f$a@f$ is less than or equal to @f$b@f$ at the given `macheps`
+          @param macheps is the minimum difference upon which two
+          floating-point values are considered equivalent
+          @return a boolean indicating whether @f$a@f$ is less than or equal to
+          @f$b@f$ at the given `macheps`
          */
         static bool isLE(scalar a, scalar b, scalar macheps = fl::fuzzylite::macheps());
         /**
           Returns whether @f$a@f$ is equal to @f$b@f$ at the given `macheps`
           @param a
           @param b
-          @param macheps is the minimum difference upon which two floating-point values are considered equivalent
-          @return a boolean indicating whether @f$a@f$ is equal to @f$b@f$ at the given `macheps`
+          @param macheps is the minimum difference upon which two
+          floating-point values are considered equivalent
+          @return a boolean indicating whether @f$a@f$ is equal to @f$b@f$ at
+          the given `macheps`
          */
         static bool isEq(scalar a, scalar b, scalar macheps = fl::fuzzylite::macheps());
         /**
           Returns whether @f$a@f$ is greater than @f$b@f$ at the given `macheps`
           @param a
           @param b
-          @param macheps is the minimum difference upon which two floating-point values are considered equivalent
-          @return a boolean indicating whether @f$a@f$ is greater than @f$b@f$ at the given `macheps`
+          @param macheps is the minimum difference upon which two
+          floating-point values are considered equivalent
+          @return a boolean indicating whether @f$a@f$ is greater than @f$b@f$
+          at the given `macheps`
          */
         static bool isGt(scalar a, scalar b, scalar macheps = fl::fuzzylite::macheps());
         /**
-          Returns whether @f$a@f$ is greater than or equal to @f$b@f$ at the given `macheps`
+          Returns whether @f$a@f$ is greater than or equal to @f$b@f$ at the
+          given `macheps`
           @param a
           @param b
-          @param macheps is the minimum difference upon which two floating-point values are considered equivalent
-          @return a boolean indicating whether @f$a@f$ is greater than or equal to @f$b@f$ at the given `macheps`
+          @param macheps is the minimum difference upon which two
+          floating-point values are considered equivalent
+          @return a boolean indicating whether @f$a@f$ is greater than or equal
+          to @f$b@f$ at the given `macheps`
          */
         static bool isGE(scalar a, scalar b, scalar macheps = fl::fuzzylite::macheps());
 
         /**
-          Linearly interpolates the parameter @f$x@f$ in range `[fromMin,fromMax]` to a new value in the range `[toMin,toMax]`
+          Linearly interpolates the parameter @f$x@f$ in range
+          `[fromMin,fromMax]` to a new value in the range `[toMin,toMax]`
           @param x is the source value to interpolate
           @param fromMin is the minimum value of the source range 
           @param fromMax is the maximum value of the source range
           @param toMin is the minimum value of the target range
           @param toMax is the maximum value of the target range
-          @param bounded determines whether the resulting value is bounded to the range
+          @param bounded determines whether the resulting value is bounded to
+          the range
           @return the source value linearly interpolated to the target range:
           @f$ y = y_a + (y_b - y_a) \dfrac{x-x_a}{x_b-x_a} @f$
          */
@@ -260,67 +275,83 @@ namespace fl {
         static scalar round(scalar x);
 
         /**
-          Returns whether @f$a@f$ is greater than or equal to @f$b@f$ at the default `macheps`
+          Returns whether @f$a@f$ is greater than or equal to @f$b@f$ at the
+          default `macheps`
           @param a
           @param b
-          @return a boolean indicating whether @f$a@f$ is greater than or equal to @f$b@f$ at the default `macheps`
+          @return a boolean indicating whether @f$a@f$ is greater than or equal
+          to @f$b@f$ at the default `macheps`
          */
         static scalar gt(scalar a, scalar b);
         /**
-          Returns whether @f$a@f$ is greater than or equal to @f$b@f$ at the default `macheps`
+          Returns whether @f$a@f$ is greater than or equal to @f$b@f$ at the
+          default `macheps`
           @param a
           @param b
-          @return a boolean indicating whether @f$a@f$ is greater than or equal to @f$b@f$ at the default `macheps`
+          @return a boolean indicating whether @f$a@f$ is greater than or equal
+          to @f$b@f$ at the default `macheps`
          */
         static scalar ge(scalar a, scalar b);
         /**
           Returns whether @f$a@f$ is equal to @f$b@f$ at the default `macheps`
           @param a
           @param b
-          @return a boolean indicating whether @f$a@f$ is equal to @f$b@f$ at the default `macheps`
+          @return a boolean indicating whether @f$a@f$ is equal to @f$b@f$ at
+          the default `macheps`
          */
         static scalar eq(scalar a, scalar b);
         /**
-          Returns whether @f$a@f$ is different from @f$b@f$ at the default `macheps`
+          Returns whether @f$a@f$ is different from @f$b@f$ at the default
+          `macheps`
           @param a
           @param b
-          @return a boolean indicating whether @f$a@f$ is different from @f$b@f$ at the default `macheps`
+          @return a boolean indicating whether @f$a@f$ is different from
+          @f$b@f$ at the default `macheps`
          */
         static scalar neq(scalar a, scalar b);
         /**
-          Returns whether @f$a@f$ is less than or equal to @f$b@f$ at the default `macheps`
+          Returns whether @f$a@f$ is less than or equal to @f$b@f$ at the
+          default `macheps`
           @param a
           @param b
-          @return a boolean indicating whether @f$a@f$ is less than or equal to @f$b@f$ at the default `macheps`
+          @return a boolean indicating whether @f$a@f$ is less than or equal to
+          @f$b@f$ at the default `macheps`
          */
         static scalar le(scalar a, scalar b);
         /**
           Returns whether @f$a@f$ is less than @f$b@f$ at the default `macheps`
           @param a
           @param b
-          @return a boolean indicating whether @f$a@f$ is less than @f$b@f$ at the default `macheps`
+          @return a boolean indicating whether @f$a@f$ is less than @f$b@f$ at
+          the default `macheps`
          */
         static scalar lt(scalar a, scalar b);
 
         /**
-          Increments @f$x@f$ by the unit, treating the entire vector as a number. For example,
-          incrementing a few times @f$x_0=\{0,0\}@f$ within boundaries @f$[0,1]@f$ results in:
-          @f$x_1=\{0,1\}@f$, @f$x_2=\{1,0\}@f$, @f$x_3=\{1,1\}@f$, @f$x_4=\{0,0\}@f$.
+          Increments @f$x@f$ by the unit, treating the entire vector as a
+          number. For example, incrementing a few times @f$x_0=\{0,0\}@f$
+          within boundaries @f$[0,1]@f$ results in: @f$x_1=\{0,1\}@f$,
+          @f$x_2=\{1,0\}@f$, @f$x_3=\{1,1\}@f$, @f$x_4=\{0,0\}@f$.
           @param x is the vector to increment
           @param min is the minimum value of the dimension 
           @param max is the maximum value of the dimension 
-          @return a boolean indicating if the increment of @f$x@f$ leads to overflow (e.g., @f$x_4@f$ returns `true`)
+          @return a boolean indicating if the increment of @f$x@f$ leads to
+          overflow (e.g., @f$x_4@f$ returns `true`)
          */
         static bool increment(std::vector<int>& x, std::vector<int>& min, std::vector<int>& max);
         /**
-          Increments @f$x@f$ by the unit at the given position, treating the entire vector as a number. For example,
-          incrementing @f$x_0=\{0,0,0\}@f$ within boundaries @f$[0,1]@f$ at the second position results in:
-          @f$x_1=\{0,1,0\}@f$, @f$x_2=\{1,0,0\}@f$, @f$x_3=\{1,1,0\}@f$, @f$x_4=\{0,0,0\}@f$.
+          Increments @f$x@f$ by the unit at the given position, treating the
+          entire vector as a number. For example, incrementing
+          @f$x_0=\{0,0,0\}@f$ within boundaries @f$[0,1]@f$ at the second
+          position results in: @f$x_1=\{0,1,0\}@f$, @f$x_2=\{1,0,0\}@f$,
+          @f$x_3=\{1,1,0\}@f$, @f$x_4=\{0,0,0\}@f$.
           @param x is the vector to increment
-          @param position is the position of the vector to increment, where smaller values lead to higher significance digits
+          @param position is the position of the vector to increment, where
+          smaller values lead to higher significance digits
           @param min is the minimum value of the dimension 
           @param max is the maximum value of the dimension 
-          @return a boolean indicating if the increment of @f$x@f$ leads to overflow (e.g., @f$x_4@f$ returns `true`)
+          @return a boolean indicating if the increment of @f$x@f$ leads to
+          overflow (e.g., @f$x_4@f$ returns `true`)
          */
         static bool increment(std::vector<int>& x, int position, std::vector<int>& min, std::vector<int>& max);
 
@@ -372,7 +403,8 @@ namespace fl {
           @param str is the target string 
           @param find is the string to find
           @param replace is the string to replace the findings
-          @param replaceAll whether all the substrings are to be replaced or just the first string
+          @param replaceAll whether all the substrings are to be replaced or
+          just the first string
           @return `str` with the replacements made
           @todo rename method to create replaceFirst and replaceAll
          */
@@ -397,9 +429,11 @@ namespace fl {
         static std::string trim(const std::string& text);
 
         /**
-          Replaces every matching character in the text with the given replacement
+          Replaces every matching character in the text with the given
+          replacement
           @param text is the string to have replacements
-          @param matchesChar is a pointer to a method that indicates whether the given character is a match
+          @param matchesChar is a pointer to a method that indicates whether
+          the given character is a match
           @param replacement a string to replace a matching character
           @return the string with every matching character replaced
          */
@@ -407,8 +441,8 @@ namespace fl {
                 const std::string& replacement = "");
 
         /**
-          Intentionally results in a compiler error in C++11 (or linker error in C++98)
-          in order to avoid the deprecated usage of this method
+          Intentionally results in a compiler error in C++11 (or linker error
+          in C++98) in order to avoid the deprecated usage of this method
           @param x is irrelevant
           @param quiet is irrelevant
           @param alternative is irrelevant
@@ -427,17 +461,21 @@ namespace fl {
         static scalar toScalar(const std::string& x); //throws fl::Exception
 
         /**
-          Parses the given string into a scalar value without throwing an exception
+          Parses the given string into a scalar value without throwing an
+          exception
           @param x is the string to parse
-          @param alternative is the value to return if the string does not contain a scalar value
-          @return the given string into a scalar value or the alternative value if the string does not contain a scalar value
+          @param alternative is the value to return if the string does not
+          contain a scalar value
+          @return the given string into a scalar value or the alternative value
+          if the string does not contain a scalar value
          */
         static scalar toScalar(const std::string& x, scalar alternative) FL_INOEXCEPT;
 
         /**
           Indicates whether the string can be converted to a numeric value. 
           @param x
-          @return a boolean indicating whether the string can be converted to a numeric value
+          @return a boolean indicating whether the string can be converted to a
+          numeric value
          */
         static bool isNumeric(const std::string& x);
 
@@ -451,25 +489,28 @@ namespace fl {
         static std::string str(T x, int decimals = fuzzylite::decimals());
 
         /**
-          Joins a vector of elements by the given separator into a single string. 
-          The elements are represented as strings utilizing the {@link #str()} method 
-          on each element
+          Joins a vector of elements by the given separator into a single
+          string. The elements are represented as strings utilizing the {@link
+          #str()} method on each element
           @param x is the vector of elements
           @param separator is the string to add between the elements
-          @return a single string joining the vector of elements by the given separator
+          @return a single string joining the vector of elements by the given
+          separator
          */
         template <typename T>
         static std::string join(const std::vector<T>& x, const std::string& separator);
 
         /**
-          Joins a variadic number of elements by the given separator into a single string. 
-          The elements are represented as strings utilizing the {@link #str()} method 
-          on each element
+          Joins a variadic number of elements by the given separator into a
+          single string. The elements are represented as strings utilizing the
+          {@link #str()} method on each element
           @param items is the number of elements to join
           @param separator is the string to add between the elements
-          @param first is the first element, which defines the type of the subsequent elements
+          @param first is the first element, which defines the type of the
+          subsequent elements
           @param ... are the remaining elements to join
-          @return a single string joining the variadic number of elements by the given separator
+          @return a single string joining the variadic number of elements by
+          the given separator
          */
         template <typename T>
         static std::string join(int items, const std::string& separator, T first, ...);

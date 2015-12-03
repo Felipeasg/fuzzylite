@@ -23,7 +23,7 @@ namespace fl {
     /**
     
       The Centroid class is an IntegralDefuzzifier that computes the centroid
-      of a fuzzy set represented in a Term
+      of a fuzzy set represented in a Term.
     
       @author Juan Rada-Vilela, Ph.D.
       @see BiSector

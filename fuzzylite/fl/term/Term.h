@@ -95,7 +95,7 @@ namespace fl {
           parameter will be considered as the height of the term; otherwise,
           the height will be set to @f$1.0@f$
 
-          @return the parameters to configure the term (@see ::configure())
+          @return the parameters to configure the term (@see Term::configure())
          */
         virtual std::string parameters() const = 0;
         /**

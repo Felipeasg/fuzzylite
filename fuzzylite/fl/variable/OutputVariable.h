@@ -25,7 +25,7 @@ namespace fl {
     /**
       
       The OutputVariable class is a Variable that represents an output of the
-      Engine
+      fuzzy logic controller.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Variable

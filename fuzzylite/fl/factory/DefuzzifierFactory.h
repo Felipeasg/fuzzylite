@@ -26,7 +26,7 @@ namespace fl {
 
     /**
     
-      The DefuzzifierFactory class is a ConstructionFactory of defuzzifiers.
+      The DefuzzifierFactory class is a ConstructionFactory of Defuzzifier%s.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Defuzzifier

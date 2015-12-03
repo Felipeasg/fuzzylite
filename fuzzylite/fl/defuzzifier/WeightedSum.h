@@ -24,7 +24,7 @@ namespace fl {
     /**
     
       The WeightedSum class is a WeightedDefuzzifier that computes the
-      weighted sum of a fuzzy set represented in an AccumulatedTerm
+      weighted sum of a fuzzy set represented in an Accumulated Term.
 
       @author Juan Rada-Vilela, Ph.D.
       @see WeightedAverage

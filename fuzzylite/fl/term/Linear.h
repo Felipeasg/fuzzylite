@@ -50,7 +50,7 @@ namespace fl {
           of the linear function defined as @f$f(\mathbf{x})=c_1x_1 + \ldots +
           c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector
           containing the values of the input variables in the order registered
-          in the ::getEngine()
+          in the Linear::getEngine()
           @return `"c1 ... ci ... cn k"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
@@ -68,7 +68,7 @@ namespace fl {
           Computes the membership function @f$f(\mathbf{x})=c_1x_1 + \ldots +
           c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector
           containing the values of the input variables in the order registered
-          in the ::getEngine()
+          in the Linear::getEngine()
           @param z is irrelevant and not used
           @return @f$\sum_{i=0}^{I}{(c_ix_i)}+k@f$
           
@@ -99,7 +99,7 @@ namespace fl {
           the linear function @f$f(\mathbf{x})=c_1x_1 + \ldots + c_ix_i +
           \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector containing
           the values of the input variables in the order registered in the
-          ::getEngine()
+          Linear::getEngine()
           @param coefficients is a vector of the coefficients @f$\{c_1, \ldots,
           c_i, \ldots, c_n, k\}@f$
          */
@@ -109,7 +109,7 @@ namespace fl {
           \ldots, c_n, k\}@f$ of the linear function @f$f(\mathbf{x})=c_1x_1 +
           \ldots + c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a
           vector containing the values of the input variables in the order
-          registered in the ::getEngine()
+          registered in the Linear::getEngine()
           @return an immutable vector of the coefficients @f$\{c_1, \ldots,
           c_i, \ldots, c_n, k\}@f$
          */
@@ -119,7 +119,7 @@ namespace fl {
           \ldots, c_n, k\}@f$ of the linear function @f$f(\mathbf{x})=c_1x_1 +
           \ldots + c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a
           vector containing the values of the input variables in the order
-          registered in the ::getEngine()
+          registered in the Linear::getEngine()
           @return a mutable vector of the coefficients @f$\{c_1, \ldots,
           c_i, \ldots, c_n, k\}@f$
          */

@@ -25,7 +25,7 @@ namespace fl {
     /**
     
       The FunctionFactory class is a CloningFactory of operators and functions
-      utilized by the Function Term
+      utilized by the Function term.
       
       @author Juan Rada-Vilela, Ph.D.
       @see Function

@@ -24,7 +24,7 @@ namespace fl {
     
       The SmallestOfMaximum class is an IntegralDefuzzifier that computes the
       smallest value of the maximum membership function of a fuzzy set
-      represented in a Term
+      represented in a Term.
     
       @author Juan Rada-Vilela, Ph.D.
       @see LargestOfMaximum
