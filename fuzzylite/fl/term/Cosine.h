@@ -25,6 +25,8 @@ namespace fl {
       The Cosine class is an extended Term that represents the cosine
       membership function.
     
+      @image html cosine.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

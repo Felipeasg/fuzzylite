@@ -25,6 +25,8 @@ namespace fl {
       The SigmoidDifference class is an extended Term that represents the
       difference between two sigmoidal membership functions.
 
+      @image html sigmoidDifference.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

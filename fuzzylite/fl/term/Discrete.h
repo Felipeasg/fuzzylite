@@ -28,6 +28,8 @@ namespace fl {
       The Discrete class is a basic Term that represents a discrete membership
       function.
     
+      @image html discrete.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

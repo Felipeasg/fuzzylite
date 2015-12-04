@@ -28,7 +28,7 @@ namespace fl {
     /**
 
       The Function class is a multipurpose Term that represents a generic
-      formula membership function.
+      formula membership function  @f$ f : x \mapsto f(x) @f$.
 
       @author Juan Rada-Vilela, Ph.D.
       @see Term

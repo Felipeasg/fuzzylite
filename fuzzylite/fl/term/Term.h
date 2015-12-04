@@ -37,7 +37,9 @@ namespace fl {
       Cosine, Gaussian, GaussianProduct, PiShape, SigmoidDifference,
       SigmoidProduct, and Spike. The edge terms are Concave, Ramp, Sigmoid,
       SShape, and ZShape. The function terms are Constant, Linear, and Function.
-    
+
+      @image html terms.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Variable
       @see InputVariable

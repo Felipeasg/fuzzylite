@@ -25,6 +25,8 @@ namespace fl {
       The Bell class is an extended Term that represents the generalized bell
       curve membership function.
     
+      @image html bell.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

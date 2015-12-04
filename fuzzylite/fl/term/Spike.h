@@ -25,6 +25,8 @@ namespace fl {
       The Spike class is an extended Term that represents the spike membership
       function.
 
+      @image html spike.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

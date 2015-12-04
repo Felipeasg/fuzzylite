@@ -24,6 +24,8 @@ namespace fl {
 
       The Triangle class is a basic Term that represents the triangular
       membership function.
+    
+      @image html triangle.svg
 
       @author Juan Rada-Vilela, Ph.D.
       @see Term

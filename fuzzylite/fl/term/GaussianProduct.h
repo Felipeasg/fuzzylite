@@ -25,6 +25,8 @@ namespace fl {
       The GaussianProduct class is an extended Term that represents the
       two-sided %Gaussian membership function.
     
+      @image html gaussianProduct.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

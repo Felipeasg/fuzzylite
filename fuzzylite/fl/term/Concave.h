@@ -26,6 +26,8 @@ namespace fl {
       The Concave class is an edge Term that represents the concave membership
       function.
     
+      @image html concave.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

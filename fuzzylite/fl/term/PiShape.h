@@ -24,6 +24,8 @@ namespace fl {
 
       The PiShape class is an extended Term that represents the Pi-shaped curve
       membership function.
+    
+      @image html piShape.svg
 
       @author Juan Rada-Vilela, Ph.D.
       @see Term

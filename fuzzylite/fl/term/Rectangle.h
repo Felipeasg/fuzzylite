@@ -25,6 +25,8 @@ namespace fl {
       The Rectangle class is a basic Term that represents the rectangle
       membership function.
 
+      @image html rectangle.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

@@ -24,6 +24,8 @@ namespace fl {
 
       The Binary class is an extended Term that represents the binary
       membership function.
+    
+      @image html binary.svg
 
       @author Juan Rada-Vilela, Ph.D.
       @see Term

@@ -25,6 +25,8 @@ namespace fl {
       The Ramp class is an edge Term that represents the ramp membership
       function.
     
+      @image html ramp.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

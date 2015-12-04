@@ -25,6 +25,8 @@ namespace fl {
       The Sigmoid class is an edge Term that represents the sigmoid membership
       function.
 
+      @image html sigmoid.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

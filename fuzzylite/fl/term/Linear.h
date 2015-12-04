@@ -24,8 +24,11 @@ namespace fl {
     /**
       
       The Linear class is a function Term that represents the linear membership
-      function.
-
+      function defined as @f$f(\mathbf{x})= \mathbf{c}\mathbf{x}+k = \sum_i
+      c_ix_i + k@f$, where @f$\mathbf{x}@f$ is the vector of values of the
+      input variables, @f$\mathbf{c}@f$ is the vector of coefficients for the
+      input variables, and @f$k@f$ is a constant.
+      
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

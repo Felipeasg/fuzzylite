@@ -25,6 +25,8 @@ namespace fl {
       The ZShape class is an edge Term that represents the Z-shaped membership
       function.
 
+      @image html zShape.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

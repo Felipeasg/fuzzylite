@@ -22,7 +22,8 @@ namespace fl {
 
     /**
     
-      The Constant class is a function Term that represents a constant value.
+      The Constant class is a function Term that represents a constant value
+      @f$ f(x) = k @f$
     
       @author Juan Rada-Vilela, Ph.D.
       @see Term

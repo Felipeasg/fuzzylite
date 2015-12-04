@@ -25,7 +25,9 @@ namespace fl {
       
       The SShape class is an edge Term that represents the S-shaped membership
       function.
-    
+
+      @image html sShape.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

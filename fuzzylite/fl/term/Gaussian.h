@@ -25,6 +25,8 @@ namespace fl {
       The Gaussian class is an extended Term that represents the %Gaussian
       curve membership function.
     
+      @image html gaussian.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

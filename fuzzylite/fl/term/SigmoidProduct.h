@@ -25,6 +25,8 @@ namespace fl {
       The SigmoidProduct class is an extended Term that represents the product
       of two sigmoidal membership functions.
 
+      @image html sigmoidProduct.svg
+
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable

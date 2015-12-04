@@ -25,6 +25,8 @@ namespace fl {
       The Trapezoid class is a basic Term that represents the trapezoidal
       membership function.
     
+      @image html trapezoid.svg
+    
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
