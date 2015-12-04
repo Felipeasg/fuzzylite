@@ -236,67 +236,67 @@ dir.create('figure',showWarnings=F)
 ##################BASIC
 
 triangle.df = data.frame(x, y=sapply(x, term.triangle, min(x), average, max(x)))
-image = ggplot(triangle.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/triangle.svg', image, width=3, height=3)
+triangle.plot = ggplot(triangle.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/triangle.svg', triangle.plot, width=3, height=3)
 
 
 trapezoid.df = data.frame(x, y=sapply(x, term.trapezoid, min(x), min(x) + .25 * diff, min(x) + .75*diff, max(x)))
-image = ggplot(trapezoid.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/trapezoid.svg', image, width=3, height=3)
+trapezoid.plot = ggplot(trapezoid.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/trapezoid.svg', trapezoid.plot, width=3, height=3)
 
 
 rectangle.df = data.frame(x, y=sapply(x, term.rectangle, min(x) + .25*diff,  min(x) + .75*diff))
-image = ggplot(rectangle.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/rectangle.svg', image, width=3, height=3)
+rectangle.plot = ggplot(rectangle.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/rectangle.svg', rectangle.plot, width=3, height=3)
 
 
 discrete.x = x[c(1, seq(10, 495, 10), 500)]
 discrete.df = data.frame(x=discrete.x, y=sapply(discrete.x, term.discrete, min(x),  max(x)))
-image = ggplot(discrete.df, aes(x,y, size=2, lineend='round')) + geom_point() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/discrete.svg', image, width=3, height=3)
+discrete.plot = ggplot(discrete.df, aes(x,y, size=2, lineend='round')) + geom_point() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/discrete.svg', discrete.plot, width=3, height=3)
 
 
 
 #################EXTENDED
 
 cosine.df = data.frame(x, y=sapply(x, term.cosine, average, diff))
-image = ggplot(cosine.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/cosine.svg', image, width=3, height=3)
+cosine.plot = ggplot(cosine.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/cosine.svg', cosine.plot, width=3, height=3)
 
 
 gaussian.df = data.frame(x, y=sapply(x, term.gaussian, average,  .2*diff))
-image = ggplot(gaussian.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/gaussian.svg', image, width=3, height=3)
+gaussian.plot = ggplot(gaussian.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/gaussian.svg', gaussian.plot, width=3, height=3)
 
 
 gaussianProduct.df = data.frame(x, y=sapply(x, term.gaussianProduct, average+.1,  .2*diff, average-.1, .2*diff))
-image = ggplot(gaussianProduct.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/gaussianProduct.svg', image, width=3, height=3)
+gaussianProduct.plot = ggplot(gaussianProduct.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/gaussianProduct.svg', gaussianProduct.plot, width=3, height=3)
 
 
 bell.df = data.frame(x, y=sapply(x, term.bell, average,  .25*diff, 3.0))
-image = ggplot(bell.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/bell.svg', image, width=3, height=3)
+bell.plot = ggplot(bell.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/bell.svg', bell.plot, width=3, height=3)
 
 
 piShape.df = data.frame(x, y=sapply(x, term.piShape, min(x), average, average, max(x)))
-image = ggplot(piShape.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/piShape.svg', image, width=3, height=3)
+piShape.plot = ggplot(piShape.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/piShape.svg', piShape.plot, width=3, height=3)
 
 
 sigmoidDifference.df = data.frame(x, y=sapply(x, term.sigmoidDifference, min(x) + .25*diff, 20/diff, 20/diff, min(x)+.75*diff))
-image = ggplot(sigmoidDifference.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/sigmoidDifference.svg', image, width=3, height=3)
+sigmoidDifference.plot = ggplot(sigmoidDifference.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/sigmoidDifference.svg', sigmoidDifference.plot, width=3, height=3)
 
 
 sigmoidProduct.df = data.frame(x, y=sapply(x, term.sigmoidProduct, min(x) + .25*diff, 10/diff, -10/diff, min(x)+.75*diff))
-image = ggplot(sigmoidProduct.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/sigmoidProduct.svg', image, width=3, height=3)
+sigmoidProduct.plot = ggplot(sigmoidProduct.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/sigmoidProduct.svg', sigmoidProduct.plot, width=3, height=3)
 
 
 spike.df = data.frame(x, y=sapply(x, term.spike, average, diff))
-image = ggplot(spike.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/spike.svg', image, width=3, height=3)
+spike.plot = ggplot(spike.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/spike.svg', spike.plot, width=3, height=3)
 
 
 
@@ -305,44 +305,49 @@ ggsave('figure/spike.svg', image, width=3, height=3)
 #Binary
 binary.dfa = data.frame(x, y=sapply(x, term.binary, min(x) + .25*diff, -1))
 binary.dfb = data.frame(x, y=sapply(x, term.binary, min(x) + .75*diff, 1))
-image = ggplot(binary.dfa, aes(x,y, size=2, lineend='round')) + 
+binary.plot = ggplot(binary.dfa, aes(x,y, size=2, lineend='round')) + 
         geom_line(data=binary.dfb, aes(x,y, size=2, lineend='round')) + 
         geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')   
-ggsave('figure/binary.svg', image, width=3, height=3)
+ggsave('figure/binary.svg', binary.plot, width=3, height=3)
 
 #Concave
 concave.dfa = data.frame(x, y=sapply(x, term.concave, average, max(x)-.2))
 concave.dfb = data.frame(x, y=sapply(x, term.concave, average, 1-(max(x)-.2)))
-image = ggplot(concave.dfa, aes(x,y, size=2, lineend='round')) + 
+concave.plot = ggplot(concave.dfa, aes(x,y, size=2, lineend='round')) + 
         geom_line(data=concave.dfb, aes(x,y, size=2, lineend='round')) + 
         geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')   
-ggsave('figure/concave.svg', image, width=3, height=3)
+ggsave('figure/concave.svg', concave.plot, width=3, height=3)
 
 #RAMP
 ramp.dfa = data.frame(x, y=sapply(x, term.ramp, max(x)-.2, min(x)+.2))
 ramp.dfb = data.frame(x, y=sapply(x, term.ramp, min(x)+.2, max(x)-.2))
-image = ggplot(ramp.dfa, aes(x,y, size=2, lineend='round')) + 
+ramp.plot = ggplot(ramp.dfa, aes(x,y, size=2, lineend='round')) + 
         geom_line(data=ramp.dfb, aes(x,y, size=2, lineend='round')) + 
         geom_line() + ylab(expression(mu(x))) + theme(legend.position='none') 
-ggsave('figure/ramp.svg', image, width=3, height=3)
+ggsave('figure/ramp.svg', ramp.plot, width=3, height=3)
 
 
 sigmoid.dfa = data.frame(x, y=sapply(x, term.sigmoid, average, 20/diff))
 sigmoid.dfb = data.frame(x, y=sapply(x, term.sigmoid, average, -20/diff))
-image = ggplot(sigmoid.dfa, aes(x,y, size=2, lineend='round')) + 
+sigmoid.plot = ggplot(sigmoid.dfa, aes(x,y, size=2, lineend='round')) + 
         geom_line(data=sigmoid.dfb, aes(x,y, size=2, lineend='round')) + 
         geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/sigmoid.svg', image, width=3, height=3)
+ggsave('figure/sigmoid.svg', sigmoid.plot, width=3, height=3)
 
 
 sShape.df = data.frame(x, y=sapply(x, term.sShape, min(x), max(x)))
-image = ggplot(sShape.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/sShape.svg', image, width=3, height=3)
+sShape.plot = ggplot(sShape.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/sShape.svg', sShape.plot, width=3, height=3)
 
 
 zShape.df = data.frame(x, y=sapply(x, term.zShape, min(x), max(x)))
-image = ggplot(zShape.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
-ggsave('figure/zShape.svg', image, width=3, height=3)
+zShape.plot = ggplot(zShape.df, aes(x,y, size=2, lineend='round')) + geom_line() + ylab(expression(mu(x))) + theme(legend.position='none')
+ggsave('figure/zShape.svg', zShape.plot, width=3, height=3)
 
 
+plot.parse = paste(ls(pattern='\\.plot$'), collapse=', ')
 
+plot.list = eval(parse(text=paste0('list(',plot.parse,')')))
+# names(plot.list) = plot.parse
+
+message(plot.parse)
