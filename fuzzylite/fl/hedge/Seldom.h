@@ -39,8 +39,8 @@ namespace fl {
           @param x is a membership function value
           @return @f$
           \begin{cases}
-          \sqrt{x/2} & \mbox{if $x \le 0.5$} \cr
-          1-\sqrt{(1-x)/2} & \mbox{otherwise}\cr
+          \sqrt{0.5x} & \mbox{if $x \le 0.5$} \cr
+          1-\sqrt{0.5(1-x)} & \mbox{otherwise}\cr
           \end{cases}
           @f$
          */

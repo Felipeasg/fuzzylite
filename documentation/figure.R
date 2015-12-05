@@ -1,4 +1,8 @@
+library('cowplot')
 library('ggplot2')
+
+theme_set(theme_gray())
+
 
 isEq = function(a,b,error=1e-5){
     abs(a - b) <= error
@@ -345,9 +349,144 @@ zShape.plot = ggplot(zShape.df, aes(x,y, size=2, lineend='round')) + geom_line()
 ggsave('figure/zShape.svg', zShape.plot, width=3, height=3)
 
 
-plot.parse = paste(ls(pattern='\\.plot$'), collapse=', ')
+##############Terms
 
-plot.list = eval(parse(text=paste0('list(',plot.parse,')')))
-# names(plot.list) = plot.parse
+    constant.plot = 
+         ggplot(data=data.frame(x=0,y=0)) +
+         geom_point(aes(x=0,y=0), size=0) +
+         ylab(expression(mu(x))) + xlab('x') + 
+         coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
+         annotate('text', x = .5, y = .5, label = "mu(x)==k", parse = T,size=10) 
+     
+    linear.plot = 
+         ggplot(data=data.frame(x=0,y=0)) + 
+         geom_point(aes(x=0,y=0), size=0) +
+         ylab(expression(mu(x))) + xlab('x') + 
+         coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
+         annotate('text', x = .5, y = .5, angle=45, label = "mu(x)==sum(paste(c[i],x[i]), i)+k", parse = T,size=10)
+             
+    function.plot = 
+        ggplot(data=data.frame(x=0,y=0)) + 
+        geom_point(aes(x=0,y=0), size=0) +
+        ylab(expression(mu(x))) + xlab('x') +
+        coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
+        annotate('text', x = .5, y = .5, label = "f:x %->% mu(x)", parse = T,size=10)
 
-message(plot.parse)
+
+########## Vertical layout
+        terms.grid = plot_grid(
+            
+triangle.plot,      bell.plot,                piShape.plot,
+trapezoid.plot,     cosine.plot,              sigmoidDifference.plot,
+rectangle.plot,     gaussian.plot,            sigmoidProduct.plot,
+discrete.plot,      gaussianProduct.plot,     spike.plot,
+function.plot,      linear.plot,              constant.plot,
+binary.plot,        ramp.plot,                sShape.plot,
+concave.plot,       sigmoid.plot,             zShape.plot,
+                                              piShape.plot,
+
+        ncol=3, nrow=7, scale=1, label_size=12, vjust=1.25, align='v',
+        #hjust=.5, # align='hv',
+
+    labels=c(
+'Triangle',   'Bell',             'PiShape',
+'Trapezoid',  'Cosine',           'SigmoidDifference',
+'Rectangle',  'Gaussian',         'SigmoidProduct',
+'Discrete',   'GaussianProduct',  'Spike',
+'Function',   'Linear',           'Constant',
+'Binary',     'Ramp',             'SShape',
+'Concave',    'Sigmoid',          'ZShape'
+    )
+    ) 
+    
+    save_plot('figure/terms.svg', terms.grid, ncol=3, nrow=7, scale=.75)
+
+    stop('Script successfully executed')
+
+
+##########Horizontal layout
+    terms.grid = plot_grid(
+
+    triangle.plot, trapezoid.plot, rectangle.plot, discrete.plot, function.plot,  binary.plot , concave.plot, 
+
+    bell.plot, cosine.plot, gaussian.plot, gaussianProduct.plot,  linear.plot, ramp.plot, sigmoid.plot,
+
+    piShape.plot, sigmoidDifference.plot,  sigmoidProduct.plot, spike.plot, constant.plot, sShape.plot, zShape.plot,
+
+    ncol=7, nrow=3, scale=1, label_size=12, vjust=1.25, align='v',
+    #hjust=.5, # align='hv',
+
+labels=c(
+'Triangle', 'Trapezoid', 'Rectangle', 'Discrete', 'Function', 'Binary',  'Concave',
+'Bell', 'Cosine', 'Gaussian', 'GaussianProduct', 'Linear',  'Ramp', 'Sigmoid',
+'PiShape', 'SigmoidDifference', 'SigmoidProduct','Spike', 'Constant', 'SShape', 'ZShape')
+) 
+    
+save_plot('figure/terms.svg', terms.grid, ncol=7, nrow=3, scale=.75)
+
+stop('Script successfully executed')
+
+
+
+
+
+
+
+
+
+
+
+
+# X1234X
+# 123456
+# 7    8
+# 123456
+
+constant.plot = 
+     ggplot(data=data.frame(x=0,y=0)) +
+     geom_point(aes(x=0,y=0), size=0) +
+     ylab(expression(mu(x))) + xlab('x') + 
+     coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
+     annotate('text', x = .5, y = .5, label = "mu(x)==k", parse = T,size=10) 
+
+linear.plot = 
+     ggplot(data=data.frame(x=0,y=0)) + 
+     geom_point(aes(x=0,y=0), size=0) +
+     ylab(expression(mu(x))) + xlab('x') + 
+     coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
+     annotate('text', x = .5, y = .5, angle=45, label = "mu(x)==sum(c[i] %.% x[i], i)+k", parse = T,size=5)
+     
+function.plot = 
+    ggplot(data=data.frame(x=0,y=0)) + 
+    geom_point(aes(x=0,y=0), size=0) +
+    ylab(expression(mu(x))) + xlab('x') +
+    coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
+    annotate('text', x = .5, y = .5, label = "f:x %->% mu(x)", parse = T,size=5)
+
+
+terms.grid = plot_grid(
+
+NULL, triangle.plot, trapezoid.plot, rectangle.plot, discrete.plot, NULL,
+
+bell.plot, cosine.plot, gaussian.plot, gaussianProduct.plot,  piShape.plot, sigmoidDifference.plot, 
+
+sigmoidProduct.plot, spike.plot, NULL, constant.plot, linear.plot, function.plot,  
+
+binary.plot, concave.plot, ramp.plot, sigmoid.plot, sShape.plot, zShape.plot,
+
+nrow=4, ncol=6, scale=1, label_size=12, vjust=1.25,
+#hjust=.5, # align='hv',
+
+labels=c(
+'', 'Triangle', 'Trapezoid', 'Rectangle', 'Discrete', '',
+'Bell', 'Cosine', 'Gaussian', 'GaussianProduct', 'PiShape', 'SigmoidDifference',
+'SigmoidProduct','Spike', '', 'Constant', 'Linear', 'Function',
+'Binary',  'Concave', 'Ramp', 'Sigmoid', 'SShape', 'ZShape')
+) 
+
+save_plot('figure/terms.svg', terms.grid,
+    ncol=6, nrow=4, scale=.5)
+
+
+
+

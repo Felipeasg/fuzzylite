@@ -22,8 +22,8 @@ namespace fl {
 
     /**
 
-      The Binary class is an extended Term that represents the binary
-      membership function.
+      The Binary class is an edge Term that represents the binary
+      membership function. @todo make it an edge term, where +threshold -> _| and -threshold |_
     
       @image html binary.svg
 

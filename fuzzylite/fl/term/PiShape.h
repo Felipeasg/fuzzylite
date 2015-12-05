@@ -69,10 +69,10 @@ namespace fl {
           @param x
           @return @f$\begin{cases}
           0h & \mbox{if $x \leq b_l$}\cr
-          2h \left((x - b_l) / (t_l-b_l)\right)^2 & \mbox{if $x \leq (a+b)/2$}\cr
+          2h \left((x - b_l) / (t_l-b_l)\right)^2 & \mbox{if $x \leq 0.5(a+b)$}\cr
           h (1 - 2 \left((x - t_l) / (t_l-b_l)\right)^2) & \mbox{if $ x < t_l$}\cr
           h & \mbox{if $x \leq t_r$}\cr
-          h (1 - 2\left((x - t_r) / (b_r - t_r)\right)^2) & \mbox{if $x \leq (t_r + b_r)/2$}\cr
+          h (1 - 2\left((x - t_r) / (b_r - t_r)\right)^2) & \mbox{if $x \leq 0.5(t_r + b_r)$}\cr
           2h \left((x - b_r) / (b_r-t_r)\right)^2 & \mbox{if $x < b_r$} \cr
           0h & \mbox{otherwise}
           \end{cases}@f$

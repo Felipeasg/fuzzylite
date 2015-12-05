@@ -63,7 +63,7 @@ namespace fl {
           @param x
           @return @f$  \begin{cases}
           1h & \mbox{if $x \leq s$} \cr
-          h(1 - 2\left((x - s) / (e-s)\right)^2) & \mbox{if $x \leq (s+e)/2$}\cr
+          h(1 - 2\left((x - s) / (e-s)\right)^2) & \mbox{if $x \leq 0.5(s+e)$}\cr
           h(2 \left((x - e) / (e-s)\right)^2) & \mbox{if $x < e$}\cr
           0h & \mbox{otherwise}
           \end{cases}@f$

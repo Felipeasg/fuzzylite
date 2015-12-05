@@ -60,8 +60,8 @@ namespace fl {
           Computes the membership function evaluated at @f$x@f$
           @param x
           @return @f$\begin{cases}
-          0h & \mbox{if $x < c - w / 2 \vee x > c + w / 2$} \cr
-          0.5h \times ( 1 + \cos(2 / w\pi(x-c))) & \mbox{otherwise}
+          0h & \mbox{if $x < c - 0.5w \vee x > c + 0.5w$} \cr
+          0.5h \times ( 1 + \cos(2.0 / w\pi(x-c))) & \mbox{otherwise}
           \end{cases}@f$
           
           where @f$h@f$ is the height of the Term,
