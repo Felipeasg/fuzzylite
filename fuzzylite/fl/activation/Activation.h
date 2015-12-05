@@ -23,8 +23,8 @@ namespace fl {
 
     /** 
      
-      The Activation class is the abstract class of activation methods for rule
-      blocks. An activation method implements the criteria to activate the
+      The Activation class is the abstract class for RuleBlock activation
+      methods. An activation method implements the criteria to activate the
       rules within a given rule block. An activation method needs to process
       every rule and determine whether the rule is to be activated or
       deactivated. The activation methods were first introduced in version 6.0,

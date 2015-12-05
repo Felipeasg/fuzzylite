@@ -26,8 +26,8 @@ namespace fl {
 
     /**
     
-      The ConstructionFactory class is the base class for a factory whose
-      objects are created from a registered Constructor.
+      The ConstructionFactory< T > class is the base class for a factory whose
+      objects are created from a registered ConstructionFactory::Constructor.
       
       @author Juan Rada-Vilela, Ph.D.
       @see FactoryManager

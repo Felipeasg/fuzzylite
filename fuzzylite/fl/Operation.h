@@ -27,9 +27,9 @@ namespace fl {
 
     /**
     
-      The Operation class (or Op type definition) is a general purpose class
-      that contains methods for numeric and string manipulation, amongst other
-      functions.
+      The Operation class contains methods for numeric operations, string
+      manipulation, and other functions, all of which are also accessible via
+      fl::Op.
     
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0

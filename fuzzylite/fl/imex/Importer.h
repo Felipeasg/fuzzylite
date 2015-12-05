@@ -25,8 +25,9 @@ namespace fl {
 
     /**
     
-      The Importer class is the base class for importers to configure an Engine
-      and its components from different formats.
+      The Importer class is the abstract class for importers to configure an
+      Engine and its components from different text formats.
+
       @todo declare methods to import specific components
     
       @author Juan Rada-Vilela, Ph.D.

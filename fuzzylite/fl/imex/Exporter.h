@@ -25,8 +25,8 @@ namespace fl {
 
     /**
       
-      The Exporter class is the base class for exporters to translate an Engine
-      into different formats.
+      The Exporter class is the abstract class for exporters to translate an
+      Engine into different formats.
     
       @todo declare methods for exporting other components (e.g., Variable)
     

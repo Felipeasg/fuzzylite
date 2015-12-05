@@ -197,8 +197,8 @@ namespace fl {
 
     /**
 
-      The fuzzylite class contains general information about the library and
-      its global settings.
+      The fuzzylite class contains global settings and information about the
+      library.
 
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0

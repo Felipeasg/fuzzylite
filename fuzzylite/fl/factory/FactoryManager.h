@@ -29,9 +29,10 @@ namespace fl {
 
     /**
     
-      The FactoryManager class contains the different factories of objects,
-      together with a singleton instance to access each of the factories
-      throughout the library.
+      The FactoryManager class is a central class grouping different factories
+      of objects, together with a singleton instance to access each of the
+      factories throughout the library.
+
       
       @author Juan Rada-Vilela, Ph.D.
       @see TermFactory

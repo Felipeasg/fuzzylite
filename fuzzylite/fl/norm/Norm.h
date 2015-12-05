@@ -24,8 +24,7 @@ namespace fl {
 
     /**
 
-      The Norm class is a pure abstract class that defines the interface of
-      TNorm%s and SNorm%s.
+      The Norm class is the abstract class for norms.
 
       @author Juan Rada-Vilela, Ph.D.
       @see TNorm

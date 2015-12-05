@@ -23,12 +23,14 @@ namespace fl {
 
     /**
       
-      The Linear class is a function Term that represents the linear membership
-      function defined as @f$f(\mathbf{x})= \mathbf{c}\mathbf{x}+k = \sum_i
-      c_ix_i + k@f$, where @f$\mathbf{x}@f$ is the vector of values of the
-      input variables, @f$\mathbf{c}@f$ is the vector of coefficients for the
-      input variables, and @f$k@f$ is a constant.
-      
+      The Linear class is a linear polynomial Term expressed as @f$f(x)=
+      \mathbf{c}\mathbf{v}+k = \sum_i c_iv_i + k@f$, where variable @f$x@f$ is
+      not utilized, @f$\mathbf{v}@f$ is a vector of values from the input
+      variables, @f$\mathbf{c}@f$ is a vector of coefficients, and @f$k@f$ is a
+      constant. Hereinafter, the vector @f$\mathbf{c}^\star=\{c_1, \ldots, c_i,
+      \ldots, c_n, k\}@f$ refers to a vector containing the coefficients of
+      @f$\mathbf{c}@f$ and the constant @f$k@f$.
+     
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
@@ -37,6 +39,7 @@ namespace fl {
      */
     class FL_API Linear : public Term {
     protected:
+        /**Contains the coefficients @f$c_i@f$ and the constant @f$k@f$*/
         std::vector<scalar> _coefficients;
         const Engine* _engine;
     public:
@@ -49,97 +52,62 @@ namespace fl {
         virtual std::string className() const FL_IOVERRIDE;
 
         /**
-          Returns the coefficients @f$\{c_1, \ldots, c_i, \ldots, c_n, k\}@f$
-          of the linear function defined as @f$f(\mathbf{x})=c_1x_1 + \ldots +
-          c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector
-          containing the values of the input variables in the order registered
-          in the Linear::getEngine()
+          Returns the vector @f$\mathbf{c}^\star@f$
           @return `"c1 ... ci ... cn k"`
          */
         virtual std::string parameters() const FL_IOVERRIDE;
         /**
-          Configures the coefficients @f$\{c_1, \ldots, c_i, \ldots, c_n,
-          k\}@f$ of the linear function @f$f(\mathbf{x})=c_1x_1 + \ldots +
-          c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector
-          containing the values of the input variables in the order registered
-          in the Engine
+          Configures the term with the values of @f$\mathbf{c}^\star@f$
           @param parameters as `"c1 ... ci ... cn k"`
          */
         virtual void configure(const std::string& parameters) FL_IOVERRIDE;
 
         /**
-          Computes the membership function @f$f(\mathbf{x})=c_1x_1 + \ldots +
-          c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector
-          containing the values of the input variables in the order registered
+          Computes the linear function @f$f(x)=\sum_i c_iv_i +k@f$,
+          where @f$v_i@f$ is the value of the input variable @f$i@f$ registered
           in the Linear::getEngine()
-          @param z is irrelevant and not used
-          @return @f$\sum_{i=0}^{I}{(c_ix_i)}+k@f$
-          
-          where @f$I@f$ is the number of input variables in the Engine,
-                @f$c_i@f$ is the @f$i@f$th coefficient of Linear,
-                @f$x_i@f$ is the input value of the @f$i@f$th input variable,
-                @f$k@f$ is a constant registered as the last coefficient in Linear
+          @param x is not utilized
+          @return @f$\sum_i c_ix_i +k@f$
          */
-        virtual scalar membership(scalar z) const FL_IOVERRIDE;
+        virtual scalar membership(scalar x) const FL_IOVERRIDE;
 
         /**
-          Sets the coefficients @f$\{c_1, \ldots, c_i, \ldots, c_n, k\}@f$ of
-          the linear function @f$f(\mathbf{x})=c_1x_1 + \ldots + c_ix_i +
-          \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector containing
-          the values of the input variables in the order registered in the
-          given Engine, whose pointer is stored to retrieve the input
-          variables when needed
-
-          @param coefficients is a vector of the coefficients @f$\{c_1, \ldots,
-          c_i, \ldots, c_n, k\}@f$
-          @param engine is the engine from which the values of the input
-          variables will be retrieved upon computing the membership function
+          Sets the vector @f$\mathbf{c}^\star@f$ and the Engine from which
+          vector @f$\mathbf{v}@f$ will be retrieved when necessary
+          @param coefficients is the vector @f$\mathbf{c}^\star@f$
+          @param engine is the engine from which @f$\mathbf{v}@f$ will be
+          retrieved when necessary
          */
         virtual void set(const std::vector<scalar>& coefficients, const Engine* engine);
 
         /**
-          Sets the coefficients @f$\{c_1, \ldots, c_i, \ldots, c_n, k\}@f$ of
-          the linear function @f$f(\mathbf{x})=c_1x_1 + \ldots + c_ix_i +
-          \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector containing
-          the values of the input variables in the order registered in the
-          Linear::getEngine()
-          @param coefficients is a vector of the coefficients @f$\{c_1, \ldots,
-          c_i, \ldots, c_n, k\}@f$
+          Sets the vector @f$\mathbf{c}^\star@f$ of the linear function
+          @param coefficients is the vector @f$\mathbf{c}^\star@f$
          */
         virtual void setCoefficients(const std::vector<scalar>& coefficients);
         /**
-          Gets an immutable vector of the coefficients @f$\{c_1, \ldots, c_i,
-          \ldots, c_n, k\}@f$ of the linear function @f$f(\mathbf{x})=c_1x_1 +
-          \ldots + c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a
-          vector containing the values of the input variables in the order
-          registered in the Linear::getEngine()
-          @return an immutable vector of the coefficients @f$\{c_1, \ldots,
-          c_i, \ldots, c_n, k\}@f$
+          Gets the immutable vector @f$\mathbf{c}^\star@f$
+          @return the immutable vector @f$\mathbf{c}^\star@f$
          */
         virtual const std::vector<scalar>& coefficients() const;
         /**
-          Gets a mutable vector of the coefficients @f$\{c_1, \ldots, c_i,
-          \ldots, c_n, k\}@f$ of the linear function @f$f(\mathbf{x})=c_1x_1 +
-          \ldots + c_ix_i + \ldots + c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a
-          vector containing the values of the input variables in the order
-          registered in the Linear::getEngine()
-          @return a mutable vector of the coefficients @f$\{c_1, \ldots,
-          c_i, \ldots, c_n, k\}@f$
+          Gets the mutable vector @f$\mathbf{c}^\star@f$
+          @return the mutable vector @f$\mathbf{c}^\star@f$
          */
         virtual std::vector<scalar>& coefficients();
 
         /**
-          Sets the engine to retrieve the values of the input variables
-          required to compute the membership function
-          @param engine is the engine from which the values of the input
-          variables will be retrieved upon computing the membership function
+          Sets the engine from which the vector @f$\mathbf{v}@f$ will be
+          obtained upon computing the Linear::membership()
+          @param engine is the engine from which the vector @f$\mathbf{v}@f$
+          will be obtained
          */
         virtual void setEngine(const Engine* engine);
         /**
-          Gets the engine from which the values of the input variables are
-          retrieved upon computing the membership function
-          @return the engine from which the values of the input variables will
-          be retrieved upon computing the membership function
+          Gets the engine from which the vector @f$\mathbf{v}@f$ will be
+          obtained upon computing the Linear::membership()
+          @return the engine from which the vector @f$\mathbf{v}@f$ will be
+          obtained
          */
         virtual const Engine* getEngine() const;
 
@@ -153,24 +121,22 @@ namespace fl {
           ensuring:
         
           - the data type of each variadic arguments is the same, e.g.,
-            @f$(1.0, 2.0, 3.0)@f$ are all fl::scalar%s. Special care needs to
-            be taken in the case of @f$(1.0, 2, 3.0)@f$, where the second term
-            is an integer because this will cause memory access issues due to
-            the difference in size between an `int` and `fl::scalar`,
+            @f$(1.0, 2.0, 3.0)@f$ are all fl::scalar%s. You *need* to avoid the
+            case of @f$(1.0, 2, 3.0)@f$, where the second term will be
+            considered as an `int` (different from the others) and cause memory
+            issues due to the difference in size between an `int` and
+            `fl::scalar`; and 
 
           - the number of variadic arguments is exactly the same as the number
             of input variables in the engine plus one in order to match the
-            equation: @f$f(\mathbf{x})=c_1x_1 + \ldots + c_ix_i + \ldots +
-            c_nx_n + k@f$, where @f$\mathbf{x}@f$ is a vector containing the
-            values of the input variables , and @f$c_i@f$ is the coefficient
-            for the @f$i@f$-th input variable.
+            size of the vector @f$\mathbf{c}^\star@f$
 
           @param name is the name of the term
-          @param engine is the engine from which the values of the input
-          variables will be retrieved upon computing the membership function
-          @param firstCoefficient is the first coefficient of the term, namely
-          @f$c_i@f$, which relates to the first input variable
-          @param ... a variadic number of coefficients whose type need to be 
+          @param engine is the engine from which the vector @f$\mathbf{v}@f$
+          will be obtained
+          @param firstCoefficient is the coefficient for the first input
+          variable, namely @f$c_1@f$
+          @param ... is a variadic number of coefficients whose type need to be 
           the same as the first coefficient
           @return a new Linear term with the given parameters
          */

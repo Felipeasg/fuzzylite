@@ -37,7 +37,7 @@ namespace fl {
       w]?`
       
       where `*`-marked elements may appear zero or more times, elements in
-      brackets are optional, elements in parenthesis are compulsory, and
+      brackets are optional, elements in parentheses are compulsory, and
       `?`-marked elements may appear once or not at all.
       
       @author Juan Rada-Vilela, Ph.D.

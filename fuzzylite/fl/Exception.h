@@ -26,12 +26,13 @@ namespace fl {
 
     /**
 
-      The Exception class is an std::exception that is utilized throughout the
-      library wherever an exception needs to be thrown. When the library is
-      built with the compiling flag `-DFL_BACKTRACE=ON`, the method
-      Exception::btCallStack() will provide a stack trace when an exception is
-      thrown. Please, have in mind enabling the stack trace will require the
-      external library `dbghelp` in the Windows platform.
+      The Exception class is the only type of exception that is utilized
+      throughout the library. If the library is built with the compiling flag
+      `-DFL_BACKTRACE=ON`, the method Exception::btCallStack() will provide a
+      stack trace when an exception is thrown. Please, have in mind that
+      enabling the stack trace will require the external library `dbghelp` in
+      the Windows platform, which is generally available in the operating
+      system.
 
       @author Juan Rada-Vilela, Ph.D.
       @since 4.0

@@ -36,7 +36,7 @@ namespace fl {
      `if variable is [hedge]* term [(and|or) variable is [hedge]* term]*`
 
       where `*`-marked elements may appear zero or more times, elements in
-      brackets are optional, and elements in parenthesis are compulsory.
+      brackets are optional, and elements in parentheses are compulsory.
 
       @author Juan Rada-Vilela, Ph.D.
       @see Consequent

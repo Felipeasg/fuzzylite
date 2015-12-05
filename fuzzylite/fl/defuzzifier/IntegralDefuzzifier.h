@@ -22,7 +22,7 @@ namespace fl {
 
     /**
     
-      The IntegralDefuzzifier is the base class for defuzzifiers which integrate
+      The IntegralDefuzzifier class is the base class for defuzzifiers which integrate
       over the fuzzy set. 
     
       @author Juan Rada-Vilela, Ph.D.

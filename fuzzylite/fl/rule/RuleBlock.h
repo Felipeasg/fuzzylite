@@ -32,7 +32,7 @@ namespace fl {
 
     /**
     
-      The RuleBlock class contains a group of Rule%s and the fuzzy logic
+      The RuleBlock class contains a set of Rule%s and fuzzy logic
       operators required to control an Engine.
 
       @author Juan Rada-Vilela, Ph.D.

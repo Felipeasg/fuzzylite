@@ -24,12 +24,14 @@ namespace fl {
 
     /**
       
-      The Hedge class is a pure abstract class that defines the interface of 
-      hedges. A Hedge is utilized to modify the membership function of a 
-      linguistic Term. 
+      The Hedge class is the abstract class for hedges. Hedges are utilized
+      within the Antecedent and Consequent of a Rule in order to modify the
+      membership function of a linguistic Term. 
     
       @author Juan Rada-Vilela, Ph.D.
-      @see Hedge
+      @see Antecedent
+      @see Consequent
+      @see Rule
       @see HedgeFactory
       @since 4.0
      

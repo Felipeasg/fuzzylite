@@ -27,13 +27,34 @@ namespace fl {
 
     /**
 
-      The Function class is a multipurpose Term that represents a generic
-      formula membership function  @f$ f : x \mapsto f(x) @f$.
+      The Function class is a polynomial Term that represents a generic
+      function @f$ f : x \mapsto f(x) @f$. Every Function object has a public
+      key-value map, namely Function::variables, that links variable names to
+      fl::scalar values, which are utilized to replace the variable names for
+      their respective values in the given formula whenever the function
+      @f$f@f$ is evaluated. Specifically, when the method
+      Function::membership() is called, the name and value of the variable
+      @f$x@f$ are automatically loaded into the map. Furthermore, if an Engine
+      is given, the names of its InputVariable%s and OutputVariable%s will also
+      be automatically loaded into the map linking to their respective input
+      values and (previously defuzzified) output values. The
+      Function::variables need to be manually loaded whenever variables other
+      than @f$x@f$, input variables, and output variables, are expressed in the
+      given formula, always having in mind that (a) the map replaces existing
+      keys, and (b) the variable @f$x@f$, and input variables and output
+      variables of an engine will automatically be replaced and will also take
+      precedence over previously loaded variables.
+
+      Besides the use of Function as a linguistic Term, it is also utilized to
+      convert the text of the Antecedent of a Rule, expressed in infix
+      notation, into postfix notation. 
+
 
       @author Juan Rada-Vilela, Ph.D.
       @see Term
       @see Variable
       @see FunctionFactory
+      @see Antecedent::load()
       @since 4.0
     
      */
@@ -44,13 +65,13 @@ namespace fl {
 
         /**
 
-          The Element structure represents a single element in a formula,
+          The Element class represents a single element in a formula, be that
           either a function or an operator. If the Element represents a
           function, the function can be Unary or Binary, that is, the function
           take one or two parameters (respectively). Else, if the Element
           represents an operator, the parameters to be defined are its `arity`,
           its `precedence`, and its `associativity`.
-
+        
          */
         struct FL_API Element {
 
@@ -113,9 +134,12 @@ namespace fl {
         };
 
         /**
-          The Node structure is a binary tree that can store a
-          Function::Element, a reference to an InputVariable or OutputVariable
-          by name, or a constant value.
+
+          The Node class structures a binary tree by storing pointers to a left
+          Node and a right Node, and storing its content as a
+          Function::Element, the name of an InputVariable or OutputVariable, or
+          a constant value.
+
          */
         struct FL_API Node {
             /**The node takes an operation or a function**/

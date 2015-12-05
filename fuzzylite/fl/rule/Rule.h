@@ -43,13 +43,24 @@ namespace fl {
       membership function to model cases such as Very, Somewhat, Seldom and
       Not. Additionally, the contribution of a rule to the control of the
       engine can be determined by its weight @f$w \in [0.0, 1.0]@f$, which is
-      equal to 1.0 if omitted.
+      equal to 1.0 if omitted. The structure of a rule is the following: `if
+      (antecedent) then (consequent) [with weight]`. The structures of 
+      the antecedent and the consequent are:
+    
+     `if variable is [hedge]* term [(and|or) variable is [hedge]* term]*`
+
+     `then variable is [hedge]* term [and variable is [hedge]* term]* [with w]?`
+
+      where elements in brackets are optional, elements in parentheses are
+      compulsory, `*`-marked elements may appear zero or more times, and
+     `?`-marked elements may appear once or not at all.
      
       @todo add `computeActivationDegree` and replace in Activation methods
       
       @author Juan Rada-Vilela, Ph.D.
       @see Antecedent
       @see Consequent
+      @see Hedge
       @see RuleBlock
       @since 4.0
     

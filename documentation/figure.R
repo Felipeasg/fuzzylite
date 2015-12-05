@@ -354,23 +354,23 @@ ggsave('figure/zShape.svg', zShape.plot, width=3, height=3)
     constant.plot = 
          ggplot(data=data.frame(x=0,y=0)) +
          geom_point(aes(x=0,y=0), size=0) +
-         ylab(expression(mu(x))) + xlab('x') + 
+         ylab(expression(f(x))) + xlab('x') + 
          coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
-         annotate('text', x = .5, y = .5, label = "mu(x)==k", parse = T,size=10) 
+         annotate('text', x = .5, y = .5, label = "f(x)==k", parse = T,size=10) 
      
     linear.plot = 
          ggplot(data=data.frame(x=0,y=0)) + 
          geom_point(aes(x=0,y=0), size=0) +
-         ylab(expression(mu(x))) + xlab('x') + 
+         ylab(expression(f(x))) + xlab('x') + 
          coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
-         annotate('text', x = .5, y = .5, angle=45, label = "mu(x)==sum(paste(c[i],x[i]), i)+k", parse = T,size=10)
+         annotate('text', x = .5, y = .5, angle=45, label = "f(x)==sum(paste(c[i],v[i]), i)+k", parse = T,size=10)
              
     function.plot = 
         ggplot(data=data.frame(x=0,y=0)) + 
         geom_point(aes(x=0,y=0), size=0) +
-        ylab(expression(mu(x))) + xlab('x') +
+        ylab(expression(f(x))) + xlab('x') +
         coord_cartesian(ylim = c(-0.05, 1.05), xlim=c(-0.05,1.05)) + 
-        annotate('text', x = .5, y = .5, label = "f:x %->% mu(x)", parse = T,size=10)
+        annotate('text', x = .5, y = .5, label = "f:x %->% f(x)", parse = T,size=10)
 
 
 ########## Vertical layout
@@ -380,10 +380,9 @@ triangle.plot,      bell.plot,                piShape.plot,
 trapezoid.plot,     cosine.plot,              sigmoidDifference.plot,
 rectangle.plot,     gaussian.plot,            sigmoidProduct.plot,
 discrete.plot,      gaussianProduct.plot,     spike.plot,
-function.plot,      linear.plot,              constant.plot,
 binary.plot,        ramp.plot,                sShape.plot,
-concave.plot,       sigmoid.plot,             zShape.plot,
-                                              piShape.plot,
+concave.plot,       sigmoid.plot,             zShape.plot, 
+function.plot,      linear.plot,              constant.plot,
 
         ncol=3, nrow=7, scale=1, label_size=12, vjust=1.25, align='v',
         #hjust=.5, # align='hv',
@@ -393,9 +392,9 @@ concave.plot,       sigmoid.plot,             zShape.plot,
 'Trapezoid',  'Cosine',           'SigmoidDifference',
 'Rectangle',  'Gaussian',         'SigmoidProduct',
 'Discrete',   'GaussianProduct',  'Spike',
-'Function',   'Linear',           'Constant',
 'Binary',     'Ramp',             'SShape',
-'Concave',    'Sigmoid',          'ZShape'
+'Concave',    'Sigmoid',          'ZShape',
+'Function',   'Linear',           'Constant'
     )
     ) 
     
