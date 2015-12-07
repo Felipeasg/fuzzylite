@@ -252,9 +252,8 @@ namespace fl {
         /**
           Computes the membership function value of @f$x@f$ at the root node.
           If the engine has been set, the current values of the input variables
-          and output variables are added to the map of {@link
-          Function::variables}. In addition, the variable @f$x@f$ will also be
-          added to the map.
+          and output variables are added to the map of Function::variables. In
+          addition, the variable @f$x@f$ will also be added to the map.
           @param x
           @return the membership function value of @f$x@f$ at the root node
          */

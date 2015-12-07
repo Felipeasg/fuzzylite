@@ -71,8 +71,8 @@ namespace fl {
         virtual Expression* getExpression() const;
 
         /**
-          Indicates if the antecedent is loaded
-          @return `true` if the antecedent is loaded, `false` otherwise
+          Indicates whether the antecedent is loaded
+          @return whether the antecedent is loaded
          */
         virtual bool isLoaded() const;
 

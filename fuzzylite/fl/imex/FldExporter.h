@@ -64,40 +64,37 @@ namespace fl {
 
         /**
           Sets whether the header of the dataset is to be exported
-          @param exportHeaders is a boolean indicating whether the header of 
-          the dataset is to be exported
+          @param exportHeaders indicates whether the header of the dataset is
+          to be exported
          */
         virtual void setExportHeader(bool exportHeaders);
         /**
           Gets whether the header of the dataset is to be exported
-          @return `true` if the header of the dataset is to be exported,
-          `false` otherwise
+          @return whether the header of the dataset is to be exported
          */
         virtual bool exportsHeader() const;
 
         /**
           Sets whether the values of the input variables are to be exported
-          @param exportInputValues is a boolean indicating whether the values
-          of the input variables are to be exported
+          @param exportInputValues indicates whether the values of the input
+          variables are to be exported
          */
         virtual void setExportInputValues(bool exportInputValues);
         /**
           Gets whether the values of the input variables are to be exported
-          @return `true` if the values of the input variables are to be
-          exported, and `false` otherwise
+          @return whether the values of the input variables are to be exported
          */
         virtual bool exportsInputValues() const;
 
         /**
           Sets whether the values of the output variables are to be exported
-          @param exportOutputValues is a boolean indicating whether the values
-          of the output variables are to be exported
+          @param exportOutputValues indicates whether the values of the output
+          variables are to be exported
          */
         virtual void setExportOutputValues(bool exportOutputValues);
         /**
           Gets whether the values of the output variables are to be exported
-          @return `true` if the values of the output variables are to be
-          exported, and `false` otherwise
+          @return whether the values of the output variables are to be exported
          */
         virtual bool exportsOutputValues() const;
 

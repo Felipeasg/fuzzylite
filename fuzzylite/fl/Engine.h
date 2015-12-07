@@ -103,8 +103,8 @@ namespace fl {
           method should be taken as a suggestion and not as a prerrequisite to
           operate the engine. 
           
-          @param status contains the configuration errors of this engine                  @return `true` if the engine is ready to operate, and `false`
-          otherwise
+          @param status contains the configuration errors of this engine
+          @return whether the engine is ready to operate
          */
         virtual bool isReady(std::string* status = fl::null) const;
 
@@ -247,7 +247,7 @@ namespace fl {
           Indicates whether an input variable of the given name is in the input
           variables
           @param name is the name of the input variable
-          @return a boolean indicating whether an input variable of the given             name is in the input variables
+          @return whether an input variable is registered with the given name
          */
         virtual bool hasInputVariable(const std::string& name) const;
         /**
@@ -309,8 +309,7 @@ namespace fl {
           Indicates whether an output variable of the given name is in the
           output variables
           @param name is the name of the output variable
-          @return a boolean indicating whether an output variable of the given
-          name is in the output variables
+          @return whether an output variable is registered with the given name
          */
         virtual bool hasOutputVariable(const std::string& name) const;
         /**
@@ -385,8 +384,8 @@ namespace fl {
           Indicates whether an rule block of the given name is in the rule
           blocks
           @param name is the name of the rule block
-          @return a boolean indicating whether an rule block of the given name 
-          is in the rule blocks
+          @return whether an rule block of the given name is in the rule blocks
+
          */
         virtual bool hasRuleBlock(const std::string& name) const;
         /**

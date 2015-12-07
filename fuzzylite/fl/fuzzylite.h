@@ -101,7 +101,7 @@
 
 /**
   The fl namespace is the namespace where all the classes of the `fuzzylite`
-  library are contained. @todo utilize FL_BEGIN_NAMESPACE and FL_END_NAMESPACE
+  library are contained in. @todo utilize FL_BEGIN_NAMESPACE and FL_END_NAMESPACE
 
   @author Juan Rada-Vilela, Ph.D.
   @since 4.0
@@ -132,7 +132,8 @@ namespace fl {
 
     //Pointers
     /**
-      Represents the C++11 null pointer
+      Represents the `C++11` or `C++98` null pointer depending on whether the
+      compilation flag `-DFL_CPP11` is set
      */
     const std::nullptr_t null = nullptr;
 #define FL_unique_ptr std::unique_ptr
@@ -167,7 +168,8 @@ namespace fl {
 
     //Pointers
     /**
-      Represents the C++98 null pointer
+      Represents the `C++11` or `C++98` null pointer depending on whether the
+      compilation flag `-DFL_CPP11` is set
      */
     const long null = 0L;
 #define FL_unique_ptr std::auto_ptr
@@ -228,8 +230,10 @@ namespace fl {
          */
         static std::string version();
         /**
-          Returns the version of the `fuzzylite` library including the release date
-          @return the version of the `fuzzylite` library including the release date
+          Returns the version of the `fuzzylite` library including the release
+          date
+          @return the version of the `fuzzylite` library including the release
+          date
          */
         static std::string longVersion();
         /**
@@ -272,45 +276,56 @@ namespace fl {
 
         /**
           Indicates whether the library is running in debug mode
-          @return a boolean indicating whether the library is running in debug mode
+          @return `true` if the library is running in debug mode, and `false`
+          if it is running in release mode
          */
         static bool debug();
         /**
           Sets whether the library is set to run in debug mode
-          @param debug is a boolean indicating whether the library is set to run in debug mode
+          @param debug indicates whether the library is set to run in debug mode
          */
         static void setDebug(bool debug);
 
         /**
           Returns the number of decimals utilized when formatting scalar values
-          @return the number of decimals utilized when formatting scalar values (default is 3)
+          @return the number of decimals utilized when formatting scalar values
+          (default is 3)
          */
         static int decimals();
         /**
           Sets the number of decimals utilized when formatting scalar values
-          @param decimals is the number of decimals to utilize when formatting scalar values
+          @param decimals is the number of decimals utilized when formatting
+          scalar values
          */
         static void setDecimals(int decimals);
 
         /**
-          Returns the minimum difference upon which two floating-point values are considered equivalent
-          @return the minimum difference upon which two floating-point values are considered equivalent (default is 1e-6)
+          Returns the minimum difference at which two floating-point values
+          are considered equivalent
+          @return the minimum difference at which two floating-point values
+          are considered equivalent (default is 1e-6)
          */
         static scalar macheps();
         /**
-          Sets the minimum difference (machine epsilon) upon which two floating-point values are considered equivalent 
-          @param macheps is the minimum difference (machine epsilon) upon which two floating-point values are considered equivalent (default is 1e-6)
+          Sets the minimum difference at which two floating-point values are
+          considered equivalent
+          @param macheps is the minimum difference at which two floating-point
+          values are considered equivalent (default is 1e-6)
          */
         static void setMachEps(scalar macheps);
 
         /**
-          Returns whether the library is set to log information using the macro FL_LOG
-          @return a boolean indicating whether the library is set to log information using the macro FL_LOG
+          Returns whether the library is logging information via the `FL_LOG`
+          macro
+          @return whether the library is logging information via the `FL_LOG`
+          macro
          */
         static bool logging();
         /**
-          Sets whether the library is set to log information using the macro FL_LOG
-          @param logging is a boolean indicating whether the library is set to log information using the macro FL_LOG
+          Sets whether the library is set to log information using the macro
+          `FL_LOG` 
+          @param logging indicates whether the library is set to log
+          information via the `FL_LOG` macro
          */
         static void setLogging(bool logging);
 

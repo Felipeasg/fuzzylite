@@ -83,7 +83,7 @@ namespace fl {
         /**
           Indicates if the given term is monotonic
           @param term is the given term
-          @return a boolean indicating whether the given term is monotonic
+          @return whether the given term is monotonic
          */
         virtual bool isMonotonic(const Term* term) const;
 

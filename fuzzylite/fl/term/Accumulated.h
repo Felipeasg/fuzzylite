@@ -150,7 +150,7 @@ namespace fl {
         virtual void addTerm(const Term* term, scalar degree, const TNorm* implication);
         /**
           Adds the activated term to the fuzzy set. The activated term 
-          will be deleted upon {@link #clear()}
+          will be deleted when Accumulated::clear()
           @param term is the activated term
          */
         virtual void addTerm(Activated* term);

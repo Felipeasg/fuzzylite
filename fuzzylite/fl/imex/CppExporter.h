@@ -56,16 +56,15 @@ namespace fl {
           Sets whether the fl namespace of the library is prefixed to types
           (e.g., `fl::Engine`) 
           
-          @param prefixNamespace is a boolean that indicates whether the `fl`
-          namespace of the library is prefixed to types (e.g., `fl::Engine`)
+          @param prefixNamespace indicates whether the `fl` namespace of the
+          library is prefixed to types (e.g., `fl::Engine`)
          */
         virtual void setPrefixNamespace(bool prefixNamespace);
         /**
           Gets whether the fl namespace of the library is prefixed to types
           (e.g., `fl::Engine`)
 
-          @return `true` if the fl namespace is prefixed to types, and `false`
-          otherwise.
+          @return whether the `fl` namespace is prefixed to types
          */
         virtual bool isPrefixNamespace() const;
 

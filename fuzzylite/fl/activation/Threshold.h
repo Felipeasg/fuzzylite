@@ -93,51 +93,50 @@ namespace fl {
         /**
           Sets the comparison operator for the activation method
           
-          @param comparison is an enum option from {@link Comparison}
+          @param comparison is the operator for the activation method
          */
         virtual void setComparison(Comparison comparison);
 
         /**
           Gets the comparison operator for the activation method
           
-          @return the comparison operator as an enum option
+          @return comparison operator for the activation method
          */
         virtual Comparison getComparison() const;
 
         /**
-          Gets the short form of the comparison operator of the activation method 
-          
-          @return the short form of an operator in (`==`, `!=`, `<`, `>`, `<=`, `>=`)
+          Gets the short form of the comparison operator of the activation
+          method
+          @return the short form of an operator in (`==`, `!=`, `<`, `>`, `<=`,
+          `>=`)
          */
         virtual std::string getComparisonOperator() const;
 
         /**
           Parses the comparison operator, or throws an
           exception if the parameter does not correspond to a valid operator
-          
-          @param comparisonOperator is an operator in (`==`, `!=`, `<`, `>`, `<=`, `>=`)
+          @param comparisonOperator is an operator in (`==`, `!=`, `<`, `>`,
+          `<=`, `>=`)
          */
         virtual Comparison parseComparisonOperator(const std::string& comparisonOperator) const;
 
         /**
           Sets the threshold of the activation method
-          
           @param threshold is the threshold for activation degrees
          */
         virtual void setThreshold(scalar threshold);
 
         /**
           Gets the threshold of the activation method
-          
-          @return the threshold for activation degrees
+          @return the threshold of the activation method
          */
         virtual scalar getThreshold() const;
 
         /**
-          Sets the comparison operator and the threshold for the activation method
-         
+          Sets the comparison operator and the threshold for the activation
+          method
           @param comparison is an enum option
-          @param threshold is the threshold for activation degrees
+          @param threshold is the threshold of the activation method
          */
         virtual void setComparisonThreshold(Comparison comparison, scalar threshold);
 
@@ -151,12 +150,12 @@ namespace fl {
         virtual void setComparisonThreshold(const std::string& comparison, scalar threshold);
 
         /**
-          Returns `true` if the activation method will activate a rule with
-          the given activation degree, and `false` otherwise. @todo rename to 
-          `activatesWith`
+          Returns whether the activation method will activate a rule with
+          the given activation degree
+          @todo rename to  `activatesWith`
           
           @param activationDegree an activation degree
-          @return `true` if the comparison equation is satisfied with the  
+          @return whether the comparison equation is satisfied with the  
           activation degree and the threshold
          */
         virtual bool activates(scalar activationDegree) const;
