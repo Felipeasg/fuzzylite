@@ -25,11 +25,57 @@ namespace fl {
     /**
       
       The OutputVariable class is a Variable that represents an output of the
-      fuzzy logic controller.
+      fuzzy logic controller. During the activation of a RuleBlock, the
+      Activated terms of each Rule will be Accumulated in the
+      OutputVariable::fuzzyOutput(), which represents a fuzzy set hereinafter
+      referred to as @f$\tilde{y}@f$. The defuzzification of @f$\tilde{y}@f$
+      translates the fuzzy output value @f$\tilde{y}@f$ into a crisp output
+      value @f$y@f$, which can be retrieved using Variable::getValue(). The
+      value of the OutputVariable is computed and automatically stored when
+      calling OutputVariable::defuzzify(), but the value depends on the
+      following properties (expressed in the FuzzyLite Language):
+    
+        - Property `default: scalar` overrides the output value @f$y@f$ with
+          the given fl::scalar whenever the defuzzification process results in
+          a non-finite value (i.e., fl::nan and fl::inf). For example,
+          considering `default: 0.0`, if RuleBlock::activate() does not
+          activate any rules whose Consequent contribute to the OutputVariable,
+          then the fuzzy output value is empty, the Defuzzifier does not
+          operate, and hence @f$y=0.0@f$. By default, `default: NaN`. Relevant
+          methods are OutputVariable::getDefaultValue() and
+          OutputVariable::setDefaultValue().
+    
+        - Property `lock-previous: boolean`, if enabled, overrides the output
+          value @f$y^t@f$ at time @f$t@f$ with the previously defuzzified valid
+          output value @f$y^{t-1}@f$ if defuzzification process results in a
+          non-finite value (i.e., fl::nan and fl::inf). When enabled, the
+          property takes precedence over `default` if @f$y^{t-1}@f$ is a finite
+          value. By default, `lock-previous: false`, @f$y^{t-1}=\mbox{NaN}@f$
+          for @f$t=0@f$, and @f$y^{t-1}=\mbox{NaN}@f$ when
+          OutputVariable::clear(). Relevant methods are
+          OutputVariable::lockPreviousValue(),
+          OutputVariable::isLockPreviousValue,
+          OutputVariable::getPreviousValue(), and
+          OutputVariable::setPreviousValue().
+    
+        - Property `lock-range: boolean` overrides the output value @f$y@f$ to
+          enforce it lies within the range of the variable determined by
+          Variable::getMinimum() and Variable::getMaximum(). When enabled, this
+          property takes precedence over `lock-previous` and `default`. For
+          example, considering `range: -1.0 1.0` and `lock-range: true`,
+          @f$y=-1.0@f$ if the result from the Defuzzifier is smaller than
+          `-1.0`, and @f$y=1.0@f$ if the result from the Defuzzifier is greater
+          than `1.0`. The property `lock-range` was introduced in version 5.0
+          to substitue the property `lock-valid` in version 4.0. By default,
+          `lock-range: false`. Relevant methods are
+          Variable::lockValueInRange(), Variable::isLockValueInRange(),
+          Variable::getMinimum(), and Variable::getMaximum()
+
       
       @author Juan Rada-Vilela, Ph.D.
       @see Variable
       @see InputVariable
+      @see RuleBlock::activate()
       @see Term
       @since 4.0
     
@@ -48,20 +94,14 @@ namespace fl {
         explicit OutputVariable(const std::string& name = "",
                 scalar minimum = -fl::inf, scalar maximum = fl::inf);
         OutputVariable(const OutputVariable& other);
-        /**
-          Deletes the terms in the current variable, adds clones of the terms
-          from the `other` variable, deletes the fuzzyOutput and defuzzifier,
-          and sets clones of fuzzyOutput and defuzzifier from `other`.
-          @param other is the other variable to copy from
-          @return this variable, which contains a copy of the `other` variable
-         */
         OutputVariable& operator=(const OutputVariable& other);
         virtual ~OutputVariable() FL_IOVERRIDE;
         FL_DEFAULT_MOVE(OutputVariable)
 
         /**
-          Gets the aggregated fuzzy output 
-          @return the aggregated fuzzy output
+          Gets the fuzzy output value @f$\tilde{y}@f$
+          @return the fuzzy output value @f$\tilde{y}@f$
+          @todo rename to fuzzyValue
          */
         virtual Accumulated* fuzzyOutput() const;
 
@@ -71,85 +111,68 @@ namespace fl {
         virtual void setMaximum(scalar maximum) FL_IOVERRIDE;
 
         /**
-          Sets the defuzzifier of the output variable (default: `fl::null`)
+          Sets the defuzzifier of the output variable
           @param defuzzifier is the defuzzifier of the output variable
          */
         virtual void setDefuzzifier(Defuzzifier* defuzzifier);
         /**
-          Gets the defuzzifier of the output variable (default: `fl::null`)
+          Gets the defuzzifier of the output variable
           @return the defuzzifier of the output variable
          */
         virtual Defuzzifier* getDefuzzifier() const;
 
         /**
-          Sets the previous value of the output variable (default: `fl::nan`). 
-          This value is managed automatically upon calling {@link #defuzzify()}
-          @param previousValue is the previous value to store
+          Sets the previous value of the output variable
+          @param previousValue is the previous value of the output variable
          */
         virtual void setPreviousValue(scalar previousValue);
         /**
-          Gets the previous value of the output variable (default: `fl::nan`)
-          @return the previous value, or `fl::nan` if there is none
+          Gets the previous value of the output variable
+          @return the previous value of the output variable
          */
         virtual scalar getPreviousValue() const;
 
         /**
-          Sets the default value of the output variable (default: `fl::nan`). 
-          The default value will replace the current value whenever the 
-          defuzzification process results in a non-finite value 
-          (i.e., `fl::inf` or `fl::nan`).
-          @param defaultValue is the default value 
+          Sets the default value of the output variable
+          @param defaultValue is the default value of the output variable
          */
         virtual void setDefaultValue(scalar defaultValue);
         /**
-          Gets the default value of the output variable (default: `fl::nan`). 
-          The default value will replace the current value whenever the 
-          defuzzification process results in a non-finite value 
-          (i.e., `fl::inf` or `fl::nan`).
-          @return the default value
+          Gets the default value of the output variable
+          @return the default value of the output variable
          */
         virtual scalar getDefaultValue() const;
 
         /**
-          Sets whether the previous value is utilized as a replacement of the 
-          current value whenever the defuzzification process results in a 
-          non-finite value (default: `false`). 
-          If `true`, the previous value takes precedence over
-          the default value, unless there is no previous value. Otherwise, the
-          default value is utilized in such cases.
-          @param lockPreviousOutputValue is a boolean that indicates whether to 
-          lock the previous output value
+          Sets whether to lock the previous value of the output variable
+          @param lockPreviousValue indicates whether to lock the previous value
+          of the output variable
+
          */
-        virtual void setLockPreviousValue(bool lockPreviousOutputValue);
+        virtual void setLockPreviousValue(bool lockPreviousValue);
         /**
-          Gets whether the previous value is utilized as a replacement of the 
-          current value whenever the defuzzification process results in a 
-          non-finite value (default: `false`). 
-          If `true`, the previous value takes precedence over
-          the default value, unless there is no previous value. Otherwise, the
-          default value is utilized in such cases.
-          @returns a boolean that indicates whether to lock the previous output value
+          Gets whether to lock the previous value of the output variable
+          @returns whether the previous output value of the output variable is
+          locked
          */
         virtual bool isLockPreviousValue() const;
 
         /**
-          Defuzzifies the output variable, stores the previous output value, 
-          and updates the output value, all while considering the conditions
-          of {@link #isLockPreviousValue()}and {@link #isLockValueInRange()}
+          Defuzzifies the output variable and stores the output value and the
+          previous output value
          */
         virtual void defuzzify();
 
         /**
-          Gets the currently accumulated fuzzy output value @f$\tilde{y}@f$ 
-          (not to be confused with a call to {@link Variable#fuzzify()} passing 
-          the output value, as this would be equivalent to @f$\mu(y)@f$)
-          @return the fuzzy output value
+          Gets a string representation of the fuzzy output value @f$\tilde{y}@f$
+          @return a string representation of the fuzzy output value
+          @f$\tilde{y}@f$
          */
         virtual std::string fuzzyOutputValue() const;
 
         /**
-          Clears the Accumulated fuzzy output value, and sets the `value` and
-          `previousValue` to `fl::nan`
+          Clears the output variable by setting @f$\tilde{y}=\{\}@f$,
+          @f$y^{t}=\mbox{NaN}@f$, @f$y^{t-1}=\mbox{NaN}@f$
          */
         virtual void clear();
 

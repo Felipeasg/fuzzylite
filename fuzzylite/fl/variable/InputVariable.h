@@ -44,7 +44,7 @@ namespace fl {
           Evaluates the membership function of the current input value @f$x@f$
           for each term @f$i@f$, resulting in a fuzzy input value in the form
           @f$\tilde{x}=\sum_i{\mu_i(x)/i}@f$. This is equivalent to a call to
-          {@link Variable#fuzzify()} passing @f$x@f$ as input value
+          Variable::fuzzify() passing @f$x@f$ as input value
 
           @return the fuzzy input value expressed as @f$\sum_i{\mu_i(x)/i}@f$
          */

@@ -28,7 +28,7 @@ namespace fl {
 
     /**
       
-      The Variable class is an abstract class for linguistic variables.
+      The Variable class is an abstract class for linguistic variables. 
 
       @author Juan Rada-Vilela, Ph.D.
       @see InputVariable
@@ -54,13 +54,6 @@ namespace fl {
                 scalar minimum = -fl::inf,
                 scalar maximum = fl::inf);
         Variable(const Variable& other);
-        /**
-          Deletes the terms in the current variable, and adds clones of the
-          terms from the `other` variable.
-
-          @param other is the other variable to copy from
-          @return this variable, which contains a copy of the `other` variable
-         */
         Variable& operator=(const Variable& other);
         virtual ~Variable();
         FL_DEFAULT_MOVE(Variable)
@@ -78,105 +71,99 @@ namespace fl {
         virtual std::string getName() const;
 
         /**
-          Sets the value of the variable (default: `fl::nan`). 
-          @param value is the input value of an InputVariable, or the  
-          output value of an OutputVariable.
+          Sets the value of the variable
+          @param value is the input value of an InputVariable, or the output
+          value of an OutputVariable
          */
         virtual void setValue(scalar value);
 
         /**
-          Gets the input value of an input variable, or the  
-          output value of an output variable (default: `fl::nan`)
-          @return the input value of an input variable, or the  
-          output value of an output variable
+          Gets the value of the variable
+          @return the input value of an InputVariable, or the output value of
+          an OutputVariable
          */
         virtual scalar getValue() const;
 
         /**
-          Sets the range of the variable between `[minimum, maximum]` (default: `(-inf, +inf)`)
-          @param minimum is the minimum value
-          @param maximum is the maximum value
+          Sets the range of the variable between `[minimum, maximum]`
+          @param minimum is the minimum value in range
+          @param maximum is the maximum value in range
          */
         virtual void setRange(scalar minimum, scalar maximum);
         /**
-          Gets the magnitude of the range of the variable as the 
-          difference between maximum and minimum values (default: `fl::nan`)
-          @return maximum - minimum
+          Gets the magnitude of the range of the variable
+          @return `maximum - minimum`
          */
         virtual scalar range() const;
 
         /**
-          Sets the minimum value of the range of the variable (default: -`fl::inf`)
+          Sets the minimum value of the range of the variable
           @param minimum is the minimum value of the range
          */
         virtual void setMinimum(scalar minimum);
         /**
-          Gets the minimum value of the range of the variable (default: -`fl::inf`)
+          Gets the minimum value of the range of the variable
           @return the minimum value of the range of the variable
          */
         virtual scalar getMinimum() const;
 
         /**
-          Sets the maximum value of the range of the variable (default: `fl::inf`)
+          Sets the maximum value of the range of the variable
           @param maximum is the maximum value of the range
          */
         virtual void setMaximum(scalar maximum);
         /**
-          Gets the maximum value of the range of the variable (default: `fl::inf`)
+          Gets the maximum value of the range of the variable
           @return the maximum value of the range of the variable
          */
         virtual scalar getMaximum() const;
 
         /**
-          Sets whether the variable is enabled (default: `true`).
-          
-          @param enabled is a boolean that enables the variable if `true`, or 
-          disables the variable if `false`.
+          Sets whether the variable is enabled
+          @param enabled determines whether to enable the variable
          */
         virtual void setEnabled(bool enabled);
         /**
-          Gets whether the variable is enabled (default: `true`).
-          
-          @return `true`, if variable is enabled; `false`, if the variable is disabled
+          Gets whether the variable is enabled
+          @return whether the variable is enabled
          */
         virtual bool isEnabled() const;
 
         /**
-          Sets whether the variable locks the current value within the 
-          range of the variable (default: `false`).
-          
-          Locking the value of an InputVariable means that the input value 
-          will always be considered to lie within the range
-          `[minimum,maximum]`, taking the `minimum` and `maximum` values whenever
-          the `value` is less than `minimum` or greater than `maximum` (respectively) 
-          without ever changing the input `value`. Refer to 
-          {@link Antecedent#activationDegree()}.
-          
-          Locking the value of an OutputVariable means that defuzzifiers will 
-          ensure that the output value is within the range of the variable, 
-          adjusting the output value if necessary. Refer to {@link OutputVariable#defuzzify()}.
-           
-          @param lockValueInRange is a boolean that indicates whether to lock 
-          the value in range
+          Sets whether the variable locks the current value to the range of the
+          variable. 
+        
+          If enabled in an InputVariable @f$i@f$, the input value @f$x_i@f$
+          will be used when computing the Antecedent::activationDegree() as
+          long as @f$x_i \in [\mbox{min}, \mbox{max}]@f$. Else, for the case of
+          @f$x_i \not\in [\mbox{min}, \mbox{max}]@f$, the range values will be
+          used instead but without changing the input value @f$x_i@f$.
+        
+          If enabled in an OutputVariable @f$j@f$, the output value @f$y_j@f$
+          will be overriden by the range values when @f$y_j \not\in
+          [\mbox{min}, \mbox{max}]@f$. See OutputVariable for more information.
+
+          @param lockValueInRange indicates whether to lock the value to the
+          range of the variable
          */
         virtual void setLockValueInRange(bool lockValueInRange);
 
         /**
-          Gets whether the variable locks the current value within the 
-          range of the variable (default: `false`). 
-          
-          Locking the value of an InputVariable means that the input value 
-          will always be considered to lie within the range
-          `[minimum,maximum]`, taking the `minimum` and `maximum` values whenever
-          the `value` is less than `minimum` or greater than `maximum` (respectively) 
-          without ever changing the input `value`. Refer to 
-          {@link Antecedent#activationDegree()}.
-          
-          Locking the value of an OutputVariable means that defuzzifiers will 
-          ensure that the output value is within the range of the variable, 
-          adjusting the output value if necessary. Refer to {@link OutputVariable#defuzzify()}.
-           
-          @return `true`, if the variable locks the value in range; `false`, otherwise
+          Gets whether the variable locks the current value to the 
+          range of the variable
+        
+          If enabled in an InputVariable @f$i@f$, the input value @f$x_i@f$
+          will be used when computing the Antecedent::activationDegree() as
+          long as @f$x_i \in [\mbox{min}, \mbox{max}]@f$. Else, for the case of
+          @f$x_i \not\in [\mbox{min}, \mbox{max}]@f$, the range values will be
+          used instead but without changing the input value @f$x_i@f$.
+        
+          If enabled in an OutputVariable @f$j@f$, the output value @f$y_j@f$
+          will be overriden by the range values when @f$y_j \not\in
+          [\mbox{min}, \mbox{max}]@f$. See OutputVariable for more information.
+        
+          @return whether the variable locks the current value to the range of
+          the variable
          */
         virtual bool isLockValueInRange() const;
 
@@ -199,9 +186,9 @@ namespace fl {
         virtual Term* highestMembership(scalar x, scalar* yhighest = fl::null) const;
 
         /**
-          Gets the representation of the variable in the 
-          FuzzyLite Language (FLL)
-          @return the variable in FLL
+          Gets a string representation of the variable in the FuzzyLite Language
+          @return a string representation of the variable in the FuzzyLite
+          Language
           @see FllExporter
          */
         virtual std::string toString() const;
@@ -237,7 +224,7 @@ namespace fl {
         /**
           Gets whether a term of the given name has been added
           @param name the name of the term 
-          @return `true`, if the term of the given name is found; `false`, otherwise
+          @return whether the term of the given name is found
          */
         virtual bool hasTerm(const std::string& name) const;
         /**
