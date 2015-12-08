@@ -1,16 +1,8 @@
-fuzzylite &reg; [![Build Status](https://travis-ci.org/fuzzylite/fuzzylite.svg?branch=documentation)](https://travis-ci.org/fuzzylite/fuzzylite) 
-[![Coverity Status](https://scan.coverity.com/projects/5759/badge.svg)](https://scan.coverity.com/projects/5759) 
-<img src="https://raw.githubusercontent.com/fuzzylite/fuzzylite/documentation/fuzzylite.svg" align="right" alt="fuzzylite">
-
-===========
-
-A Fuzzy Logic Control Library in C++
+fuzzylite&reg;
+==============
+A Fuzzy Logic Control Library in C++ 
 ------------------------------------
-
-Current version: 6.0 (in progress)
-
-By: [Juan Rada-Vilela](http://www.fuzzylite.com/jcrada), Ph.D.
-
+By [Juan Rada-Vilela](http://www.fuzzylite.com/jcrada), Ph.D.
 
 ***
 
@@ -25,6 +17,7 @@ By: [Juan Rada-Vilela](http://www.fuzzylite.com/jcrada), Ph.D.
 [What's next](#whatsnext) &nbsp;
 [What's new](#whatsnew) : [General](#new-general), [Macros](#new-macros), [Operation](#new-operation), [Engine](#new-engine), [Input Variables and Output Variables](#new-inoutvars), [Linguistic Terms](#new-terms), [Linear and Discrete Terms](#new-linear-discrete), [Function Term](#new-function), [[T|S]Norms and Hedges](#new-norms-hedges), [Rules](#new-rules), [Rule Blocks](#new-ruleblocks), [Weighted Defuzzifiers](#new-weighted), [Integral Defuzzifiers](#new-integral), [Importers and Exporters](#new-imex), [Examples](#new-examples),  [Console](#new-console), [Fixed Bugs and Leaks](#new-fixes)
 
+***
 
 ### <a name="license">License</a>
 `fuzzylite` will **always** be free and open source. However, `fuzzylite` is **no** longer released under the Apache License. Since version 5.0, `fuzzylite` is **dual-licensed** under the [**GNU Lesser General Public License (LGPL) v3.0**](https://www.gnu.org/licenses/lgpl.html) and a **paid commercial license**.
@@ -137,7 +130,6 @@ int main(int argc, char* argv[]){
 
 ### <a name="whatsnext">What's Next?</a>
 
-+ Source code documentation
 + Type-2 Fuzzy Logic Controllers
 + Adaptive Neuro-Fuzzy Inference System (ANFIS)
 + Fuzzy C-means data clustering
@@ -456,4 +448,4 @@ For more information, visit [www.fuzzylite.com](http://www.fuzzylite.com).
 
 fuzzylite&reg; is a registered trademark of FuzzyLite Limited.
 
-Copyright &#xa9; 2010-2015 FuzzyLite Limited. All rights reserved.
+Copyright &copy; 2010-2015 FuzzyLite Limited. All rights reserved.
